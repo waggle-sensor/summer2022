@@ -1,0 +1,19 @@
+# Daily Progress Report
+
+### Week 1: 5/31 to 6/3 ###
+#### Monday May 31th ####
+----------------------------------------------
+- [ ] Attended the first orientation
+- [ ] Created workflow and documentation on Github
+- [ ] Filled out HR forms such as I-9 and workday
+
+Questions for later:
+What does a system fault look like? Does it entail the entire system failing, or just a set of services not working?
+What is the high-level process for updating nodes remotely?
+Main object of the day: Research into important filesystem packages.
+
+#### Monday June 1th ####
+----------------------------------------------
+- [ ] Attended the first orientation
+- [ ] Created workflow and documentation on Github
+- [ ] Filled out HR forms such as I-9 and workday
