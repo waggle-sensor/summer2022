@@ -24,5 +24,5 @@ Main object of the day: Research into important filesystem packages.
 
 #### Friday June 3th ####
 ----------------------------------------------
-- [ ] Attended the RPL software/network brainstorm
+- [ ] Attended the PAISE Workshop: www.paise.org
 - [ ] Read the file *RPL software/network brainstorm* and *WORKFLOWs for Modular SAL Demo* shared by Joe
