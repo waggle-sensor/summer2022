@@ -17,3 +17,15 @@ Main object of the day: Research into important filesystem packages.
 - [ ] --
 - [ ] --
 - [ ] --
+
+#### Thursday June 2th ####
+----------------------------------------------
+- [ ] --
+- [ ] --
+- [ ] --
+
+#### Friday June 3th ####
+----------------------------------------------
+- [ ] Attended the RPL software/network brainstorm
+- [ ] Received the file * RPL software/network brainstorm * by Joe.
+- [ ] --
