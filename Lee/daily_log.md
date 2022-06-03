@@ -1,8 +1,9 @@
 # Daily Progress Report
 
+----------------------------------------------
 ### Week 1: 5/31 to 6/3 ###
 #### Tuesday May 31th ####
-----------------------------------------------
+
 - [ ] Attended the first orientation
 - [ ] Created workflow and documentation on Github
 - [ ] Filled out HR forms such as I-9 and workday
@@ -33,7 +34,7 @@ Before ask Yongho to figure out this task: instrumentation interface and the int
 Questions for later:  
 filesystem packages to Yongho.
 
+----------------------------------------------
 ### Week 2: 6/6 to 6/10 ###
 #### Monday June 6th ####
-----------------------------------------------
 - [ ] Will updated
