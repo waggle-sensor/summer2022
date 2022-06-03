@@ -3,7 +3,7 @@
 ### Project Goals ###
 
 - [ ] Create workflow and documentation (in the waggle github) to run instrumented AI@Edge in a docker.  Demo how to do it for the whole team.
-- [ ] Decide on 5 simple measurements, by default, for all computational tasks.  For example: GPU RAM max, CPU RAM max, average <x>, etc.
+- [ ] Decide on 5 simple measurements, by default, for all computational tasks.  For example: GPU RAM max, CPU RAM max, average, etc.
 - [ ] Add into workflow pywaggle hooks to report summary measurements for each job to beehive.
 - [ ] Add in pywaggle bits to publish internally, periodically, to scoreboard, so resource managers running locally could decide how to tune or tweak a running container that was misbehaving or exceeding resources.
 
@@ -150,8 +150,33 @@
 
 Things to added to dockerfile.
 
+``` export PATH="/usr/local/cuda-11.0/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH"
+apt-get install nvidia-cuda-toolkit
+    pip install pycuda  
 ```
-	- export PATH="/usr/local/cuda-11.0/bin:$PATH"
-	- export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH"
-	- apt-get install nvidia-cuda-toolkit
-    - pip install pycuda  ```
+
+
+### Week 3 ###
+
+------------------------------------------------
+
+#### Monday May 30, 2022 ####
+
+- Labor Day.
+#### Tuesday May 31, 2022 ####
+
+- Read and worked on using socket programing on docker and also using docker-in-docker.
+
+#### Wednesday June 01, 2022 ####
+
+- Set up nvidia nx local for testing application.
+
+#### Thursday June 02, 2022 ####
+
+- Debug errors on running application on running on nx.
+
+#### Friday June 03, 2022 ####
+
+- Completed running running a live-application on nvidia-nx.
+- Created a docker container with tau and example app [app-example:latest](https://hub.docker.com/layers/227035774/odunayo/waggle-plugin-base/1.1.1-ml-cuda10.2-l4t/images/sha256-8ced3a3e95d45dad0135ef14338891c8730a540ca78b175b0d048cbefd7e02e8?context=repo)
