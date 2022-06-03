@@ -15,18 +15,21 @@ Main object of the day: Research into important filesystem packages.
 
 #### Wednesday June 1th ####
 - [ ] Took mandatory TMS courses
+
 Things to do for later:  
 In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow.  
 
 #### Thursday June 2th ####
 - [ ] Made an appointment and received the Argonne badge
 - [ ] Had a lunch meeting with Joe and Sean to discuss about the internship plan. 
+
 Questions for later:  
 Before ask Yongho to figure out this task: instrumentation interface and the integration of new instruments into existing experimental workflows. Both teams will work to establish an open source collaborative network.
 
 #### Friday June 3th ####
 - [ ] Attended the PAISE Workshop: www.paise.org
 - [ ] Read the file *RPL software/network brainstorm* and *WORKFLOWs for Modular SAL Demo* shared by Joe. 
+
 Questions for later:  
 filesystem packages to Yongho.
 
