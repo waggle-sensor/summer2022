@@ -1,7 +1,7 @@
 # Daily Progress Report
 
 ### Week 1: 5/31 to 6/3 ###
-#### Monday May 31th ####
+#### Tuesday May 31th ####
 ----------------------------------------------
 - [ ] Attended the first orientation
 - [ ] Created workflow and documentation on Github
@@ -12,7 +12,7 @@ What does a system fault look like? Does it entail the entire system failing, or
 What is the high-level process for updating nodes remotely?
 Main object of the day: Research into important filesystem packages.
 
-#### Monday June 1th ####
+#### Wednesday June 1th ####
 ----------------------------------------------
 - [ ] Attended the first orientation
 - [ ] Created workflow and documentation on Github
