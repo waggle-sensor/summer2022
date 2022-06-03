@@ -14,6 +14,6 @@ Main object of the day: Research into important filesystem packages.
 
 #### Wednesday June 1th ####
 ----------------------------------------------
-- [ ] Attended the first orientation
-- [ ] Created workflow and documentation on Github
-- [ ] Filled out HR forms such as I-9 and workday
+- [ ] --
+- [ ] --
+- [ ] --
