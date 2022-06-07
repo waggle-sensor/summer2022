@@ -1,5 +1,4 @@
 # Daily Progress Report
-
 ----------------------------------------------
 ### Week 1: 5/31 to 6/3 ###
 #### Tuesday May 31th ####
@@ -21,7 +20,7 @@ Things to do for later:
 In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow.  
 
 #### Thursday June 2th ####
-- [ ] Made an appointment and received the Argonne badge
+- [ ] Made an appointment and obtained the Argonne badge
 - [ ] Had a lunch meeting with Joe and Sean to discuss about the internship plan. 
 
 Questions for later:  
@@ -37,4 +36,9 @@ filesystem packages to Yongho.
 ----------------------------------------------
 ### Week 2: 6/6 to 6/10 ###
 #### Monday June 6th ####
-- [ ] Will updated
+- [ ] Had a meeting with Pete and Raj to discuss about the overall summer plan (Yongho and Rory virtually)
+- [ ] Met Doga, Casey and Rafael in the robot room and talked about the schedule
+
+Things to do by this week:  
+- Reading up the documents shared by Doga
+- Sh
