@@ -8,19 +8,19 @@
 - [ ] Filled out HR forms such as I-9 and workday
 - [ ] Registered and took mandatory TMS courses
 
-Questions for later:
-What does a system fault look like? Does it entail the entire system failing, or just a set of services not working?  
-What is the high-level process for updating nodes remotely?  
-Main object of the day: Research into important filesystem packages.
+Things to do:
+In order to get permission Argonne file box, the authorization issue needs to be solved out  
+Meeting for the project shedule with Pete and Raj  
+Building up the agile planning for the summer plan
 
 #### Wednesday June 1th ####
 - [ ] Took mandatory TMS courses  
 
-Things to do for later:  
-In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow.  
+Things to do:  
+In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow  
 
 #### Thursday June 2th ####
-- [ ] Made an appointment and obtained the Argonne badge
+- [ ] Made an appointment and obtained an Argonne badge
 - [ ] Had a lunch meeting with Joe and Sean to discuss about the internship plan  
 
 Questions for later:  
@@ -28,10 +28,7 @@ Before ask Yongho to figure out this task: instrumentation interface and the int
 
 #### Friday June 3th ####
 - [ ] Attended the PAISE Workshop: www.paise.org
-- [ ] Read the file *RPL software/network brainstorm* and *WORKFLOWs for Modular SAL Demo* shared by Joe   
-
-Questions for later:  
-filesystem packages to Yongho  
+- [ ] Read the file *RPL software/network brainstorm* and *WORKFLOWs for Modular SAL Demo* shared by Joe  
 
 ----------------------------------------------
 ### Week 2: 6/6 to 6/10 ###
@@ -39,6 +36,15 @@ filesystem packages to Yongho
 - [ ] Had a meeting with Pete and Raj to discuss about the overall summer plan (Yongho and Rory virtually)
 - [ ] Met Doga, Casey and Rafael in the robot room and talked about the schedule.  
 
--Things to do by this week:  
-Reading up the documents shared by Doga  
-- Sh
+-Things to do:  
+Reading up the documents shared by Doga by this Friday  
+Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS process
+Preparing 
+
+#### Tuesday June 7th ####
+
+- [ ] Completed the mandatory TMS courses: DEI101 Diversity Equity and Inclusion at Argonne Introduction and ESH561 Bicycle Safety course
+- [ ] Finished up the ROS course week 1, and took an exam for the certificate
+
+Things to do:
+Research into the ROS system and how to apply it  
