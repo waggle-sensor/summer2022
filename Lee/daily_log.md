@@ -39,6 +39,6 @@ filesystem packages to Yongho
 - [ ] Had a meeting with Pete and Raj to discuss about the overall summer plan (Yongho and Rory virtually)
 - [ ] Met Doga, Casey and Rafael in the robot room and talked about the schedule.  
 
-Things to do by this week:  
+-Things to do by this week:  
 Reading up the documents shared by Doga  
 - Sh
