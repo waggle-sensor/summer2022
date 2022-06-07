@@ -6,7 +6,9 @@ These are software processes that do 'stuff' (e.g. process data, command hardwar
 - Topics:  
 Transport information between nodes, in the form of messages.
 
-In a real robot application you will often have to deal with a large number of nodes and topics. It is important to know which nodes are talking to each other, and what topics are being used to pass the information (messages) between nodes.
+For example, a sensor, processes information and then provides data, is a node as it does not transport it between nodes.
+
+
 
 ### There are three main ways to inspect a ROS node:
 
