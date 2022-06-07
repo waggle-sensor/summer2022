@@ -7,3 +7,18 @@ These are software processes that do 'stuff' (e.g. process data, command hardwar
 Transport information between nodes, in the form of messages.
 
 In a real robot application you will often have to deal with a large number of nodes and topics. It is important to know which nodes are talking to each other, and what topics are being used to pass the information (messages) between nodes.
+
+### There are three main ways to inspect a ROS node:
+
+Simply list all currently running nodes in the terminal:  
+```
+rosnode list
+```
+Make a visual graph of all running nodes and their connections:  
+```
+rqt_graph
+```
+List information about a specific node in the terminal:  
+```
+rosnode info <node_name>
+```
