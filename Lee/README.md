@@ -1,2 +1,1 @@
-I am a second year PhD student at Purdue University, IN, USA studying deep learning and UAV robotics.  
 This README.md file includes daily progress reports, code explanations of the instrumentation interface and the integration of new instruments into existing experimental workflows to establish an open source collaborative network focused on contributing to the growing national interest in AI-driven autonomous discovery.
