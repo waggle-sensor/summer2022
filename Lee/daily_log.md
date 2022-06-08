@@ -39,7 +39,6 @@ Before ask Yongho to figure out this task: instrumentation interface and the int
 -Things to do:  
 Reading up the documents shared by Doga by this Friday  
 Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS process
-Preparing 
 
 #### Tuesday June 7th ####
 
@@ -57,4 +56,5 @@ Research into the ROS system and how to apply it
 - [ ] Updated my payment check on Argonne Workday
 
 Things to do:  
-Read up following documents: https://docs.waggle-edge.ai/docs/about/overview 
+Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/
+Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student nodes to register with beekeeper to get credentials to a “student” beehive
