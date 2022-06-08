@@ -45,6 +45,16 @@ Preparing
 
 - [ ] Completed the mandatory TMS courses: DEI101 Diversity Equity and Inclusion at Argonne Introduction and ESH561 Bicycle Safety course
 - [ ] Finished up the ROS course week 1, and took an exam for the certificate
+- [ ] Emailed HR to figure out Alien Determination Form (ANL67)
 
 Things to do:
 Research into the ROS system and how to apply it  
+
+#### Wednesday June 8th ####
+
+- [ ] Attended the SAGE software team meeting (brief demo of accomplishments over the past sprint)
+- [ ] Set up RPI finally
+- [ ] Updated my payment check on Argonne Workday
+
+Things to do:  
+Read up following documents: https://docs.waggle-edge.ai/docs/about/overview 
