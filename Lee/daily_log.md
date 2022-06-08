@@ -54,6 +54,7 @@ Research into the ROS system and how to apply it
 - [ ] Attended the SAGE software team meeting (brief demo of accomplishments over the past sprint)
 - [ ] Set up RPI finally
 - [ ] Updated my payment check on Argonne Workday
+- [ ] Obtained the Argonne prox card
 
 Things to do:  
 Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/  
