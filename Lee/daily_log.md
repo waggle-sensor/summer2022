@@ -56,5 +56,5 @@ Research into the ROS system and how to apply it
 - [ ] Updated my payment check on Argonne Workday
 
 Things to do:  
-Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/ 
+Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/  
 Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student nodes to register with beekeeper to get credentials to a “student” beehive
