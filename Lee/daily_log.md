@@ -43,7 +43,7 @@ Preparing
 
 #### Tuesday June 7th ####
 
-- [ ] Completed the mandatory TMS courses: DEI101 Diversity Equity and Inclusion at Argonne Introduction and ESH561 Bicycle Safety course
+- [ ] Completed the mandatory TMS courses: DEI101 Diversity Equity and Inclusion at Argonne Introduction (ESH561 Bicycle Safety course as an elective class)
 - [ ] Finished up the ROS course week 1, and took an exam for the certificate
 - [ ] Emailed HR to figure out Alien Determination Form (ANL67)
 
