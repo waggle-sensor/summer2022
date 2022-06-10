@@ -74,6 +74,5 @@ Reading up the Lightweight Kubernetes, ref: https://k3s.io
 - [ ] Tested ros/ros2 files on Nano
 
 Things to do:  
-Get the nano image to deploy, run codes from ECR, and get the ros example from Yongho working to control something in the robot space  
+I need to implement the nano image to deploy, run codes from ECR, and get the ros example from Yongho working to control something in the robot space  
 As the previous ros file built by Yongho might need a different ROS version (LIDAR), it needs to be modified  
-Reading up the Lightweight Kubernetes, ref: https://k3s.io
