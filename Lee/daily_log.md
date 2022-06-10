@@ -59,3 +59,21 @@ Research into the ROS system and how to apply it
 Things to do:  
 Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/  
 Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student nodes to register with beekeeper to get credentials to a “student” beehive
+
+#### Thursday June 9th ####
+
+- [ ] Had a meeting with Joe and Francisco to discuss about the WAGGLE OS/WES
+- [ ] Set up Jetson Nano and install/test ros docker file on Nano, ref: https://developer.nvidia.com/embedded/learn/tutorials/jetson-container
+
+Things to do:  
+Reading up the Lightweight Kubernetes, ref: https://k3s.io
+
+#### Friday June 10th ####
+
+- [ ] Had a discussion with Yomi; Self-Supervised Learning Tree Detection
+- [ ] Tested ros/ros2 files on Nano
+
+Things to do:  
+Get the nano image to deploy, run codes from ECR, and get the ros example from Yongho working to control something in the robot space  
+As the previous ros file built by Yongho might need a different ROS version (LIDAR), it needs to be modified  
+Reading up the Lightweight Kubernetes, ref: https://k3s.io
