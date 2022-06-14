@@ -1,1 +1,1 @@
-
+# Maggie Zoerner - Daily Logs
