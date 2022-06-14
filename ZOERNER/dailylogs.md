@@ -1,4 +1,4 @@
-# Maggie Zoerner - Day One
+# Maggie Zoerner - Daily Log
 
 ### Project Goals ###
 
