@@ -50,11 +50,9 @@
 
 #### Tuesday June 7, 2022 ####
 
-- Completed new student orientation day 2
-- Started JHQ training
-- Met with Bobby, Dario, Bhupendra to discuss additional project details
-- Got access to data sets
 - Attended TRACER briefing
+- Did some TRACER training with Max to prepare for presentation of verification
+- Finished working through example code for Py-ART
 
 #### Wednesday June 8, 2022 ####
 
