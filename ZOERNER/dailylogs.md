@@ -1,4 +1,4 @@
-# Maggie Zoerner - Daily Log
+# Maggie Zoerner - Daily Logs
 
 ### Project Goals ###
 
