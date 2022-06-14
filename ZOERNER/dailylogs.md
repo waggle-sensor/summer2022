@@ -92,6 +92,7 @@
 
 #### Tuesday June 14, 2022 ####
 
+- Participated in ESH meeting
 - Assisted with TRACER forecasting and attended briefing (Air Quality)
 - Established folder in Waggle GitHub repository and created this document.
 - Completed "About Me" Google Slide
