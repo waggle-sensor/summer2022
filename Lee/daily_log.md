@@ -79,7 +79,7 @@ I need to implement the nano image to deploy, run codes from ECR, and get the ro
 ----------------------------------------------
 ### Week 2: 6/13 to 6/17 ###
 #### Monday June 13th ####
-- [ ] Attended the Argonne Fifth Quantum Computing Tutorial Day 1: https://events.cels.anl.gov/event/267/timetable/#20220613.detailed
+- [ ] Attended the Argonne Fifth Quantum Computing Tutorial Day 1: https://events.cels.anl.gov/event/267/timetable/#20220613.detailed and https://github.com/yurialexeev/Argonne-Quantum-Computing-Tutorial-2022
 - [ ] Had a meeting with Yomi to discuss about the ECR and docker for the Sage project.
 - [ ] Finally completed read up https://github.com/waggle-sensor/ and https://docs.waggle-edge.ai/docs/about/overview
 
