@@ -84,8 +84,8 @@ I need to implement the nano image to deploy, run codes from ECR, and get the ro
 - [ ] Finally completed read up https://github.com/waggle-sensor/ and https://docs.waggle-edge.ai/docs/about/overview
 
 -Things to do:  
-Preparing Thursday meeting with Joe & Francisco to discuss about the details of what needs to be in nano OS and the detailed services needed to run WES
-Docker tutorial: https://www.katacoda.com/courses/container-runtimes
+Preparing Thursday meeting with Joe & Francisco to discuss about the details of what needs to be in nano OS and the detailed services needed to run WES. 
+Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/container-runtimes
 
 #### Tuesday June 14th ####
 
