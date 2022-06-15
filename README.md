@@ -19,6 +19,20 @@ We recommend these tutorials if you are new to git:
 
 Please do not add large files to git repositories if possible. Please ask your supervisor where to put them. Please do not clone a git repository in a directory that is synced with icloud or any other sync mechanism, as files might be deleted.
 
+### Process for Github:
+- Fork the https://github.com/waggle-sensor/summer2022 repository.  This will create a “copy” of the repository in your own profile.  (ex. https://github.com/jswantek/summer2022)
+- Clone forked repository to your machine (ex. git clone git@github.com:jswantek/summer2022.git)
+- Make code changes on the main (or another branch) in your own forked environment (i.e git commit)
+- Push your changes to your own forked repository (git push origin <branch>)
+- Then within your fork on github create a “Pull Request” (see attached image)
+- You will see that the proposed merge is from jswantek/summer2022:main -> waggle-sensor/summer2022:main.  Click “Create pull request”
+- After the change is approved the change, click the “Merge pull request”.  This will merge your change into the `waggle-sensor/summer2022:main along with everyone else’s work in a safe way.
+- Repeat the above process for each change you want to make.
+*note:* your own fork will get “out-of-date” with the main waggle-sensor/summer2022 repository so in your forked repository in GitHub you can click the “Fetch upstream” to have the upstream repository merged into your fork. (see attached image)
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request
+
+
+
 ## Google Drive
 If you need to create documents, spreadsheets and share them, feel free to create a folder named per your lastname in our shared [Google Drive Summer2022](https://drive.google.com/drive/u/0/folders/1dgy7P6ISU2wHp5zaTFBVIWuvf6jl_DB4) and link to your GitHub files. Send us you google email address via slack, so we can share trhat folder with you.
 
