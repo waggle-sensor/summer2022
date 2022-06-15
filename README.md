@@ -25,10 +25,13 @@ Please do not add large files to git repositories if possible. Please ask your s
 - Make code changes on the main (or another branch) in your own forked environment (i.e git commit)
 - Push your changes to your own forked repository (git push origin <branch>)
 - Then within your fork on github create a “Pull Request” 
-<img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork1.png" width="600"></br>
+
+ <img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork1.png" width="600"></br>
  
 - You will see that the proposed merge is from jswantek/summer2022:main -> waggle-sensor/summer2022:main.  Click “Create pull request”
+
 <img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork2.png" width="600"></br>
+
 <img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork3.png" width="600"></br>
 
 - After the change is approved, click the “Merge pull request”.  This will merge your change into the `waggle-sensor/summer2022:main along with everyone else’s work in a safe way.
