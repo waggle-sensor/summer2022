@@ -9,22 +9,22 @@
 - [x] Registered and took mandatory TMS courses
 
 Things to do:
-In order to get permission Argonne file box, the authorization issue needs to be solved out  
-Meeting for the project shedule with Pete and Raj  
-Building up the agile planning for the summer plan
+- [ ] In order to get permission Argonne file box, the authorization issue needs to be solved out  
+- [ ] Meeting for the project shedule with Pete and Raj  
+- [ ] Building up the agile planning for the summer plan
 
 #### Wednesday June 1th ####
 - [x] Took mandatory TMS courses  
 
 Things to do:  
-In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow  
+- [ ] In order to complete the section 1 and section 2 of I-9 process, communicating with Argonne HR by sending an email is required by tomorrow  
 
 #### Thursday June 2th ####
 - [x] Made an appointment and obtained an Argonne badge
 - [x] Had a lunch meeting with Joe and Sean to discuss about the internship plan  
 
-Questions for later:  
-Before ask Yongho to figure out this task: instrumentation interface and the integration of new instruments into existing experimental workflows. Both teams will work to establish an open source collaborative network.
+Things to do: 
+- [ ] Before ask Yongho to figure out the ROS configuration, implementing and deploying docker files on my laptop.
 
 #### Friday June 3th ####
 - [x] Attended the PAISE Workshop: www.paise.org
@@ -37,8 +37,8 @@ Before ask Yongho to figure out this task: instrumentation interface and the int
 - [x] Met Doga, Casey and Rafael in the robot room and talked about the schedule.  
 
 -Things to do:  
-Reading up the documents shared by Doga by this Friday  
-Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS process
+- [ ] Reading up the documents shared by Doga by this Friday  
+- [ ] Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS process
 
 #### Tuesday June 7th ####
 
@@ -47,7 +47,7 @@ Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS proces
 - [x] Emailed HR to figure out Alien Determination Form (ANL67)
 
 Things to do:
-Research into the ROS system and how to apply it  
+- [ ] Conducting research into the ROS system and how to apply it  
 
 #### Wednesday June 8th ####
 
@@ -57,8 +57,8 @@ Research into the ROS system and how to apply it
 - [x] Obtained the Argonne prox card
 
 Things to do:  
-Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/  
-Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student nodes to register with beekeeper to get credentials to a “student” beehive
+- [ ] Reading up following documents: https://docs.waggle-edge.ai/docs/about/overview and https://github.com/waggle-sensor/  
+- [ ] Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student nodes to register with beekeeper to get credentials to a “student” beehive
 
 #### Thursday June 9th ####
 
@@ -66,7 +66,7 @@ Preparing tomorrow meeting with Joe & Neal - Interface for new nano-student node
 - [x] Set up Jetson Nano and install/test ros docker file on Nano, ref: https://developer.nvidia.com/embedded/learn/tutorials/jetson-container
 
 Things to do:  
-Reading up the Lightweight Kubernetes, ref: https://k3s.io
+- [ ] Reading up the Lightweight Kubernetes, ref: https://k3s.io
 
 #### Friday June 10th ####
 
@@ -74,7 +74,7 @@ Reading up the Lightweight Kubernetes, ref: https://k3s.io
 - [x] Tested ros/ros2 files on Nano
 
 Things to do:  
-I need to implement the nano image to deploy, run codes from ECR, and get the ros example from Yongho working to control something in the robot space. Furthermore, as the previous ros file built by Yongho might need a different ROS version (LIDAR), it needs to be modified  
+- [ ] I need to implement the nano image to deploy, run codes from ECR, and get the ros example from Yongho working to control something in the robot space. Furthermore, as the previous ros file built by Yongho might need a different ROS version (LIDAR), it needs to be modified  
 
 ----------------------------------------------
 ### Week 2: 6/13 to 6/17 ###
@@ -83,24 +83,30 @@ I need to implement the nano image to deploy, run codes from ECR, and get the ro
 - [x] Had a meeting with Yomi to discuss about the ECR and docker for the Sage project.
 - [x] Finally completed read up https://github.com/waggle-sensor/ and https://docs.waggle-edge.ai/docs/about/overview
 
--Things to do:  
-Preparing Thursday meeting with Joe & Francisco to discuss about the details of what needs to be in nano OS and the detailed services needed to run WES.   
-Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/container-runtimes
+Things to do:  
+- [ ] Preparing Thursday meeting with Joe & Francisco to discuss about the details of what needs to be in nano OS and the detailed services needed to run WES
+- [ ] Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/container-runtimes
 
 #### Tuesday June 14th ####
 
 - [x] Attended the Argonne Fifth Quantum Computing Tutorial Day2
 - [x] Had a meeting with Joe, Francisco, and Sammi. Francisco and I figured out the outline for setting up Nano on Ansible. The steps are following:  
 
-```sudo apt install nvidia-jetpack```  
-```sudo apt install nvidia-cuda-toolkit```  
-```sudo apt show nvidia-jetpack```  
-```cat /usr/local/cuda/version.txt```  
+1. ```sudo apt install nvidia-jetpack```  
+2. ```sudo apt install nvidia-cuda-toolkit```  
+3. ```sudo apt show nvidia-jetpack```  
+4. ```cat /usr/local/cuda/version.txt```  
 
 Current Jetson NAno version: JetPack 4.6 that includes 10.2 CUDA  
 Reference: https://docs.nvidia.com/jetson/jetpack/install-jetpack/index.html
+
+Things to do:
+- [ ] July 1: Get the document to figure out the list of minimal WES (Waggle Edge Stack) things
+- [ ] July 15: Get the Ansible script done
+- [ ] Reading up Ansible documents
 
 #### Wednesday June 15th ####
 
 - [x] Attended the Argonne Fifth Quantum Computing Tutorial Day3
 
+#### Thursday June 16th ####
