@@ -24,11 +24,22 @@ Please do not add large files to git repositories if possible. Please ask your s
 - Clone forked repository to your machine (ex. git clone git@github.com:jswantek/summer2022.git)
 - Make code changes on the main (or another branch) in your own forked environment (i.e git commit)
 - Push your changes to your own forked repository (git push origin <branch>)
-- Then within your fork on github create a “Pull Request” (see attached image)
+- Then within your fork on github create a “Pull Request” 
+<img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork1.png" width="600"></br>
+ 
 - You will see that the proposed merge is from jswantek/summer2022:main -> waggle-sensor/summer2022:main.  Click “Create pull request”
-- After the change is approved the change, click the “Merge pull request”.  This will merge your change into the `waggle-sensor/summer2022:main along with everyone else’s work in a safe way.
+
+<img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork2.png" width="600"></br>
+
+- After the change is approved, click the “Merge pull request”.  This will merge your change into the `waggle-sensor/summer2022:main along with everyone else’s work in a safe way.
+
+<img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork3.png" width="600"></br>
+
 - Repeat the above process for each change you want to make.
 *note:* your own fork will get “out-of-date” with the main waggle-sensor/summer2022 repository so in your forked repository in GitHub you can click the “Fetch upstream” to have the upstream repository merged into your fork. (see attached image)
+
+<img src="https://github.com/waggle-sensor/summer2022/raw/main/resources/fork4.png" width="600"></br>
+
 https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request
 
 
