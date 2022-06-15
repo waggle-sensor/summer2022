@@ -2,6 +2,6 @@
 
 ### 13th of June
 
-[] Orientation
+[ ] Orientation
 
 ### 14th of June
