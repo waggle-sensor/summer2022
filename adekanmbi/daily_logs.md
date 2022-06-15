@@ -150,11 +150,10 @@
 
 Things to added to dockerfile.
 
-``` export PATH="/usr/local/cuda-11.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH"
-apt-get install nvidia-cuda-toolkit
-    pip install pycuda  
-```
+``` export PATH="/usr/local/cuda-11.0/bin:$PATH" ```
+``` export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH" ```
+``` apt-get install nvidia-cuda-toolkit ```
+``` pip install pycuda ```
 
 
 ### Week 3 ###
@@ -181,7 +180,6 @@ apt-get install nvidia-cuda-toolkit
 - Completed running running a live-application on nvidia-nx.
 - Created a docker container with tau and example app [app-example:latest](https://hub.docker.com/layers/227035774/odunayo/waggle-plugin-base/1.1.1-ml-cuda10.2-l4t/images/sha256-8ced3a3e95d45dad0135ef14338891c8730a540ca78b175b0d048cbefd7e02e8?context=repo)
 
-ß
 ### Week 4 ###
 
 ------------------------------------------------
@@ -224,16 +222,7 @@ apt-get install nvidia-cuda-toolkit
 
 - Implemented Tegrastats metric logging for running application. Below are the system and application metrics collected.
 
-    ``` {'container_ram_usage': 233357312, 
-        'tegrastats': {'time': datetime.datetime(2022, 6, 14, 23, 24, 4, 556681), 
-                        'uptime': datetime.timedelta(1, 34193, 110000), 'jetson_clocks': 
-                        'OFF', 'nvp model': 'MODE_15W_4CORE', 'CPU1': 98, 'CPU2': 100, 'CPU3': 96, 
-                        'CPU4': 100, 'CPU5': 'OFF', 'CPU6': 'OFF',
-                        'GPU': 13, 'MTS FG': 4, 'MTS BG': 4, 'RAM': 6189988, 'EMC': 6189988, 'SWAP': 392, 
-                        'APE': 150, 'NVENC': 'OFF', 'NVDEC': 'OFF', 'NVJPG': 'OFF', 
-                        'fan': 100.0, 'Temp AO': 37.0, 'Temp AUX': 37.0, 'Temp CPU': 38.0, 
-                        'Temp GPU': 36.5, 'Temp thermal': 37.3, 'power cur': 5417, 'power avg': 3684}}
-    ```
+    ``` {'container_ram_usage': 233357312, 'tegrastats': {'time': datetime.datetime(2022, 6, 14, 23, 24, 4, 556681),'uptime': datetime.timedelta(1, 34193, 110000), 'jetson_clocks': 'OFF', 'nvp model': 'MODE_15W_4CORE', 'CPU1': 98, 'CPU2': 100, 'CPU3': 96, 'CPU4': 100, 'CPU5': 'OFF', 'CPU6': 'OFF','GPU': 13, 'MTS FG': 4, 'MTS BG': 4, 'RAM': 6189988, 'EMC': 6189988, 'SWAP': 392 'APE': 150, 'NVENC': 'OFF', 'NVDEC': 'OFF', 'NVJPG': 'OFF', 'fan': 100.0, 'Temp AO': 37.0, 'Temp AUX': 37.0, 'Temp CPU': 38.0, 'Temp GPU': 36.5, 'Temp thermal': 37.3, 'power cur': 5417, 'power avg': 3684}} ```
 
 #### Thursday June 16, 2022 ####
 
@@ -243,5 +232,3 @@ apt-get install nvidia-cuda-toolkit
 
 - 
 - 
-
-
