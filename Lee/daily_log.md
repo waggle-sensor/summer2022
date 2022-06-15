@@ -93,11 +93,12 @@ Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/con
 - [x] Had a meeting with Joe, Francisco, and Sammi. Francisco and I figured out the outline for setting up Nano on Ansible. The steps are following:  
 
 ```sudo apt install nvidia-jetpack```  
-```Sudo apt install nvidia-cuda-toolkit```  
+```sudo apt install nvidia-cuda-toolkit```  
 ```sudo apt show nvidia-jetpack```  
-```Cat /usr/local/cuda/version.txt```  
+```cat /usr/local/cuda/version.txt```  
 
-Current Jetson NAno version: JetPack 4.6 that includes 10.2 CUDA
+Current Jetson NAno version: JetPack 4.6 that includes 10.2 CUDA  
+Reference: https://docs.nvidia.com/jetson/jetpack/install-jetpack/index.html
 
 #### Wednesday June 15th ####
 
