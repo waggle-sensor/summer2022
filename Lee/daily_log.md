@@ -36,7 +36,7 @@ Things to do:
 - [x] Had a meeting with Pete and Raj to discuss about the overall summer plan (Yongho and Rory virtually)
 - [x] Met Doga, Casey and Rafael in the robot room and talked about the schedule.  
 
--Things to do:  
+Things to do:  
 - [ ] Reading up the documents shared by Doga by this Friday  
 - [ ] Preparing tomorrow meeting with Joe & Francisco to catch up the WAGGLE OS process
 
