@@ -7,10 +7,12 @@ My daily activity! Most recent additions are at the top
 - Learned about Scrum and Docker
 - Started LinkedIn Learning Course on 5G  
 #### To Do
-- 
+- Read Telit manuals :)
+- finish second 5G course
 ### Tuesday 6/14
 -  Finished TMS training
 -  Toured building 446 and 485
+-  Met with Raj, Jaoquin, and Randy Berry to discuss project plans
 -  Connected to Telit board and connected to server
 #### To Do
 - Learn about Scrum
