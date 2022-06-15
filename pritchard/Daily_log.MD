@@ -5,15 +5,11 @@
 
 - [ ] Attended the first introduction session
 - [ ] Got workday detials in order, including banking
-Things to do:
 
 #### Wednesday June 1th ####
 - [ ] Attended the second introduction session
 - [ ] Obtained Argonne badge
 - [ ] Took mandatory TMS courses
-
-Things to do:  
-
 
 #### Thursday June 2th ####
 - [ ] Gained access to teams channel
@@ -27,9 +23,8 @@ Things to do:
 - [ ] Ask Raj about supervisor agreement
 - [ ] Get github permissions
 - [ ] Figure out how to record daily logs
-- [ ] Gather all questions to gether for meeting
+- [ ] Gather all questions together for meeting
 - [ ] Research LoRaWan
-
 
 #### Friday June 3th ####
 - [ ] Looked through Summer 2020 repo
