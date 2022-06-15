@@ -3,7 +3,7 @@
 ### Week 1: 5/31 to 6/3 ###
 #### Tuesday May 31th ####
 
-- [ ] Attended the first orientation
+- [x] Attended the first orientation
 - [ ] Created workflow and documentation on Github
 - [ ] Filled out HR forms such as I-9 and workday
 - [ ] Registered and took mandatory TMS courses
@@ -90,4 +90,8 @@ Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/con
 #### Tuesday June 14th ####
 
 - [ ] Attended the Argonne Fifth Quantum Computing Tutorial Day2
+
+#### Wednesday June 15th ####
+
+- [ ] Attended the Argonne Fifth Quantum Computing Tutorial Day3
 
