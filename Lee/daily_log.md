@@ -92,7 +92,7 @@ Reading up and implemented Docker tutorial: https://www.katacoda.com/courses/con
 - [x] Attended the Argonne Fifth Quantum Computing Tutorial Day2
 - [x] Had a meeting with Joe, Francisco, and Sammi. Francisco and I figured out the outline for setting up Nano on Ansible. The steps are following:  
 
-'''sudo apt install nvidia-jetpack'''
+```sudo apt install nvidia-jetpack```
 '''Sudo apt install nvidia-cuda-toolkit'''
 '''sudo apt show nvidia-jetpack'''
 '''Cat /usr/local/cuda/version.txt'''
