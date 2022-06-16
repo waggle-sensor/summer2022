@@ -84,8 +84,8 @@ Things to do:
 3. ```sudo apt install nvidia-cuda-toolkit```  
 4. ```sudo apt show nvidia-jetpack```  
 5. ```cat /usr/local/cuda/version.txt```  
-Current Jetson NAno version: JetPack 4.6 that includes 10.2 CUDA  
-Reference: https://docs.nvidia.com/jetson/jetpack/install-jetpack/index.html  
+
+Current Jetson NAno version: JetPack 4.6 that includes 10.2 CUDA, Reference: https://docs.nvidia.com/jetson/jetpack/install-jetpack/index.html  
 Things to do:
 - [ ] July 1: Get the document to figure out the list of minimal WES (Waggle Edge Stack) things
 - [ ] July 15: Get the Ansible script done
