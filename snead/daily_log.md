@@ -2,6 +2,16 @@
 My daily activity! Most recent additions are at the top  
   
 ## Week 1: 6/13 to 6/17  
+### Thursday 6/16
+- Read Telit FN980 Manuals
+  - Learned hardware capabilities
+    - Attach Arduino for remote control? Would need to confirm with our units
+  - Learned AT Commands
+- Finished 5G network courses
+#### To Do
+- tinker with our Telit units
+  - interested in SMS capabilities, and transmitting data
+- discuss with supervisors about next steps
 ### Wednesday 6/15
 - Set up GitHub and other needed accounts  
 - Learned about Scrum and Docker
@@ -12,7 +22,7 @@ My daily activity! Most recent additions are at the top
 ### Tuesday 6/14
 -  Finished TMS training
 -  Toured building 446 and 485
--  Met with Raj, Jaoquin, and Randy Berry to discuss project plans
+-  Met with Raj, Joaquin, and Randy Berry to discuss project plans
 -  Connected to Telit board and connected to server
 #### To Do
 - Learn about Scrum
