@@ -4,13 +4,15 @@ My daily activity! Most recent additions are at the top
 ## Week 1: 6/13 to 6/17  
 ### Thursday 6/16
 - Read Telit FN980 Manuals
-  - Learned hardware capabilities
-    - Attach Arduino for remote control? Would need to confirm with our units
+  - Learned HW/SW capabilities
+    - Attach Arduino for remote control? (A-star 32U4 microcontroller board)
+    - It's got a battery and can have GPS capabilites!
   - Learned AT Commands
 - Finished 5G network courses
-#### To Do
+#### To Do / Questions to be Answered
 - tinker with our Telit units
   - interested in SMS capabilities, and transmitting data
+  - looks like these things just function like phones, can we just use it as an antenna to pass data through
 - discuss with supervisors about next steps
 ### Wednesday 6/15
 - Set up GitHub and other needed accounts  
