@@ -1,6 +1,6 @@
 # Daily Activity
 
-My dayily work on the NAISE 5G 2022!
+My daily work on the NAISE 5G project 2022!
 
 ## Week 1
 
@@ -15,7 +15,7 @@ My dayily work on the NAISE 5G 2022!
 ### 14th of June
 - [X] Finished TMS training
 
-- [X] Toured building 446 and 485
+- [X] Toured building 446 and 485 to see the project base and the lab
 
 - [X] Met with Raj, Jaoquin and Randy to discuss project plan
 
