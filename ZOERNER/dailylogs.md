@@ -98,3 +98,15 @@
 - Established folder in Waggle GitHub repository and created this document.
 - Completed "About Me" Google Slide
 
+#### Wednesday June 15, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Worked through more contour analysis using OpenCV.
+
+#### Thursday June 16, 2022
+
+- Weekly Student Connect meeting
+- Familiarized myself with Github, cloned the Waggle Github repository to create my own, figured out how to commit changes from my repository to the Waggle repository.
+- Writing Coach Introductory Session
+- Worked through more contour analysis using OpenCV
+
