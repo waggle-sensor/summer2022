@@ -9,6 +9,7 @@ My daily activity! Most recent additions are at the top
     - It's got a battery and can have GPS capabilites!
   - Learned AT Commands
 - Finished 5G network courses
+- Found a quick [CBRS resource](https://www.fiercewireless.com/private-wireless/what-cbrs)
 #### To Do / Questions to be Answered
 - tinker with our Telit units
   - interested in SMS capabilities, and transmitting data
