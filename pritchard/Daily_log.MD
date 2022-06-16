@@ -5,15 +5,11 @@
 
 - [ ] Attended the first introduction session
 - [ ] Got workday detials in order, including banking
-Things to do:
 
 #### Wednesday June 1th ####
 - [ ] Attended the second introduction session
 - [ ] Obtained Argonne badge
 - [ ] Took mandatory TMS courses
-
-Things to do:  
-
 
 #### Thursday June 2th ####
 - [ ] Gained access to teams channel
@@ -27,9 +23,8 @@ Things to do:
 - [ ] Ask Raj about supervisor agreement
 - [ ] Get github permissions
 - [ ] Figure out how to record daily logs
-- [ ] Gather all questions to gether for meeting
+- [ ] Gather all questions together for meeting
 - [ ] Research LoRaWan
-
 
 #### Friday June 3th ####
 - [ ] Looked through Summer 2020 repo
@@ -39,27 +34,26 @@ Things to do:
 
 Things to do:
 - [ ] Talk with Raj about questions, bugs and supervisor agreement
+
 ### Week 2: 6/6 to 6/10 ###
 #### Monday June 6th ####
 - [ ] Went over previous python issues and made word doc containing them and bugs
 - [ ] Messaged Raj about bugs
 - [ ] Compiled list of questions
-- [ ] worked out many of prevoius questions
+- [ ] Worked out many of prevoius questions
 
 Things to do:
 - [ ] Talk with Raj about questions, bugs and supervisor agreement
 
 #### Tuesday June 7th ####
-
 - [ ] Met with Raj
 - [ ] Received hardware to work with 
 - [ ] Began completing tutorials to get devices all connected through ethernet
 - [ ] Got all firmware images updated
 
 Things to do:
-- [ ] re-do supervisor agreement
+- [ ] re-do supervisor agreement and get signature
 - [ ] Finish device setup
-- [ ] Get signature
 
 #### Wednesday June 8th ####
 - [ ] Attended the required wensdsday session
@@ -85,12 +79,58 @@ Things to do:
 - [ ] Finish Waggle daily journal
 - [ ] Prepare for presentation on friday about WisGate VS RAZPi
 
-
 #### Friday June 10th ####
-- [ ] rewrote paper and recievd signature
+- [ ] Rewrote paper and recievd signature
 - [ ] Finished updating to current Waggle daily journal
 - [ ] Researched for presentation
 - [ ] Gave presentation
 
 Things to do:
+- [ ] Fix broken WisGateway
+
+### Week 3: 6/13 to 6/17 ###
+#### Monday June 13th ####
+- [ ] Fixed broken WisGateway
+- [ ] Attended Wriking workshop introduction
+- [ ] Talked to Raj about buying parts 
+- [ ] Talked with Raj about setting up sensors on bike racks
+
+Things to do:
+- [ ] Catch up on journals
+- [ ] Talk to Raj about setting up Creat robot
+- [ ] Make shopping list of sensors and needed parts
+
+#### Tuesday June 14th ####
+- [ ] Make shopping list of sensors and needed parts
+- [ ] Catch up on journals
+- [ ] Talked to Raj and decided we would use arduinos instead of RAK based WisBlock
+
+Things to do:
+- [ ] Find antenna for MKR WAN 1300 Arduino
+
+#### Wednesday June 15th ####
+- [ ] Found antenna for MKR WAN 1300 Arduino
+- [ ] Updated daily log
+- [ ] Attended seminar on graduate studies
+- [ ] Met with Andre (over slack) to bring him up to speed
+- [ ] Applied for summer get together
+- [ ] Met with Raj about purchasing anntena
+- [ ] Found some related tutorials and information on using MKR Wan 1310 chips
+- [ ] Completed Student Pulse survey
+- [ ] Did some more Lora vs Lora Wan research
+
+Things to do:  
+- [ ] 
+
+#### Thursday June 16th ####
+- [ ] 
+
+Things to do: 
+- [ ] 
+
+#### Friday June 17th ####
+- [ ] 
+
+Things to do:
+
 

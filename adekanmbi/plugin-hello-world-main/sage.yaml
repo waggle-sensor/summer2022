@@ -1,0 +1,11 @@
+name: "hello-world"
+description: "Intro example which publishes hello world."
+version: "0.1.1"
+authors: "Sean Shahkarami <sshahkarami@anl.gov>"
+keywords: "example, tutorial, numpy, hackathon"
+source:
+  architectures:
+    - "linux/amd64"
+    - "linux/arm64"
+  url: "https://github.com/waggle-sensor/plugin-hello-world"
+  branch: "main"
