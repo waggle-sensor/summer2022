@@ -10,6 +10,7 @@ My daily activity! Most recent additions are at the top
   - Learned AT Commands
 - Finished 5G network courses
 - Found a quick [CBRS resource](https://www.fiercewireless.com/private-wireless/what-cbrs)
+- started learning more about Linux
 #### To Do / Questions to be Answered
 - tinker with our Telit units
   - interested in SMS capabilities, and transmitting data
