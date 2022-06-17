@@ -107,3 +107,11 @@ Things to do:
 #### Thursday June 16th ####
 - [x] Attended the Argonne Fifth Quantum Computing Tutorial Day4: Quantum Machine Learning (Hands-On)
 - [x] Conducting research into ROS (edc courses) 
+
+#### Friday June 17th ####
+- [x] Had a meeting with Joe & Francisco: https://github.com/waggle-sensor/node-platforms/tree/main/nvidia-nano (IT WAS VERY USEFUL, AWESOME!!!!!)
+- [x] Attend the Demo meeting; Joe, Neal, Sergey, ismael and Sammi to understand the overall plan (e.g., goal of testing the VSN beepkeeper change in a VM style space)
+
+Things to do:
+- [ ] It seems like ROS depends on other modules such as python version, and need to conduct more research into the singularity dependency & docker
+- [ ] Checking Jetson Nano software updater; the package system is broken because of using third party repositories.
