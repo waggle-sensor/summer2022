@@ -19,7 +19,7 @@
         - ![](https://i.imgur.com/uVBMwVY.png)
         - **instead of connecting to The Things Network (TTN, a LoRaWAN server), we can connect to the NVIDIA system**
 
-**June 14th**
+**June 15th**
 * [x] Sort out transportation to Argonne Laboratory
 * [x] Once transportation is sort out, register for badge appointment with Argonne Lab
 * [ ] TMS
@@ -32,7 +32,7 @@
 http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
 * [x] Refamiliarize with new GitHub instructions
 
-**June 15th**
+**June 16th**
 * [x] Acquire gatepass and badge
 * [x] Work env set up
 * [x] Familiarize with linux terminal
@@ -42,4 +42,23 @@ http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
     - RAK pi to NVIDIA nano
     - NVIDIA nano to Argonne-auth
 * [x] Further studies on establishing LoRaWAN with RAK pi and the sensor nodes
-    
+
+**June 16th**
+* [x] Connect RAKpi to WiFi while connecting to NVIDIA nano through ethernet (eth0), met multiple issues:
+    - Argonne-auth WiFi needs WPA2 authentication
+        - attempted to follow this: https://iceburn.medium.com/raspberry-pi-connected-to-wifi-of-wpa2-enterprise-ddd5a40c0b07 , but did not work
+    - `nmtui` edit connections only show LAN (with eth0) and not wireless network
+        - thought that was weird so I turned off AP mode and turned on client mode, then entered `iwlist wlan0 scan` in terminal -- I actually found that it scans the Argonne-auth network properly
+        - ![](https://i.imgur.com/q833fFO.png)
+        - followed https://raspberrytips.com/raspberry-pi-wifi-setup/ : go into `raspi-config` in terminal
+        - ![](https://i.imgur.com/dbSRSyL.jpg)
+        - go into System Options and select Wireless LAN
+        - turned on hotspot on my laptop so the raspi can connect to a WPA authentication WiFi network
+        - entered SSID and password of my laptop's hotspot manually on raspi and connected successfully
+        - ![](https://i.imgur.com/iJiLZGU.png)
+    - After successfully connecting to WiFi, I found the connection is unstable if the ethernet port is also plugged in -- probably because the RAK pi is confused if it should use WiFi or ethernet as connection to ping (I tested this by pinging 8.8.8.8, or google DNS server). If the ethernet port is unplugged however, the WiFi is stable other than high ping due to the additional intermediate network node (my laptop)
+* [ ] Keep the AP mode on but use an external wireless adapter to connect to WiFi
+
+
+
+`current thought: in sudo gateway-config there is a option to setup RAK gateway channel plan. In there, there's only two choices (TNN and Chirpstack). The chirpstack allows us to choose IP. Once the sensors come, we can try connecting the nodes to the RAKpi with Chirpstack.`
