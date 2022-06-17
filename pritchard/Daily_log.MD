@@ -120,16 +120,23 @@ Things to do:
 - [ ] Did some more Lora vs Lora Wan research
 
 Things to do:  
-- [ ] 
+- [ ] Improve Daily Log quality
+- [ ] Read and take notes on four acamemic articles relevant to LoRa/LoRaWAN
+- [ ] Make slide presentation on project relevant information from articles 
+- [ ] Experiment with nano
 
 #### Thursday June 16th ####
-- [ ] 
+- [ ]  Read and took notes on four acamemic articles relevant to LoRa/LoRaWAN
+- [ ]  Spoke to Raj about what he cared about for the research presentation
+- [ ]  Helped settle Andre into project
 
 Things to do: 
-- [ ] 
+- [ ] Finishing the presentation
 
 #### Friday June 17th ####
-- [ ] 
+- [ ] Finished the presentation
+- [ ] Presented the presentation
+- [ ] Found space on 7th floor where I could work
 
 Things to do:
 
