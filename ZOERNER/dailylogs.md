@@ -110,3 +110,10 @@
 - Writing Coach Introductory Session
 - Worked through more contour analysis using OpenCV
 
+#### Friday June 17, 2022
+
+- Assisted with TRACER forecasting and attended briefing (air quality forecast)
+- Journaled about this week's project decision-making and progress
+- Worked through more contour analysis using OpenCV
+  
+
