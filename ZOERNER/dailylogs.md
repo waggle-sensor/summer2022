@@ -36,6 +36,10 @@
 - Troubleshooted Py-Art with Max
 - Attended TRACER briefing
 
+#### Overview
+
+- Removed colorbar/title/axes from radar images to have accurate analyses in OpenCV.
+
 ---
 
 ### Week 2
@@ -71,6 +75,13 @@
 - Assisted with TRACER forecasting and attended briefing (Air Quality)
 - Worked with data set in OpenCV
 - Continued with TMS trainings
+
+#### Overview
+
+- Chose data from 5/20/22 because it was a heavy rain event
+- Filtered out data < 40dBz as this is a widely accepted value used to use only convective precip. This will help to eliminate radar noise/lower reflectivities to get down to the core shape.
+- Began to select radar images that would provide good data for image processing (different shapes)
+- Pre-processed images to binary with thresholding with all pixels below 70 are set to 0 (black) and all pixels above 70 are set to 255 (white) to assist further with eliminating radar noise. Unsure if this is a proper method.
 
 ---
 
@@ -115,5 +126,9 @@
 - Assisted with TRACER forecasting and attended briefing (air quality forecast)
 - Journaled about this week's project decision-making and progress
 - Worked through more contour analysis using OpenCV
-  
+
+#### Overview
+
+- Did not make significant progress with the project this week due to heavy involvement with TRACER
+- Practiced with more OpenCV techniques
 
