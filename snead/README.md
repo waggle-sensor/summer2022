@@ -20,4 +20,4 @@ This section will not tell you the full functionality of the commands, but inste
   - Found some GPIO pin commands if we want to connect a Raspberry Pi, I2C, or possibly have analog data flow
   - Audio input, looks like mainly so you can "call" other devices, but who knows!
 ## Other helpful links
-- [Linux learning help] (https://linuxjourney.com/)
+- [Linux learning help](https://linuxjourney.com/)
