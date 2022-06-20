@@ -59,6 +59,12 @@ http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
     - After successfully connecting to WiFi, I found the connection is unstable if the ethernet port is also plugged in -- probably because the RAK pi is confused if it should use WiFi or ethernet as connection to ping (I tested this by pinging 8.8.8.8, or google DNS server). If the ethernet port is unplugged however, the WiFi is stable other than high ping due to the additional intermediate network node (my laptop)
 * [ ] Keep the AP mode on but use an external wireless adapter to connect to WiFi
 
+**June 17th**
+- ChirpStack is a fullstack that includes connecting the sensor nodes to gateway to server. 
+- https://www.chirpstack.io/network-server/install/debian/
+- Creates a database using the Postgres
+- https://www.chirpstack.io/gateway-os/guides/getting-started/
 
-
-`current thought: in sudo gateway-config there is a option to setup RAK gateway channel plan. In there, there's only two choices (TNN and Chirpstack). The chirpstack allows us to choose IP. Once the sensors come, we can try connecting the nodes to the RAKpi with Chirpstack.`
+ChirpStack Gateway Bridge:
+- Converts LoRa packet fowarder protocol into a ChirpStack Network Server common data format (JSON and Protobuf) -- part of the ChirpStack open source LoRaWAN Network Server Stack
+- https://www.chirpstack.io/gateway-bridge/gateway/raspberrypi/
