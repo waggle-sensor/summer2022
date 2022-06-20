@@ -3,6 +3,7 @@ My daily activity! Most recent additions are at the top
   
 ## Week 2: 6/20 to 6/24
 ### Monday 6/20
+- Select Band (AT#BND) [Command help](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
 - 
 ## Week 1: 6/13 to 6/17  
 ### Friday 6/17
