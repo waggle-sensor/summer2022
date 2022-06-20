@@ -3,8 +3,23 @@ My daily activity! Most recent additions are at the top
   
 ## Week 2: 6/20 to 6/24
 ### Monday 6/20
-- Select Band (AT#BND) [Command help](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
-- 
+- Went through Telit AT Commands and User Guides to find 5G configuration and diagnostic information commands. The goal is to possibly automate/attach AI to be checking in on the status of the UE to make transmission decisions
+  - In terms of power consumption monitoring, an Arduino can be programmed to monitor current, but at this time unsure if that would interfere with remote controlling
+  - *AT#BND:* selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
+  - *AT+WS46:* selects cellular network
+  - *AT#5GCTL:* enable NSA FR1/FR2 and SA FR1/FR2
+  - *AT+CIND?:* returns some status updates, like battery charge, signal quality, and RSSI
+  - *AT+CESQ:* returns RSRQ, RSRP, and SNR for 5G signals, will give parameters for 3G and 4G if those are enabled 
+  - *AT#TEMPSENS* gives current temperature and *AT#TMLVL?* gives temperature mitigation level
+  - *AT#CSURV:* performs network survey, but possibly only finds 3G and 4G networks
+  - *AT#TESTMODE* and *AT#MIMOSTS* are also possibly useful
+  - GNSS information can give us date, time, location, and ground speed information if we want to look into that
+  - Found some GPIO pin commands if we want to connect a Raspberry Pi, I2C, or possibly have analog data flow
+- Met with Wildebeest team to give some updates
+- Experiemented with Ziad to try to set up HTTP server
+- Talked with Joaquin and Ziad about next steps for server
+#### To Do
+- Possibly try connecting Telit over 4G and transmit data as a tester until we get the 5G network running 
 ## Week 1: 6/13 to 6/17  
 ### Friday 6/17
 - Continued learning about Linux
