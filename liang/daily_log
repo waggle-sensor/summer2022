@@ -17,3 +17,7 @@ June 16th
   - Followed tutorials on pix2pix
   - set up training images from kaggle
   - emailed Nicola about using colab/jupyter or cloud service for building models
+
+June 17th
+  - experimented with pix2pix pre-generated models
+  - used python package dataset-tools for generating canny edges from images
