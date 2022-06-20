@@ -230,5 +230,5 @@ Things to added to dockerfile.
 
 #### Friday June 17, 2022 ####
 
-- 
-- 
+- completed a working code for runtime profiler using the tau sample code. 
+
