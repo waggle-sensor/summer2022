@@ -1,7 +1,19 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Most recent additions are at the top  
   
+## Week 2: 6/20 to 6/24
+### Monday 6/20
+- 
 ## Week 1: 6/13 to 6/17  
+### Friday 6/17
+- Continued learning about Linux
+  - [Helpful site for learning basics] (https://linuxjourney.com/)
+  - Some discussion on here about network sharing that will be useful
+- Went to 446 Lab and reconnected to the 4G network
+#### Next Steps
+- talk to advisors about Telit manual findings
+- get Telit Arduino manual and read through
+- talk about bigger picture next steps!
 ### Thursday 6/16
 - Read Telit FN980 Manuals
   - Learned HW/SW capabilities
