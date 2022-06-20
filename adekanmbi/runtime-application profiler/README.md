@@ -1,5 +1,6 @@
 # Runtime code profiling
 
+![](schematics-v1.png)
 ## Installing and running code
 
 - First step is build the docker image. For the example name application as app-example:latest run the following command in terminal
