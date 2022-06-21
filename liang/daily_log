@@ -21,3 +21,13 @@ June 16th
 June 17th
   - experimented with pix2pix pre-generated models
   - used python package dataset-tools for generating canny edges from images
+
+June 20th
+  - Researched more into GANs model
+  - Reached out to Nicola with regards to setting up my access to the gpu system
+  
+June 21st
+  - https://www.researchgate.net/publication/351359172_Generative_adversarial_networks_to_model_air_pollution_under_uncertainty
+  - https://www.researchgate.net/publication/344506117_Conditional_Generative_Adversarial_Networks_to_Model_Urban_Outdoor_Air_Pollution
+  - Two papers very similar to what we are trying to acheive with modeling air quality using GANs
+  - alcf account was approved and gained access to the gpu system
