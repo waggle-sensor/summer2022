@@ -117,3 +117,9 @@ Things to do:
 - [ ] It seems like ROS depends on other modules such as python version, and need to conduct more research into the singularity dependency & docker to run ROS - I will ask the question when Sean comes back to Argonne from his vacation.
 - [ ] Checking Jetson Nano software updater; the package system is broken because of using third party repositories.
 - [ ] Reading the Ansible documents to implement our node system.
+
+----------------------------------------------
+### Week 4: 6/20 to 6/24 ###
+#### Monday June 20th ####
+- [x] Report to Raj and Pete: The current Jetson Nano version is JetPack 4.6 which includes 10.2 CUDA. While installing several packages such as Jetpack 4.6 for Nano on Ubuntu 18.04 LTS, it shows the unmet dependencies issue, including to the python-rosdep-moduels do not match. Setting up for ROS in a Singularity container as singularity can be an option to solve it out and Docker container can be used to run a container inside the container, however, it also shows the mismatch of the dependencies; Plus, it shows the another mismatch issue such as minikube_1.16.0-0_amd64.deb: package architecture (arm64) does not match system (amd64) as those architectures are not same. The next step in order to get over these issues, the list of dependencies for ROS is required.
+- [x] Debugged the dependency and listed up the required for Nano
