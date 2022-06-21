@@ -232,3 +232,26 @@ Things to added to dockerfile.
 
 - completed a working code for runtime profiler using the tau sample code. 
 
+
+### Week 6 ###
+
+------------------------------------------------
+
+#### Monday June 20, 2022 ####
+
+- Draw the architecture for application profiler
+- Worked running real application
+#### Tuesday June 21, 2022 ####
+
+- 
+
+#### Wednesday June 22, 2022 ####
+
+- 
+    
+#### Thursday June 23, 2022 ####
+
+- 
+#### Friday June 24, 2022 ####
+
+- 
