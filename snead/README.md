@@ -22,3 +22,4 @@ This section will not tell you the full functionality of the commands, but inste
 ## Other helpful links
 - [Linux learning help](https://linuxjourney.com/)
 - Quick [CBRS Resource](https://www.fiercewireless.com/private-wireless/what-cbrs)
+- [Docker basics explanation](https://yannmjl.medium.com/what-is-docker-in-simple-english-a24e8136b90b#:~:text=Docker%20is%20a%20tool%20designed,all%20out%20as%20one%20package.)
