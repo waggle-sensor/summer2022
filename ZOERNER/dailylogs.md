@@ -2,7 +2,7 @@
 
 ### Project Goals
 
-- [ ] Establish folder and files in the Waggle GitHub Repository
+- [x] Establish folder and files in the Waggle GitHub Repository
 - [ ] Radar image processing using OpenCV and determine which parameters give the best insight
 - [ ] Utilize k-means clustering to place the radar images into distinct categories
 - [ ] Complete deliverables (presentation, poster, paper)
@@ -81,7 +81,7 @@
 - Chose data from 5/20/22 because it was a heavy rain event
 - Filtered out data < 40dBz as this is a widely accepted value used to use only convective precip. This will help to eliminate radar noise/lower reflectivities to get down to the core shape.
 - Began to select radar images that would provide good data for image processing (different shapes)
-- Pre-processed images to binary with thresholding with all pixels below 70 are set to 0 (black) and all pixels above 70 are set to 255 (white) to assist further with eliminating radar noise. Unsure if this is a proper method.
+- Pre-processed images to binary with thresholding with all pixels below 100 are set to 0 (black) and all pixels above 100 are set to 255 (white) to assist further with eliminating radar noise. Unsure if this is a proper method.
 
 ---
 
@@ -113,6 +113,7 @@
 
 - Assisted with TRACER forecasting and attended briefing (weather forecast)
 - Worked through more contour analysis using OpenCV.
+- Attended weekly seminar
 
 #### Thursday June 16, 2022
 
@@ -131,4 +132,33 @@
 
 - Did not make significant progress with the project this week due to heavy involvement with TRACER
 - Practiced with more OpenCV techniques
+
+---
+
+### Week 4
+
+---
+
+#### Monday June 20, 2022
+
+- Eliminated radar noise for all KILX 5/20/2022 rain event radar scans via Py-ART by removing reflectivity values less than 40 dBz.
+- Saved filtered radar images to /filtered_quicklooks/
+- Attended TRACER briefing
+
+#### Tuesday June 21, 2022
+
+- Removed images from data set that have no data after lower reflectivities were filtered out
+- Was able to detect and draw largest contour on most images in the data set
+
+#### Wednesday June 22, 2022
+
+- Attended weekly seminar
+- Attended TRACER briefing
+- Removed images from data set that have little data ( < 1000 pixels) after lower reflectivities were filtered out as these images do not show major convective precip
+- Detected and drew largest contour and tweaked the thresholding to only highlight the main convection on all remaining images
+- Prepared introduction presentation slides
+
+#### Thursday June 23, 2022
+
+- Goal: remove images that are touching the border frame
 
