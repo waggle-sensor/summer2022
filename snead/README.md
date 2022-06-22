@@ -4,7 +4,6 @@ My hope is to make this a useful resource (mostly for me to reference) of the th
 This is the module we are using to eventually connect our Waggle Nodes to the 5G network. They kind of act like cell phones -they can send and recieve calls and SMS- and we will mainly use them like a phone putting up a hotspot. It's a pretty versatile little machine!
 ### Helpful AT Commands
 This section will not tell you the full functionality of the commands, but instead serves as a culled down list of relevant commands. Use this in conjunction with the Telit AT Command manual (not sure if it's kosher to link that here)
-
 - **AT#BND** selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
 - **AT+WS46** selects cellular network 
 - **AT#5GCTL** enable NSA FR1/FR2 and SA FR1/FR2 
@@ -16,8 +15,10 @@ This section will not tell you the full functionality of the commands, but inste
 - **AT#TESTMODE** and **AT#MIMOSTS** are also possibly useful 
  ### Some EVB interests of mine
   - Use Arduino to remotely control the EVB
+    - Looks like standard 20-pin connection
   - GNSS information can give us date, time, location, and ground speed information
   - Found some GPIO pin commands if we want to connect a Raspberry Pi, I2C, or possibly have analog data flow
   - Audio input, looks like mainly so you can "call" other devices, but who knows!
 ## Other helpful links
 - [Linux learning help](https://linuxjourney.com/)
+- Quick [CBRS Resource](https://www.fiercewireless.com/private-wireless/what-cbrs)

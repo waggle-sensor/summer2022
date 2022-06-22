@@ -57,9 +57,9 @@ http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
         - entered SSID and password of my laptop's hotspot manually on raspi and connected successfully
         - ![](https://i.imgur.com/iJiLZGU.png)
     - After successfully connecting to WiFi, I found the connection is unstable if the ethernet port is also plugged in -- probably because the RAK pi is confused if it should use WiFi or ethernet as connection to ping (I tested this by pinging 8.8.8.8, or google DNS server). If the ethernet port is unplugged however, the WiFi is stable other than high ping due to the additional intermediate network node (my laptop)
-* [ ] Keep the AP mode on but use an external wireless adapter to connect to WiFi
+* [x] Keep the AP mode on but use an external wireless adapter to connect to WiFi
 
-**June 17th**
+**June 20th**
 - ChirpStack is a fullstack that includes connecting the sensor nodes to gateway to server. 
 - https://www.chirpstack.io/network-server/install/debian/
 - Creates a database using the Postgres
@@ -68,3 +68,13 @@ http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
 ChirpStack Gateway Bridge:
 - Converts LoRa packet fowarder protocol into a ChirpStack Network Server common data format (JSON and Protobuf) -- part of the ChirpStack open source LoRaWAN Network Server Stack
 - https://www.chirpstack.io/gateway-bridge/gateway/raspberrypi/
+
+
+**June 21th**
+* [x] Complete TMS
+* [x] Explore the capabilities of raspberry pi as the gateway
+    - raspberry pi can function as a small database itself using Postgres management system
+    - has a Application Server and Network Server for its chirpstack for LoRaWAN
+    - `sudo journalctl -f -n 100 -u chirpstack-application-server` will allow us to see the log output for the raspberry pi's application server activity
+    - forgot to take a picture of the log output when I tried it
+* [x] Look into the Postgres commands and how we can edit and excess the database using this management system
