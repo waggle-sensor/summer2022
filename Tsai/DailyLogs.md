@@ -60,7 +60,7 @@ http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
 * [x] Keep the AP mode on but use an external wireless adapter to connect to WiFi
 
 **June 20th**
-- ChirpStack is a fullstack that includes connecting the sensor nodes to gateway to server. 
+- ChirpStack is a fullstack that includes connecting the sensor nodes to gateway to server.
 - https://www.chirpstack.io/network-server/install/debian/
 - Creates a database using the Postgres
 - https://www.chirpstack.io/gateway-os/guides/getting-started/
@@ -78,3 +78,18 @@ ChirpStack Gateway Bridge:
     - `sudo journalctl -f -n 100 -u chirpstack-application-server` will allow us to see the log output for the raspberry pi's application server activity
     - forgot to take a picture of the log output when I tried it
 * [x] Look into the Postgres commands and how we can edit and excess the database using this management system
+
+
+**June 22nd**
+We figured out that RAK2287 raspi can't be used as a sensor node, nor can the wisgate, so while waiting for the arduino sensors, we can figure out the gateway-server side of the syste
+* [x] Filing through the database of the raspberry pi to see what it is used for at the moment
+    - found that there is an application server and network server database
+    - also an empty database called postgres which is probably defaultly there
+    - chirpstack application server table list:
+    - ![](https://i.imgur.com/OWpuSMc.jpg)
+        - interesting information is the "device" table:
+        - ![](https://i.imgur.com/6CzwlqX.png)
+        - these devices might be the sensor nodes that the gateway is connected to, or the nano that I was connected to before
+* [x] Built a bike rack to place in the back of Argonne building 240 and another bike rack at a greenhouse place
+* [x] Cleared the 4th floor lab and made it habitable
+* [x] Populated the empty postgres database with fake data to test sending database entries to nano later on
