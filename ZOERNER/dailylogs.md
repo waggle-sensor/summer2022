@@ -149,6 +149,7 @@
 
 - Removed images from data set that have no data after lower reflectivities were filtered out
 - Was able to detect and draw largest contour on most images in the data set
+- Attended TRACER briefing
 
 #### Wednesday June 22, 2022
 
@@ -161,4 +162,5 @@
 #### Thursday June 23, 2022
 
 - Goal: remove images that are touching the border frame
+- Goal by end of week: compute 3 parameters that determine shape and export them to perform statistics 
 
