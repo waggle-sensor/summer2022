@@ -5,7 +5,7 @@ My daily activity! Most recent additions are at the top
 ### Wednesday 6/22
 - Found a couple methods to control and talk to EVBs
   - Python window automation library and TeraTerm GUI
-  - looking into ModemManager (mmcli)
+  - looking into ModemManager ([mmcli](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html#:~:text=DESCRIPTION,different%20connection%20managers%2C%20like%20NetworkManager.))
 - Got a loaner laptop to use to interface with modems and servers 
 ### Tuesday 6/21
 - Helped Ziad fiddle with connecting to and hosting servers
