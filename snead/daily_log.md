@@ -2,6 +2,18 @@
 My daily activity! Most recent additions are at the top  
   
 ## Week 2: 6/20 to 6/24
+### Wednesday 6/22
+- Found a couple methods to control and talk to EVBs
+  - Python window automation library and TeraTerm GUI
+  - looking into ModemManager (mmcli)
+- Got a loaner laptop to use to interface with modems and servers 
+### Tuesday 6/21
+- Helped Ziad fiddle with connecting to and hosting servers
+  - found out my personal laptop will have trouble connecting to certain servers because of Argonne's firewall
+- Researched Raspberry Pi and connection to Telit EVB
+- Got my Docker and DockerHub to work
+#### To Do
+- Look into remote control and automation of Telit
 ### Monday 6/20
 - Went through Telit AT Commands and User Guides to find 5G configuration and diagnostic information commands. The goal is to possibly automate/attach AI to be checking in on the status of the UE to make transmission decisions
   - In terms of power consumption monitoring, an Arduino can be programmed to monitor current, but at this time unsure if that would interfere with remote controlling
