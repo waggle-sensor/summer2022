@@ -239,19 +239,22 @@ Things to added to dockerfile.
 
 #### Monday June 20, 2022 ####
 
-- Draw the architecture for application profiler
+- Drew the architecture for application profiler
 - Worked running real application
 #### Tuesday June 21, 2022 ####
 
-- 
+- Worked on creating dockerize application on kubernetes
 
 #### Wednesday June 22, 2022 ####
 
-- 
-    
+- Tried out the kubernetes tutorials
+
+- Worked on creating dockerize application on kubernetes
+
 #### Thursday June 23, 2022 ####
 
-- 
+- Wrote script(tau_parser.py) to parse TAU outputs to JSON.
+
 #### Friday June 24, 2022 ####
 
 - 
