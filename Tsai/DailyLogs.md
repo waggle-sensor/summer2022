@@ -81,7 +81,7 @@ ChirpStack Gateway Bridge:
 
 
 **June 22nd**
-We figured out that RAK2287 raspi can't be used as a sensor node, nor can the wisgate, so while waiting for the arduino sensors, we can figure out the gateway-server side of the syste
+We figured out that RAK2287 raspi can't be used as a sensor node, nor can the wisgate, so while waiting for the arduino sensors, we can figure out the gateway-server side of the system
 * [x] Filing through the database of the raspberry pi to see what it is used for at the moment
     - found that there is an application server and network server database
     - also an empty database called postgres which is probably defaultly there
@@ -93,3 +93,13 @@ We figured out that RAK2287 raspi can't be used as a sensor node, nor can the wi
 * [x] Built a bike rack to place in the back of Argonne building 240 and another bike rack at a greenhouse place
 * [x] Cleared the 4th floor lab and made it habitable
 * [x] Populated the empty postgres database with fake data to test sending database entries to nano later on
+
+**June 23rd**
+Today was mainly trying to setup the chirpstack application server (AS) as well as the chirpstack network server (NS)
+Chirpstack AS:
+- Initially I tried following the set up of chirpstack AS following https://www.chirpstack.io/application-server/
+- Realized that we don't want to use WiFi on the gateway, there is no way of accessing the set up application server on a webserver
+- Decided to set up the application server on the nano's end
+-![](https://i.imgur.com/eRYX8B0.jpg)
+- successfully setup the application server on localhost and accessed it on a web server
+- need to to decide whether to put the network server on the RAK2287 or the nano --- have quite a few thought on that at the moment
