@@ -2,6 +2,31 @@
 My daily activity! Most recent additions are at the top  
   
 ## Week 2: 6/20 to 6/24
+### Thursday 6/23
+- fiddled with Screen
+  - it's a little finnicky to get the terminal open to send AT commands to the modem
+  - use mmcli -m # to see what USB connection to call
+- Picked up Blade from the 240 lab
+- Starting Waggle Edge Stack deployment on loaner computer to test interface with modem
+#### To Do 
+- take Waggle Blade to 446 and install it
+- install Waggle Edge Stack!
+### Wednesday 6/22
+- Found a couple methods to control and talk to EVBs
+  - Python window automation library and TeraTerm GUI
+  - looking into ModemManager ([mmcli](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html#:~:text=DESCRIPTION,different%20connection%20managers%2C%20like%20NetworkManager.))
+- Got a loaner laptop to use to interface with modems and servers 
+- Went to 446 lab and was able to connect modem to 4G and set up an HTTP server from the Base Station
+#### To Do
+- install and fiddle with Screen for Ubuntu as a means of controlling the modem
+- look into Waggle Node architecture to figure how to integrate the 5G modem
+### Tuesday 6/21
+- Helped Ziad fiddle with connecting to and hosting servers
+  - found out my personal laptop will have trouble connecting to certain servers because of Argonne's firewall
+- Researched Raspberry Pi and connection to Telit EVB
+- Got my Docker and DockerHub to work
+#### To Do
+- Look into remote control and automation of Telit
 ### Monday 6/20
 - Went through Telit AT Commands and User Guides to find 5G configuration and diagnostic information commands. The goal is to possibly automate/attach AI to be checking in on the status of the UE to make transmission decisions
   - In terms of power consumption monitoring, an Arduino can be programmed to monitor current, but at this time unsure if that would interfere with remote controlling
