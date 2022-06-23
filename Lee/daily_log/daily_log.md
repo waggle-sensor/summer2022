@@ -122,4 +122,17 @@ Things to do:
 ### Week 4: 6/20 to 6/24 ###
 #### Monday June 20th ####
 - [x] Report to Raj and Pete: The current Jetson Nano version is JetPack 4.6 which includes 10.2 CUDA. While installing several packages such as Jetpack 4.6 for Nano on Ubuntu 18.04 LTS, it shows the unmet dependencies issue, including to the python-rosdep-moduels do not match. Setting up for ROS in a Singularity container as singularity can be an option to solve it out and Docker container can be used to run a container inside the container, however, it also shows the mismatch of the dependencies; Plus, it shows the another mismatch issue such as minikube_1.16.0-0_amd64.deb: package architecture (arm64) does not match system (amd64) as those architectures are not same. The next step in order to get over these issues, the list of dependencies for ROS is required.
-- [x] Debugged the dependency and listed up the required for Nano
+
+Things to do:  
+- [ ] Debugged the dependency and listed up the required for Nano
+
+#### Tuesday June 21th ####
+- [x] Had a meeting with Joe and Francisco: https://github.com/waggle-sensor/node-platforms/tree/main/nvidia-nano
+
+#### Wednesday June 22th ####
+- [x] Setup and cleaned up robotic lab workspace
+- [x] Had a meeting with Joe and Francisco: https://catalog.ngc.nvidia.com/containers 
+
+Things to do:  
+- [ ] Research into configuring keyboard-configuration as this command```DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration``` does not work.
+- [ ] Install ROS GUI
