@@ -161,6 +161,23 @@
 
 #### Thursday June 23, 2022
 
-- Goal: remove images that are touching the border frame
-- Goal by end of week: compute 3 parameters that determine shape and export them to perform statistics 
+- Met with team to discuss student project progress
+- Attended TRACER briefing
+- Started working with scipy ndimage package
+
+#### Friday June 24, 2022
+
+- Met with student connect group
+- Continued working with scipy ndimage package to practice image analysis
+
+---
+
+#### Overview
+
+- Wrote an algorithm that would remove images from the data set that contain little/no data after removing reflectivities less than 40 dBz.
+- Drew largest contour on radar echoes using OpenCV
+- Started practicing with ndimage.label to pick out the largest shape in the radar images.
+- Next steps are to eliminate the smaller echoes to concentrate on the largest echo and calculate shape characteristics.-
+
+---
 
