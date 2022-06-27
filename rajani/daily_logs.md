@@ -74,3 +74,36 @@
 - Learned many more features of torchaudio, including how to pre-process audio to make the dataset more uniform in length, number of channels, etc.
 - Implemented a CNN for sound classification using torchaudio
 - Planned modified augmentations to training stage of VICReg that would make the model less robust to anomalous images
+
+## Week 3
+
+### Monday, June 20
+
+- Got access to ThetaGPU and learned how to submit jobs, start interactive sessions, forward ports, etc.
+- Learned in more detail how to use the Linux command line (piping, etc.)
+- Set up pretrained VICReg model on ThetaGPU; assessed performance on ImageNet
+
+### Tuesday, June 21
+
+- Read Hojjati et. al.’s survey paper on self-supervised anomaly detection to come up with alternative ideas for detecting anomalies in the spectrograms
+- Trained my own VICReg model on ThetaGPU, assessed performance, and set up anomalous images. The network was unable to distinguish between normal images and anomalous images based on the terms in the loss function
+- Set up visualization of terms in loss function and the invariance value of different images using Tensorboard
+
+### Wednesday, June 22
+
+- Since anomaly detection did not work with training on ImageNet, hypothesized that the model was too robust in feature extraction to distinguish between normal and anomalous images in the loss function
+- Modified VICReg augmentations to consist solely of a crop, and varied the scale of the crop to attempt to improve contrast between normal and anomalous images, which was unsuccessful
+- Devised a more curated task for anomaly detection, in which the network was trained solely on images from two classes of dogs, and then images of beverages were fed to the network as anomalies
+- Sped up evaluation by switching from training images to anomalous images (and freezing the network weights) partway through training, logging the terms in the loss function
+
+### Thursday, June 23
+
+- Modified the loss function to consist solely of the covariance term; this was unsuccessful, and the covariance approached zero for all input images as training proceeded
+- Presented solid color images to the network in training, and ImageNet images after freezing network weights; this allowed for distinction between normal and anomalous images using any one of the three terms in the loss function
+  - Modifying the augmentations to include only the crop (and excluding the normalization) significantly improved performance by increasing the contrast between the loss terms between normal and anomalous images
+
+### Friday, June 24
+
+- Formed a hybrid neural network in which the Resnet50 used in the VICReg paper was replaced by the vision transformer used in DINO
+- Assessed performance of the hybrid network on anomaly detection and found that it could distinguish between training images (two classes of dogs) and anomalous images (beverages) using the covariance term, but only for large batch sizes (e.g., 64), and not on the scale of individual images
+- Implemented a basic autoencoder for anomaly detection, which I will adapt to audio spectrograms next week
