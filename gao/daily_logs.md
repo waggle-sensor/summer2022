@@ -1,4 +1,4 @@
-# Week 1
+# Week 1 (5/31 - 6/3)
 
 ## Tuesday, May 31
 - Completed new student orientation
@@ -23,7 +23,7 @@
 - Studied RNN, LSTM, GRU ([x](https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21))
 - Practiced xarray (plotting ARM data)
 
-# Week 2
+# Week 2 (6/6 - 6/10)
 
 ## Monday, June 6 - Friday, June 10
 
@@ -57,7 +57,7 @@ xarray (plot solar irradiance vs cloud coverage on one graph)
 
 **Primary Project:** <br>
 LSTM to predict solar irradiance based on cloud coverage in July
-# Week 3
+# Week 3 (6/13 - 6/17)
 
 ## Monday, June 13
 
@@ -106,7 +106,7 @@ LSTM to predict solar irradiance based on cloud coverage in July
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage in July
 
-# Week 4
+# Week 4 (6/20 - 6/24)
 
 ## Monday, June 20
 
@@ -149,6 +149,26 @@ LSTM to predict solar irradiance based on cloud coverage in July
 
 - Worked on making model work with multivariate inputs, multistep outputs (hyperas)
 - Attended student check-in
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage in July
+
+# Week 5 (6/27 - 7/1)
+
+## Goals
+
+|     | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul>
+| 🟩 | Write separate function to load data and set up into time series format | High | <ul><li>Takes a long time to run</li><li>Write out to some file</li><li>Needs to be re-run for different inputs and step sizes</li></ul> |
+| 🟩 | Research variations in LSTM models | Med | <ul><li>Some nice elementary explanations [x]</li></ul> |
+| 🟩 | Meet with Seongha | Low | <ul><li>Update on work accomplished thus far</li><li>Discuss future communication</li><li>Consider next steps</li></ul>|
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 27
+
+- Setup goals for week
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage in July
