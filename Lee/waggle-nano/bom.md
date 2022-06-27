@@ -1,4 +1,4 @@
-| Number | Product | Link |
+| Number,Product | Link |
 |-|-|-|
 |1| Network Cable|https://www.amazon.com/Ethernet-2000Mhz-Network-Weatherproof-Resistant/dp/B08D9FBLQG/
 |1| Amcrest Camera Power|https://www.amazon.com/100-240V-Supply-Adapter-Switching-5-52-1mm/dp/B013HJI0Q6/
