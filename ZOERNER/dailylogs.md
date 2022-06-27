@@ -1,13 +1,21 @@
 # Maggie Zoerner - Daily Logs
 
-### Project Goals
+### Overall Project Goals
 
-- [x] Establish folder and files in the Waggle GitHub Repository
+- [x] Establish documentation in the Waggle GitHub Repository
 - [ ] Radar image processing using OpenCV and determine which parameters give the best insight
 - [ ] Utilize k-means clustering to place the radar images into distinct categories
 - [ ] Complete deliverables (presentation, poster, paper)
 
 ### Week 1
+
+##### Goals for this week:
+
+- [x] Get set up with work station
+- [x] Meet mentors
+- [x] Complete orientation
+- [x] Get familiar with Anaconda
+- [x] Start working through example code
 
 ---
 
@@ -36,13 +44,21 @@
 - Troubleshooted Py-Art with Max
 - Attended TRACER briefing
 
-#### Overview
+#### Week 1 Progress
+
+- Got familiar with using Anaconda and installing Python packages
 
 - Removed colorbar/title/axes from radar images to have accurate analyses in OpenCV.
 
 ---
 
 ### Week 2
+
+##### Goals for this week:
+
+- [x] Work through example code in Py-ART
+- [x] Continue with required trainings
+- [x] Remove some radar noise from images
 
 ---
 
@@ -76,7 +92,7 @@
 - Worked with data set in OpenCV
 - Continued with TMS trainings
 
-#### Overview
+#### Week 2 Overview
 
 - Chose data from 5/20/22 because it was a heavy rain event
 - Filtered out data < 40dBz as this is a widely accepted value used to use only convective precip. This will help to eliminate radar noise/lower reflectivities to get down to the core shape.
@@ -86,6 +102,12 @@
 ---
 
 ### Week 3
+
+##### Goals for this week:
+
+- [x] Complete required trainings
+- [x] Set up GitHub profile
+- [x] Learn more image processing techniques in OpenCV
 
 ---
 
@@ -128,7 +150,7 @@
 - Journaled about this week's project decision-making and progress
 - Worked through more contour analysis using OpenCV
 
-#### Overview
+#### Week 3 Overview
 
 - Did not make significant progress with the project this week due to heavy involvement with TRACER
 - Practiced with more OpenCV techniques
@@ -136,6 +158,12 @@
 ---
 
 ### Week 4
+
+##### Goals for this week:
+
+- [x] Remove images from data set that contain little to no data after extracting lower reflectivities
+- [x] Outline largest contour using OpenCV
+- [x] Learn some image processing techniques in SciPy's ndimage library
 
 ---
 
@@ -172,7 +200,7 @@
 
 ---
 
-#### Overview
+#### Week 4 Overview
 
 - Wrote an algorithm that would remove images from the data set that contain little/no data after removing reflectivities less than 40 dBz.
 - Drew largest contour on radar echoes using OpenCV
@@ -180,4 +208,18 @@
 - Next steps are to eliminate the smaller echoes to concentrate on the largest echo and calculate shape characteristics.-
 
 ---
+
+### Week 5
+
+##### Goals for this week:
+
+- [ ] Use scipy ndimage.label to extract the largest region of reflectivity in the radar images
+- [ ] Use OpenCV to perform image processing analysis on the labeled images and export as text files
+
+---
+
+#### Monday June 27, 2022
+
+- Assisted with TRACER forecasting and attended briefing (verification)
+- 
 
