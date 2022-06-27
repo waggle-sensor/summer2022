@@ -4,7 +4,7 @@
 
 ### Thursday 06/23
 
-- [] Worked through WaggleSensor Summer 2022 Onboarding
+- [ ] Worked through WaggleSensor Summer 2022 Onboarding
     - [x] Part 1: What is Sage? github, website, docs
     - [x] Parts 4, 5: Accounts and SSH Setup
     - [ ] Part 2: Agile Scrum Development Process
@@ -21,7 +21,7 @@
 
 #### Later
 
-[ ] Intro to ROS2
+ - [ ] Intro to ROS2
 
 ## Week 2: 06/27 - 07/02
 
@@ -30,3 +30,4 @@
  - [ ] K3S Introduction + Tutorial
  - [ ] WaggleSensor onboarding: Agile Scrum Development Process
  - [ ] Jetson Nano Introduction(?)
+ - [ ] Intro to ROS2
