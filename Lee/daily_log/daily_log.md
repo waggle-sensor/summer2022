@@ -136,3 +136,23 @@ Things to do:
 Things to do:  
 - [ ] Research into configuring keyboard-configuration as this command```DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration``` does not work.
 - [ ] Install ROS GUI
+
+#### Thursday June 23th ####
+- [x] Had a meeting with Pete, Raj, Joe to discuss about Jetson Nano Kit plan
+- [x] Got ssh access for Nano 
+- [x] Had a meeting with Sean and Yomi; discussion docker container & architecture
+
+#### Friday June 24th ####
+- [x] Read up ROS documents
+- [x] Debugging ROS dockerfile 
+
+Things to do:  
+- [ ] Research into Ansible 
+- [ ] Jetson Nano Kit github edition
+- [ ] Zhuoru & Kojo meeting next Monday
+
+----------------------------------------------
+### Week 4: 6/27 to 7/1 ###
+#### Monday June 27th ####
+- [x] 
+

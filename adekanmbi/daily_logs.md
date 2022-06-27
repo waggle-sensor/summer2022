@@ -138,14 +138,13 @@
 
 - Completed running the [plugin-surface-water-detection](https://github.com/waggle-sensor/plugin-surface-water-detection) locally got some errors need to debug.
 
-
 #### Thursday May 26, 2022 ####
 
 - Read some documentation on [TAU](https://sea.ucar.edu/sites/default/files/tau-seaconf18.pdf) and [Prometheus](https://prometheus.io/docs/concepts/metric_types/) documentations.
 
 #### Friday May 27, 2022 ####
 
-- Replicating the results of the [live monitoring app example](https://github.com/waggle-sensor/application-profiling). 
+- Replicating the results of the [live monitoring app example](https://github.com/waggle-sensor/application-profiling).
 - Modified the docker file to install pycuda.
 
 Things to added to dockerfile.
@@ -155,7 +154,6 @@ Things to added to dockerfile.
 ``` apt-get install nvidia-cuda-toolkit ```
 ``` pip install pycuda ```
 
-
 ### Week 3 ###
 
 ------------------------------------------------
@@ -163,6 +161,7 @@ Things to added to dockerfile.
 #### Monday May 30, 2022 ####
 
 - Labor Day.
+
 #### Tuesday May 31, 2022 ####
 
 - Read and worked on using socket programing on docker and also using docker-in-docker.
@@ -186,7 +185,7 @@ Things to added to dockerfile.
 
 #### Monday June 6, 2022 ####
 
-- Worked on running beehive waggle-plugin example. 
+- Worked on running beehive waggle-plugin example.
 
 #### Tuesday June 7, 2022 ####
 
@@ -205,8 +204,6 @@ Things to added to dockerfile.
 - Worked on code for generating runtime metrics for applications.
 - My code can be found here in runtime-application profiler, for version control changes see my forked branch here [runtime-application profiler](https://github.com/aabayomi/application-profiling.git)
 
-
-
 ### Week 5 ###
 
 ------------------------------------------------
@@ -214,6 +211,7 @@ Things to added to dockerfile.
 #### Monday June 13, 2022 ####
 
 - Worked on code for generating runtime metrics for applications.
+
 #### Tuesday June 14, 2022 ####
 
 - Worked on code for generating runtime metrics for applications.
@@ -230,8 +228,7 @@ Things to added to dockerfile.
 
 #### Friday June 17, 2022 ####
 
-- completed a working code for runtime profiler using the tau sample code. 
-
+- completed a working code for runtime profiler using the tau sample code.
 
 ### Week 6 ###
 
@@ -241,6 +238,7 @@ Things to added to dockerfile.
 
 - Drew the architecture for application profiler
 - Worked running real application
+
 #### Tuesday June 21, 2022 ####
 
 - Worked on creating dockerize application on kubernetes
@@ -257,4 +255,20 @@ Things to added to dockerfile.
 
 #### Friday June 24, 2022 ####
 
-- 
+- Read paper on ai benchmarks [AI Benchmark: All About Deep Learning on Smartphones in 2019](https://arxiv.org/pdf/1910.06663.pdf)
+- Usefull profiling metics
+
+- Serial application - suggested metrics
+  - Inclusive calls
+  - Exclusive calls
+  - Hardware Performance counter (PAPI )
+  - Floating Point Instructions executed per second
+  - Floating point instructions executed
+  - Total instructions issued
+  - Total instructions executed
+  - Vector/SIMD instructions executed
+  - Millions of floating point operations/second (PCL)
+- Tau event trace
+- Parallel application - suggested metrics
+  - Tau MPI 
+
