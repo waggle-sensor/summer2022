@@ -12,7 +12,7 @@
 
 ### Friday 06/24
 
-- [] Continue WaggleSensor Onboarding
+- [ ] Continue WaggleSensor Onboarding
     - [x] Part 3: Docker
     - [ ] Part 2: Agile Scrum Development Process
 - [x] Investigate/Demonstrate Docker + ROS Integration
@@ -26,3 +26,7 @@
 ## Week 2: 06/27 - 07/02
 
 ### Monday 06/27
+
+ - [ ] K3S Introduction + Tutorial
+ - [ ] WaggleSensor onboarding: Agile Scrum Development Process
+ - [ ] Jetson Nano Introduction(?)
