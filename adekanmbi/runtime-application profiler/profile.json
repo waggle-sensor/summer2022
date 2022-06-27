@@ -1,0 +1,833 @@
+{
+    "/tau-2.31/examples/python/js/pr": {
+        "metadata": {
+            "Rank 0, Thread 0": {
+                "CPU Cores": "24",
+                "CPU MHz": "1000.023",
+                "CPU Type": "Intel(R) Xeon(R) Gold 6348H CPU @ 2.30GHz",
+                "CPU Vendor": "GenuineIntel",
+                "CWD": "/tau-2.31/examples/python",
+                "Cache Size": "33792 KB",
+                "Command Line": "python -m tau_python_wrapper firstprime.py",
+                "Ending Timestamp": "1652994576930317",
+                "Executable": "/usr/bin/python3.6",
+                "Hostname": "4a9c9843ac8e",
+                "Local Time": "2022-05-19T21:09:36+00:00",
+                "Memory Size": "362545604 kB",
+                "Node Name": "4a9c9843ac8e",
+                "OS Machine": "x86_64",
+                "OS Name": "Linux",
+                "OS Release": "5.4.48-xe-max",
+                "OS Version": "#8 SMP Mon Feb 14 14:43:17 PST 2022",
+                "Starting Timestamp": "1652994576853983",
+                "TAU Architecture": "default",
+                "TAU Config": " -bfd=download -python -pythonlib=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu -pythoninc=/usr/include/python3.6m -unwind=download",
+                "TAU Makefile": "/tau-2.31/x86_64/lib/Makefile.tau-python",
+                "TAU Version": "2.30.2-git",
+                "TAU_BFD_LOOKUP": "on",
+                "TAU_CALLPATH": "off",
+                "TAU_CALLPATH_DEPTH": "2",
+                "TAU_CALLSITE_DEPTH": "1",
+                "TAU_COMPENSATE": "off",
+                "TAU_CUDA_BINARY_EXE": "",
+                "TAU_CUPTI_API": "runtime",
+                "TAU_CURRENT_TIMER_EXIT_PARAMS": "on",
+                "TAU_EBS_INCLUSIVE": "0 usec",
+                "TAU_EBS_KEEP_UNRESOLVED_ADDR": "off",
+                "TAU_EBS_PERIOD": "30000",
+                "TAU_EBS_SAMPLES_DROPPED_SUSPENDED_0": "0",
+                "TAU_EBS_SAMPLES_DROPPED_TAU_0": "0",
+                "TAU_EBS_SAMPLES_TAKEN_0": "2",
+                "TAU_EBS_UNWIND": "off",
+                "TAU_ENABLE_THREAD_CONTEXT": "off",
+                "TAU_IBM_BG_HWP_COUNTERS": "off",
+                "TAU_MAX_THREADS": "1",
+                "TAU_MEASURE_TAU": "off",
+                "TAU_MEMDBG_PROTECT_ABOVE": "off",
+                "TAU_MEMDBG_PROTECT_BELOW": "off",
+                "TAU_MEMDBG_PROTECT_FREE": "off",
+                "TAU_OPENMP_RUNTIME": "on",
+                "TAU_OPENMP_RUNTIME_EVENTS": "on",
+                "TAU_OPENMP_RUNTIME_STATES": "off",
+                "TAU_OUTPUT_CUDA_CSV": "off",
+                "TAU_PAPI_MULTIPLEXING": "off",
+                "TAU_PROFILE": "on",
+                "TAU_PROFILE_FORMAT": "profile",
+                "TAU_RECYCLE_THREADS": "off",
+                "TAU_REGION_ADDRESSES": "off",
+                "TAU_SAMPLING": "on",
+                "TAU_SHOW_MEMORY_FUNCTIONS": "off",
+                "TAU_SIGNALS_GDB": "off",
+                "TAU_THROTTLE": "on",
+                "TAU_THROTTLE_NUMCALLS": "100000",
+                "TAU_THROTTLE_PERCALL": "10",
+                "TAU_TRACE": "off",
+                "TAU_TRACE_FORMAT": "tau",
+                "TAU_TRACK_CUDA_CDP": "off",
+                "TAU_TRACK_CUDA_ENV": "off",
+                "TAU_TRACK_CUDA_INSTRUCTIONS": "",
+                "TAU_TRACK_CUDA_SASS": "off",
+                "TAU_TRACK_HEADROOM": "off",
+                "TAU_TRACK_HEAP": "off",
+                "TAU_TRACK_IO_PARAMS": "off",
+                "TAU_TRACK_MEMORY_FOOTPRINT": "off",
+                "TAU_TRACK_MEMORY_LEAKS": "off",
+                "TAU_TRACK_SIGNALS": "off",
+                "TAU_TRACK_UNIFIED_MEMORY": "off",
+                "TAU_VERBOSE_RANK": "-1",
+                "Timestamp": "1652994576854182",
+                "UTC Time": "2022-05-19T21:09:36Z",
+                "pid": "45884",
+                "tid": "45884"
+            }
+        },
+        "Timers": [{
+                "process index": 0,
+                "thread index": 0,
+                "Function": ".TAU application",
+                "Calls": 1,
+                "Subroutines": 5,
+                "Exclusive Time": 48329,
+                "Inclusive Time": 49857
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "find_module [{imp.py}{255}]",
+                "Calls": 1,
+                "Subroutines": 21,
+                "Exclusive Time": 78,
+                "Inclusive Time": 334
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "isinstance",
+                "Calls": 9,
+                "Subroutines": 0,
+                "Exclusive Time": 6,
+                "Inclusive Time": 6
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "is_builtin",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 3,
+                "Inclusive Time": 3
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "is_frozen",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "join [{posixpath.py}{75}]",
+                "Calls": 7,
+                "Subroutines": 23,
+                "Exclusive Time": 45,
+                "Inclusive Time": 58
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "fspath",
+                "Calls": 7,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_get_sep [{posixpath.py}{41}]",
+                "Calls": 7,
+                "Subroutines": 7,
+                "Exclusive Time": 6,
+                "Inclusive Time": 9
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "startswith",
+                "Calls": 8,
+                "Subroutines": 0,
+                "Exclusive Time": 3,
+                "Inclusive Time": 3
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "endswith",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "isfile [{genericpath.py}{27}]",
+                "Calls": 6,
+                "Subroutines": 7,
+                "Exclusive Time": 16,
+                "Inclusive Time": 66
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "stat",
+                "Calls": 6,
+                "Subroutines": 0,
+                "Exclusive Time": 49,
+                "Inclusive Time": 49
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "get_suffixes [{imp.py}{105}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 12,
+                "Inclusive Time": 15
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "<listcomp> [{imp.py}{107}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "<listcomp> [{imp.py}{108}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "<listcomp> [{imp.py}{109}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "S_ISREG",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "open",
+                "Calls": 2,
+                "Subroutines": 1,
+                "Exclusive Time": 41,
+                "Inclusive Time": 47
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "detect_encoding [{tokenize.py}{355}]",
+                "Calls": 1,
+                "Subroutines": 6,
+                "Exclusive Time": 17,
+                "Inclusive Time": 64
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "read_or_stop [{tokenize.py}{379}]",
+                "Calls": 2,
+                "Subroutines": 2,
+                "Exclusive Time": 6,
+                "Inclusive Time": 20
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "readline",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 14,
+                "Inclusive Time": 14
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "find_cookie [{tokenize.py}{385}]",
+                "Calls": 2,
+                "Subroutines": 4,
+                "Exclusive Time": 11,
+                "Inclusive Time": 22
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "decode",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "match",
+                "Calls": 3,
+                "Subroutines": 0,
+                "Exclusive Time": 12,
+                "Inclusive Time": 12
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{codecs.py}{308}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 4,
+                "Inclusive Time": 6
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{codecs.py}{259}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "read",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 12,
+                "Inclusive Time": 21
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "decode [{codecs.py}{318}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 7,
+                "Inclusive Time": 9
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "utf_8_decode",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "compile",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 148,
+                "Inclusive Time": 148
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "new_module [{imp.py}{48}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "exec",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 5,
+                "Inclusive Time": 1023
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "<module> [{firstprime.py}{4}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 3,
+                "Inclusive Time": 1018
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "firstPrimeAfter [{firstprime.py}{4}]",
+                "Calls": 1,
+                "Subroutines": 4,
+                "Exclusive Time": 719,
+                "Inclusive Time": 1015
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_find_and_load [{<frozen importlib._bootstrap>}{966}]",
+                "Calls": 1,
+                "Subroutines": 6,
+                "Exclusive Time": 27,
+                "Inclusive Time": 275
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{<frozen importlib._bootstrap>}{143}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__enter__ [{<frozen importlib._bootstrap>}{147}]",
+                "Calls": 1,
+                "Subroutines": 2,
+                "Exclusive Time": 7,
+                "Inclusive Time": 39
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_get_module_lock [{<frozen importlib._bootstrap>}{157}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 14,
+                "Inclusive Time": 22
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "acquire_lock",
+                "Calls": 3,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{<frozen importlib._bootstrap>}{58}]",
+                "Calls": 1,
+                "Subroutines": 2,
+                "Exclusive Time": 5,
+                "Inclusive Time": 6
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "allocate_lock",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "release_lock",
+                "Calls": 3,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "acquire [{<frozen importlib._bootstrap>}{78}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 10,
+                "Inclusive Time": 10
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "get_ident",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 0,
+                "Inclusive Time": 0
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "get",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_find_and_load_unlocked [{<frozen importlib._bootstrap>}{936}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 14,
+                "Inclusive Time": 194
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "rpartition",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_find_spec [{<frozen importlib._bootstrap>}{870}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 16,
+                "Inclusive Time": 58
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__enter__ [{<frozen importlib._bootstrap>}{843}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "find_spec [{<frozen importlib._bootstrap>}{707}]",
+                "Calls": 1,
+                "Subroutines": 2,
+                "Exclusive Time": 4,
+                "Inclusive Time": 38
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "spec_from_loader [{<frozen importlib._bootstrap>}{433}]",
+                "Calls": 1,
+                "Subroutines": 4,
+                "Exclusive Time": 14,
+                "Inclusive Time": 33
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "hasattr",
+                "Calls": 4,
+                "Subroutines": 0,
+                "Exclusive Time": 4,
+                "Inclusive Time": 4
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_requires_builtin_wrapper [{<frozen importlib._bootstrap>}{232}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 14,
+                "Inclusive Time": 15
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "is_package [{<frozen importlib._bootstrap>}{753}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{<frozen importlib._bootstrap>}{369}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__exit__ [{<frozen importlib._bootstrap>}{847}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 1,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_load_unlocked [{<frozen importlib._bootstrap>}{651}]",
+                "Calls": 1,
+                "Subroutines": 6,
+                "Exclusive Time": 22,
+                "Inclusive Time": 122
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "module_from_spec [{<frozen importlib._bootstrap>}{564}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 11,
+                "Inclusive Time": 71
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "create_module [{<frozen importlib._bootstrap>}{728}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 5,
+                "Inclusive Time": 39
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_call_with_frames_removed [{<frozen importlib._bootstrap>}{211}]",
+                "Calls": 2,
+                "Subroutines": 2,
+                "Exclusive Time": 6,
+                "Inclusive Time": 38
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "create_builtin",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 31,
+                "Inclusive Time": 31
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_init_module_attrs [{<frozen importlib._bootstrap>}{504}]",
+                "Calls": 1,
+                "Subroutines": 6,
+                "Exclusive Time": 14,
+                "Inclusive Time": 20
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "getattr",
+                "Calls": 4,
+                "Subroutines": 0,
+                "Exclusive Time": 4,
+                "Inclusive Time": 4
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "parent [{<frozen importlib._bootstrap>}{416}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 1,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "has_location [{<frozen importlib._bootstrap>}{424}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 0,
+                "Inclusive Time": 0
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__init__ [{<frozen importlib._bootstrap>}{307}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__enter__ [{<frozen importlib._bootstrap>}{311}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "exec_module [{<frozen importlib._bootstrap>}{736}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 2,
+                "Inclusive Time": 6
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "exec_builtin",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__exit__ [{<frozen importlib._bootstrap>}{318}]",
+                "Calls": 1,
+                "Subroutines": 2,
+                "Exclusive Time": 11,
+                "Inclusive Time": 18
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "any",
+                "Calls": 1,
+                "Subroutines": 4,
+                "Exclusive Time": 3,
+                "Inclusive Time": 6
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "<genexpr> [{<frozen importlib._bootstrap>}{321}]",
+                "Calls": 4,
+                "Subroutines": 0,
+                "Exclusive Time": 3,
+                "Inclusive Time": 3
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "_verbose_message [{<frozen importlib._bootstrap>}{222}]",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "__exit__ [{<frozen importlib._bootstrap>}{151}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 4,
+                "Inclusive Time": 8
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "release [{<frozen importlib._bootstrap>}{103}]",
+                "Calls": 1,
+                "Subroutines": 1,
+                "Exclusive Time": 4,
+                "Inclusive Time": 4
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "cb [{<frozen importlib._bootstrap>}{176}]",
+                "Calls": 1,
+                "Subroutines": 3,
+                "Exclusive Time": 4,
+                "Inclusive Time": 5
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "sqrt",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 1,
+                "Inclusive Time": 1
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "format",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 2,
+                "Inclusive Time": 2
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "print",
+                "Calls": 1,
+                "Subroutines": 0,
+                "Exclusive Time": 18,
+                "Inclusive Time": 18
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "[CONTEXT] .TAU application",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 0,
+                "Inclusive Time": 60006
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": ".TAU application  => [CONTEXT] .TAU application",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 0,
+                "Inclusive Time": 60006
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": "[SAMPLE] UNRESOLVED /usr/bin/python3.6",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 60006,
+                "Inclusive Time": 60006
+            },
+            {
+                "process index": 0,
+                "thread index": 0,
+                "Function": ".TAU application  => [CONTEXT] .TAU application  => [SAMPLE] UNRESOLVED /usr/bin/python3.6",
+                "Calls": 2,
+                "Subroutines": 0,
+                "Exclusive Time": 60006,
+                "Inclusive Time": 60006
+            }
+        ],
+        "Counters": []
+    }
