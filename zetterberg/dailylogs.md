@@ -102,4 +102,53 @@
 
 - Wrote in all of past daily logs
 - Used PCA along with kmeans clustering
-- 
+
+---
+
+### Week 4
+
+---
+
+#### Monday June 20th, 2022
+
+- Talked with Bobby about plotting
+- Continued with Dask tutorial
+- Worked on plotting cluster data in time-range domain
+
+#### Tuesday June 21st, 2022
+
+- Plotted cluster data in time-range domain
+- Plotted Power Spectra for data points, averaged for each day
+
+#### Wednesday June 22nd, 2022
+
+- Student Seminar on LinkedIn
+- Streamlined workflow so that all my data only uses xarray
+
+#### Thursday June 23rd, 2022
+
+- Waggle meeting
+- Meeting with Argonne EVS mentors and students
+- Moved workflow to a defined function, finished streamlining it
+
+#### Friday June 24th, 2022
+
+- Attended Student Connects Group
+- Ran algorithm over 2 whole days
+- Improved written functions and general of algorithm
+- Looked at structure of clusters after PCA 
+
+---
+
+### Week 5 
+
+### Goals for the week: 
+- Expand my algorithm to run over all of the data using dask
+- Gain a clearer image at the end goal of my project
+- Understand the physical meaning of the improved clusters
+
+---
+
+
+
+
