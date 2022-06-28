@@ -3,6 +3,13 @@ My daily activity! Most recent additions are at the top
   
 ## Week 3: 6/27 to 7/1
 ### Tuesday 6/28
+- Researched ONAP ([README Notes]())
+  - Developed understanding of their 5G Core architecture and made notes
+  - Found specific plug-in that would allow control of our COTS radios
+  - Depending on the hardware we have and where we want to host this core, it seems pretty plug-and-play
+#### To Do 
+- Research more on Kubernetes and understand our current setup (the Waggle Nodes already run using Kubernetes, right?)
+- Look into other OpenSource 5G setups, like free5GC or Aether (ONF)
 ### Monday 6/27
 - Met with Dr. Kihei and his associates (Mfon and Luanne)
   - Discussed Vehicle to Vehicle capabilities of 5G with Mfon
@@ -13,6 +20,7 @@ My daily activity! Most recent additions are at the top
 - Installed and started configuring the Blade Edge Server
 #### To Do
 - No access to the lab tomorrow, begin looking into opensource 5G technology 
+
 ## Week 2: 6/20 to 6/24
 ### Friday 6/24
 - happy friday!! I forgot to bring my tea
