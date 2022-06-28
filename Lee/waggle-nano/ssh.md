@@ -13,5 +13,13 @@ To generate RSA keys, on the command line, enter:
 ### SSH Access
 ```ssh waggle@10.0.0.151```
 
-### Note: UPDATED!!!!! SSH Access
+
+## After re-flashed June 28th
+### SSH Access
 ```ssh-keygen -R 10.0.0.151```
+
+### Install the same docker file from https://hub.docker.com/r/waggle/gpu-stress-test/tags
+```docker pull waggle/gpu-stress-test:1.0.1```
+
+### You won't see the any output on your terminal,
+```sudo docker run -it --rm --runtime nvidia --network host waggle/gpu-stress-test:1.0.1 -m 2```
