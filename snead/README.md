@@ -13,12 +13,20 @@ This section will not tell you the full functionality of the commands, but inste
 - **AT#TEMPSENS** gives current temperature and **AT#TMLVL?** gives temperature mitigation level 
 - **AT#CSURV** performs network survey, but possibly only finds 3G and 4G networks 
 - **AT#TESTMODE** and **AT#MIMOSTS** are also possibly useful 
- ### Some EVB interests of mine
+### Some EVB interests of mine
   - Use Arduino to remotely control the EVB
     - Looks like standard 20-pin connection
   - GNSS information can give us date, time, location, and ground speed information
   - Found some GPIO pin commands if we want to connect a Raspberry Pi, I2C, or possibly have analog data flow
   - Audio input, looks like mainly so you can "call" other devices, but who knows!
+## 5G Core Information
+### ONAP
+"Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
+#### Architecture Notes
+![ONAP Architecture Notes](C:/Users/zoink/Pictures/ONAP-Notes.png "ONAP Architecture")
+All pictures and information is compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
+### Helpful Resources
+- Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
 ## Other helpful links
 - [Linux learning help](https://linuxjourney.com/)
 - Quick [CBRS Resource](https://www.fiercewireless.com/private-wireless/what-cbrs)
