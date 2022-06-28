@@ -23,3 +23,8 @@ To generate RSA keys, on the command line, enter:
 
 ### You won't see the any output on your terminal,
 ```sudo docker run -it --rm --runtime nvidia --network host waggle/gpu-stress-test:1.0.1 -m 2```
+
+
+### Python version update
+```apt install -y gcc g++ zlib1g-dev autoconf automake make m4 libpython3.6-dev python3-dev wget```
+```update-alternatives --install /usr/bin/python python /usr/bin/python3 1```
