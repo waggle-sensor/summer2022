@@ -14,6 +14,7 @@ My hope is to make this a useful resource (mostly for me to reference) of the th
     1. Conduct Spectrum surveys using a 5G-capable smartphone and the [SigCap app](https://people.cs.uchicago.edu/~muhiqbalcr/sigcap/)
     2. Investigate Argonne’s UE modem capabilities for Spectrum sensing
     3. Collaborate on CBRS access channel techniques development
+
 # Telit FN980m Information
 This is the module we are using to eventually connect our Waggle Nodes to the 5G network. They kind of act like cell phones -they can send and recieve calls and SMS- and we will mainly use them like a phone putting up a hotspot. It's a pretty versatile little machine!
 ## Helpful AT Commands
@@ -36,15 +37,31 @@ This section will not tell you the full functionality of the commands, but inste
   - GNSS information can give us date, time, location, and ground speed information
   - Found some GPIO pin commands if we want to connect a Raspberry Pi, I2C, or possibly have analog data flow
   - Audio input, looks like mainly so you can "call" other devices, but who knows!
+
 # 5G Core Information
+
 ## ONAP
 "Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
+
+[ONAP Home Page](https://www.onap.org/)
+
+[ONAP Documentation](https://docs.onap.org/en/honolulu/index.html#)
 #### Architecture Notes
 ![ONAP-Notes](https://user-images.githubusercontent.com/107580325/176268551-013da326-381a-4dad-b308-e67f7bfd19b1.png "ONAP Architecture")
 
 All pictures and information compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
+
+#### Integrating COTS Radios
+So far it looks like mmWave Radios and our equipment can be controlled using an ONAP's SDN controller for ‘Radio’ (SDN-R), an additional service you can integrate into the run-time model. It's a part of their ONAP component, SDN-Controller. 
+
+![image](https://user-images.githubusercontent.com/107580325/176289800-2dbdf6bd-9397-4a30-9d91-4cc5e908bf1d.png)
+
+Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
+
 ## Helpful Resources
 - Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
+- Quick dicussion of [PNF and VFN](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
+
 # Other helpful links
 - [Linux learning help](https://linuxjourney.com/)
 - Quick [CBRS Resource](https://www.fiercewireless.com/private-wireless/what-cbrs)
