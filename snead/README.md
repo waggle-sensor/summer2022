@@ -23,7 +23,7 @@ This section will not tell you the full functionality of the commands, but inste
 ### ONAP
 "Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
 #### Architecture Notes
-![ONAP Architecture Notes](C:/Users/zoink/Pictures/ONAP-Notes.png "ONAP Architecture")
+![ONAP-Notes](https://user-images.githubusercontent.com/107580325/176268551-013da326-381a-4dad-b308-e67f7bfd19b1.png "ONAP Architecture")
 
 All pictures and information compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
 ### Helpful Resources
