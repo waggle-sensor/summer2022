@@ -3,7 +3,7 @@ My daily activity! Most recent additions are at the top
   
 ## Week 3: 6/27 to 7/1
 ### Tuesday 6/28
-- Researched ONAP ([README Notes]())
+- Researched ONAP ([README Notes](https://github.com/waggle-sensor/summer2022/tree/main/snead#onap))
   - Developed understanding of their 5G Core architecture and made notes
   - Found specific plug-in that would allow control of our COTS radios
   - Depending on the hardware we have and where we want to host this core, it seems pretty plug-and-play
