@@ -47,7 +47,6 @@
 #### Week 1 Progress
 
 - Got familiar with using Anaconda and installing Python packages
-
 - Removed colorbar/title/axes from radar images to have accurate analyses in OpenCV.
 
 ---
@@ -221,5 +220,5 @@
 #### Monday June 27, 2022
 
 - Assisted with TRACER forecasting and attended briefing (verification)
-- 
+- Worked with ndimage.label to remove the largest object from the radar images
 
