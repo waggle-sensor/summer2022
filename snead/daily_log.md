@@ -1,7 +1,25 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Most recent additions are at the top  
   
+## Week 3: 6/27 to 7/1
+### Tuesday 6/28
+### Monday 6/27
+- Met with Dr. Kihei and his associates (Mfon and Luanne)
+  - Discussed Vehicle to Vehicle capabilities of 5G with Mfon
+  - Ran some tests with their Python [5G Tool Kit](https://github.com/Intelligent-Mobile-Device-Lab-at-KSU/5gtoolkit)
+    - We were achieving typical speeds with UE to UE communication (~40-50ms delays)
+    - Jitter test had very low delays because we are alone on our network (~5ms)
+  - Tried running their [Latency Tools](https://github.com/Intelligent-Mobile-Device-Lab-at-KSU/wireless_latency_tools) but the read outs were not making sense
+- Installed and started configuring the Blade Edge Server
+#### To Do
+- No access to the lab tomorrow, begin looking into opensource 5G technology 
 ## Week 2: 6/20 to 6/24
+### Friday 6/24
+- happy friday!! I forgot to bring my tea
+- trying to run Waggle stack
+- Testing connectivity of modem
+  - we are shut out of WiFi connectivity
+  - something is wrong and our Linux computers can no longer connect to our cellular. Could have something to do with Docker?
 ### Thursday 6/23
 - fiddled with Screen
   - it's a little finnicky to get the terminal open to send AT commands to the modem
