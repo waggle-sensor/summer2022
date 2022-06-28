@@ -12,3 +12,6 @@ To generate RSA keys, on the command line, enter:
 
 ### SSH Access
 ```ssh waggle@10.0.0.151```
+
+### Note: UPDATED!!!!! SSH Access
+```ssh-keygen -R 10.0.0.151```
