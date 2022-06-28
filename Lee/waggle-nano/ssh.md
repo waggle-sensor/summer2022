@@ -26,5 +26,5 @@ To generate RSA keys, on the command line, enter:
 
 
 ### Python version update
-```apt install -y gcc g++ zlib1g-dev autoconf automake make m4 libpython3.6-dev python3-dev wget```
+```apt install -y gcc g++ zlib1g-dev autoconf automake make m4 libpython3.6-dev python3-dev wget``` 
 ```update-alternatives --install /usr/bin/python python /usr/bin/python3 1```
