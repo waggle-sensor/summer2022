@@ -21,10 +21,13 @@ To generate RSA keys, on the command line, enter:
 ### Install the same docker file from https://hub.docker.com/r/waggle/gpu-stress-test/tags
 ```docker pull waggle/gpu-stress-test:1.0.1```
 
-### You won't see the any output on your terminal,
+### You won't see the any output on your current terminal. You can open another one.
 ```sudo docker run -it --rm --runtime nvidia --network host waggle/gpu-stress-test:1.0.1 -m 2```
 
 
 ### Python version update
-```apt install -y gcc g++ zlib1g-dev autoconf automake make m4 libpython3.6-dev python3-dev wget``` 
+```apt install -y gcc g++ zlib1g-dev autoconf automake make m4 libpython3.6-dev python3-dev wget```  
 ```update-alternatives --install /usr/bin/python python /usr/bin/python3 1```
+
+### If want to see your current nvidia jetpack version
+```sudo apt-cache show nvidia-jetpack```
