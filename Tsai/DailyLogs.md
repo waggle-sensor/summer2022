@@ -70,7 +70,7 @@ ChirpStack Gateway Bridge:
 - https://www.chirpstack.io/gateway-bridge/gateway/raspberrypi/
 
 
-**June 21th**
+**June 21st**
 * [x] Complete TMS
 * [x] Explore the capabilities of raspberry pi as the gateway
     - raspberry pi can function as a small database itself using Postgres management system
@@ -103,3 +103,15 @@ Chirpstack AS:
 -![](https://i.imgur.com/eRYX8B0.jpg)
 - successfully setup the application server on localhost and accessed it on a web server
 - need to to decide whether to put the network server on the RAK2287 or the nano --- have quite a few thought on that at the moment
+
+
+**June 24th**
+* [x] Connect the gateway to the network server which connects to the application server
+    - Since setting up the AS, NS, and gateway bridge all is easier, I decided to set them all up in the nano since I'm testing it out to see if the chirpstack even works
+    - ![](https://i.imgur.com/qqOKube.png)
+    - After setting up the servers and bridge, I linked them together using the chirpstack application platform
+    * [x] create network server profile, gateway profile
+    * [x] Connect the gateway to the network server using the gateway bridge 
+    - ![](https://i.imgur.com/q9SBtur.png)
+    - Successfully linked up the gateway
+    - *when the arduino sensors get here, we can try setting up the applications and see if it shows up on the chirpstack application*
