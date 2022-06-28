@@ -154,5 +154,24 @@ Things to do:
 ----------------------------------------------
 ### Week 4: 6/27 to 7/1 ###
 #### Monday June 27th ####
-- [x] 
+- [x] Debugged all day: last deployed the gpu-stress-test ```kubectl run gpu-test --image=waggle/gpu-stress-test:1.0.1 --attach=true```
+- [x] Had a meeting with Yongho to discuss about the summer internship plan (IT WAS GREAT!!!!!!) 
+
+Things to do (by tomorrow):  
+- [ ] disconnect everything from the Nano in 4302 and start from scratch
+- [ ] install the 32.4.4 L4T
+- [ ] for the external media use the 512GB Samsung USB stick (in-place of the SD-card dongle)
+- [ ] follow the instructions in the README to get the node back to the point of it is now, but with a L4T 32.4.4 base
+- [ ] ensure docker and k3s GPU access work using the gpu-stress-test
+
+#### Tuesday June 28th ####
+- [x] Figured out the Nano GPU running on the K3S finally (THANKS FRANCISCO AND JOE!!!!!)
+
+Things to do (by this Friday):  
+- [ ] Documents (README file)
+
+#### Wednesday June 29th ####
+- [x] Career Day YAY !!!!!! (showing off my Kayaking skill :sunglasses:)
+
+#### Thursday June 30th #### (Important as it is Minji's birthday :confetti_ball:)
 
