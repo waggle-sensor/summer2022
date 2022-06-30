@@ -149,6 +149,18 @@
 
 ---
 
+#### Monday June 27th, 2022
 
+- Worked on Creating an elbow plot of the clusters so that I can see the optimal number of clusters for my data
+- Worked on updating dailylogs and using Github
 
+#### Tuesday June 28th, 2022
+
+- Continued working on elbow plot and updating it
+- Studied Slurm and bash to begin running jobs directly on Bebop
+- Ran a test script for an elbow plot on Bebop
+
+#### Wednesday June 29th, 2022
+
+- Sage Career Day!
 
