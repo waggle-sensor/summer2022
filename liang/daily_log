@@ -39,3 +39,21 @@ June 22nd
 June 23rd
   - Attended two lectures discussing applications of DL
   - Began experimenting with modeling via ssh through the theta gpu system
+  
+June 27th
+  - Met with Bhupendra, Dario, and Sean with regards to my project details/objectives
+  - Reread the paper I sent to Nicola that gave proof of concept to the project
+  - Emailed the researcher of the paper if they were willing to share their project code
+  
+June 28th
+  - Met with Nicola over zoom to clarify detailed about GANs for AQ and optimizing sensor placement
+  - Met with Dario to discuss the CGANs implementation used in the paper
+  - Slacked the Oregon researchers to gain access to AQ data in Oregon
+  
+June 29th
+  - Career Day
+  
+June 30th
+  - Set up my vscode to experiment with CGANs model found online (shell script created)
+  - First testing aroung with the MNIST dataset to experiment
+  - Asked Dario about how to modify this model to mimic the research paper's
