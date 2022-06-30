@@ -283,9 +283,16 @@ Things to added to dockerfile.
 
 - Worked on dockerizing [plugin-surface-water-detection](https://github.com/aabayomi/plugin-surface-water-detection) to work on Jetson NX
 
-#### Monday June 28, 2022 ####
+#### Tuesday June 28, 2022 ####
 
--  Worked on dockerizing [plugin-surface-water-detection](https://github.com/aabayomi/plugin-surface-water-detection) to work on Jetson NX
+- Worked on dockerizing [plugin-surface-water-detection](https://github.com/aabayomi/plugin-surface-water-detection) to work on Jetson NX
 
 - Meet with Yongho,Seongha and Raj and pivoting to modeling a simple app for profile snapshots.
 
+#### Wednesday June 29, 2022 ####
+
+- Career day
+
+#### Thursday June 30, 2022 ####
+
+- Worked on installing PAPI to collect snapshot data
