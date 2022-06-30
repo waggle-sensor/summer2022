@@ -39,26 +39,10 @@ This section will not tell you the full functionality of the commands, but inste
   - Audio input, looks like mainly so you can "call" other devices, but who knows!
 
 # 5G Core Information
+As part of my goals for the summer listed above, I am researching different organizations that provide open source 5G Core systems. This information is mostly compiled from the public websites and documentation of the organizations. So far I have researched ONAP and free5GC. Most of these packages seem to be able to be installed and implemented without charge or restriction, but training or tech support is behind a paywall. Go to my 5G Core notes to read more specifics!
 
-## ONAP
-"Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
-
-[ONAP Home Page](https://www.onap.org/)
-
-[ONAP Documentation](https://docs.onap.org/en/honolulu/index.html#)
-#### Architecture Notes
-![ONAP-Notes](https://user-images.githubusercontent.com/107580325/176268551-013da326-381a-4dad-b308-e67f7bfd19b1.png "ONAP Architecture")
-
-All pictures and information compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
-
-#### Integrating COTS Radios
-So far it looks like mmWave Radios and our equipment can be controlled using an ONAP's SDN controller for ‘Radio’ (SDN-R), an additional service you can integrate into the run-time model. It's a part of their ONAP component, SDN-Controller. Once set up, the user could open the SDN-R portal and see which devices are connected (and manually mount radios, if needed). 
-
-![image](https://user-images.githubusercontent.com/107580325/176289800-2dbdf6bd-9397-4a30-9d91-4cc5e908bf1d.png)
-
-Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
-
-## Helpful Resources
+## Helpful 5GC Resources
+- [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
 - Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
 - Quick dicussion of [PNF and VFN](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
 

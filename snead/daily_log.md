@@ -2,6 +2,12 @@
 My daily activity! Most recent additions are at the top  
   
 ## Week 3: 6/27 to 7/1
+### Thursday 6/30
+- free5GC seems less accessible, more lean, and less robust than ONAP
+  - the software itself is free, but the technical support is behind a membership paywall
+- Found [UERANSIM](https://github.com/aligungr/UERANSIM) which could simulate a 5G phone and base station if core testing needed
+### Wednesday 6/29
+- Career day!! Figured out how to play Carcassonne 
 ### Tuesday 6/28
 - Researched ONAP ([README Notes](https://github.com/waggle-sensor/summer2022/tree/main/snead#onap))
   - Developed understanding of their 5G Core architecture and made notes
