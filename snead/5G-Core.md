@@ -41,6 +41,8 @@ Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-
 An opensource 5G Core that can be used commercially without any licensing. To gain access to training, seminars, and tech support you must pay for [membership](https://www.free5gc.org/membership/)
 
 [free5GC Home Page](https://www.free5gc.org/)
+
+[free5GC Stage 3 GitHub](https://github.com/free5gc/free5gc-stage-3)
 ## Versions
 free5GC was developed in different stages, and offers each stage as an independent download. Information compiled from free5GC's [roadmap](https://www.free5gc.org/roadmap/)
 #### Stage 1: Non-Standalone 5G
@@ -66,6 +68,7 @@ Architecture below:
 Add features: non-mobile access network (N3IWF) and UP Uplink Classifier (ULCL)
 
 [Hardware and Software Requirements](https://github.com/free5gc/free5gc/wiki/Environment)
+
 [Installation](https://github.com/free5gc/free5gc/wiki/Installation)
 
 ## Integrating COTS Radios
