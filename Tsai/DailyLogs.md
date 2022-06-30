@@ -115,3 +115,39 @@ Chirpstack AS:
     - ![](https://i.imgur.com/q9SBtur.png)
     - Successfully linked up the gateway
     - *when the arduino sensors get here, we can try setting up the applications and see if it shows up on the chirpstack application*
+
+**June 27-28th**
+* [x] Understand different components of the chirpstack
+    - Gateways
+        - demodulates LoRa packets
+        - forwards the packets to the Network Server via the internet or LAN
+    - Network Server
+        - handles authentication
+        - communicates with the Application Server
+        - deduplicates number of uplinks
+        - schedules downlink messages
+        - handles join request and join accept messages between device and Join Server
+    - Application Server
+        - application layer, user interface
+        - receives frame from Network Server and decrypt the data
+        - encrypts the data and send downlinks to the end nodes
+        - data events can be integrated with third party platform or storage like AWS, MQTT broker, HTTP, etc
+    - Join Server
+        - used for Over the Air Activation
+        - generates security keys for encrypting and signing the messages
+        - responsible for join request and join accept messages
+        - from shared application key inside the device:
+            - a dynamic device address
+            - network session key
+            - a appllication session key is generated to enable secure transmission of LoRaWAN messages
+
+**June 30th**
+- the live LoRaWAN frames given by the gateway has an issue because the WebSocket API is not connected
+* [x] Fix the WebSocket API issue
+    - with the new chirpstack update, the redis server needs to be version 5+. I was able to fix the websocket API not connected issue
+- After the websocket issue is fixed, the Live LoRaWAN frames just continuously loads -> doesn't show any frames
+* [ ] Fix the frame not showing issue
+    - I checked the mqtt log files and it seems like the network server is receiving packets from the gateway, but it is not showing up on the application
+    - ![](https://i.imgur.com/6NksVSa.jpg)
+    - `gateway/mqtt: gateway stats packet received` are logged
+* [x] look into the pywaggle plugin and see how the Application server can be integrated with it
