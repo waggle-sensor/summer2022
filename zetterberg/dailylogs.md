@@ -164,3 +164,11 @@
 
 - Sage Career Day!
 
+#### Thursday June 30th, 2022
+
+- AI Alogrithm Students Group Meeting
+- Reran test script for an elbow plot on Bebop
+- Began working on heatmap for showing clusters in principal component space
+- Developed code for 2D histogram cluster plot
+- Plotted clusters in time-range space for every hour of 08/31
+
