@@ -1,5 +1,5 @@
 # 5G Core Information
-This is where I'm compiling my research about different open source 5G Core developments. 
+This is where I'm compiling my research about different open source 5G Core organizations. 
 ### Helpful 5GC Resources
 - [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
 - Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
