@@ -1,4 +1,9 @@
 # 5G Core Information
+This is where I'm compiling my research about different open source 5G Core developments. 
+### Helpful 5GC Resources
+- [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
+- Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
+- Quick dicussion of [PNF and VNF](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
 
 # ONAP
 "Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
@@ -46,8 +51,3 @@ In the standalone architecture, network functions became 5G based
 - Access to different versions in varying stages of 5G integration could be useful as Waggle begins migration to 5G
 ### Cons/Challenges
 - Pay wall for training, but that's not too unique
-
-# Helpful 5GC Resources
-- [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
-- Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
-- Quick dicussion of [PNF and VFN](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
