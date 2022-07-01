@@ -172,3 +172,7 @@
 - Developed code for 2D histogram cluster plot
 - Plotted clusters in time-range space for every hour of 08/31
 
+#### Friday July 1st, 2022
+
+- Could not do much today because Firefox was not working on my desktop, and I use Firefox to use Jupyter
+- Wrote code to make a bar chart that shows label frequency versus time
