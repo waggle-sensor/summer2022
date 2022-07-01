@@ -4,7 +4,11 @@ My daily activity! Most recent additions are at the top
 ## Week 3: 6/27 to 7/1
 ### Friday 7/1
 - Went to Active Shooter training... not a fan...
-- 
+
+#### To Do
+- Talk with Jaoquin about 5G core research to gain more direction
+- Research more on Kubernetes and understand our current setup
+- try downlinking!
 ### Thursday 6/30
 - Researched free5GC, check out the [notes!](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
   - seems more lean, and less robust than ONAP, but just as accessible
