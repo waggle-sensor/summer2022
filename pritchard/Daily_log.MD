@@ -144,31 +144,86 @@ Things to do:
 
 ### Week 3: 6/20 to 6/24 ###
 #### Monday June 20th ####
-- [ ] 
+- [ ] Got outlook/Github/slack/setup on linux computer
+- [ ] Talked with Raj about: arduino arrvial date, when we would be setting up bike racks to act as testing rigs, how I should go a bout testing the nano's interaction with the WisGate
+- [ ] setup LoRaWAN server on Nano so as to communicate with WisGate acting as a gateway
 
 Things to do:
-- [ ] 
+- [ ] Talk about future project steps with Raj and Andre
 
 #### Tuesday June 21th ####
-- [ ] 
+- [ ] Met with Raj and Andre, clarified that we want the gateway to also act as a network server, and verified that the next step will be to figure out how to communicate with Nvidia Nano
+- [ ] researched how we can get data from the network server on the WisGate to the Nano, two feasable methods were grabbing off the local api or via the built in mqtt broker
+- [ ] participated in required weekly student meeting
 
 Things to do:
-- [ ] 
+- [ ] make the Nano talk with the WisGate via the MQTT broker which includes figuring out how to setup a mqtt client on the nano
 
 #### Wednesday June 22th ####
-- [ ] 
+- [ ] setup bike raks outside as testing rigs for nodes
+- [ ] helped setup 4th floor lab
+- [ ] did research on how to register with and recieve messages from Wisgate MQTT broker
 
 Things to do:  
-- [ ] 
+- [ ] settle the communication path with the broker
 
 #### Thursday June 23th ####
-- [ ]  
+- [ ]  Rediscovered Ip adress of WisGate
+- [ ]  reconnected everything to Wireless
+- [ ]  decided on using Paho library in Python to make barebones client
+- [ ]  successfully sent message to WisGate MQTT broker
 
 Things to do: 
-- [ ] 
+- [ ] get WisGate to send message through MQTT broker from its inputs
 
-#### Friday June 24th ####
+#### Friday June 24th/weekend ####
+- [ ] unsussessfully tried to connect WisGate to home router for serveral hours
+- [ ] discoered that WisGate cannot send broker messages over self generated Wifi network
+- [ ] did some research on RAK serial port tool
+
+Things to do:
+- [ ] Get WisGate to accept some fake data via RAK serial port tool 
+
+### Week 3: 6/27 to 6/31 ###
+#### Monday June 27th ####
+- [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
+- [ ] messed up wireless network while trying to implement previous test
+- [ ] figured out workaround for notation problem when labling MQTT topics/ topics san be refered to using "wildcards" like "+" in wisGate terminal, but will still update from messages from the Nano client that fall within a smaller domain 
+- [ ] Began working on EdgeSwitch project, goal: to monitor specific conditions of particular ports via automated ssh and activly display said data in local system
+- [ ] Found related commands to display required data over ssh
+
+Things to do:
+- [ ] write python file to monitor specific conditions of particular ports via automated ssh and activly display said data in local system
+
+#### Tuesday June 28th ####
+- [ ] made some progress on writing automated ssh code
+- [ ] learned of previously made repo that spits out slightly different data from that what I am looking for from same edge switch
+- [ ] upon further analysis found that repo used the locally hosted api
+- [ ] with Raj's help got a basic main.py to print out large section of port data
+- [ ] spent time learing about parsing json
+- [ ] made initial testing file that relied upon a .JSON file filled with the contents of what was originally spit out by the main.py to attempt to parse said printed out data for what we want
+
+Things to do:
+- [ ] parse data
+
+#### Wednesday June 29th ####
+- [ ] went to summer meetup
+- [ ] did an hour of research on the error I got the day before
+
+Things to do:  
+- [ ] parse .Json data
+
+#### Thursday June 30th ####
+- [ ]  discovered that error resulted from the printing of the data which converts the data to something unreadable to parsing methods
+- [ ]  began working in original main.py file 
+- [ ]  discovered that the file that is imported into main.py is in the form of a list instead of a JSON object and attempts to convert said list to Python dictionary or JSON result in a single member list
+
+Things to do: 
+- [ ] figure out how to get an output that can be read as a python dictionary
+
+#### Friday June 31th ####
 - [ ] 
 
 Things to do:
 - [ ] 
+
