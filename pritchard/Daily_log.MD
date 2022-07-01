@@ -222,8 +222,12 @@ Things to do:
 - [ ] figure out how to get an output that can be read as a python dictionary
 
 #### Friday June 31th ####
-- [ ] 
+- [ ] switched laptops after repeated crashing
+- [ ] Raj decided we will move forwards with rack pie and leave WisGate behind for now
+- [ ] successfully accessed and parsed data from EdgeSwitch 8
+- [ ] ![image](https://user-images.githubusercontent.com/106760508/176968684-959c4733-54df-4bb4-a4a6-b44d601e7a6f.png)
+- [ ] ![image](https://user-images.githubusercontent.com/106760508/176968819-f7d14522-4b78-4139-b6a8-c742f23132e3.png)
+- [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
+- [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific value we are looking for, in this case the first poe wattage value
 
-Things to do:
-- [ ] 
 
