@@ -122,4 +122,5 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 - SD-C manages Network Slicing
 - Deployment flexibility: network can be deployed completely centrally or distributed at the edge
 - [Aether-in-a-Box](https://docs.sd-core.opennetworking.org/master/developer/aiab.html#aiab-guide) can be deployed on a simple computer then scaled up
+- [gNB Simulator](https://docs.sd-core.opennetworking.org/master/developer/gnbsim.html) for testing the core?
 
