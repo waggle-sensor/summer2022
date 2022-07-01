@@ -151,3 +151,14 @@ Chirpstack AS:
     - ![](https://i.imgur.com/6NksVSa.jpg)
     - `gateway/mqtt: gateway stats packet received` are logged
 * [x] look into the pywaggle plugin and see how the Application server can be integrated with it
+
+**July 1st**
+- MKRWAN 1310 and the antennas are here, so today's agenda is to get them to connect with the LoRa gateway and display packets on the Application Server
+* [x] Look through the Arduino LoRamodem library
+* [x] Code up a straightfoward message sending arduino code to send to the gateway
+    - successfully sent messages to the gateway and have it show on the application
+    - ![](https://i.imgur.com/nx8cLdw.jpg)
+* [x] Edit code so the MKRWAN 1310 can connect to gateway with network and application session keys by itself without Serial write
+* [x] Test the distance of connection
+    - put the MKRWAN 1310 different floors of the buildingr
+    - setup the MKRWAN 1310 on the 7th floor and it was able to send messages to the gateway on 3rd floor
