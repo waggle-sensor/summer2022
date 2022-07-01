@@ -138,24 +138,21 @@
 
 - Completed running the [plugin-surface-water-detection](https://github.com/waggle-sensor/plugin-surface-water-detection) locally got some errors need to debug.
 
-
 #### Thursday May 26, 2022 ####
 
 - Read some documentation on [TAU](https://sea.ucar.edu/sites/default/files/tau-seaconf18.pdf) and [Prometheus](https://prometheus.io/docs/concepts/metric_types/) documentations.
 
 #### Friday May 27, 2022 ####
 
-- Replicating the results of the [live monitoring app example](https://github.com/waggle-sensor/application-profiling). 
+- Replicating the results of the [live monitoring app example](https://github.com/waggle-sensor/application-profiling).
 - Modified the docker file to install pycuda.
 
 Things to added to dockerfile.
 
-``` export PATH="/usr/local/cuda-11.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH"
-apt-get install nvidia-cuda-toolkit
-    pip install pycuda  
-```
-
+``` export PATH="/usr/local/cuda-11.0/bin:$PATH" ```
+``` export LD_LIBRARY_PATH="/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH" ```
+``` apt-get install nvidia-cuda-toolkit ```
+``` pip install pycuda ```
 
 ### Week 3 ###
 
@@ -164,6 +161,7 @@ apt-get install nvidia-cuda-toolkit
 #### Monday May 30, 2022 ####
 
 - Labor Day.
+
 #### Tuesday May 31, 2022 ####
 
 - Read and worked on using socket programing on docker and also using docker-in-docker.
@@ -181,14 +179,13 @@ apt-get install nvidia-cuda-toolkit
 - Completed running running a live-application on nvidia-nx.
 - Created a docker container with tau and example app [app-example:latest](https://hub.docker.com/layers/227035774/odunayo/waggle-plugin-base/1.1.1-ml-cuda10.2-l4t/images/sha256-8ced3a3e95d45dad0135ef14338891c8730a540ca78b175b0d048cbefd7e02e8?context=repo)
 
-ß
 ### Week 4 ###
 
 ------------------------------------------------
 
 #### Monday June 6, 2022 ####
 
-- Worked on running beehive waggle-plugin example. 
+- Worked on running beehive waggle-plugin example.
 
 #### Tuesday June 7, 2022 ####
 
@@ -207,8 +204,6 @@ apt-get install nvidia-cuda-toolkit
 - Worked on code for generating runtime metrics for applications.
 - My code can be found here in runtime-application profiler, for version control changes see my forked branch here [runtime-application profiler](https://github.com/aabayomi/application-profiling.git)
 
-
-
 ### Week 5 ###
 
 ------------------------------------------------
@@ -216,6 +211,7 @@ apt-get install nvidia-cuda-toolkit
 #### Monday June 13, 2022 ####
 
 - Worked on code for generating runtime metrics for applications.
+
 #### Tuesday June 14, 2022 ####
 
 - Worked on code for generating runtime metrics for applications.
@@ -224,16 +220,7 @@ apt-get install nvidia-cuda-toolkit
 
 - Implemented Tegrastats metric logging for running application. Below are the system and application metrics collected.
 
-    ``` {'container_ram_usage': 233357312, 
-        'tegrastats': {'time': datetime.datetime(2022, 6, 14, 23, 24, 4, 556681), 
-                        'uptime': datetime.timedelta(1, 34193, 110000), 'jetson_clocks': 
-                        'OFF', 'nvp model': 'MODE_15W_4CORE', 'CPU1': 98, 'CPU2': 100, 'CPU3': 96, 
-                        'CPU4': 100, 'CPU5': 'OFF', 'CPU6': 'OFF',
-                        'GPU': 13, 'MTS FG': 4, 'MTS BG': 4, 'RAM': 6189988, 'EMC': 6189988, 'SWAP': 392, 
-                        'APE': 150, 'NVENC': 'OFF', 'NVDEC': 'OFF', 'NVJPG': 'OFF', 
-                        'fan': 100.0, 'Temp AO': 37.0, 'Temp AUX': 37.0, 'Temp CPU': 38.0, 
-                        'Temp GPU': 36.5, 'Temp thermal': 37.3, 'power cur': 5417, 'power avg': 3684}}
-    ```
+    ``` {'container_ram_usage': 233357312, 'tegrastats': {'time': datetime.datetime(2022, 6, 14, 23, 24, 4, 556681),'uptime': datetime.timedelta(1, 34193, 110000), 'jetson_clocks': 'OFF', 'nvp model': 'MODE_15W_4CORE', 'CPU1': 98, 'CPU2': 100, 'CPU3': 96, 'CPU4': 100, 'CPU5': 'OFF', 'CPU6': 'OFF','GPU': 13, 'MTS FG': 4, 'MTS BG': 4, 'RAM': 6189988, 'EMC': 6189988, 'SWAP': 392 'APE': 150, 'NVENC': 'OFF', 'NVDEC': 'OFF', 'NVJPG': 'OFF', 'fan': 100.0, 'Temp AO': 37.0, 'Temp AUX': 37.0, 'Temp CPU': 38.0, 'Temp GPU': 36.5, 'Temp thermal': 37.3, 'power cur': 5417, 'power avg': 3684}} ```
 
 #### Thursday June 16, 2022 ####
 
@@ -241,7 +228,47 @@ apt-get install nvidia-cuda-toolkit
 
 #### Friday June 17, 2022 ####
 
-- 
-- 
+- completed a working code for runtime profiler using the tau sample code.
 
+### Week 6 ###
+
+------------------------------------------------
+
+#### Monday June 20, 2022 ####
+
+- Drew the architecture for application profiler
+- Worked running real application
+
+#### Tuesday June 21, 2022 ####
+
+- Worked on creating dockerize application on kubernetes
+
+#### Wednesday June 22, 2022 ####
+
+- Tried out the kubernetes tutorials
+
+- Worked on creating dockerize application on kubernetes
+
+#### Thursday June 23, 2022 ####
+
+- Wrote script(tau_parser.py) to parse TAU outputs to JSON.
+
+#### Friday June 24, 2022 ####
+
+- Read paper on ai benchmarks [AI Benchmark: All About Deep Learning on Smartphones in 2019](https://arxiv.org/pdf/1910.06663.pdf)
+- Usefull profiling metics
+
+- Serial application - suggested metrics
+  - Inclusive calls
+  - Exclusive calls
+  - Hardware Performance counter (PAPI )
+  - Floating Point Instructions executed per second
+  - Floating point instructions executed
+  - Total instructions issued
+  - Total instructions executed
+  - Vector/SIMD instructions executed
+  - Millions of floating point operations/second (PCL)
+- Tau event trace
+- Parallel application - suggested metrics
+  - Tau MPI 
 

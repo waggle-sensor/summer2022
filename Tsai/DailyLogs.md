@@ -12,8 +12,6 @@
 **June 14th**
 * [x] Zoom call with Dr. Raj, who filled me up with the projects our team is working
 * [x] Accept invitation for waggle-sensor GitHub
-* [ ] Sort out transportation to Argonne Laboratory
-* [ ] Once transportation is sort out, register for badge appointment with Argonne Lab
 * [x] Look into ways to create a private local network between NVIDIA system, RAK2287, and the individual sensors using LoRaWAN
     - Looked into LoRaWAN networks and how it can be setup as a local network using the MAC addresses
     - Found useful read https://www.cardinalpeak.com/blog/setting-up-a-lora-gateway-to-view-iot-device-data : uses Rak7243, which also has antennas for LoRa and GPS system
@@ -21,4 +19,99 @@
         - ![](https://i.imgur.com/uVBMwVY.png)
         - **instead of connecting to The Things Network (TTN, a LoRaWAN server), we can connect to the NVIDIA system**
 
-`NEXT STEPS: find out how to connect RAK2287 to an individually owned server instead of TTN, possibly need authentication abilities to prevent random modules connecting. Need to know more about the NVIDIA system.`
+**June 15th**
+* [x] Sort out transportation to Argonne Laboratory
+* [x] Once transportation is sort out, register for badge appointment with Argonne Lab
+* [ ] TMS
+* [x] Lined up with Pritchard on our current tasks
+* [x] Look into network authentication and certificates
+* [x] Look into Arduino LoRaWAN
+* [x] Figure out RAK2287 and Wisgate network logistics, useful for tomorrow:
+    - RAK commercial LoRaWAN (need to have a built in server): https://www.youtube.com/watch?v=6YES3DD-N60&ab_channel=RAKwireless
+    - RAK2287 manual setup:
+http://tosscore.com/download/RAK2287%20Quick%20Start%20Guide.pdf
+* [x] Refamiliarize with new GitHub instructions
+
+**June 16th**
+* [x] Acquire gatepass and badge
+* [x] Work env set up
+* [x] Familiarize with linux terminal
+* [x] Update NVIDIA nano system
+* [x] Test out connections:
+    - RAK pi to personal computer
+    - RAK pi to NVIDIA nano
+    - NVIDIA nano to Argonne-auth
+* [x] Further studies on establishing LoRaWAN with RAK pi and the sensor nodes
+
+**June 16th**
+* [x] Connect RAKpi to WiFi while connecting to NVIDIA nano through ethernet (eth0), met multiple issues:
+    - Argonne-auth WiFi needs WPA2 authentication
+        - attempted to follow this: https://iceburn.medium.com/raspberry-pi-connected-to-wifi-of-wpa2-enterprise-ddd5a40c0b07 , but did not work
+    - `nmtui` edit connections only show LAN (with eth0) and not wireless network
+        - thought that was weird so I turned off AP mode and turned on client mode, then entered `iwlist wlan0 scan` in terminal -- I actually found that it scans the Argonne-auth network properly
+        - ![](https://i.imgur.com/q833fFO.png)
+        - followed https://raspberrytips.com/raspberry-pi-wifi-setup/ : go into `raspi-config` in terminal
+        - ![](https://i.imgur.com/dbSRSyL.jpg)
+        - go into System Options and select Wireless LAN
+        - turned on hotspot on my laptop so the raspi can connect to a WPA authentication WiFi network
+        - entered SSID and password of my laptop's hotspot manually on raspi and connected successfully
+        - ![](https://i.imgur.com/iJiLZGU.png)
+    - After successfully connecting to WiFi, I found the connection is unstable if the ethernet port is also plugged in -- probably because the RAK pi is confused if it should use WiFi or ethernet as connection to ping (I tested this by pinging 8.8.8.8, or google DNS server). If the ethernet port is unplugged however, the WiFi is stable other than high ping due to the additional intermediate network node (my laptop)
+* [x] Keep the AP mode on but use an external wireless adapter to connect to WiFi
+
+**June 20th**
+- ChirpStack is a fullstack that includes connecting the sensor nodes to gateway to server.
+- https://www.chirpstack.io/network-server/install/debian/
+- Creates a database using the Postgres
+- https://www.chirpstack.io/gateway-os/guides/getting-started/
+
+ChirpStack Gateway Bridge:
+- Converts LoRa packet fowarder protocol into a ChirpStack Network Server common data format (JSON and Protobuf) -- part of the ChirpStack open source LoRaWAN Network Server Stack
+- https://www.chirpstack.io/gateway-bridge/gateway/raspberrypi/
+
+
+**June 21st**
+* [x] Complete TMS
+* [x] Explore the capabilities of raspberry pi as the gateway
+    - raspberry pi can function as a small database itself using Postgres management system
+    - has a Application Server and Network Server for its chirpstack for LoRaWAN
+    - `sudo journalctl -f -n 100 -u chirpstack-application-server` will allow us to see the log output for the raspberry pi's application server activity
+    - forgot to take a picture of the log output when I tried it
+* [x] Look into the Postgres commands and how we can edit and excess the database using this management system
+
+
+**June 22nd**
+We figured out that RAK2287 raspi can't be used as a sensor node, nor can the wisgate, so while waiting for the arduino sensors, we can figure out the gateway-server side of the system
+* [x] Filing through the database of the raspberry pi to see what it is used for at the moment
+    - found that there is an application server and network server database
+    - also an empty database called postgres which is probably defaultly there
+    - chirpstack application server table list:
+    - ![](https://i.imgur.com/OWpuSMc.jpg)
+        - interesting information is the "device" table:
+        - ![](https://i.imgur.com/6CzwlqX.png)
+        - these devices might be the sensor nodes that the gateway is connected to, or the nano that I was connected to before
+* [x] Built a bike rack to place in the back of Argonne building 240 and another bike rack at a greenhouse place
+* [x] Cleared the 4th floor lab and made it habitable
+* [x] Populated the empty postgres database with fake data to test sending database entries to nano later on
+
+**June 23rd**
+Today was mainly trying to setup the chirpstack application server (AS) as well as the chirpstack network server (NS)
+Chirpstack AS:
+- Initially I tried following the set up of chirpstack AS following https://www.chirpstack.io/application-server/
+- Realized that we don't want to use WiFi on the gateway, there is no way of accessing the set up application server on a webserver
+- Decided to set up the application server on the nano's end
+-![](https://i.imgur.com/eRYX8B0.jpg)
+- successfully setup the application server on localhost and accessed it on a web server
+- need to to decide whether to put the network server on the RAK2287 or the nano --- have quite a few thought on that at the moment
+
+
+**June 24th**
+* [x] Connect the gateway to the network server which connects to the application server
+    - Since setting up the AS, NS, and gateway bridge all is easier, I decided to set them all up in the nano since I'm testing it out to see if the chirpstack even works
+    - ![](https://i.imgur.com/qqOKube.png)
+    - After setting up the servers and bridge, I linked them together using the chirpstack application platform
+    * [x] create network server profile, gateway profile
+    * [x] Connect the gateway to the network server using the gateway bridge 
+    - ![](https://i.imgur.com/q9SBtur.png)
+    - Successfully linked up the gateway
+    - *when the arduino sensors get here, we can try setting up the applications and see if it shows up on the chirpstack application*
