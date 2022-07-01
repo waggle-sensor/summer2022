@@ -17,3 +17,43 @@ June 16th
   - Followed tutorials on pix2pix
   - set up training images from kaggle
   - emailed Nicola about using colab/jupyter or cloud service for building models
+
+June 17th
+  - experimented with pix2pix pre-generated models
+  - used python package dataset-tools for generating canny edges from images
+
+June 20th
+  - Researched more into GANs model
+  - Reached out to Nicola with regards to setting up my access to the gpu system
+  
+June 21st
+  - https://www.researchgate.net/publication/351359172_Generative_adversarial_networks_to_model_air_pollution_under_uncertainty
+  - https://www.researchgate.net/publication/344506117_Conditional_Generative_Adversarial_Networks_to_Model_Urban_Outdoor_Air_Pollution
+  - Two papers very similar to what we are trying to acheive with modeling air quality using GANs
+  - alcf account was approved and gained access to the gpu system
+
+June 22nd
+  - Read more research papers on how topology and and wind directiona affect air quality
+  - Emailed Nicola with list of clarification questions regarding types of input data / optimizing sensor placement
+  
+June 23rd
+  - Attended two lectures discussing applications of DL
+  - Began experimenting with modeling via ssh through the theta gpu system
+  
+June 27th
+  - Met with Bhupendra, Dario, and Sean with regards to my project details/objectives
+  - Reread the paper I sent to Nicola that gave proof of concept to the project
+  - Emailed the researcher of the paper if they were willing to share their project code
+  
+June 28th
+  - Met with Nicola over zoom to clarify detailed about GANs for AQ and optimizing sensor placement
+  - Met with Dario to discuss the CGANs implementation used in the paper
+  - Slacked the Oregon researchers to gain access to AQ data in Oregon
+  
+June 29th
+  - Career Day
+  
+June 30th
+  - Set up my vscode to experiment with CGANs model found online (shell script created)
+  - First testing aroung with the MNIST dataset to experiment
+  - Asked Dario about how to modify this model to mimic the research paper's

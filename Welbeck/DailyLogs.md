@@ -25,9 +25,18 @@
 
 ## Week 2: 06/27 - 07/02
 
-### Monday 06/27
+### Tuesday 06/27
 
- - [ ] K3S Introduction + Tutorial
- - [ ] WaggleSensor onboarding: Agile Scrum Development Process
- - [ ] Jetson Nano Introduction(?)
- - [ ] Intro to ROS2
+ - [ ] Configured and Tested ROS with Docker on the Jetson Nano
+
+### Thursday 06/30
+ - [X] Augmented Dockerfile beyond waggle/ros-base per official ROS installation instructions
+   - bootstrap tools
+   - custom workspace
+   - net-tools and iputils-ping for diagnostics
+   - [updated Dockerfile](../Docker/Dockerfile)
+     - Docker container still requires ROS_MASTER_URI to be specified; could automate later
+
+ - [ ] Demonstate Bi-directional communications across containers on Nano [Shirley]
+ - [ ] Protocols Examples meeting @ 2pm
+ - [ ] Robot Team Meeting @ 4pm

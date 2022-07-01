@@ -154,5 +154,37 @@ Things to do:
 ----------------------------------------------
 ### Week 4: 6/27 to 7/1 ###
 #### Monday June 27th ####
-- [x] 
+- [x] Debugged all day: last deployed the gpu-stress-test ```kubectl run gpu-test --image=waggle/gpu-stress-test:1.0.1 --attach=true```
+- [x] Had a meeting with Yongho to discuss about the summer internship plan (IT WAS GREAT!!!!!!) 
 
+Things to do (by tomorrow):  
+- [ ] disconnect everything from the Nano in 4302 and start from scratch
+- [ ] install the 32.4.4 L4T
+- [ ] for the external media use the 512GB Samsung USB stick (in-place of the SD-card dongle)
+- [ ] follow the instructions in the README to get the node back to the point of it is now, but with a L4T 32.4.4 base
+- [ ] ensure docker and k3s GPU access work using the gpu-stress-test
+
+#### Tuesday June 28th ####
+- [x] Figured out the Nano GPU running on the K3S finally (THANKS FRANCISCO AND JOE!!!!!)
+
+Things to do (by this Friday):  
+- [ ] Cleaning up the documents such as README file
+
+#### Wednesday June 29th ####
+- [x] Career Day YAY !!!!!! (showing off my Kayaking skill :sunglasses:)
+
+#### Thursday June 30th (Important as it is Minji's birthday :confetti_ball:)
+- [x] Attended AI group meeting
+- [x] Had a meeting with Robot team for the demo
+- [x] Had a Sage Edu Kit meeting
+- [x] Meeting with another robot team meeting (thanks Yongho)
+
+Things to do:  
+- [ ] Getting the boot strapping for the Nano done and Ansible (https://www.ansible.com/overview/how-ansible-works?hsLang=en-us) scripts created to finish the boot strapping
+
+#### Friday July 1th ####
+- [x] Installed Ansible files on Jetson Nano
+- [x] Explored the ansible playbook with tutorials: https://www.youtube.com/watch?v=bU6OEtbdiOI
+
+Things to do:  
+- [ ] Finishing the Ansible script by July 15th

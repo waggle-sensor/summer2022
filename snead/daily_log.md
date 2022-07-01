@@ -1,7 +1,61 @@
 # Zoe Snead Daily Activity Log  
-My daily activity! Most recent additions are at the top  
-  
+My daily activity! Most recent additions are at the top
+
+## Week 3: 6/27 to 7/1
+### Friday 7/1
+- Went to Active Shooter training... not a fan...
+- Started researching [Aether](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#aether-onf)
+  - looks like it uses the free5GC 5G base to build something as extensive as ONAP, if not more extensive. I'm not sure if we need something this big?
+- Looked into .NET for fun! (at Billy Kihei's suggestion)
+- found [gNB Simulator](https://docs.sd-core.opennetworking.org/master/developer/gnbsim.html) hosted by ONF
+#### To Do
+- Talk with Jaoquin about 5G core research to gain more direction
+- Research more on Kubernetes and understand our current setup
+- Continue getting into Aether/SD-Core functionality. Still haven't found how to install it...
+- try downlinking in the lab!
+### Thursday 6/30
+- Researched free5GC, check out the [notes!](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
+  - seems more lean, and less robust than ONAP, but just as accessible
+  - the software itself is free, but the technical support is behind a membership paywall
+  - not too many services, and no network slicing
+  - has a backlog of versions that are non-standalone, standalone, and fully 5G depending on our infrastructure needs
+- Found [UERANSIM](https://github.com/aligungr/UERANSIM) which could simulate a 5G phone and base station if core testing needed
+- Helped give Randy Berry a tour of our lab
+- I was able to connect my Linux computer to the modem that got a ping on [6/22](https://github.com/waggle-sensor/summer2022/blob/main/snead/daily_log.md#wednesday-622) but ONLY this modem. Are you only able to connect to *one* modem from your Linux system? Still doesn't explain the 5g phones being unable to connect. My ModemManager was able to talk to it, but the mobile network couldn't connect... ( ._.)
+#### To Do
+- Look into Aether (ONF) and other open source cores
+- Dive deeper with free5GC
+- Research more on Kubernetes and understand our current setup
+- Try to downlink from the server to a modem if we're in the lab tomorrow (randy's idea!) Can you downlink to the modem when the computer is not connected?
+  - How do we know the packets aer transmitting over 5G? When we get it up and running, I guess...
+### Wednesday 6/29
+- Career day!! Figured out how to play Carcassonne, did NOT figure out how to kayak properly
+### Tuesday 6/28
+- Researched ONAP ([README Notes](https://github.com/waggle-sensor/summer2022/tree/main/snead#onap))
+  - Developed understanding of their 5G Core architecture and made notes
+  - Found specific plug-in that would allow control of our COTS radios
+  - Depending on the hardware we have and where we want to host this core, it seems pretty plug-and-play
+#### To Do 
+- Research more on Kubernetes and understand our current setup (the Waggle Nodes already run using Kubernetes, right?)
+- Look into other OpenSource 5G setups, like free5GC or Aether (ONF)
+### Monday 6/27
+- Met with Dr. Kihei and his associates (Mfon and Luanne)
+  - Discussed Vehicle to Vehicle capabilities of 5G with Mfon
+  - Ran some tests with their Python [5G Tool Kit](https://github.com/Intelligent-Mobile-Device-Lab-at-KSU/5gtoolkit)
+    - We were achieving typical speeds with UE to UE communication (~40-50ms delays)
+    - Jitter test had very low delays because we are alone on our network (~5ms)
+  - Tried running their [Latency Tools](https://github.com/Intelligent-Mobile-Device-Lab-at-KSU/wireless_latency_tools) but the read outs were not making sense
+- Installed and started configuring the Blade Edge Server
+#### To Do
+- No access to the lab tomorrow, begin looking into opensource 5G technology 
+
 ## Week 2: 6/20 to 6/24
+### Friday 6/24
+- happy friday!! I forgot to bring my tea
+- trying to run Waggle stack
+- Testing connectivity of modem
+  - we are shut out of WiFi connectivity
+  - something is wrong and our Linux computers can no longer connect to our cellular. Could have something to do with Docker?
 ### Thursday 6/23
 - fiddled with Screen
   - it's a little finnicky to get the terminal open to send AT commands to the modem
