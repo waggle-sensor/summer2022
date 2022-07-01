@@ -6,6 +6,8 @@ My daily activity! Most recent additions are at the top
 - Went to Active Shooter training... not a fan...
 - Started researching [Aether](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#aether-onf)
   - looks like it uses the free5GC 5G base to build something as extensive as ONAP, if not more extensive. I'm not sure if we need something this big?
+- Looked into .NET for fun! (at Billy Kihei's suggestion)
+- found [gNB Simulator](https://docs.sd-core.opennetworking.org/master/developer/gnbsim.html) hosted by ONF
 #### To Do
 - Talk with Jaoquin about 5G core research to gain more direction
 - Research more on Kubernetes and understand our current setup
