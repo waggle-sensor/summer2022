@@ -2,6 +2,9 @@
 My daily activity! Most recent additions are at the top
 
 ## Week 3: 6/27 to 7/1
+### Friday 7/1
+- Went to Active Shooter training... not a fan...
+- 
 ### Thursday 6/30
 - Researched free5GC, check out the [notes!](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
   - seems more lean, and less robust than ONAP, but just as accessible
@@ -10,11 +13,13 @@ My daily activity! Most recent additions are at the top
   - has a backlog of versions that are non-standalone, standalone, and fully 5G depending on our infrastructure needs
 - Found [UERANSIM](https://github.com/aligungr/UERANSIM) which could simulate a 5G phone and base station if core testing needed
 - Helped give Randy Berry a tour of our lab
-- I was able to connect my Linux computer to the modem that got a ping on [6/22](https://github.com/waggle-sensor/summer2022/blob/main/snead/daily_log.md#wednesday-622) but ONLY this modem. Are you only able to connect to one modem from your Linux system? Still doesn't explain the 5g phones being unable to connect. My ModemManager was able to talk to it, but the mobile network couldn't connect... ( ._.)
+- I was able to connect my Linux computer to the modem that got a ping on [6/22](https://github.com/waggle-sensor/summer2022/blob/main/snead/daily_log.md#wednesday-622) but ONLY this modem. Are you only able to connect to *one* modem from your Linux system? Still doesn't explain the 5g phones being unable to connect. My ModemManager was able to talk to it, but the mobile network couldn't connect... ( ._.)
 #### To Do
 - Look into Aether (ONF) and other open source cores
 - Dive deeper with free5GC
 - Research more on Kubernetes and understand our current setup
+- Try to downlink from the server to a modem if we're in the lab tomorrow (randy's idea!) Can you downlink to the modem when the computer is not connected?
+  - How do we know the packets aer transmitting over 5G? When we get it up and running, I guess...
 ### Wednesday 6/29
 - Career day!! Figured out how to play Carcassonne, did NOT figure out how to kayak properly
 ### Tuesday 6/28
