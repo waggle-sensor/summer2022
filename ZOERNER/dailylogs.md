@@ -212,8 +212,8 @@
 
 ##### Goals for this week:
 
-- [ ] Use scipy ndimage.label to extract the largest region of reflectivity in the radar images
-- [ ] Use OpenCV to perform image processing analysis on the labeled images and export as text files
+- [x] Use scipy ndimage.label to extract the largest region of reflectivity in the radar images
+- [x] Use OpenCV to perform image processing analysis on the labeled images and export as text files
 
 ---
 
@@ -221,4 +221,24 @@
 
 - Assisted with TRACER forecasting and attended briefing (verification)
 - Worked with ndimage.label to remove the largest object from the radar images
+
+#### Tuesday June 28, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Met with Bhupendra for help using the label function to extract the largest echo
+
+#### Wedesday June 29, 2022
+
+- Kayaking day with students and mentors
+
+#### Thursday June 30, 2022
+
+- Introduction meeting with AI group
+- Attended TRACER briefing
+- Worked on a script that finds the centroid of a shape based on its image moments.
+
+#### Friday July 1, 2022
+
+- Attended TRACER briefing
+- Continued working on image analysis with OpenCV
 
