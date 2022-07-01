@@ -6,7 +6,7 @@ This is where I'm compiling my research about different open source 5G Core orga
 - Quick dicussion of [PNF and VNF](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
 
 # ONAP
-"Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
+> "Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
 
 [ONAP Home Page](https://www.onap.org/)
 
@@ -82,3 +82,29 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 - [Forum](https://forum.free5gc.org/) for asking questions!
 - Pay wall (annual membership fee) for training and seminar access, but that's not too unique 
 - run and managed entirely through Linux CLI
+
+# Aether (ONF)
+> "Aether is the first open source 5G Connected Edge platform for enabling enterprise digital transformation. It provides mobile connectivity and edge cloud services for distributed enterprise networks as a cloud managed offering. Aether is an open source platform optimized for multi-cloud deployments, and simultaneous support for wireless connectivity over **licensed, unlicensed and lightly-licensed (CBRS) spectrum."** \- Aether website
+
+[Aether Hope Page](https://opennetworking.org/aether/)
+
+[Aether Dev Wiki](https://wiki.opennetworking.org/display/COM/Aether)
+
+## Architecture
+![Aether Architecture](https://user-images.githubusercontent.com/107580325/176931696-64211a88-295d-403c-9f32-87f96d4017d6.png)
+
+(Image from Aether website)
+
+### SD-Core
+> "The SD-Core project is a 5G/4G disaggregated mobile core implementation optimized for deployment in the public cloud. SD-Core exposes standard 3GPP interfaces for those wishing to use the project as a conventional mobile core, but it is also pre-integrated with an adapter available as part of the Aether ROC subsystem for those wishing to deploy mobile-core-as-a-service as a SaaS solution.
+>
+> SD-Core leverages control plane components of the Free5GC project and the ONF OMEC project, building on both of these upstream open source projects by adding cloud native capabilities for scaling, resiliency and multi-cloud agility." - SD-C Wiki
+
+
+[SD-Core Wiki](https://wiki.opennetworking.org/display/COM/SD-Core)
+
+<img src="https://user-images.githubusercontent.com/107580325/176935832-4d35d1b6-1e12-4366-9548-885ae904bfa5.png" width="625" height="350">
+
+(Image from SD-C Wiki)
+
+
