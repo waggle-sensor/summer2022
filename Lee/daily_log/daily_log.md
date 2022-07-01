@@ -168,10 +168,23 @@ Things to do (by tomorrow):
 - [x] Figured out the Nano GPU running on the K3S finally (THANKS FRANCISCO AND JOE!!!!!)
 
 Things to do (by this Friday):  
-- [ ] Documents (README file)
+- [ ] Cleaning up the documents such as README file
 
 #### Wednesday June 29th ####
 - [x] Career Day YAY !!!!!! (showing off my Kayaking skill :sunglasses:)
 
-#### Thursday June 30th #### (Important as it is Minji's birthday :confetti_ball:)
+#### Thursday June 30th (Important as it is Minji's birthday :confetti_ball:)
+- [x] Attended AI group meeting
+- [x] Had a meeting with Robot team for the demo
+- [x] Had a Sage Edu Kit meeting
+- [x] Meeting with another robot team meeting (thanks Yongho)
 
+Things to do:  
+- [ ] Getting the boot strapping for the Nano done and Ansible (https://www.ansible.com/overview/how-ansible-works?hsLang=en-us) scripts created to finish the boot strapping
+
+#### Friday July 1th ####
+- [x] Installed Ansible files on Jetson Nano
+- [x] Explored the ansible playbook with tutorials: https://www.youtube.com/watch?v=bU6OEtbdiOI
+
+Things to do:  
+- [ ] Finishing the Ansible script by July 15th
