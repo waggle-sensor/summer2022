@@ -4,11 +4,13 @@ My daily activity! Most recent additions are at the top
 ## Week 3: 6/27 to 7/1
 ### Friday 7/1
 - Went to Active Shooter training... not a fan...
-
+- Started researching [Aether]()
+  - looks like it uses the free5GC 5G base to build something as extensive as ONAP, if not more extensive. I'm not sure if we need something this big?
 #### To Do
 - Talk with Jaoquin about 5G core research to gain more direction
 - Research more on Kubernetes and understand our current setup
-- try downlinking!
+- Continue getting into Aether/SD-Core functionality. Still haven't found how to install it...
+- try downlinking in the lab!
 ### Thursday 6/30
 - Researched free5GC, check out the [notes!](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
   - seems more lean, and less robust than ONAP, but just as accessible
