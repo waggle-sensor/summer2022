@@ -76,7 +76,7 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 [Radio Connection Demo](https://www.youtube.com/watch?v=2rgZgYyqugM&ab_channel=free5GC) <-- got access to the internet!
 
-### Attributes
+## Attributes
 - Access to different versions in varying stages of 5G integration could be useful as Waggle begins migration to 5G
 - After initial configuration, it seems ready to go "off the shelf," so to speak
 - [Forum](https://forum.free5gc.org/) for asking questions!
@@ -95,18 +95,31 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 (Image from Aether website)
 
-### SD-Core
+## SD-Core
 > "The SD-Core project is a 5G/4G disaggregated mobile core implementation optimized for deployment in the public cloud. SD-Core exposes standard 3GPP interfaces for those wishing to use the project as a conventional mobile core, but it is also pre-integrated with an adapter available as part of the Aether ROC subsystem for those wishing to deploy mobile-core-as-a-service as a SaaS solution.
 >
-> SD-Core leverages control plane components of the Free5GC project and the ONF OMEC project, building on both of these upstream open source projects by adding cloud native capabilities for scaling, resiliency and multi-cloud agility." - SD-C Wiki
+> SD-Core leverages control plane components of the **Free5GC project** and the ONF OMEC project, building on both of these upstream open source projects by adding cloud native capabilities for scaling, resiliency and multi-cloud agility." - SD-C Wiki
 
 
 [SD-Core Wiki](https://wiki.opennetworking.org/display/COM/SD-Core)
 
+[SD-C Documentation](https://docs.sd-core.opennetworking.org/master/overview/introduction.html)
+
+[Hardware requirements](https://docs.sd-core.opennetworking.org/master/deployment/deployment5G.html) <-- seems very costly, and requires Kubernetes and Helm environments
+
+### SD-C Architecture
 <img src="https://user-images.githubusercontent.com/107580325/176935832-4d35d1b6-1e12-4366-9548-885ae904bfa5.png" width="625" height="350">
 
 (Image from SD-C Wiki)
 
-### Attributes
-- Aether (and SD-C) build off of free5GC to create a "dual-made solution" that supports 4G and 5G
+> "SD-Core provides the 4G/5G connectivity and the SD-Core control plane at the central site controls multiple user plane components running at each Aether Edge site." \- from SD-C documentation
+> 
+## Attributes
+- Has both a 5G and 4G core: Aether (and SD-C) build off of free5GC to create a "dual-mode solution" that supports both
+  - also allows for standalone and non-standalone 5G connectivity
+  - has two containerized User Plane Function so the core can process LTE and 5G signals simultaneously
+- SD-C has runtime APIs that enable closed loop control and other services, including ensuring that only authorized users are connecting to the network
+- SD-C manages Network Slicing
+- Deployment flexibility: network can be deployed completely centrally or distributed at the edge
+- [Aether-in-a-Box](https://docs.sd-core.opennetworking.org/master/developer/aiab.html#aiab-guide) can be deployed on a simple computer then scaled up
 
