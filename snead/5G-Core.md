@@ -107,4 +107,6 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 (Image from SD-C Wiki)
 
+### Attributes
+- Aether (and SD-C) build off of free5GC to create a "dual-made solution" that supports 4G and 5G
 
