@@ -241,4 +241,19 @@
 
 - Attended TRACER briefing
 - Continued working on image analysis with OpenCV
+- Created a text file to output to
+
+---
+
+#### Week 5 Overview
+
+---
+
+- Re-wrote first steps using netCDF4 file instead of png images
+- Found the image moments
+- Began morphology calculations based on image moments
+
+---
+
+
 
