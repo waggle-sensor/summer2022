@@ -160,15 +160,64 @@ LSTM to predict solar irradiance based on cloud coverage in July
 |     | Goal | Priority | Notes |
 | --- | --- | --- | --- |
 | 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul>
-| 🟩 | Write separate function to load data and set up into time series format | High | <ul><li>Takes a long time to run</li><li>Write out to some file</li><li>Needs to be re-run for different inputs and step sizes</li></ul> |
+| ✅ | Write separate function to load data and set up into time series format | High | <ul><li>Takes a long time to run</li><li>Write out to some file</li><li>Needs to be re-run for different inputs and step sizes</li></ul> |
 | 🟩 | Research variations in LSTM models | Med | <ul><li>Some nice elementary explanations [x]</li></ul> |
-| 🟩 | Meet with Seongha | Low | <ul><li>Update on work accomplished thus far</li><li>Discuss future communication</li><li>Consider next steps</li></ul>|
+| ✅ | Meet with Seongha | Low | <ul><li>Update on work accomplished thus far</li><li>Discuss future communication</li><li>Consider next steps</li></ul>|
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
 
 ## Monday, June 27
 
 - Setup goals for week
+- Wrote script to prepare date in time series format
+- Debugged misc issues regarding training model
+- Worked on hyperparameter opimization
+- Studied transformers [[1](https://www.youtube.com/watch?v=EFkbT-1VGTQ), [2](https://arxiv.org/abs/2109.12218)]
+    - Interesting, but would be a major change from current methods. Consider if RNN’s perform poorly.
+- Set up meeting with Seongha
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage in July
+
+## Tuesday, June 28
+
+- Debugged multivariate grid search (flatten input and reshape)
+- Debugged data loading (improper shape)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage in July
+
+## Wednesday, June 29
+
+- Career Day - Kayaking!
+
+## Thursday, June 30
+
+- Debugged data loading
+- Met with AI/Algorithm student group
+- Met with Seongha
+    - Condensed Notes:
+        - Key takeaways
+            - Completely ignore all faulty data
+            - Stick with ARMS data for duration of project
+            - Code and model will have to run on NVIDIA Nano; later down the line think about dockerizing for plug-in
+        - Todos
+            - Check timezone of data: may have to resample to match
+            - Resample data to every 15 minutes
+            - Switch from just July to all data
+            - Normalize variables individually
+            - Test for resource usage, accuracy, and speed (in that order of importance)        
+- Modified data loading format based on Seongha’s feedback (ignoring faulty data, resampling)
+    - Checked time zones: all data is in 0000UTC, but may be split into days differently (i.e., for us, solar irradiance splits at 0000UTC and cloud coverage splits at 0600UTC)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
+
+## Friday, July 1
+
+- Wrote script to delete unnecessary data files (i.e., dates which have data for only one of the two variables)
+- Worked on configuring GPU set up
+    - Meet with Bobby next week for help
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
