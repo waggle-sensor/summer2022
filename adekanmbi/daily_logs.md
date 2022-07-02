@@ -296,3 +296,7 @@ Things to added to dockerfile.
 #### Thursday June 30, 2022 ####
 
 - Worked on installing PAPI to collect snapshot data
+
+#### Friday July 1, 2022 ####
+
+- Worked on Installing PAPI to collect snapshot on docker container
