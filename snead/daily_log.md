@@ -6,9 +6,20 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 - morning!
 - Joaquin is checking in with Nokia about the phones and Linux. Radios are down, not sure when I'll get back into the lab
 - Aether is if you want to run your own mobile core as a service, but its component, SD-Core, can be run independently as a 5G/4G Core
+- Met with Joaquin to check in about core research, new ToDos!
+- Gathered more info on free5GC and 
 #### To Do
 - Downlink!!! When in the lab!! Eventually! Radios are down!
 - [Open5GCore](https://www.open5gcore.org/) as another avenue to look into for Core research? Just kidding it's not open source
+- [Open Air Interface 5G CN](https://openairinterface.org/oai-5g-core-network-project/)
+- [Magma](https://magmacore.org/learn-the-technology/)
+- Maybe look and find public reviews of each? Get some unbiased descriptions/information on each organization
+- free5GC is dev'ed by china, will we want to pursure that?
+- prepare a matrix of options vs their features
+  - make sure to include price points
+  - maybe who it's developed by? Linux Foundation for Magma and ONAP
+- what is the 3GPP interface to communicate btwn core and RAN?
+- Nokia RAN thing from Joaquin
 ## Week 3: 6/27 to 7/1
 ### Friday 7/1
 - Went to Active Shooter training... not a fan...
