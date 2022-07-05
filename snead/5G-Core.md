@@ -131,7 +131,7 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 
 [SD-Fabric Wiki](https://wiki.opennetworking.org/display/COM/SD-Fabric)
 
-[SD-Fabric Documentation](https://docs.sd-fabric.org/master/index.html)]
+[SD-Fabric Documentation](https://docs.sd-fabric.org/master/index.html)
 
 - Uses bare metal switches, enables network verification and closed loop control, spine-leaf structure
 - Scalable with varying topologies
