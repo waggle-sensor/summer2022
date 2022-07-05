@@ -1,6 +1,12 @@
 # Zoe Snead Daily Activity Log  
-My daily activity! Most recent additions are at the top
+My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 4: 7/5 to 7/8
+### Tuesday 7/5
+- morning!
+- Joaquin is checking in with Nokia about the phones and Linux. Radios are down, not sure when I'll get back into the lab
+#### To Do
+- Downlink!!! When in the lab!! Eventually! Radios are down!
 ## Week 3: 6/27 to 7/1
 ### Friday 7/1
 - Went to Active Shooter training... not a fan...
