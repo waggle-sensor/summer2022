@@ -162,3 +162,10 @@ Chirpstack AS:
 * [x] Test the distance of connection
     - put the MKRWAN 1310 different floors of the buildingr
     - setup the MKRWAN 1310 on the 7th floor and it was able to send messages to the gateway on 3rd floor
+
+**July 5th**
+* [x] Set up router to connect both the gateway and the chirpstack network server -> so gateway can have communication with the server
+* [x] Replicate work on Friday from home's environment
+* [x] Create a new device with unique NWSKEY and APPKEY and DEV id
+* [ ] Connect a second device simultaneously
+    - unable to receive frames from the second device
