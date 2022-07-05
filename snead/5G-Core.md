@@ -86,7 +86,7 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 # Aether (ONF)
 > "Aether is the first open source 5G Connected Edge platform for enabling enterprise digital transformation. It provides mobile connectivity and edge cloud services for distributed enterprise networks as a cloud managed offering. Aether is an open source platform optimized for multi-cloud deployments, and simultaneous support for wireless connectivity over **licensed, unlicensed and lightly-licensed (CBRS) spectrum."** \- Aether website
 
-[Aether Hope Page](https://opennetworking.org/aether/)
+[Aether Home Page](https://opennetworking.org/aether/)
 
 [Aether Dev Wiki](https://wiki.opennetworking.org/display/COM/Aether)
 
