@@ -120,23 +120,23 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 > "SD-Core provides the 4G/5G connectivity and the SD-Core control plane at the central site controls multiple user plane components running at each Aether Edge site." \- from SD-C documentation
 >
-## SD-Fiber
+## SD-Fabric
 > "SD-Fabric is an open source, full stack, deeply programmable network fabric optimized for edge cloud, 5G, and Industry 4.0 applications." - SD-Fabric Documentation
 
 > "A network fabric describes the network topology in which components pass data to each other through interconnecting switches." - [IBM Documnetation](https://www.ibm.com/docs/en/flashsystem-9x00/8.2.x?topic=overview-network-fabrics)
 
-[SD-Fiber Home Page](https://opennetworking.org/sd-fabric/)
+[SD-Fabric Home Page](https://opennetworking.org/sd-fabric/)
 
-[SD-Fiber Wiki](https://wiki.opennetworking.org/display/COM/SD-Fabric)
+[SD-Fabric Wiki](https://wiki.opennetworking.org/display/COM/SD-Fabric)
 
-[SD-Fiber Documentation](https://docs.sd-fabric.org/master/index.html)]
+[SD-Fabric Documentation](https://docs.sd-fabric.org/master/index.html)]
 
 - Uses bare metal switches, enables network verification and closed loop control, spine-leaf structure
 - Scalable with varying topologies
 - Plans to build a **Docker-based environment** so we could run Fabric without hardware. Otherwise we would have to buy the switches. Does this mean Aether can't run without the hardware in its current state?
 - Programmable, API driven
 
-### SD-Fiber Architecture
+### SD-Fabric Architecture
 <img src="https://user-images.githubusercontent.com/107580325/177362988-a4e58943-9c81-46f0-af26-89a6d5866474.png" width="500" height="350"> <img src="https://user-images.githubusercontent.com/107580325/177368695-30a3f39c-e606-4a5c-8f00-fdf14313382b.png" width="200" height="350">
 
 (Left image from SD-F Documentation, right image from SD-F Homepage)
