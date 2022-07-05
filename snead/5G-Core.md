@@ -107,20 +107,47 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 [Hardware requirements](https://docs.sd-core.opennetworking.org/master/deployment/deployment5G.html) <-- seems very costly, and requires Kubernetes and Helm environments
 
+- Standard 3GPP interfaces allow SD-Core to be run as a standalone mobile core, can also be integrated into Aether
+- SD-C has runtime APIs that enable closed loop control and other services, including ensuring that only authorized users are connecting to the network
+- SD-C manages Network Slicing
+- Three User Plane Functions (UPF) that are designed to be customized at the edge for different use cases
+- Aether acts as a Runtime Operational Control (ROC) portal, and it seems you can use the ROC to control SD-Core without... needing everything? Might need to look into third party ROC. REST Interface (Simapp?) or Helm Charts?
+
 ### SD-C Architecture
 <img src="https://user-images.githubusercontent.com/107580325/176935832-4d35d1b6-1e12-4366-9548-885ae904bfa5.png" width="625" height="350">
 
 (Image from SD-C Wiki)
 
 > "SD-Core provides the 4G/5G connectivity and the SD-Core control plane at the central site controls multiple user plane components running at each Aether Edge site." \- from SD-C documentation
-> 
+>
+## SD-Fiber
+> "SD-Fabric is an open source, full stack, deeply programmable network fabric optimized for edge cloud, 5G, and Industry 4.0 applications." - SD-Fabric Documentation
+
+> "A network fabric describes the network topology in which components pass data to each other through interconnecting switches." - [IBM Documnetation](https://www.ibm.com/docs/en/flashsystem-9x00/8.2.x?topic=overview-network-fabrics)
+
+[SD-Fiber Home Page](https://opennetworking.org/sd-fabric/)
+
+[SD-Fiber Wiki](https://wiki.opennetworking.org/display/COM/SD-Fabric)
+
+[SD-Fiber Documentation](https://docs.sd-fabric.org/master/index.html)]
+
+- Uses bare metal switches, enables network verification and closed loop control, spine-leaf structure
+- Scalable with varying topologies
+- Plans to build a **Docker-based environment** so we could run Fabric without hardware. Otherwise we would have to buy the switches. Does this mean Aether can't run without the hardware in its current state?
+- Programmable, API driven
+
+### SD-Fiber Architecture
+<img src="https://user-images.githubusercontent.com/107580325/177362988-a4e58943-9c81-46f0-af26-89a6d5866474.png" width="500" height="350"> <img src="https://user-images.githubusercontent.com/107580325/177368695-30a3f39c-e606-4a5c-8f00-fdf14313382b.png" width="200" height="350">
+
+(Left image from SD-F Documentation, right image from SD-F Homepage)
+
 ## Attributes
 - Has both a 5G and 4G core: Aether (and SD-C) build off of free5GC to create a "dual-mode solution" that supports both
   - also allows for standalone and non-standalone 5G connectivity
   - has two containerized User Plane Function so the core can process LTE and 5G signals simultaneously
-- SD-C has runtime APIs that enable closed loop control and other services, including ensuring that only authorized users are connecting to the network
-- SD-C manages Network Slicing
+- **SD-Core can be run as a separate entity from Aether for a simple mobile core**
 - Deployment flexibility: network can be deployed completely centrally or distributed at the edge
+- SD-Fabric is a vital component that Aether and SD-Core run on. **At the moment it looks like we would need to invest in hardware until they get a virtual environment**
 - [Aether-in-a-Box](https://docs.sd-core.opennetworking.org/master/developer/aiab.html#aiab-guide) can be deployed on a simple computer then scaled up
 - [gNB Simulator](https://docs.sd-core.opennetworking.org/master/developer/gnbsim.html) for testing the core?
 
