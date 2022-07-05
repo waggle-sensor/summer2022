@@ -76,6 +76,8 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 [Radio Connection Demo](https://www.youtube.com/watch?v=2rgZgYyqugM&ab_channel=free5GC) <-- got access to the internet!
 
+Other videos they have show demos of how to [configure and run UE, RAN with free5GC](https://www.youtube.com/watch?v=WDy0TL4fPKI&ab_channel=free5GC)
+
 ## Attributes
 - Access to different versions in varying stages of 5G integration could be useful as Waggle begins migration to 5G
 - After initial configuration, it seems ready to go "off the shelf," so to speak
