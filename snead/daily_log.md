@@ -8,6 +8,7 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 - Aether is if you want to run your own mobile core as a service, but its component, SD-Core, can be run independently as a 5G/4G Core
 #### To Do
 - Downlink!!! When in the lab!! Eventually! Radios are down!
+- [Open5GCore](https://www.open5gcore.org/) as another avenue to look into for Core research
 ## Week 3: 6/27 to 7/1
 ### Friday 7/1
 - Went to Active Shooter training... not a fan...
