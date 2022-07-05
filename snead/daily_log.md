@@ -5,6 +5,7 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 ### Tuesday 7/5
 - morning!
 - Joaquin is checking in with Nokia about the phones and Linux. Radios are down, not sure when I'll get back into the lab
+- Aether is if you want to run your own mobile core as a service, but its component, SD-Core, can be run independently as a 5G/4G Core
 #### To Do
 - Downlink!!! When in the lab!! Eventually! Radios are down!
 ## Week 3: 6/27 to 7/1
