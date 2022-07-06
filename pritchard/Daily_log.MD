@@ -230,4 +230,82 @@ Things to do:
 - [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific value we are looking for, in this case the first poe wattage value
 
+### Week 3: 6/27 to 6/31 ###
+#### Monday June 27th ####
+- [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
+- [ ] messed up wireless network while trying to implement previous test
+- [ ] figured out workaround for notation problem when labling MQTT topics/ topics san be refered to using "wildcards" like "+" in wisGate terminal, but will still update from messages from the Nano client that fall within a smaller domain 
+- [ ] Began working on EdgeSwitch project, goal: to monitor specific conditions of particular ports via automated ssh and activly display said data in local system
+- [ ] Found related commands to display required data over ssh
+
+Things to do:
+- [ ] write python file to monitor specific conditions of particular ports via automated ssh and activly display said data in local system
+
+#### Tuesday June 28th ####
+- [ ] made some progress on writing automated ssh code
+- [ ] learned of previously made repo that spits out slightly different data from that what I am looking for from same edge switch
+- [ ] upon further analysis found that repo used the locally hosted api
+- [ ] with Raj's help got a basic main.py to print out large section of port data
+- [ ] spent time learing about parsing json
+- [ ] made initial testing file that relied upon a .JSON file filled with the contents of what was originally spit out by the main.py to attempt to parse said printed out data for what we want
+
+Things to do:
+- [ ] parse data
+
+#### Wednesday June 29th ####
+- [ ] went to summer meetup
+- [ ] did an hour of research on the error I got the day before
+
+Things to do:  
+- [ ] parse .Json data
+
+#### Thursday June 30th ####
+- [ ]  discovered that error resulted from the printing of the data which converts the data to something unreadable to parsing methods
+- [ ]  began working in original main.py file 
+- [ ]  discovered that the file that is imported into main.py is in the form of a list instead of a JSON object and attempts to convert said list to Python dictionary or JSON result in a single member list
+
+Things to do: 
+- [ ] figure out how to get an output that can be read as a python dictionary
+
+#### Friday June 31th ####
+- [ ] switched laptops after repeated crashing
+- [ ] Raj decided we will move forwards with rack pie and leave WisGate behind for now
+- [ ] successfully accessed and parsed data from EdgeSwitch 8
+- [ ] ![image](https://user-images.githubusercontent.com/106760508/176968684-959c4733-54df-4bb4-a4a6-b44d601e7a6f.png)
+- [ ] ![image](https://user-images.githubusercontent.com/106760508/176968819-f7d14522-4b78-4139-b6a8-c742f23132e3.png)
+- [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
+- [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific 
+ 
+### Week 3: 7/5 to 6/31 ###
+#### Tuesday July 5 ####
+- [ ] WFH due to family member catching covid
+- [ ] wrote basic code for prcessing POE outputs by minimum maximum and average in file over 5min interval
+- [ ] ![image](https://user-images.githubusercontent.com/106760508/177434446-c4205417-51d2-46cf-9c7b-288f0c5cc0fb.png)
+
+
+
+Things to do:
+- [ ] fix bugs in code
+- [ ] creat system fr reognizing consistent change in POE levels
+- [ ] figure out how to write outputs to CSV file
+
+
+#### Wednesday June 29th ####
+- [ ] 
+
+Things to do:  
+- [ ] 
+
+#### Thursday June 30th ####
+- [ ]  
+
+
+Things to do: 
+- [ ] 
+
+#### Friday June 31th ####
+- [ ] 
+
+
+
 
