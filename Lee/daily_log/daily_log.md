@@ -152,7 +152,7 @@ Things to do:
 - [ ] Zhuoru & Kojo meeting next Monday
 
 ----------------------------------------------
-### Week 4: 6/27 to 7/1 ###
+### Week 5: 6/27 to 7/1 ###
 #### Monday June 27th ####
 - [x] Debugged all day: last deployed the gpu-stress-test ```kubectl run gpu-test --image=waggle/gpu-stress-test:1.0.1 --attach=true```
 - [x] Had a meeting with Yongho to discuss about the summer internship plan (IT WAS GREAT!!!!!!) 
@@ -188,3 +188,22 @@ Things to do:
 
 Things to do:  
 - [ ] Finishing the Ansible script by July 15th
+
+----------------------------------------------
+### Week 7: 7/4 to 7/8 ###
+#### Monday July 4th (Happy July 4th!)
+
+#### Tuesday July 5th ####
+- [x] Installed pip Ansible on Nano. First of all, it requires to switch the python version to install pip as there are two python versions on linux. If the command line ```curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10 (e.g.)``` runs, it will show the moduleNotFoundError: No module named 'distutils.cmd' for example.  
+```sudo apt update```  
+```alias python='/usr/bin/python3.6```  
+```sudo update-alternatives --config python3```  
+```python -m pip install --upgrade pip```  
+```python -m pip install --user ansible```  
+```python3 -m pip show ansible```  
+
+Things to do:  
+- [ ] Finishing up reading the Ansible tutorials
+
+#### Wednesday July 6th ####
+- [x] 
