@@ -200,3 +200,7 @@ Current Wavelab Magma 5G Capabilities (as of Jan 2022):
 - Looks like it is originally built to interface with LTE systems as a means to create a 5G-like system that controls 4G so transitioning to 5G would be easier 
   - it says with it just takes some adjustment to use RAN 
 - Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
+
+# Open Air Interface 5G Core Network
+
+[OAI 5G CN Home](https://openairinterface.org/oai-5g-core-network-project/)
