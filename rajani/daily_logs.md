@@ -107,3 +107,35 @@
 - Formed a hybrid neural network in which the Resnet50 used in the VICReg paper was replaced by the vision transformer used in DINO
 - Assessed performance of the hybrid network on anomaly detection and found that it could distinguish between training images (two classes of dogs) and anomalous images (beverages) using the covariance term, but only for large batch sizes (e.g., 64), and not on the scale of individual images
 - Implemented a basic autoencoder for anomaly detection, which I will adapt to audio spectrograms next week
+
+## Week 4
+
+### Monday, June 27
+
+- Wrote a convolutional autoencoder to reconstruct audio spectrograms based on basic last week's basic autoencoder, with the plan to monitor reconstruction error to detect anomalies
+- Met with Dario to discuss some alternate approaches for anomaly detection
+
+### Tuesday, June 28
+
+- Debugged and tried out many layer combinations for the autoencoder
+- Evaluated performance of different network architectures based on training loss, monitored by viewing plot in Tensorboard
+
+### Wednesday, June 29
+
+- Career Day!
+
+### Thursday, June 30
+
+- Wrote an evaluation script to reconstruct audio from spectrograms and to display original and reconstructed spectrograms
+- Evaluated chosen network architecture to assess whether reconstruction performance increased as training proceeded
+
+### Friday, July 1
+
+- Tested out several hyperparameters of model (batch size, learning rate, etc.)
+- Learned how to use Singularity, and created an image to prepare convolutional autoencoder for ThetaGPU training
+
+## Week 5
+
+### Monday, July 4
+
+- Holiday!
