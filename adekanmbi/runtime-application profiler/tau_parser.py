@@ -2,7 +2,7 @@
 
 
 """A python script to convert TAU profiles to JSON 
-    copied online but modified by me
+    copied from TAU/tools 
 """
 
 from __future__ import print_function
