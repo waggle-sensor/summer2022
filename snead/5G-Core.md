@@ -1,5 +1,10 @@
 # 5G Core Information
-This is where I'm compiling my research about different open source 5G Core organizations. 
+This is where I'm compiling my research about different open source 5G Core organizations. These include:
+- [ONAP](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#onap)
+- [free5GC](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
+- [Aether](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#aether-onf) and [SD-Core](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#sd-core)
+- [Magma](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#magma)
+- [Open Air Interface 5G CN](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#open-air-interface-5g-core-network)
 ### Helpful 5GC Resources
 - [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
 - Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
