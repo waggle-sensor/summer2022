@@ -2,6 +2,24 @@
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
 ## Week 4: 7/5 to 7/8
+### Wednesday 7/6
+- researched [Magma core](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#magma)
+  - meant to interface with existing 4G systems, would need to work with 3rd party developer to use the architecture for 5G
+  - the 3rd party isn't as developed as other 5G cores
+  - extensive documentation, though!
+- researched [OAI 5G CN](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#open-air-interface-5g-core-network)
+  - little to no documentation
+  - not all 5G functions are developed yet
+  - would not recommend
+- started on comparison matrix, very much a WIP
+  - thinking about what charcteristics/features should be prioritized, maybe want two matricies? One for logistics end and one for cool features and capabilities?
+- started looking into the specifics of how these cores will talk to pre-existing RAN, needs more research
+- There are almost literally no user reviews of these cores, we will have to go on inflated org. language alone
+#### To Do
+- daily reminder to try downlinking...... _soon..._
+- look into 3GPP interface between core and RAN
+- continue on comparison matrix and discuss the rough draft with Joaquin
+- Log into Nokia DAC OSS
 ### Tuesday 7/5
 - morning!
 - Joaquin is checking in with Nokia about the phones and Linux. Radios are down, not sure when I'll get back into the lab
