@@ -57,3 +57,7 @@ June 30th
   - Set up my vscode to experiment with CGANs model found online (shell script created)
   - First testing aroung with the MNIST dataset to experiment
   - Asked Dario about how to modify this model to mimic the research paper's
+  
+July 5th
+  - Spent majority of time using Pandas to organize the researcher's data
+  - Utilized matplot to plot the data
