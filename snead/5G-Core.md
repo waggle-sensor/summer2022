@@ -25,6 +25,8 @@ So far it looks like mmWave Radios and our equipment can be controlled using an 
 
 Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
 
+[PNF Plug and Play Use Case](https://wiki.onap.org/display/DW/R8+PNF+Plug+and+Play+Use+Case) shows there is a method to register and operate Physical NF
+
 ## Attributes
 - Automated closed-loop management
   - takes a little more set up at the beginning to design and manage
