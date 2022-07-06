@@ -25,7 +25,9 @@ So far it looks like mmWave Radios and our equipment can be controlled using an 
 
 Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
 
-### Attributes
+[PNF Plug and Play Use Case](https://wiki.onap.org/display/DW/R8+PNF+Plug+and+Play+Use+Case) shows there is a method to register and operate Physical NF
+
+## Attributes
 - Automated closed-loop management
   - takes a little more set up at the beginning to design and manage
 - Portal function makes interacting with ONAP system more accessible
@@ -36,6 +38,11 @@ Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-
 - Can't find much evidence of user support, ie being able to contact a developer to get help
 - One-time-pay [eLearning course](https://training.linuxfoundation.org/training/onap-fundamentals/) on specifics of how to use and interact with ONAP 
 - Being very robust means a lot of RAM and processing power required
+
+## Reviews
+This '[UBiqube article](https://ubiqube.com/onap-is-no-automation-panacea-quite-the-opposite-by-design/) thinks ONAP is overly complex, requires training to understand (I agree), with a high learning curve.
+
+This was the only review I could find
 
 # free5GC
 An opensource 5G Core that can be used commercially without any licensing. To gain access to training, seminars, and tech support you must pay for [membership](https://www.free5gc.org/membership/)
@@ -84,6 +91,7 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 - [Forum](https://forum.free5gc.org/) for asking questions!
 - Pay wall (annual membership fee) for training and seminar access, but that's not too unique 
 - run and managed entirely through Linux CLI
+- Online videos and documentation for install and use
 
 # Aether (ONF)
 > "Aether is the first open source 5G Connected Edge platform for enabling enterprise digital transformation. It provides mobile connectivity and edge cloud services for distributed enterprise networks as a cloud managed offering. Aether is an open source platform optimized for multi-cloud deployments, and simultaneous support for wireless connectivity over **licensed, unlicensed and lightly-licensed (CBRS) spectrum."** \- Aether website
@@ -153,3 +161,70 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 - [Aether-in-a-Box](https://docs.sd-core.opennetworking.org/master/developer/aiab.html#aiab-guide) can be deployed on a simple computer then scaled up
 - [gNB Simulator](https://docs.sd-core.opennetworking.org/master/developer/gnbsim.html) for testing the core?
 
+# Magma
+
+[Magma Home Page](https://magmacore.org/)
+
+[Magma Documentation](https://docs.magmacore.org/docs/basics/introduction.html)
+
+[Software Requirements](https://docs.magmacore.org/docs/basics/prerequisites#prerequisites) and [Hardware Requirements](https://docs.magmacore.org/docs/basics/prerequisites#production-hardware) including needs for Access Gatewas and RAN 
+
+## Architecture
+![magma Architecture](https://user-images.githubusercontent.com/107580325/177576609-2ef4e7ff-cf21-493e-9e12-898dfa895f73.png)
+
+(Image and following decription from Magma documentation)
+
+- **Access Gateway (AGW):** provides network services and policy enforcement. In an LTE network, the AGW implements an evolved packet core (EPC), and a combination of an AAA and a PGW. It works with existing, unmodified commercial radio hardware.
+  - <img src="https://user-images.githubusercontent.com/107580325/177583060-e7e32f2e-e912-4d1f-845f-a690a783e27a.png" width="300" height="350">
+  - _enodebd_ manages eNBs (supports TR-069 management interface), _mobilityd_ manages subscriber mobility, _control_proxy_ proxies control-plane traffic between AGW and Orch., _magmad_ parent service that orchestrates all others, for more info on all services see the [AGW docs](https://docs.magmacore.org/docs/lte/architecture_overview#architecture-overview)
+- **Orchestrator:** configures and monitors the network, and can be hosted publicly or privately. [Magma web UI (NMS)](https://docs.magmacore.org/docs/nms/nms_arch_overview#overview) allows access to analytics and other info. Composed of two components
+  - A standardized, vendor-agnostic northbound REST API which exposes configuration and metrics for network devices
+  - A southbound interface which applies device configuration and reports device status
+  - <img src="https://user-images.githubusercontent.com/107580325/177586755-e423cddc-0f93-40f9-95e6-c9c4ea59048e.png" width="350" height="300">
+  - Network entity configuration (networks, gateway, subscribers, policies, etc.), metrics querying via Prometheus and Grafana, event and log aggregation via Fluentd and Elasticsearch Kibana, config streaming for gateways, subscribers, policies, etc., device state reporting (metrics and status), request relaying between access gateways and federated gateways
+  - Supports some [extensions](https://docs.magmacore.org/docs/orc8r/architecture_modularity#overview) to functionality that can either push data out to or recieve data from core services
+  - For more detailed info, see [Orch. docs](https://docs.magmacore.org/docs/orc8r/architecture_overview#architecture-overview)
+- **Federation Gateway:** integrates the Mobile Network Provider (MNO) core network with Magma by using standard 3GPP interfaces to existing MNO components. It acts as a proxy between the Magma AGW and the operator's network and facilitates core functions, such as authentication, data plans, policy enforcement, and charging to stay uniform between an existing MNO network and the expanded network with Magma.
+
+## Deploying for 5G
+Must partner with [Wavelabs](https://magmacore.org/wavelabs/) or [Radtonics](https://www.radtonics.com/) to deploy Magma for 5G. 
+
+Current Wavelab Magma 5G Capabilities (as of Jan 2022):
+- Registration, 5G specific authentication, PDU session estab., idle mode paging, service request, UE init. session release and de-registration, dynamic policy support & 5G QOS, usage reporting & charging
+  - pulled from this [video](https://youtu.be/KkNp3vJZc24?t=1837) that you can watch for more info (here's the [GitHub link](https://github.com/magma/magma/tree/80493f7c96a5500063f1f57e2962ea9f7da624b8/lte/gateway/c/core/oai/tasks) he talks about at [45:00](https://youtu.be/KkNp3vJZc24?t=2699))
+- as of Feb 2022 (?): stateless network function, basic IPv6 support, network initiated session modification
+- [Future Dev](https://youtu.be/ynsORXa_OI8)
+  - not yet implemented network slicing (talking to ONAP community to learn more, unsure when it will be available
+  - some implemented [private network use cases](https://youtu.be/ynsORXa_OI8?t=2058)
+- Wavelab has a Slack you can join with a dedicated 5G support channel
+
+## Attributes
+- Part of the Linux Foundation
+- Does not run on windows. macOS preferred, also runs on Ubuntu
+- "Add capacity and reach by using Wi-Fi and CBRS even when constrained with licensed spectrum." - Magma Home Page
+  - yet to find anything to this end
+- Built for service providers: what does that mean?
+  - AGW is built to interface with a preexisting LTE Gateway (is this required?)
+- Looks like it is originally built to interface with LTE systems as a means to create a 5G-like system that controls 4G so transitioning to 5G would be easier 
+  - it says with it just takes some adjustment to use RAN 
+- Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
+
+# Open Air Interface 5G Core Network
+> "The scope of 5G CN project developments is to deliver a 3GPP compliant 5G Core Network under the OAI Public License V1.1. OpenAirInterface CN 5G project is one of the main projects under OSA’s umbrella. The main objective is to develop a fully 3GPP compatible 5G CN stack as an open-source software for the OAI community. In the scope of this project, we focus only on Standalone Mode." - OAI 5G Page
+[OAI 5G CN Home](https://openairinterface.org/oai-5g-core-network-project/)
+
+[OAI 5G Gitlab](https://gitlab.eurecom.fr/oai/cn5g)
+
+## Architecture
+![OAI 5G Architecture](https://user-images.githubusercontent.com/107580325/177624977-d32e45e8-57c2-435f-9e31-a7c1c21c2dca.png)
+
+(Image from OAI 5G Home Page)
+
+![Future Development Roadmap](https://user-images.githubusercontent.com/107580325/177625214-77bd317f-5bcc-43a9-9b1c-dd4b465c6018.png)
+
+(Future Development Roadmap, Image from OAI 5G Home Page)
+## Attributes
+- runs on Ubuntu
+- has most 5G functionalities tested, missing some as can be seen from the architecture picture
+- Little to no documentation, I wouldn't know how to install this
+- As far as I can tell, built to work with their preexisting RAN (?)
