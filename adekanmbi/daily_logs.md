@@ -307,7 +307,7 @@ Things to added to dockerfile.
 
 #### Monday July 4, 2022 ####
 
-- Independence day with
+- Independence day
 
 #### Monday July 5, 2022 ####
 
