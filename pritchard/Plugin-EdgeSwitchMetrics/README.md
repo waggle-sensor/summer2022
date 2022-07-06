@@ -1,9 +1,14 @@
 # What is this file?
 This file contains the necessary files to take various metrics from a locally connected edgeswitch8 via its local api. 
 These metrics currently include basic measurements of the POE wattage consumed per each port, as well as wether the port was disconnected or connected to a power consuming device over the period of testing.
+<br />
+All librarys currently used are common:
+<br />
+![image](https://user-images.githubusercontent.com/106760508/177654319-2e67b8ae-99bf-4d99-a3b0-6765ebd82d01.png)
+<br />
 # Example of running the file
 It is intended to be run with python3.
-example:
+Example of running code:
 <br />
 ![image](https://user-images.githubusercontent.com/106760508/177652188-d9b7ca2e-2042-4724-879b-64c3bdc0a2e6.png)
 <br />
