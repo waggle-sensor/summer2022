@@ -202,5 +202,21 @@ Current Wavelab Magma 5G Capabilities (as of Jan 2022):
 - Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
 
 # Open Air Interface 5G Core Network
-
+> "The scope of 5G CN project developments is to deliver a 3GPP compliant 5G Core Network under the OAI Public License V1.1. OpenAirInterface CN 5G project is one of the main projects under OSA’s umbrella. The main objective is to develop a fully 3GPP compatible 5G CN stack as an open-source software for the OAI community. In the scope of this project, we focus only on Standalone Mode." - OAI 5G Page
 [OAI 5G CN Home](https://openairinterface.org/oai-5g-core-network-project/)
+
+[OAI 5G Gitlab](https://gitlab.eurecom.fr/oai/cn5g)
+
+## Architecture
+![OAI 5G Architecture](https://user-images.githubusercontent.com/107580325/177624977-d32e45e8-57c2-435f-9e31-a7c1c21c2dca.png)
+
+(Image from OAI 5G Home Page)
+
+![Future Development Roadmap](https://user-images.githubusercontent.com/107580325/177625214-77bd317f-5bcc-43a9-9b1c-dd4b465c6018.png)
+
+(Future Development Roadmap, Image from OAI 5G Home Page)
+## Attributes
+- runs on Ubuntu
+- has most 5G functionalities tested, missing some as can be seen from the architecture picture
+- Little to no documentation, I wouldn't know how to install this
+- As far as I can tell, built to work with their preexisting RAN (?)
