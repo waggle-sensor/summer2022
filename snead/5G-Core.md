@@ -25,7 +25,7 @@ So far it looks like mmWave Radios and our equipment can be controlled using an 
 
 Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
 
-### Attributes
+## Attributes
 - Automated closed-loop management
   - takes a little more set up at the beginning to design and manage
 - Portal function makes interacting with ONAP system more accessible
@@ -36,6 +36,11 @@ Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-
 - Can't find much evidence of user support, ie being able to contact a developer to get help
 - One-time-pay [eLearning course](https://training.linuxfoundation.org/training/onap-fundamentals/) on specifics of how to use and interact with ONAP 
 - Being very robust means a lot of RAM and processing power required
+
+## Reviews
+This '[UBiqube article](https://ubiqube.com/onap-is-no-automation-panacea-quite-the-opposite-by-design/) thinks ONAP is overly complex, requires training to understand (I agree), with a high learning curve.
+
+This was the only review I could find
 
 # free5GC
 An opensource 5G Core that can be used commercially without any licensing. To gain access to training, seminars, and tech support you must pay for [membership](https://www.free5gc.org/membership/)
@@ -84,6 +89,7 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 - [Forum](https://forum.free5gc.org/) for asking questions!
 - Pay wall (annual membership fee) for training and seminar access, but that's not too unique 
 - run and managed entirely through Linux CLI
+- Online videos and documentation for install and use
 
 # Aether (ONF)
 > "Aether is the first open source 5G Connected Edge platform for enabling enterprise digital transformation. It provides mobile connectivity and edge cloud services for distributed enterprise networks as a cloud managed offering. Aether is an open source platform optimized for multi-cloud deployments, and simultaneous support for wireless connectivity over **licensed, unlicensed and lightly-licensed (CBRS) spectrum."** \- Aether website
