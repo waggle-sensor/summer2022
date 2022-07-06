@@ -7,8 +7,8 @@ All librarys currently used are common:
 ![image](https://user-images.githubusercontent.com/106760508/177654319-2e67b8ae-99bf-4d99-a3b0-6765ebd82d01.png)
 <br />
 # Example of running the file
-It is intended to be run with python3.
-Example of running code:
+It is intended to be run with python3. Over the test period data is pulled from the api multiple times in order to find metrics that
+Example of running code: are true over the sample period
 <br />
 ![image](https://user-images.githubusercontent.com/106760508/177652188-d9b7ca2e-2042-4724-879b-64c3bdc0a2e6.png)
 <br />
