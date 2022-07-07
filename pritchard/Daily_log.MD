@@ -355,11 +355,46 @@ Things to do:
 - [ ] look into "warning keyring is skipped, failed to download keyring error"
 
 #### Thursday June 30th ####
-- [ ]  
+- [ ] Recorded previous day's journal
+- [ ] Added List of queues system to store events
+ ```
+import queue
+wattagerecorders=[queue.Queue() for i in range(8)] #ceates list of 8 ques for different ports
+ ```
+- [ ] Altered input testing logic to better fit new storing system
+ ```
+   if poePower!=0:#checks to see if anything currently plugged in
+                        isoncurrent[x]= True
+                else:
+                        isoncurrent[x]= False
+                if y==0|isonrecent[x]!=isoncurrent[x]:#checks to make sure that either this is the first iteration or something has been unplugged/pluggedin
+                        wattagerecorders[x].put(datetime.datetime.now())#stores the changes with when they occured
+                        wattagerecorders[x].put(isoncurrent[x])
+                isonrecent[x]=isoncurrent[x]     
+ ```
+- [ ] Added code to identify and store date and time per event occurance
+ ```
+ wattagerecorders[x].put(datetime.datetime.now())#stores the changes with when they occured
+ ```
+- [ ] Added code to print individual que to csv file by first converting it to a list
+ ```
+ header2 = ['started on', 'every time it changed', 'what it changed to each time']
+que = list(wattagerecorders[0].queue)
+with open('edgeswitch.csv', 'A', encoding='UTF8') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerow(Port1)
+        writer.writerow(header2)
+        writer.writerow(que)
+ ```
+- [ ] Displayed demo of progress to Raj
+- [ ] Talked to Raj about what he wants in project: whole json objects stored in que and then parsed as we need from buffer
 
 
 Things to do: 
-- [ ] 
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] figure out full system of storing json objects, then recalling and analizing them
 
 #### Friday June 31th ####
 - [ ] 
