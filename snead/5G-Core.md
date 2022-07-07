@@ -276,10 +276,12 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
 **NSSF:** Network Slice Selection Function  <br>
 **PCF:** Policy Control Function  <br>
 **PNF:** Physical Network Function, most radios and physical equipment  <br>
-**SAS:** Spectrum Access System		<br>
+**RAN:** Radio Access Network, series of cllular connection nodes <br>
+**SAS:** Spectrum Access System <br>
 **SMF:** Session Management Function  <br>
 **UDM:** Unified Data Management  <br>
 **UDR:** Unified Data Repository  <br>
+**UE:** User Equipment, e.g. phones, modem, cars
 **UPF:** User Plane Function  <br>
-**URLLC:** Ultra-Reliable Low Latency Connection <br>  
+**URLLC:** Ultra-Reliable Low Latency Connection <br>
 **VNF:** Virutal Network Function, cloud based or otherwise virtual version of NFs <br>  
