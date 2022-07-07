@@ -5,6 +5,8 @@ This is where I'm compiling my research about different open source 5G Core orga
 - [Aether](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#aether-onf) and [SD-Core](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#sd-core)
 - [Magma](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#magma)
 - [Open Air Interface 5G CN](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#open-air-interface-5g-core-network)
+
+Please also see my working [glossary](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#glossary) at the end of this page
 ### Helpful 5GC Resources
 - [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
 - Explanation of [5G Core Architecture](https://www.digi.com/blog/post/5g-network-architecture)
@@ -25,12 +27,15 @@ All pictures and information compiled from [ONAP's Architecture page](https://do
 
 ## Integrating COTS Radios
 So far it looks like mmWave Radios and our equipment can be controlled using an ONAP's SDN controller for ‘Radio’ (SDN-R), an additional service you can integrate into the run-time model. It's a part of their ONAP component, SDN-Controller. Once set up, the user could open the SDN-R portal and see which devices are connected (and manually mount radios, if needed). 
+[SDNC Documentation](https://docs.onap.org/projects/onap-sdnc-oam/en/latest/index.html#master-index) is currently missing, so unsure?
 
 ![image](https://user-images.githubusercontent.com/107580325/176289800-2dbdf6bd-9397-4a30-9d91-4cc5e908bf1d.png)
 
 Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-features/en/honolulu/guides/onap-user/home.html)
 
 [PNF Plug and Play Use Case](https://wiki.onap.org/display/DW/R8+PNF+Plug+and+Play+Use+Case) shows there is a method to register and operate Physical NF
+
+[RAN-Sim Setup guide](https://wiki.onap.org/display/DW/RAN-Sim+setup) could be relevant to configuration. I think as long as you have the SDN-R config information you can connect RAN?
 
 ## Attributes
 - Automated closed-loop management
@@ -90,6 +95,8 @@ free5GC has a [WebConsole](https://github.com/free5gc/webconsole) that allows yo
 
 Other videos they have show demos of how to [configure and run UE, RAN with free5GC](https://www.youtube.com/watch?v=WDy0TL4fPKI&ab_channel=free5GC)
 
+They have set up instructions for [connecting external RAN](https://github.com/free5gc/free5gc/wiki/Configuration#sample-configuration) and for connecting to [non-3GPP RAN](https://www.free5gc.org/installations/stage-3-free5gc/#b-run-the-n3iwf-individually)
+
 ## Attributes
 - Access to different versions in varying stages of 5G integration could be useful as Waggle begins migration to 5G
 - After initial configuration, it seems ready to go "off the shelf," so to speak
@@ -135,6 +142,16 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 
 > "SD-Core provides the 4G/5G connectivity and the SD-Core control plane at the central site controls multiple user plane components running at each Aether Edge site." \- from SD-C documentation
 >
+
+### SD-C Connection to COTS Radios and RAN
+[Test cases for RAN Emulator](https://docs.sd-core.opennetworking.org/master/testing/sdcore_testing.html)
+
+SD-Core is [compliant](https://docs.sd-core.opennetworking.org/master/overview/3gpp-compliance-5g.html?highlight=ran) with UE registration and de-registration, NRF NF registration. Otherwise, it is vague how you would connect
+
+[Config with SimApp](https://docs.sd-core.opennetworking.org/master/configuration/config_simapp.html) has a section about gNB names?
+
+[WebConsole](https://github.com/omec-project/webconsole) facilitates communication to NFs and manages configuration. I think this is where we would find out
+
 ## SD-Fabric
 > "SD-Fabric is an open source, full stack, deeply programmable network fabric optimized for edge cloud, 5G, and Industry 4.0 applications." - SD-Fabric Documentation
 
@@ -175,23 +192,26 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 [Software Requirements](https://docs.magmacore.org/docs/basics/prerequisites#prerequisites) and [Hardware Requirements](https://docs.magmacore.org/docs/basics/prerequisites#production-hardware) including needs for Access Gatewas and RAN 
 
 ## Architecture
-![magma Architecture](https://user-images.githubusercontent.com/107580325/177576609-2ef4e7ff-cf21-493e-9e12-898dfa895f73.png)
 
+![magma Architecture](https://user-images.githubusercontent.com/107580325/177576609-2ef4e7ff-cf21-493e-9e12-898dfa895f73.png) 
 (Image and following decription from Magma documentation)
 
 - **Access Gateway (AGW):** provides network services and policy enforcement. In an LTE network, the AGW implements an evolved packet core (EPC), and a combination of an AAA and a PGW. It works with existing, unmodified commercial radio hardware.
   - <img src="https://user-images.githubusercontent.com/107580325/177583060-e7e32f2e-e912-4d1f-845f-a690a783e27a.png" width="300" height="350">
   - _enodebd_ manages eNBs (supports TR-069 management interface), _mobilityd_ manages subscriber mobility, _control_proxy_ proxies control-plane traffic between AGW and Orch., _magmad_ parent service that orchestrates all others, for more info on all services see the [AGW docs](https://docs.magmacore.org/docs/lte/architecture_overview#architecture-overview)
-- **Orchestrator:** configures and monitors the network, and can be hosted publicly or privately. [Magma web UI (NMS)](https://docs.magmacore.org/docs/nms/nms_arch_overview#overview) allows access to analytics and other info. Composed of two components
+- **Orchestrator (Orch8r):** configures and monitors the network, and can be hosted publicly or privately. [Magma web UI (NMS)](https://docs.magmacore.org/docs/nms/nms_arch_overview#overview) allows access to analytics and other info. Composed of two components
   - A standardized, vendor-agnostic northbound REST API which exposes configuration and metrics for network devices
   - A southbound interface which applies device configuration and reports device status
   - <img src="https://user-images.githubusercontent.com/107580325/177586755-e423cddc-0f93-40f9-95e6-c9c4ea59048e.png" width="350" height="300">
   - Network entity configuration (networks, gateway, subscribers, policies, etc.), metrics querying via Prometheus and Grafana, event and log aggregation via Fluentd and Elasticsearch Kibana, config streaming for gateways, subscribers, policies, etc., device state reporting (metrics and status), request relaying between access gateways and federated gateways
   - Supports some [extensions](https://docs.magmacore.org/docs/orc8r/architecture_modularity#overview) to functionality that can either push data out to or recieve data from core services
-  - For more detailed info, see [Orch. docs](https://docs.magmacore.org/docs/orc8r/architecture_overview#architecture-overview)
-- **Federation Gateway:** integrates the Mobile Network Provider (MNO) core network with Magma by using standard 3GPP interfaces to existing MNO components. It acts as a proxy between the Magma AGW and the operator's network and facilitates core functions, such as authentication, data plans, policy enforcement, and charging to stay uniform between an existing MNO network and the expanded network with Magma.
+  - For more detailed info, see [Orch8r docs](https://docs.magmacore.org/docs/orc8r/architecture_overview#architecture-overview)
+- **Federation Gateway (FeG):** integrates the Mobile Network Provider (MNO) core network with Magma by using standard 3GPP interfaces to existing MNO components. It acts as a proxy between the Magma AGW and the operator's network and facilitates core functions, such as authentication, data plans, policy enforcement, and charging to stay uniform between an existing MNO network and the expanded network with Magma.
+- **Domain Proxy (DP):** Vendor neutral Domain Proxy serves as a single point of contact for eNB-SAS communication for private networks using Magma as the Operator Core. Without a Domain Proxy an eNB has to request for SAS Spectrums/Grants on its own, which is not typical. 
+	- <img src="https://user-images.githubusercontent.com/107580325/177859453-3041edb2-4bb6-4f76-946a-b3088dec0414.png" width="600" height="300">
 
 ## Deploying for 5G
+
 Must partner with [Wavelabs](https://magmacore.org/wavelabs/) or [Radtonics](https://www.radtonics.com/) to deploy Magma for 5G. 
 
 Current Wavelab Magma 5G Capabilities (as of Jan 2022):
@@ -203,7 +223,17 @@ Current Wavelab Magma 5G Capabilities (as of Jan 2022):
   - some implemented [private network use cases](https://youtu.be/ynsORXa_OI8?t=2058)
 - Wavelab has a Slack you can join with a dedicated 5G support channel
 
+### Connecting to COTS Radios and such
+
+enodebd service in AGW manages eNBs (compatible with TR-069 management interface) but unsure about connection to 5G RAN equipment. They have tested with the following [eNBs](https://docs.magmacore.org/docs/basics/prerequisites#ran-equipment):
+- Baicells Nova 233 TDD Outdoor
+- Baicells Nova 243 TDD Outdoor
+- Assorted Baicells indoor units (for lab deployments)
+
+In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview), it looks like most of the radio interface is 4G based, so will have to see at the Wavelabs 5G webinar.
+
 ## Attributes
+
 - Part of the Linux Foundation
 - Does not run on windows. macOS preferred, also runs on Ubuntu
 - "Add capacity and reach by using Wi-Fi and CBRS even when constrained with licensed spectrum." - Magma Home Page
@@ -215,21 +245,41 @@ Current Wavelab Magma 5G Capabilities (as of Jan 2022):
 - Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
 
 # Open Air Interface 5G Core Network
-> "The scope of 5G CN project developments is to deliver a 3GPP compliant 5G Core Network under the OAI Public License V1.1. OpenAirInterface CN 5G project is one of the main projects under OSA’s umbrella. The main objective is to develop a fully 3GPP compatible 5G CN stack as an open-source software for the OAI community. In the scope of this project, we focus only on Standalone Mode." - OAI 5G Page
+
+> "The scope of 5G CN project developments is to deliver a 3GPP compliant 5G Core Network under the OAI Public License V1.1. OpenAirInterface CN 5G project is one of the main projects under OSA’s umbrella. The main objective is to develop a fully 3GPP compatible 5G CN stack as an open-source software for the OAI community. In the scope of this project, we focus only on Standalone Mode." - OAI 5G Page 
+
 [OAI 5G CN Home](https://openairinterface.org/oai-5g-core-network-project/)
 
 [OAI 5G Gitlab](https://gitlab.eurecom.fr/oai/cn5g)
 
 ## Architecture
-![OAI 5G Architecture](https://user-images.githubusercontent.com/107580325/177624977-d32e45e8-57c2-435f-9e31-a7c1c21c2dca.png)
 
+![OAI 5G Architecture](https://user-images.githubusercontent.com/107580325/177624977-d32e45e8-57c2-435f-9e31-a7c1c21c2dca.png)  
 (Image from OAI 5G Home Page)
 
-![Future Development Roadmap](https://user-images.githubusercontent.com/107580325/177625214-77bd317f-5bcc-43a9-9b1c-dd4b465c6018.png)
-
+![Future Development Roadmap](https://user-images.githubusercontent.com/107580325/177625214-77bd317f-5bcc-43a9-9b1c-dd4b465c6018.png) 
 (Future Development Roadmap, Image from OAI 5G Home Page)
+
 ## Attributes
+
 - runs on Ubuntu
 - has most 5G functionalities tested, missing some as can be seen from the architecture picture
 - Little to no documentation, I wouldn't know how to install this
-- As far as I can tell, built to work with their preexisting RAN (?)
+- As far as I can tell, built to work with their preexisting [RAN](https://openairinterface.org/oai-5g-ran-project/) which looks pretty robust upon first inspection (?)
+
+# Glossary
+
+**AMF:** Access and Mobility Management Function, receives all session and connection related info from the UE. Forwards session info to SMF <br>
+**AUSF:** Authentication Server Function, receives authentication requests from AMF, works with UDM to mkae sure a User can gain access <br>
+**N3IWF:** Non-3GPP Interworking Function <br>
+**NRF:** Network function Repository Function, provides record of all NFs available <br>
+**NSSF:** Network Slice Selection Function  <br>
+**PCF:** Policy Control Function  <br>
+**PNF:** Physical Network Function, most radios and physical equipment  <br>
+**SAS:** Spectrum Access System		<br>
+**SMF:** Session Management Function  <br>
+**UDM:** Unified Data Management  <br>
+**UDR:** Unified Data Repository  <br>
+**UPF:** User Plane Function  <br>
+**URLLC:** Ultra-Reliable Low Latency Connection <br>  
+**VNF:** Virutal Network Function, cloud based or otherwise virtual version of NFs <br>  
