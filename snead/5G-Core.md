@@ -235,6 +235,7 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
 ## Attributes
 
 - Part of the Linux Foundation
+- [Training!](https://training.linuxfoundation.org/training/introduction-to-magma-cloud-native-wireless-networking-lfs166x/)
 - Does not run on windows. macOS preferred, also runs on Ubuntu
 - "Add capacity and reach by using Wi-Fi and CBRS even when constrained with licensed spectrum." - Magma Home Page
   - yet to find anything to this end
