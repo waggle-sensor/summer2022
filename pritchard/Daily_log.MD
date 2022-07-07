@@ -340,7 +340,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 ```
 - [ ] Spoke with Raj about current progress in project, was directed to focus on using a que to record events
-- [ ] Created new file in repo to contain current progress in project, as well as a readme to describe that progress
+- [ ] Created new file caled Plugin-EdgeSwitchMetrics in repo to contain current progress in project, as well as a readme to describe that progress
 - [ ] Spoke to Abayomi about how to use the pywaggle system to set up ifrustructure to send data while still being able to see it locally by setting up a local directory and directing pywaggle to send its logs there via command line, plugin-logls is the name of the directory
 ```
 env PYWAGGLE_LOG_DIR=/plugin-logls 
