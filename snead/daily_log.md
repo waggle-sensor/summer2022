@@ -10,6 +10,7 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 - Checked the RAN and UE connection methods for each 5G core (this took longer than expected, documentation is a little convoluted)
   - Magma and OAI seem to rely exclusively on their internal RANs, and I'm unsure if you can connect your own COTS systems. Magma talks about 3GPP compliance a lot
 - Working on decision matrix, almost finished with rough draft??
+- Added glossary to 5G research page
 
 #### To Do
 - doooowwwnliiinnk
