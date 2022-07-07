@@ -2,14 +2,21 @@
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
 ## Week 4: 7/5 to 7/8
+
 ### Thursday 7/7
+
 - Tried logging into Nokia DAC and I get rejected
   - I am working from home this week so I will try it again on the Argonne WiFi and see
+- Checked the RAN and UE connection methods for each 5G core (this took longer than expected, documentation is a little convoluted)
+  - Magma and OAI seem to rely exclusively on their internal RANs, and I'm unsure if you can connect your own COTS systems
+- Working on decision matrix
+
 #### To Do
 - doooowwwnliiinnk
 - Try Nokia DAC on Monday
 
 ### Wednesday 7/6
+
 - researched [Magma core](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#magma)
   - meant to interface with existing 4G systems, would need to work with 3rd party developer to use the architecture for 5G
   - the 3rd party isn't as developed as other 5G cores
@@ -22,7 +29,9 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
   - thinking about what charcteristics/features should be prioritized, maybe want two matricies? One for logistics end and one for cool features and capabilities?
 - started looking into the specifics of how these cores will talk to pre-existing RAN, needs more research
 - There are almost literally no user reviews of these cores, we will have to go on inflated org. language alone
+
 #### To Do
+
 - daily reminder to try downlinking...... _soon..._
 - look into 3GPP interface between core and RAN
 - continue on comparison matrix and discuss the rough draft with Joaquin
