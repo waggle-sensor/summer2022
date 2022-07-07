@@ -273,7 +273,7 @@ Things to do:
 - [ ] successfully accessed and parsed data from EdgeSwitch 8
 - [ ] ![image](https://user-images.githubusercontent.com/106760508/176968684-959c4733-54df-4bb4-a4a6-b44d601e7a6f.png)
 - [ ] ![image](https://user-images.githubusercontent.com/106760508/176968819-f7d14522-4b78-4139-b6a8-c742f23132e3.png)
-- [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
+- [ ] my code essentially accepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific 
  
 ### Week 3: 7/5 to 6/31 ###
@@ -286,22 +286,115 @@ Things to do:
 
 Things to do:
 - [ ] fix bugs in code
-- [ ] creat system fr reognizing consistent change in POE levels
+- [ ] create system for reognizing consistent change in POE levels
 - [ ] figure out how to write outputs to CSV file
 
 
 #### Wednesday June 29th ####
-- [ ] 
+- [ ] Attended seminar on how our oral and postor presentations will work
+- [ ] Fixed a bug in code that created a delay after each port read rather than after each iteration of reading all the ports
+```
+          print ("port", x+1)#line of code was here
+        print ("iterations=", y+1)
+        time.sleep(1) #set to 10 in final project # is now here
+
+```
+- [ ] Adjusted code for testing purposes: added testing print outs and decreased the delay, number of iterations and number of ports tested
+```
+for y in range(5): #iterations set to 30 in fianl project
+ for x in range(3): #iterates through each port, 8 in final
+ time.sleep(1) #set to 10 in final project
+ 
+ print (Averages[0])
+print (Maximums[0])
+print (Minimums[0])
+print (pluggschanged[0])
+```
+- [ ] Added code to allow for notation to determine if port had a power consuming device plugged in or unplugged during testing period
+```
+if pluggschanged[x]==0: #checks to make sure nothing was plugged into or unplugged from this port since beggining of test
+                        if poePower!=0:#checks to see if anything currently plugged in
+                                isoncurrent[x]= 'True'
+                        else:
+                                isoncurrent[x]= 'False'
+                        if y==0:
+                                isonoriginal[x]=isoncurrent[x]
+                        elif isonoriginal[x]!=isoncurrent[x]:
+                                if isonoriginal[x]== True:
+                                        pluggschanged[x]= 2 #something was unplugged at this port
+                                else:
+                                        pluggschanged[x]= 1 #something was plugged in at this port
+```
+- [ ] Added code to write results to csv file
+```
+header = ['minimums', 'maximums', 'averages', 'pluggschanged', 'Started plugged in']
+Port1 = [Minimums[0], Maximums[0], Averages[0], pluggschanged[0], isonoriginal[0]]
+with open('edgeswitch.csv', 'a', encoding='UTF8') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerow(Port1)
+```
+- [ ] Added code to ignore Insecure request warning
+```
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+```
+- [ ] Spoke with Raj about current progress in project, was directed to focus on using a que to record events
+- [ ] Created new file caled Plugin-EdgeSwitchMetrics in repo to contain current progress in project, as well as a readme to describe that progress
+- [ ] Spoke to Abayomi about how to use the pywaggle system to set up ifrustructure to send data while still being able to see it locally by setting up a local directory and directing pywaggle to send its logs there via command line, plugin-logls is the name of the directory
+```
+env PYWAGGLE_LOG_DIR=/plugin-logls 
+```
 
 Things to do:  
-- [ ] 
+- [ ] Talk with Raj about which additional variables we want take from api
+- [ ] Get Docker fully functional on loaned computer 
+- [ ] Set up a working heap system for event notifications
+- [ ] Ask about whether I need to use docker
+- [ ] Set up connection to Github repo from loaned computer for easy commits
+- [ ] look into "warning keyring is skipped, failed to download keyring error"
 
 #### Thursday June 30th ####
-- [ ]  
+- [ ] Recorded previous day's journal
+- [ ] Added List of queues system to store events
+ ```
+import queue
+wattagerecorders=[queue.Queue() for i in range(8)] #ceates list of 8 ques for different ports
+ ```
+- [ ] Altered input testing logic to better fit new storing system
+ ```
+   if poePower!=0:#checks to see if anything currently plugged in
+                        isoncurrent[x]= True
+                else:
+                        isoncurrent[x]= False
+                if y==0|isonrecent[x]!=isoncurrent[x]:#checks to make sure that either this is the first iteration or something has been unplugged/pluggedin
+                        wattagerecorders[x].put(datetime.datetime.now())#stores the changes with when they occured
+                        wattagerecorders[x].put(isoncurrent[x])
+                isonrecent[x]=isoncurrent[x]     
+ ```
+- [ ] Added code to identify and store date and time per event occurance
+ ```
+ wattagerecorders[x].put(datetime.datetime.now())#stores the changes with when they occured
+ ```
+- [ ] Added code to print individual que to csv file by first converting it to a list
+ ```
+ header2 = ['started on', 'every time it changed', 'what it changed to each time']
+que = list(wattagerecorders[0].queue)
+with open('edgeswitch.csv', 'A', encoding='UTF8') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerow(Port1)
+        writer.writerow(header2)
+        writer.writerow(que)
+ ```
+- [ ] Displayed demo of progress to Raj
+- [ ] Talked to Raj about what he wants in project: whole json objects stored in que and then parsed as we need from buffer
 
 
 Things to do: 
-- [ ] 
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] figure out full system of storing json objects, then recalling and analizing them
 
 #### Friday June 31th ####
 - [ ] 
