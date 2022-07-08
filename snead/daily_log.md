@@ -10,10 +10,14 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
   - Demo-ed a Docker containerized version of their Access Gateway, which is not yet ready for release, but is on their GitHub
     - Showed the Docker AGW being connected through the Orch8r portal, then connected a gNB/UE simulator to that AGW
   - Showed other features that will be part of the current 1.8 release
+- I wanna say the decision matrix is ready for feedback?
+- Went through Linux-Telit manual and I have some [ideas for debugging](https://github.com/waggle-sensor/summer2022/blob/main/snead/README.md#linux-and-telit) our shotty connection to the modules
 
 #### To Do
 
 - .....downlink :) I'm especially thinking about the SIM cards that can't connect to our computers. They are assigned an IP address, but the computer isn't connected to the cellular network, so what would downlinking do?
+- also as soon as our lab is functional, would love to try connecting to Linux again
+- get feedback on 5G core decision matrix
 
 ### Thursday 7/7
 
