@@ -53,7 +53,7 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
 - use [this ACM doc page](https://docs.kernel.org/usb/authorization.html) to check if new Telit modems are authorized for communication
 - Check kernel version is up-to-date to run [`option`](https://superuser.com/questions/691271/what-does-modprobe-option-do)
     - <img src="https://user-images.githubusercontent.com/107580325/178068703-6fe4c3bf-ab7a-4596-aa64-03fcd02bfa58.png" height="200" width="400">
-    - might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0)?
+    - might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
 - We might be able to use [libqmi project](https://gitlab.freedesktop.org/mobile-broadband/libqmi) to talk to the modem, but I'm doubtful
 - Is there a way to force the network manager wizard to open?
 
