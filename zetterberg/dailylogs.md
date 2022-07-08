@@ -149,6 +149,30 @@
 
 ---
 
+#### Monday June 27th, 2022
 
+- Worked on Creating an elbow plot of the clusters so that I can see the optimal number of clusters for my data
+- Worked on updating dailylogs and using Github
 
+#### Tuesday June 28th, 2022
 
+- Continued working on elbow plot and updating it
+- Studied Slurm and bash to begin running jobs directly on Bebop
+- Ran a test script for an elbow plot on Bebop
+
+#### Wednesday June 29th, 2022
+
+- Sage Career Day!
+
+#### Thursday June 30th, 2022
+
+- AI Alogrithm Students Group Meeting
+- Reran test script for an elbow plot on Bebop
+- Began working on heatmap for showing clusters in principal component space
+- Developed code for 2D histogram cluster plot
+- Plotted clusters in time-range space for every hour of 08/31
+
+#### Friday July 1st, 2022
+
+- Could not do much today because Firefox was not working on my desktop, and I use Firefox to use Jupyter
+- Wrote code to make a bar chart that shows label frequency versus time
