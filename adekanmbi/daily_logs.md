@@ -309,13 +309,22 @@ Things to added to dockerfile.
 
 - Independence day
 
-#### Monday July 5, 2022 ####
+#### Tuesday July 5, 2022 ####
 
 - Continued debug to run PAPI on Jetson NX
 
-#### Monday July 6, 2022 ####
+#### Wednesday July 6, 2022 ####
 
 - Started working on final presentation
 - Continued debug to run PAPI on Jetson NX
 - Created a docker compose for app profiling example
+
+#### Thursday July 7, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Friday July 8, 2022 ####
+
+- Worked on presentation and designing experiment.
+
 
