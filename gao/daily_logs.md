@@ -159,9 +159,9 @@ LSTM to predict solar irradiance based on cloud coverage in July
 
 |     | Goal | Priority | Notes |
 | --- | --- | --- | --- |
-| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul>
+| ❎ | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul>
 | ✅ | Write separate function to load data and set up into time series format | High | <ul><li>Takes a long time to run</li><li>Write out to some file</li><li>Needs to be re-run for different inputs and step sizes</li></ul> |
-| 🟩 | Research variations in LSTM models | Med | <ul><li>Some nice elementary explanations [x]</li></ul> |
+| 🟩 | Research variations in LSTM models | Med | <ul><li>Some nice elementary explanations [x](https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/)</li></ul> |
 | ✅ | Meet with Seongha | Low | <ul><li>Update on work accomplished thus far</li><li>Discuss future communication</li><li>Consider next steps</li></ul>|
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
@@ -218,6 +218,69 @@ LSTM to predict solar irradiance based on cloud coverage
 - Wrote script to delete unnecessary data files (i.e., dates which have data for only one of the two variables)
 - Worked on configuring GPU set up
     - Meet with Bobby next week for help
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
+
+# Week 6 (7/5 - 7/8)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| ✅ | Configure Jupyter to run GPU on Swing | High | <ul><li>Work with Bobby</li></ul> |
+| 🟩 | Implement early stopping | High |  |
+| ❎ | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul> |
+| 🟩 | Research variations in LSTM models | Low | <ul><li>Some nice elementary explanations [x](https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/)</li></ul> |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 4
+
+- Independence Day Holiday
+
+## Tuesday, June 5
+
+- Setup goals for week
+- Worked with Bobby to configure GPU setup
+- Debugged using GPU in Jupyter
+    - Test Drive: CPU (3:59 CPU / 3:53 wall); GPU (3:54 CPU / 3:46 wall)
+    - GPU runs out; issue seems to be in data
+- Found issue in data: nan values in solar irradiance (potentially also percent opaque though not yet witnessed)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
+
+## Wednesday, June 6
+
+- Attended EDU Weekly Seminar - Creating Effective Oral and Poster Presentations
+- Attended LANS Seminar - AI x Mathematics
+- Debugged issues in loading data, refactored code
+    - Removed NaN values ⇒ there are now (very, very infrequent) random gaps in data from where the NaN values used to be, in addition to the gaps each night
+- Worked on configuring parallel processing (for pre-loading data)
+- Rewrote data loading to be much faster (~11.5s vs ~17.3s)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
+
+## Thursday, June 7
+
+- Met with AI/Algorithm student group
+    - Notes:
+        - Batch by day so gaps between days don’t mess things up
+        - When prepping predictions and stuff, be careful you’re cutting in right spot (not including predictive value into input) (i.e. unit test for split step)
+- Configured GPU
+    - Able to run using Keras, but not with scikit-learn’s GridSearchCV ⇒ switch to some other package for tuning
+- Uncovered bug in data loading (overlapping values). Worked on manual opening and concatenation of multiple files to fix
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage
+
+## Friday, June 8
+
+- Debugged issue in data loading. Finished manual opening and concatenation method.
+- Worked on implementing time series cross-validation with early stopping
+- Attended Summer Interns Check-In
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage
