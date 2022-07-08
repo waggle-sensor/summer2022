@@ -172,3 +172,24 @@
 - Developed code for 2D histogram cluster plot
 - Plotted clusters in time-range space for every hour of 08/31
 
+#### Friday July 1st, 2022
+
+- Could not do much today because Firefox was not working on my desktop, and I use Firefox to use Jupyter
+- Wrote code to make a bar chart that shows label frequency versus time
+
+---
+
+### Week 6
+
+### Goals for the Week:
+- Use Bebop to run through all 2 months of data
+- Simplify workflow so that I don't need to use Jupyter as much
+- Start making conclusions for poster
+
+---
+
+#### Tuesday July 5th, 202
+
+- Restarted bash jobs
+- Converted Jupyter notebook to plotting tools
+- Worked on plotting the power spectra

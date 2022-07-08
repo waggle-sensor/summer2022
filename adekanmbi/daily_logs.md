@@ -296,3 +296,35 @@ Things to added to dockerfile.
 #### Thursday June 30, 2022 ####
 
 - Worked on installing PAPI to collect snapshot data
+
+#### Friday July 1, 2022 ####
+
+- Worked on Installing PAPI to collect snapshot on docker container
+
+### Week 8 ###
+
+------------------------------------------------
+
+#### Monday July 4, 2022 ####
+
+- Independence day
+
+#### Tuesday July 5, 2022 ####
+
+- Continued debug to run PAPI on Jetson NX
+
+#### Wednesday July 6, 2022 ####
+
+- Started working on final presentation
+- Continued debug to run PAPI on Jetson NX
+- Created a docker compose for app profiling example
+
+#### Thursday July 7, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Friday July 8, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+

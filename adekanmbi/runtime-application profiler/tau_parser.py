@@ -20,7 +20,7 @@ class parser:
     """
         Parse the "invalid" TAU XML
     """
-    def parse_tau_xml(instring):
+    def parse_tau_xml(self,instring):
         mydict = OrderedDict()
         tmp = instring
         metadata_tokens = tmp.split("<metadata>",1)
@@ -64,7 +64,7 @@ class parser:
         # print(args)
         return args
 
-    def parse_functions(node, context, thread, infile, data, num_functions, function_map):
+    def parse_functions(self,node, context, thread, infile, data, num_functions, function_map):
         # Function looks like:
         # "".TAU application" 1 0 8626018 8626018 0 GROUP="TAU_USER""
         if num_functions > 0:
@@ -126,7 +126,7 @@ class parser:
                 timer["Inclusive Time"] = int(tokens[3])
                 data["Timers"].append(timer)
         
-    def parse_aggregates(node, context, thread, infile, data):
+    def parse_aggregates(self,node, context, thread, infile, data):
         aggregates = infile.readline()
         tokens = aggregates.split()
         num_aggregates = int(tokens[0])
@@ -135,12 +135,14 @@ class parser:
             # do nothing
             line = infile.readline()
 
-    def parse_counters(node, context, thread, infile, data, counter_map):
+    def parse_counters(self,node, context, thread, infile, data, counter_map):
         userevents = infile.readline()
         tokens = userevents.split()
         
-        num_userevents = int(tokens[0])
+        ## some errors using the parsed user events so an arbitrary value is chosen.
+        # num_userevents = int(tokens[0])
         
+        num_userevents = 50
         # data["Num Counters"] = tokens[0]
         # ignore the header line
         line = infile.readline()
@@ -210,14 +212,14 @@ class parser:
                 counter["SumSqr Value"] = float(tokens[4])
                 data["Counters"].append(counter)
 
-    def parse_profile(indir, profile, data, function_map, counter_map):
+    def parse_profile(self, profile, data, function_map, counter_map):
         # FIrst, split the name of the profile to get the node, context, thread
         tokens = profile.split(".")
         node = tokens[1]
         context = tokens[2]
         thread = tokens[3]
         # Open the file, get the first line
-        infile = open(os.path.join(indir, profile), "r")
+        infile = open(os.path.join(self.indir, profile), "r")
         functions = infile.readline()
         # First line looks like:
         # "16 templated_functions_MULTI_TIME"
@@ -230,18 +232,18 @@ class parser:
         tokens = header.split("#",2)
         # Parse the metadata
         thread_name = "Rank " + str(node) + ", Thread " + str(thread)
-        data["metadata"][thread_name] = parse_tau_xml(str.strip(tokens[2]))
+        data["metadata"][thread_name] = self.parse_tau_xml(str.strip(tokens[2]))
         # Parse the functions
-        parse_functions(node, context, thread, infile, data, num_functions, function_map)
+        self.parse_functions(node, context, thread, infile, data, num_functions, function_map)
         # Parse the aggregates
-        parse_aggregates(node, context, thread, infile, data)
+        self.parse_aggregates(node, context, thread, infile, data)
         # Parse the counters
-        parse_counters(node, context, thread, infile, data, counter_map)
+        self.parse_counters(node, context, thread, infile, data, counter_map)
 
     """
     This method will parse a directory of TAU profiles
     """
-    def parse_directory(indir, index, data):
+    def parse_directory(self, index, data):
         # assume just 1 metric for now...
 
         # create a dictionary for this application
@@ -251,17 +253,17 @@ class parser:
         # add the application to the master dictionary
         # tmp = "Application " + str(index)
         #data[tmp] = application
-        data[indir] = application
+        data[self.indir] = application
         
         # get the list of profile files
-        profiles = [f for f in os.listdir(indir) if os.path.isfile(os.path.join (indir, f))]
+        profiles = [f for f in os.listdir(self.indir) if os.path.isfile(os.path.join (self.indir, f))]
         #application["num profiles"] = len(profiles)
 
         application["metadata"] = OrderedDict()
         function_map = {}
         counter_map = {}
         for p in profiles:
-            parse_profile(indir, p, application, function_map, counter_map)
+            self.parse_profile(self.indir, p, application, function_map, counter_map)
 
     """
     Main method
