@@ -3,6 +3,18 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 4: 7/5 to 7/8
 
+### Friday 7/8
+
+- Went to Wavelabs' monthly 5G Magma update meeting
+  - Magma core is implemented in GenXComm's 5G testbed and it was _**shown to work with commercial gNBs and UEs**_ (I think they were using Samsung UEs, unsure about the brand of gNB)
+  - Demo-ed a Docker containerized version of their Access Gateway, which is not yet ready for release, but is on their GitHub
+    - Showed the Docker AGW being connected through the Orch8r portal, then connected a gNB/UE simulator to that AGW
+  - Showed other features that will be part of the current 1.8 release
+
+#### To Do
+
+- .....downlink :) I'm especially thinking about the SIM cards that can't connect to our computers. They are assigned an IP address, but the computer isn't connected to the cellular network, so what would downlinking do?
+
 ### Thursday 7/7
 
 - Tried logging into Nokia DAC and I get rejected
