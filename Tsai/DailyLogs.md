@@ -151,3 +151,37 @@ Chirpstack AS:
     - ![](https://i.imgur.com/6NksVSa.jpg)
     - `gateway/mqtt: gateway stats packet received` are logged
 * [x] look into the pywaggle plugin and see how the Application server can be integrated with it
+
+**July 1st**
+- MKRWAN 1310 and the antennas are here, so today's agenda is to get them to connect with the LoRa gateway and display packets on the Application Server
+* [x] Look through the Arduino LoRamodem library
+* [x] Code up a straightfoward message sending arduino code to send to the gateway
+    - successfully sent messages to the gateway and have it show on the application
+    - ![](https://i.imgur.com/nx8cLdw.jpg)
+* [x] Edit code so the MKRWAN 1310 can connect to gateway with network and application session keys by itself without Serial write
+* [x] Test the distance of connection
+    - put the MKRWAN 1310 different floors of the buildingr
+    - setup the MKRWAN 1310 on the 7th floor and it was able to send messages to the gateway on 3rd floor
+
+**July 5th, 6th**
+* [x] Set up router to connect both the gateway and the chirpstack network server -> so gateway can have communication with the server
+* [x] Replicate work on Friday from home's environment
+* [x] Create a new device with unique NWSKEY and APPKEY and DEV id
+* [ ] Connect a second device simultaneously
+    - unable to receive frames from the second device
+* [x] Familiarize with the seeed modules that came in
+
+**July 7th**
+* [x] Connect a second device to the same gateway
+    - successfully connected two device that sends data together at the same time
+    - the application is able to see both devices' messages entering
+    - ![](https://i.imgur.com/KzGeYt7.jpg)
+    - ![](https://i.imgur.com/V2BFF2c.jpg)
+    - The `TQ==` is a Base64 message that is translated into 'M', which was what I was sending to the gateway repeatedly
+    - I also tried sending different messages like "Hello" and "Andre Tsai" >> all sends successfully
+* [x] Send 10 messages of 'M' and see the packet loss
+    - I was able to receive five out of the ten packets
+    - Lots of theories:
+        - could be that the gateway is unable to receive from a certain port when it is in use by another
+        - could be that the message just simply did not send properly, etc
+    - I also noticed that when there are no particular message being sent by the arduino devices, the gateway still receives a "AA==", which translates to ? when converting from base64

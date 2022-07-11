@@ -152,7 +152,7 @@ Things to do:
 - [ ] Zhuoru & Kojo meeting next Monday
 
 ----------------------------------------------
-### Week 4: 6/27 to 7/1 ###
+### Week 5: 6/27 to 7/1 ###
 #### Monday June 27th ####
 - [x] Debugged all day: last deployed the gpu-stress-test ```kubectl run gpu-test --image=waggle/gpu-stress-test:1.0.1 --attach=true```
 - [x] Had a meeting with Yongho to discuss about the summer internship plan (IT WAS GREAT!!!!!!) 
@@ -188,3 +188,62 @@ Things to do:
 
 Things to do:  
 - [ ] Finishing the Ansible script by July 15th
+
+----------------------------------------------
+### Week 7: 7/4 to 7/8 ###
+#### Monday July 4th (Happy July 4th!)
+
+#### Tuesday July 5th ####
+- [x] Installed pip Ansible on Nano. First of all, it requires to switch the python version to install pip as there are two python versions on linux. If the command line ```curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10 (e.g.)``` runs, it will show the moduleNotFoundError: No module named 'distutils.cmd' for example.  
+```sudo apt update```  
+```alias python='/usr/bin/python3.6```  
+```sudo update-alternatives --config python3```  
+```python -m pip install --upgrade pip```  
+```python -m pip install --user ansible```  
+```python3 -m pip show ansible```  
+
+Things to do:  
+- [ ] Finishing up reading the Ansible tutorials
+
+#### Wednesday July 6th ####
+- [x] Conducting research into Ansible running on Nano VS Ansible running on Docker: which one is suitable for WaggleOS?
+
+#### Thursday July 7th ####
+- [x] Had a meeting weekly EDU; summary: 
+(1) Need to figure out hw to add the sensor on our OS (like building a tutorial for the educational points)
+(2) Add another type sensor such as soil moisture sensor
+
+- [x] Had a meeting with Francisco and Sean: how to configure the microphone setup: Completed! (update device manager (labeling) PulseAudio)
+- [x] Had a weekly Robot (ROS) meeting
+ 
+Things to do:  
+Linux(Waggle) should know about the itemized list such as different types of sensors 
+ 
+- [x] Had a meeting with Joe to talk about Ansible script
+- Configuration on MAC
+
+- From user side
+
+(1) Ensuring ```pip``` is available on your computer and install ansible  
+```pip --version```  //pip 21.3.1 from /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pip (python 3.9)
+
+```pip3 install --upgrade pip``` //if you do not have
+
+```pip3 install ansible``` // For linux, it is avilable here: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+(2) Test on your own machine with hello-world file. Create your own directoy first (e.g., ansible): https://github.com/waggle-sensor/node-platforms/blob/main/nvidia-nano/01_ansible_nvidia-nano_base.yaml 
+
+```cd ansible```
+
+```cd node-platforms/```
+
+```cd nvidia-nano```
+
+```ansible-playbook -i ansible_inventory 01_ansible_nvidia-nano_base.yaml //error will occur if it is your own host
+
+```ansible-playbook -i ansible_inventory --user root 01_ansible_nvidia-nano_base.yaml //should work as "--user" included
+
+Ref
+https://formulae.brew.sh/formula/ansible 
+https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#:~:text=Group%20variables%20are%20a%20convenient,from%20all%20of%20those%20groups.
+

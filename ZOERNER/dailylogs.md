@@ -212,8 +212,8 @@
 
 ##### Goals for this week:
 
-- [ ] Use scipy ndimage.label to extract the largest region of reflectivity in the radar images
-- [ ] Use OpenCV to perform image processing analysis on the labeled images and export as text files
+- [x] Use scipy ndimage.label to extract the largest region of reflectivity in the radar images
+- [x] Use OpenCV to perform image processing analysis on the labeled images and export as text files
 
 ---
 
@@ -221,4 +221,98 @@
 
 - Assisted with TRACER forecasting and attended briefing (verification)
 - Worked with ndimage.label to remove the largest object from the radar images
+
+#### Tuesday June 28, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Met with Bhupendra for help using the label function to extract the largest echo
+
+#### Wedesday June 29, 2022
+
+- Kayaking day with students and mentors
+
+#### Thursday June 30, 2022
+
+- Introduction meeting with AI group
+- Attended TRACER briefing
+- Worked on a script that finds the centroid of a shape based on its image moments.
+
+#### Friday July 1, 2022
+
+- Attended TRACER briefing
+- Continued working on image analysis with OpenCV
+- Created a text file to output to
+
+---
+
+#### Week 5 Overview
+
+---
+
+- Re-wrote first steps using netCDF4 file instead of png images
+- Found the image moments
+- Began morphology calculations based on image moments
+
+---
+
+### Week 6
+
+##### Goals for this week:
+
+- [x] Use OpenCV to find additional parameters
+- [x] Contour new binary image and perform analysis with the contours
+
+---
+
+#### Monday July 4th, 2022
+
+- Holiday, day off.
+
+#### Tuesday July 5th, 2022
+
+- Attended TRACER briefing
+- Experimented with collecting more morphological parameters
+
+#### Wednesday July 6th, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Continued working with morphological parameters in OpenCV
+
+#### Thursday July 7th, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Attended weekly AI meeting
+- Met with Bhupendra to discuss project
+- Attended weekly Student Connects meeting
+- Continued working with morphological parameters in OpenCV
+
+#### Friday July 8th, 2022
+
+- Contoured binary image, collected more parameters based on contour
+- Worked on some organization, planning, goal-setting, and writing about progress.
+
+---
+
+#### Week 6 Overview and Reflection
+
+---
+
+I am over halfway through my SULI internship at this point in time, with 4 weeks left. My poster submission is due in 2 weeks, on July 21st.</br>
+So far, I have gathered a data set, created a binary image and removed radar noise, and computed some parameters for the radar image.</br>
+</br>
+My next steps are to export these computations into a text file and format the file, perform k-means clustering on the parameters, and make revisions. Additionally, I need to increase the scale at which my current algorithm operates by looping through a dataset of multiple images and performing the analysis for all of the images in the dataset.  </br>
+</br>
+If time allows, I can either gather more datasets that I believe would make good cases to analyze, or run this algorithm for an entire season.</br>
+</br>
+The Learning on the Lawn event is on August 4th, and my final paper is due on August 5th. I will also need to complete a peer review by the end of my internship.</br>
+</br>
+I have learned so much about the research process throughout my internship at ANL so far. I have met some wonderful people here and have made amazing connections with my collegues. My project has been challenging and enriching for me, as I have had to take a lot of time to learn about new processes and techniques that were previously unfamiliar to me.</br>
+</br>
+My mentor, Bhupendra, gave me great advice. He told me that research is like learning how to ride a bike, you have to fall down before you can figure it out. I definitely needed to hear that!
+
+---
+
+
+
+
 
