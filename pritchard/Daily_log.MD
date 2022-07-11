@@ -397,7 +397,145 @@ Things to do:
 - [ ] figure out full system of storing json objects, then recalling and analizing them
 
 #### Friday June 31th ####
-- [ ] 
+- [ ] Made list of all availible values accessible on api page 
+```
+0.timestamp
+0.device.0.identifier
+0.device.0.usage
+0.device.ram.usage
+0.device.ram.free
+0.device.ram.total
+
+x is between 0 and 3
+0.device.temperatures.x.name
+0.device.temperatures.x.type 
+0.device.temperatures.x.value
+  #two lower ports are poe ports, all types are other
+0.device.uptime
+
+x is between 0 and 15
+0.interfaces.x.statistics.dropped
+0.interfaces.x.statistics.errors
+0.interfaces.x.statistics.txErrors
+0.interfaces.x.statistics.rxErrors
+0.interfaces.x.statistics.rate
+0.interfaces.x.statistics.txRate
+0.interfaces.x.statistics.rxRate
+0.interfaces.x.statistics.bytes
+0.interfaces.x.statistics.txBytes
+0.interfaces.x.statistics.rxBytes
+0.interfaces.x.statistics.packets
+0.interfaces.x.statistics.txPackets
+0.interfaces.x.statistics.rxPackets
+0.interfaces.x.statistics.pps
+0.interfaces.x.statistics.txPPS
+0.interfaces.x.statistics.rxPPS
+0.interfaces.x.statistics.poePower
+```
+- [ ] Made functions to return particular specified values after receiving the json of a particular iteration
+```
+def getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
+        data=json.loads(jsonObject)
+        Statistic=data[0]['interfaces'][portnumber]['statistics'][variable]#port= 0-15, 
+        #variable= dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower
+        #print('from statistic')
+        #print(Statistic, data[0]['timestamp'])
+        return(Statistic,data[0]['timestamp'])#return as tuple with timestamp
+def getRaminfo(jsonObject,variable):
+        data=json.loads(jsonObject)
+        RamInfo=data[0]['device']['ram'][variable]#variable = usage, free, total
+        return(RamInfo,data[0]['timestamp'])
+def getTempinfo(jsonObject,area,variable):#area= 0-3, 
+        #variable= name, value, as well as type which is always other
+        data=json.loads(jsonObject)
+        TempInfo=data[0]['device']['temperatures'][area][variable]
+        return(TempInfo,data[0]['timestamp'])
+def getTimestamp(jsonObject):
+        data=json.loads(jsonObject)
+        Timestamp=data[0]['timestamp']
+        return(Timestamp) 
+def getProcessorUsage(jsonObject):
+        data=json.loads(jsonObject)
+        ProcessorUsage=data[0]['device']['cpu'][0]['usage'] #second zero might be cpu
+        return(ProcessorUsage,data[0]['timestamp'])
+def getUptime(jsonObject):
+        data=json.loads(jsonObject)
+        Uptime=data[0]['device']['uptime']
+        return(Uptime,data[0]['timestamp'])
+```
+- [ ] Figured out how make que of json objects as well as how to run through that que when doing processing for a particular value
+```
+Queofjson.put(json.dumps(info))
+jsonObject=Queofjson.get()
+```
+- [ ] Figured out how to send out and receive all values in the form of tuples which contain the wanted value as well as the timestamp of when that value occured
+```
+ Averages =[(0,0)*numberofports]# error creates (0, 0, 0, 0, 0, 0)
+temp =Averages[x][0]+(poePower-Averages[x][0])/(y+1) #rolling average calculation
+                        Averages[x]=(temp, time)
+```
+- [ ] Made new versions of previous average, minimum and maximum value finders, sussessfully got average function fully operational
+```
+def getPOEAverages(jsonqueue):
+        #Averages = [0] * numberofports
+        #Averages= [0.0 for i in range(numberofports)]
+        Averages =[(0,0)*numberofports]# error creates (0, 0, 0, 0, 0, 0)
+        #print (type(Averages[0]))
+        for y in range(numberiterations):
+                jsonObject=jsonqueue.get()
+              
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time = getStatistics(jsonObject,1,'poePower')
+                        temp =Averages[x][0]+(poePower-Averages[x][0])/(y+1) #rolling average calculation
+                        Averages[x]=(temp, time)
+        return (Averages)                       
+def getPOEMaxes(jsonqueue):
+        #timestamps = [0] * 8#not sure how to initialize list of timestamps want 
+        #Maximums = [0] * 8
+        print('max was called')
+        Maximums =[(0,0)*numberofports]
+        for y in range(numberiterations):
+                print(y)
+                jsonObject=jsonqueue.get()
+                print('max should end')
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time= getStatistics(jsonObject,1,'poePower')
+                        if poePower>Maximums[x][0]:
+                                Maximums[x]=(poePower,time)
+        
+        return (Maximums)
+def getPOEMins(jsonqueue):  
+        #timestamps = [0] * 8#not sure how to initialize list of timestamps
+        Minimums =[(150,0)*numberofports]
+        #Minimums = [0] * 8
+        #Minimums = [150 for i in range(8)]#assumes that no port will have a higher minimum then 150 watts
+        for y in range(numberiterations):
+                jsonObject=jsonqueue.get()
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time= getStatistics(jsonObject,1,'poePower')
+                        if poePower<Minimums[x][0]: #compars and sets maximums and mins per port
+                                Minimums[x]=(poePower,time)                    
+        return (Minimums)
+output:functions
+functionqueue1= copy.copy(Queofjson)
+print(getPOEAverages(functionqueue1))#there is definitly a way to set the functions to static
+functionqueue= copy.copy(Queofjson)
+print(getPOEMaxes(functionqueue))
+output:
+python3 main.py
+[(0.96, 1657550520513)]
+max was called
+0
+
+```
+
+Things to do
+- [ ] Fix bug that occures when passing queue to max function
+- [ ] Fix Average value function so it doesn't just return the last timestamp it received
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] make function to return any specific value of a specific iteration given the full json que
+
 
 
 
