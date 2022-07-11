@@ -1,0 +1,22 @@
+### Seeed Instructions
+https://wiki.seeedstudio.com/install_NVIDIA_software_to_Jetson-10-1-A0/
+
+### For Building a docker image
+https://github.com/kaz3w/sdk_manager_docker/blob/master/Dockerfile
+https://github.com/atinfinity/sdk_manager_docker
+https://hub.docker.com/r/kaz3w/sdk_manager_docker
+
+
+### Commandline Instructions / Installation by docker image
+https://docs.nvidia.com/sdk-manager/sdkm-command-line-install/index.html
+https://docs.nvidia.com/sdk-manager/docker-containers/index.html
+
+### SDK Manager Installation options
+https://developer.nvidia.com/nvidia-sdk-manager
+
+
+### Bulk apt downloads by aptfile
+https://github.com/seatgeek/bash-aptfile
+
+### Building a minimalist image for Nano pre the sdk-comps
+https://pythops.com/post/create-your-own-image-for-jetson-nano-board.html
