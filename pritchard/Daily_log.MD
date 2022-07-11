@@ -516,6 +516,17 @@ def getPOEMins(jsonqueue):
                         if poePower<Minimums[x][0]: #compars and sets maximums and mins per port
                                 Minimums[x]=(poePower,time)                    
         return (Minimums)
+output:functions
+functionqueue1= copy.copy(Queofjson)
+print(getPOEAverages(functionqueue1))#there is definitly a way to set the functions to static
+functionqueue= copy.copy(Queofjson)
+print(getPOEMaxes(functionqueue))
+output:
+python3 main.py
+[(0.96, 1657550520513)]
+max was called
+0
+
 ```
 
 Things to do
