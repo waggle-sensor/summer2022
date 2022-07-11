@@ -21,22 +21,60 @@
 
 #### Later
 
- - [ ] Intro to ROS2
+- [ ] Intro to ROS2
 
 ## Week 2: 06/27 - 07/02
 
 ### Tuesday 06/27
 
- - [ ] Configured and Tested ROS with Docker on the Jetson Nano
+- [ ] Configured and Tested ROS with Docker on the Jetson Nano
 
 ### Thursday 06/30
+
  - [X] Augmented Dockerfile beyond waggle/ros-base per official ROS installation instructions
    - bootstrap tools
    - custom workspace
    - net-tools and iputils-ping for diagnostics
-   - [updated Dockerfile](../Docker/Dockerfile)
+   - [updated Dockerfile](./Docker)
      - Docker container still requires ROS_MASTER_URI to be specified; could automate later
 
- - [ ] Demonstate Bi-directional communications across containers on Nano [Shirley]
- - [ ] Protocols Examples meeting @ 2pm
- - [ ] Robot Team Meeting @ 4pm
+ - [x] Demonstate Bi-directional communications across containers on Nano [Shirley]
+ - [x] Protocols Examples meeting @ 2pm
+ - [x] Robot Team Meeting @ 4pm
+
+## Week 3: 07/05 -07/08
+
+### Tuesday 07/05
+
+- [x] Successfully Flashed Jetpack 4.5 as test run
+  - could not find Jetpack 4.4.1 OS Installation
+  
+- [x] Direction Meeting with YongHo (to be continued)
+
+### Wednesday 07/06
+
+- [x] Direction Meeting with YongHo Continued
+  - Next Steps: Implement a multi-Nano, multi-container(docker for now) ROS(or other)-based network interfacing with a scheduler node to simulate multi-robot coordination
+  - Think large-scale (!!)
+
+- [x]Flash Nana-eMMC with JetPack 4.4.1 [Did not finish]
+
+### Thursday 07/07
+
+- [x] Flash Nano-eMMC with JetPack 4.4.1 with SDK Components
+  - [Instructions to flash Jetson OS and Jetson SDK Components via docker container](./Getting%20Jetpack%204.4.1%20on%20Jetson%20Nano(emmc)/)
+  - Next steps:
+    - Multi-flash: script provided in docker. [Instructions](./Getting%20Jetpack%204.4.1%20on%20Jetson%20Nano(emmc)/README_Massflash.txt)
+    - Can we create a ready image to flash directly instead of repeatedly following instructions?
+
+- [x] Robot Team Meeting @ 4pm
+  - Discussion:
+    - Registered Peer-to-peer communication (as opposed to pub/sub comms) between ROS machines is inconsistent with waggle network architecture
+    - Would require opening up ports between all sibling WES nodes
+    - Could channel communication through upstream scheduler
+    - Also ROS2 breaks away from the roscore registeration of ROS1; eliminates failure mode.
+  - Next Steps: Execute [06/30 Protocols Examples Meeting] script on Nano
+
+### Friday 07/08
+
+- [x] ROS2 Setup and Beginner tutorials (to be continued)

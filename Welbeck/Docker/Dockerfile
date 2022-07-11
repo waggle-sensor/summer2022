@@ -11,7 +11,10 @@ ENV ROS_DISTRO=noetic
 ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
 ENV ROS_PYTHON_VERSION=3
 ENV ROS_WS=/root/catkin_ws
-ENV ROS_MASTER=http://10.0.0.163:11311/
+# ENV ROS_MASTER=http://10.0.0.163:11311/
+
+ARG ROS_MASTER_IP
+
 
 # install system packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -48,10 +51,23 @@ SHELL ["/bin/bash", "-c"]
 RUN . "/opt/ros/$ROS_DISTRO/setup.bash" && cd $ROS_WS && catkin_make
 RUN echo "source $ROS_WS/devel/setup.bash" >> ~/.bashrc
 
+# # Setting ROS_MASTER_URI and ROS_IP in bashrc
+# RUN echo "export ROS_MASTER_URI=http://$ROS_MASTER_URI:11311/" >> ~/.bashrc
+
 # Installing network and ping tools
 RUN apt-get update && apt-get install --no-install-recommends -y \ 
     net-tools \
     iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy in beginner-tutorials ros-package
+WORKDIR $ROS_WS
+RUN mkdir src/beginner-tutorials
+COPY beginner-tutorials/ src/beginner-tutorials
+# RUN . "/opt/ros/$ROS_DISTRO/setup.bash" && cd $ROS_WS && catkin_make
 
+CMD ["bash"]
+
+
+## BUILD TIME INSTRUCTIONS
+## sudo docker build --tag <tag-name> --build-arg ROS_MASTER_IP=<ip-address-of-master> .
