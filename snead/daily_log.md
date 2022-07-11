@@ -15,6 +15,7 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 - implement decision matrix notes and email Raj, Joaquin, and Randy when finished to set up meeting to discuss!
 - downlink, debug Linux
+- Get in person help with logging into/getting access to the Nokia DAC
 
 ## Week 4: 7/5 to 7/8
 
