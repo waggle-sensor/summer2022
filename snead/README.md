@@ -56,6 +56,8 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
     - might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
 - We might be able to use [libqmi project](https://gitlab.freedesktop.org/mobile-broadband/libqmi) to talk to the modem, but I'm doubtful
 - Is there a way to force the network manager wizard to open?
+    - `nmcli c` shows what is currently connected, `nmcli d` shows current devices 
+    - maybe use [`nmcli`](https://developer-old.gnome.org/NetworkManager/stable/nmcli-examples.html#:~:text=nmcli%20is%20a%20command%2Dline,and%20usage%20scenarios%20of%20nmcli.) to do this
 - Maybe look into [rmnet](https://www.kernel.org/doc/html/v5.8/networking/device_drivers/qualcomm/rmnet.html)?
 
 
