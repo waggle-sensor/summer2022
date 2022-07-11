@@ -139,3 +139,22 @@
 ### Monday, July 4
 
 - Holiday!
+
+### Tuesday, July 5
+
+- Librosa was not working properly with the Singularity container, which I needed to reconstruct audio files from the spectrograms. After many failed attempts, I resorted to training the model on ThetaGPU and evaluating on my local machine
+- Used argparse to add arguments to training code to streamline training the model
+
+### Wednesday, July 6
+
+- Attended one seminar on poster presentations and the LANS seminar on the use of AI in mathematics.
+- Learned in depth how parallelization works in PyTorch, and implemented a basic version in my training code (DataParallel), with plans to use DistributedDataParallel to decrease the overhead time cost and allow for training across multiple nodes
+
+### Thursday, July 7
+
+- Added more command line arguments to my code and set up model checkpoints in the manner done on the VICReg GitHub
+- Created `anomaly_usd` GitHub repository to track progress on training on the Urban Sound Dataset
+- Created separate `anomaly_bird` workspace for working with the BirdAudio dataset, and wrote a script that splits up a long (~6 hr.) audio clip into one-second samples and uses these samples as training data
+  - Audio preprocessing occurs before the `__getitem__` method in order to speed up multiple-epoch training
+
+### Friday, July 8
