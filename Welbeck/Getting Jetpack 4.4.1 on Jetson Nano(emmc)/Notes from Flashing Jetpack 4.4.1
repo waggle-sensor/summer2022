@@ -1,0 +1,70 @@
+Jetson Nano
+P3448-0002 module
+P3449-0000 carrier board
+
+
+sudo docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave --name JetPack_Nano20 --network host sdkmanager --cli install --logintype devzone --product Jetson --target JETSON_NANO --targetos Linux --archivedversions --version 4.4.1 --select 'Jetson OS' --select 'Jetson SDK Components' --flash ab --license accept --staylogin true --datacollection enable --exitonfinish
+
+
+
+sudo docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb/ -v /dev:/dev -v /media/$USER:/media/nvidia:slave --name SDK_Tools --network host sdkmanager --cli downloadonly --logintype devzone --product Jetson --target P3448-0002 --targetos Linux --archivedversions --version 4.4.1 --deselect 'Jetson OS' --select 'Jetson SDK Components' --license accept --staylogin true --datacollection enable
+
+4.6
+4.5 for jetson nanos
+
+
+usb
+inet6 fe80::8475:f8ff:fe0b:950f
+ehter 86:75:f8:0b:95:0f
+
+eth0
+inet 10.0.0.168
+inet6 fe80::67be:8b27:c5f5:cde5
+
+
+
+sudo ./flash.sh  jetson-nano-qspi-sd mmcblk0p1
+
+info: saving flash command in /home/nvidia/nvidia/nvidia_sdk/JetPack_4.4.1_Linux_JETSON_NANO/Linux │
+│_for_Tegra/bootloader/flashcmd.txt
+
+
+Process for Flashing reComputer Jetson-10 with Jetpack-4.4.1
+
+2 Steps
+1. Flash Jetson OS 
+2. Flash Jetson SDK Components
+
+My System Setup
+Running Ubuntu20.04
+JetPack builds are not yet supported on Ubuntu 20.04 host, so still suggest to use host PC with Ubuntu 18.04
+ - Downloading and Installing and Using SDK Manager .deb did not work
+ 	- why :  
+ 	
+ - Solution: Use Docker Image(18.04)
+
+
+Download Install Docker Image for command line flashing
+https://developer.nvidia.com/nvidia-sdk-manager
+https://docs.nvidia.com/sdk-manager/docker-containers/index.html
+
+Connect to the Target Device (the Nano) in recovery mode 
+
+Run the launch the docker  with sdk-manager cli... 
+'${EXACT COMMAND}' to prep the docker containter  with-args-version and example bash command
+ - explain the various tags and arguments
+
+Running the installer/flasher from cli will error out 
+
+Navigate to the command line in the docker image 
+run the ./flash  args
+explain the args
+Anything mmcblk0 is the eMMC. Anything mmcblk1 is SD card. 
+
+Verification
+
+
+https://wiki.seeedstudio.com/install_NVIDIA_software_to_Jetson-10-1-A0/
+
+
+
