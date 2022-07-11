@@ -142,7 +142,7 @@ Things to do:
 - [ ] Setup linux laptop so I can use it as my main computer at work
 - [ ] Talk to Raj about: when arduinos will be in, when I will set up bike racks, how I should go about setting up a network server,
 
-### Week 3: 6/20 to 6/24 ###
+### Week 4: 6/20 to 6/24 ###
 #### Monday June 20th ####
 - [ ] Got outlook/Github/slack/setup on linux computer
 - [ ] Talked with Raj about: arduino arrvial date, when we would be setting up bike racks to act as testing rigs, how I should go a bout testing the nano's interaction with the WisGate
@@ -184,7 +184,7 @@ Things to do:
 Things to do:
 - [ ] Get WisGate to accept some fake data via RAK serial port tool 
 
-### Week 3: 6/27 to 6/31 ###
+### Week 5: 6/27 to 6/31 ###
 #### Monday June 27th ####
 - [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
 - [ ] messed up wireless network while trying to implement previous test
@@ -230,7 +230,7 @@ Things to do:
 - [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific value we are looking for, in this case the first poe wattage value
 
-### Week 3: 6/27 to 6/31 ###
+### Week 6: 6/27 to 6/31 ###
 #### Monday June 27th ####
 - [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
 - [ ] messed up wireless network while trying to implement previous test
@@ -276,7 +276,7 @@ Things to do:
 - [ ] my code essentially accepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific 
  
-### Week 3: 7/5 to 6/31 ###
+### Week 7: 7/5 to 6/31 ###
 #### Tuesday July 5 ####
 - [ ] WFH due to family member catching covid
 - [ ] wrote basic code for prcessing POE outputs by minimum maximum and average in file over 5min interval
@@ -536,6 +536,122 @@ Things to do
 - [ ] Link up local repo for easy commits
 - [ ] make function to return any specific value of a specific iteration given the full json que
 
+### Week 8: 7/11 to 7/15 ###
+#### Monday June 13th ####
+- [ ] Talked with Raj, he wants: circular buffer, three threads that operate at smae time-> reading standard writing and intercetion writing, three variables to control-> the total time the function is active, the delay between occurances of reading as well as writing
+- [ ] Wrote code for the three basic threads as separate functions
+```
+def Read(threadname, Queofjson):
+def Dostuff(threadname, Queofjson):
+        #global Queofjson
+        while (time.time()-starttime)<Totaltime:
+                if(Queofjson.qsize()==1):
+                        print('there are 1 jsons')
+                #print(len(Queofjson))
+                time.sleep(execution_check)
+def Write(threadname, Queofjson):
+        while (time.time()-starttime)<Totaltime:
+                #print('write called')
+                timestamps=getquetimestamps()
+                #print(timestamps)
+                header = ['timestamps']
+                Port1 = [timestamps]
+                #header2 = ['what time started', 'started on', 'every time it changed', 'what it changed to each time']
+                with open('edgeswitch.csv', 'w', encoding='UTF8') as f:
+                        writer = csv.writer(f)
+                        writer.writerow(header)
+                        writer.writerow(Port1)
+                time.sleep(frequency_write)       
+```
+- [ ] Created Cycling Queue system primarily within Read function
+```
+def Read(threadname, Queofjson):
+        #global Queofjson
+        while (time.time()-starttime)<Totaltime:
+                
+                #print('read called')
+                with UnifiSwitchClient(
+                        host='https://192.168.0.5',
+                        username='ubnt',
+                        password='why1not2') as client:
+                        info = client.get_POE_info()
+                if Queofjson.qsize()==numberiterations:#this makes the que circular might be unneeded due to maxlength
+                         Queofjson.get()
+                Timestamp=getTimestamp(json.dumps(info))
+                testingtimestamp= Timestamp
+                Queofjson.put(( Timestamp,json.dumps(info)))
+                print(Queofjson.qsize())
+                #print(Queofjson[-1])
+                time.sleep(frequency_read)
+```
+- [ ] Changed the libraries used by Queue so as to allow the threads to act opon common variables
+```
+#import multiprocessing
+from threading import Thread
+import queue
+```
+- [ ] Added function to return respective timestamps for all jsons currently in que
+```
+def getquetimestamps():
+        Timestamps= [0 for i in range(Queofjson.qsize())]
+        temp=Queofjson.queue
+        for x in range(Queofjson.qsize()):
+                Timestamps[x], json = temp[x]
+        print(Timestamps)
+        return (Timestamps)
+```
+- [ ] Added funtion to return a json from Queue given its timestamp, this timestamp is currently automatically called
+```
+def getJson(Timestamp):
+        temp=Queofjson.queue #this makes a copy of the given que in dque format which makes it possible to operate on its individual members
+        for x in range(len(temp)):
+                time, json=temp[x]
+                if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
+                        return json 
+        return ('error submitted timestamp too low')
+```
+output:
+```
+[]
+1
+there are 1 jsons
+[1657577106639]
+2
+[1657577106639, 1657577108339]
+2
+[1657577108339, 1657577110282]
+2
+ending main
+[{"timestamp": 1657577110282, "device":......
+```
+
+
+Things to do:
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ]  
+
+#### Tuesday June 14th ####
+- [ ] 
+
+Things to do:
+- [ ] 
+
+#### Wednesday June 15th ####
+- [ ] 
+
+Things to do:  
+- [ ] 
+
+#### Thursday June 16th ####
+- [ ]  
+
+Things to do: 
+- [ ] 
+#### Friday June 17th ####
+- [ ] 
+
+Things to do:
+- [ ] 
 
 
 
