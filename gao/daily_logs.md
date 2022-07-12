@@ -284,3 +284,45 @@ LSTM to predict solar irradiance based on cloud coverage
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage
+
+# Week 7 (7/11 - 7/15)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Wrap up manual implementation (cross validation, early stopping, tuner) | High |  |
+| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul> |
+| 🟩 | Research variations in LSTM models if model performance unsatisfactory | Low | <ul><li>Some nice elementary explanations [x](https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/)</li></ul> |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 11
+
+- Set up weekly goals
+- Implemented manual time series validation, early stopping, hyperparameter tuning
+    - Could not use sklearn due to lack of GPU support nor keras due to different training methodologies, so manually implemented
+- Researched variations in RNN architectures
+- Note: LCRC maintenace day
+    - Need to check if all methods still function on GPU tomorrow
+    - Need to check if optuna works with environment
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Tuesday, June 12
+
+- Checked that new implementations compatible with GPU
+- Researched variations in RNN architectures
+- Fixed bug in scaling data
+- Worked on rewriting data loading to ensure all days have consistent number of timestamps
+    - Discovered heavy gaps in data (specifically cloud data, it seems): entire days without data, days missing many data points, etc.
+    - For entire days, days missing many data points: remove from dataset, check on resampling without including those days
+    - Shorter days (i.e., in the winter): pad with 0’s for night
+        - Looks like 900 data points is a safe choice? 850 a slightly tighter bound
+        - Figure out how to do this
+            - Select times each day to add 0’s to if no existing value (perhaps: 10:30 - 3:00 UTC? Based on graph and Ohio weather data)
+            - Remember that times are in UTC which may be funky for indexing (espepecially first day, since there’s data from the previous day’s sunset)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
