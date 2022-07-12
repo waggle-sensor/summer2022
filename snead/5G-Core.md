@@ -225,6 +225,8 @@ Current Wavelab Magma 5G Capabilities (as of Jan 2022):
 
 ### Connecting to COTS Radios and such
 
+[5G NSA support](https://docs.magmacore.org/docs/howtos/5g_nsa_support#5g-nsa-support) documented here, interfaces are compliant with 3GPP so should be good to set up COTS radios.
+
 enodebd service in AGW manages eNBs (compatible with TR-069 management interface) but unsure about connection to 5G RAN equipment. They have tested with the following [eNBs](https://docs.magmacore.org/docs/basics/prerequisites#ran-equipment):
 - Baicells Nova 233 TDD Outdoor
 - Baicells Nova 243 TDD Outdoor
