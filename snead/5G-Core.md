@@ -218,6 +218,10 @@ SD-Core is [compliant](https://docs.sd-core.opennetworking.org/master/overview/3
 
 Must partner with [Wavelabs](https://magmacore.org/wavelabs/) or [Radtonics](https://www.radtonics.com/) to deploy Magma for 5G. 
 
+<img src="https://user-images.githubusercontent.com/107580325/178586161-9423e068-ef77-44e9-b0a0-c6c1e9d6c880.png" height="200" width="450">
+
+(Image from Magma Wavelab Page) 
+
 Current Wavelab Magma 5G Capabilities (as of Jan 2022):
 - Registration, 5G specific authentication, PDU session estab., idle mode paging, service request, UE init. session release and de-registration, dynamic policy support & 5G QOS, usage reporting & charging
   - pulled from this [video](https://youtu.be/KkNp3vJZc24?t=1837) that you can watch for more info (here's the [GitHub link](https://github.com/magma/magma/tree/80493f7c96a5500063f1f57e2962ea9f7da624b8/lte/gateway/c/core/oai/tasks) he talks about at [45:00](https://youtu.be/KkNp3vJZc24?t=2699))
@@ -253,7 +257,31 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
   - it says with it just takes some adjustment to use RAN 
 - Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
 
-# Open Air Interface 5G Core Network
+# Open Air Interface Mosaic5G & 5G Core Network
+
+## Mosaic5G (M5G)
+
+> "The newly created MOSAIC5G (M5G) PROJECT GROUP aims to transform radio access (RAN) and core networks (CN) into agile and open network-service delivery platforms. Such a platform allows for exploring new use-cases of interest to different vertical industries. Mosaic5G introduces the world’s first ecosystem of 5G R&D open source platforms ranging from the centralized network control to the mobile edge network deployment." - from M5G Home
+
+[Mosaic Home](https://openairinterface.org/mosaic5g/)
+
+[Mosaic Gitlab](https://gitlab.eurecom.fr/mosaic5g) (in the gitlab for each component there are docs for installation, not much else, information-wise)
+
+### M5G Architecture
+
+<img src="https://user-images.githubusercontent.com/107580325/178587171-b8313a9a-0e63-46d3-9348-dc07897e1909.png" height="250" width="475"> <img src="https://user-images.githubusercontent.com/107580325/178587526-9dd3ffe2-6348-4b8c-840d-b213712168f1.png" height="250" width="450">
+
+(Images from Mosaic Home)
+
+As it looks right now, only FlexCN and FlexRIC are ready to try, though not fully implemented. In May of 2021, Mosaic5G was adopted as a project group by OAI and is being integrated to control OAI's existing core and RAN infrastructure, so it might take a while before it's operational
+
+### FlexRIC
+
+> "FlexRIC is short for “Flexible RAN Intelligent Controller”. It interfaces with the OAI radio stack over the O-RAN-defined E2-interface to monitor and control the RAN in real-time." - from Mosaic home page
+
+[Demo of FlexRIC](https://youtu.be/k2JDPBKCcNM) that shows some slicing and control of OAI RAN
+
+## 5G CN
 
 > "The scope of 5G CN project developments is to deliver a 3GPP compliant 5G Core Network under the OAI Public License V1.1. OpenAirInterface CN 5G project is one of the main projects under OSA’s umbrella. The main objective is to develop a fully 3GPP compatible 5G CN stack as an open-source software for the OAI community. In the scope of this project, we focus only on Standalone Mode." - OAI 5G Page 
 
@@ -261,7 +289,7 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
 
 [OAI 5G Gitlab](https://gitlab.eurecom.fr/oai/cn5g)
 
-## Architecture
+### Architecture
 
 ![OAI 5G Architecture](https://user-images.githubusercontent.com/107580325/177624977-d32e45e8-57c2-435f-9e31-a7c1c21c2dca.png)  
 (Image from OAI 5G Home Page)
@@ -272,9 +300,11 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
 ## Attributes
 
 - runs on Ubuntu
-- has most 5G functionalities tested, missing some as can be seen from the architecture picture
-- Little to no documentation, I wouldn't know how to install this
+- has most 5G functionalities tested, missing some as can be seen from the 5G CN architecture picture
+	- Overall, I think this is missing components that would make it understandable or usable at the current moment, but if we are willing to wait another year or so, the stack looks well thought out so far... where's the shrug emoji when you need it...
+- Little documentation on installation of each piece, not much on how to run this (I'm unsure it can be run at all?)
 - As far as I can tell, built to work with their preexisting [RAN](https://openairinterface.org/oai-5g-ran-project/) which looks pretty robust upon first inspection (?)
+	- but if it is 3GPP compliant we should be able to interface with COTS radios... unclear
 
 # Glossary
 
