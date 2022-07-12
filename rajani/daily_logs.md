@@ -164,3 +164,15 @@
 - Reformatted evaluation script as a `.ipynb` file to avoid having to re-load the dataset each time a different section of the data is to be analyzed
 - Re-trained the model on daytime, rather than nighttime sounds and realized that the loss decreased much more smoothly (this dataset actually contained bird sounds, and wasn't just noise)
 - Wrote code to report the timestamp of the largest reconstruction error, and found that it corresponded precisely with a very loud plane flying directly overhead, indeed an anomaly! It seems the autoencoder is working :)
+
+## Week 6
+
+### Monday, July 11
+
+- Cleaned up and added new functionality to the evaluation component of the autoencoder, including:
+  - Using `torch.utils.data.Subset` to allow for evaluation on a smaller portion of the dataset
+  - Splitting evaluation into three functions:
+    - `plot_recons()`: plots the original and reconstructed spectrograms of a specified set of frames
+    - `save_audio()`: converts the original and reconstructed spectrograms to `.wav` files and saves them, for a specified set of frames
+    - `get_max_loss()`: gives the timestamp of the maximum reconstruction error, as well as its value, and the average reconstruction error across the dataset
+  - Added functionality to stitch together original audio and reconstructed audio from multiple training samples. The elevated noise level in the audio derived from the spectrograms suggests using more mels would be beneficial.
