@@ -26,6 +26,7 @@ Please also see my working [glossary](https://github.com/waggle-sensor/summer202
 All pictures and information compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
 
 ## Integrating COTS Radios
+
 So far it looks like mmWave Radios and our equipment can be controlled using an ONAP's SDN controller for ‘Radio’ (SDN-R), an additional service you can integrate into the run-time model. It's a part of their ONAP component, SDN-Controller. Once set up, the user could open the SDN-R portal and see which devices are connected (and manually mount radios, if needed). 
 [SDNC Documentation](https://docs.onap.org/projects/onap-sdnc-oam/en/latest/index.html#master-index) is currently missing, so unsure?
 
@@ -36,6 +37,7 @@ Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-
 [PNF Plug and Play Use Case](https://wiki.onap.org/display/DW/R8+PNF+Plug+and+Play+Use+Case) shows there is a method to register and operate Physical NF
 
 [RAN-Sim Setup guide](https://wiki.onap.org/display/DW/RAN-Sim+setup) could be relevant to configuration. I think as long as you have the SDN-R config information you can connect RAN?
+[Old 5G RAN Use Case](https://wiki.onap.org/display/DW/Use+case+proposal%3A+5G-+RAN+deployment%2C+Slicing%2C+SON)
 
 ## Attributes
 - Automated closed-loop management
@@ -152,6 +154,8 @@ SD-Core is [compliant](https://docs.sd-core.opennetworking.org/master/overview/3
 
 [WebConsole](https://github.com/omec-project/webconsole) facilitates communication to NFs and manages configuration. I think this is where we would find out
 
+[gNB Simulator](https://github.com/omec-project/gnbsim#readme)
+
 ## SD-Fabric
 > "SD-Fabric is an open source, full stack, deeply programmable network fabric optimized for edge cloud, 5G, and Industry 4.0 applications." - SD-Fabric Documentation
 
@@ -231,6 +235,8 @@ enodebd service in AGW manages eNBs (compatible with TR-069 management interface
 - Baicells Nova 233 TDD Outdoor
 - Baicells Nova 243 TDD Outdoor
 - Assorted Baicells indoor units (for lab deployments)
+
+[UE Sim to test gateways](https://docs.magmacore.org/docs/next/lte/s1ap_tests)
 
 In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview), it looks like most of the radio interface is 4G based, so will have to see at the Wavelabs 5G webinar.
 
