@@ -156,5 +156,11 @@
 - Created `anomaly_usd` GitHub repository to track progress on training on the Urban Sound Dataset
 - Created separate `anomaly_bird` workspace for working with the BirdAudio dataset, and wrote a script that splits up a long (~6 hr.) audio clip into one-second samples and uses these samples as training data
   - Audio preprocessing occurs before the `__getitem__` method in order to speed up multiple-epoch training
+- Performed a long (~3 hr.) training on BirdAudio dataset, for which the loss seemed to decrease very slowly, suggesting that the hyperparameter analysis would need to be re-done for this dataset
 
 ### Friday, July 8
+
+- Wrote a script to scan through several combinations of hyperparameters for the new dataset, and found that a learning rate of 0.0001, a weight decay of 1e-7, and a batch size of 256 worked best
+- Reformatted evaluation script as a `.ipynb` file to avoid having to re-load the dataset each time a different section of the data is to be analyzed
+- Re-trained the model on daytime, rather than nighttime sounds and realized that the loss decreased much more smoothly (this dataset actually contained bird sounds, and wasn't just noise)
+- Wrote code to report the timestamp of the largest reconstruction error, and found that it corresponded precisely with a very loud plane flying directly overhead, indeed an anomaly! It seems the autoencoder is working :)
