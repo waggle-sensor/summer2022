@@ -171,7 +171,7 @@ Chirpstack AS:
     - unable to receive frames from the second device
 * [x] Familiarize with the seeed modules that came in
 
-**July 7th**
+**July 7th, 8th**
 * [x] Connect a second device to the same gateway
     - successfully connected two device that sends data together at the same time
     - the application is able to see both devices' messages entering
@@ -185,3 +185,11 @@ Chirpstack AS:
         - could be that the gateway is unable to receive from a certain port when it is in use by another
         - could be that the message just simply did not send properly, etc
     - I also noticed that when there are no particular message being sent by the arduino devices, the gateway still receives a "AA==", which translates to ? when converting from base64
+
+**July 11th, 12th**
+* [x] Fixed packet loss issue
+    - tried multiple different ways
+    - in the end, delaying the sending of each packet solves the issue
+        - this is consistent with the theory that the arduino was still in the process of communicating the previous message when another is sent. That will cause an error
+    - I also tried resending each time we meet an error, and that also allows us to send all 10 packets
+* [x] Look into Seeed lora E5 mini
