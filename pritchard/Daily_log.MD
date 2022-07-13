@@ -628,13 +628,80 @@ ending main
 
 Things to do:
 - [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
-- [ ]  
 
 #### Tuesday June 14th ####
-- [ ] 
+- [ ] Talked with and provided demo of current process to Raj, 
+he wants:
+- [ ] login password removed from commited file and password changed in device
+  - [ ] My solution: storing the password in a noncommited python file as a variable
+```
+ with UnifiSwitchClient(
+                        host='https://192.168.0.5',
+                        username='ubnt',
+                        password=password.password) as client:#password is from another not included file
+                        info = client.get_POE_info()
+```
+- [ ] Current main Python file broken up into multiple other files
+  - [ ] Unfortunatly I ran into significant trouble trying to divide out the three threads into thier own file apart from main, with variables not passing themselves over and between the threads correctly, so for now the threethreads.py file is nonfuctional, instead the three threads are located within main.py
+```
+import threethread #haven't been able to get threading to talk with other 
+#files well, so temporarily usless
+'''error message
+File "/home/isaiah/code/main.py", line 3, in <module>
+    Queofjson= queue.Queue()#maxsize=buffer_length)
+NameError: name 'queue' is not defined
+
+'''
+import statisticgetter
+'''
+#pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
+#getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
+#getRaminfo(jsonObject,variable):
+#getTempinfo(jsonObject,area,variable):#area= 0-3, 
+#getProcessorUsage(jsonObject):
+#getUptime(jsonObject):
+'''
+import secondarys
+'''
+def getPOEAverages(jsonqueue):      
+def getPOEMaxes(jsonqueue):
+def getPOEMins(jsonqueue):  
+'''
+import password
+```
+- [ ] Initial plugin setup to publish to local filesystem
+  - [ ] I eventually got the basic plugin to run without errors, but ran into problems getting input to download to the directory designated by:
+```
+ commmand line: env PYWAGGLE_LOG_DIR=/plugin-log
+
+```
+```
+with Plugin() as plugin:
+                        rightnow=time.time_ns()
+                        #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
+                        plugin.publish("plugin.log", 1234, timestamp=rightnow)#,timestamp=rightnow)
+```
+![image](https://user-images.githubusercontent.com/106760508/178788373-ae196cda-59f1-4948-9360-bc2245290393.png)
+- [ ] His edits during demo commited into main file
+  - [ ] Removed time limit set on threads so they continue until ended by keyboard input
+  - [ ] Discovered my functions are reading miliseconds instead of seconds
+```
+ while True:
+        #while (time.time()-starttime)<total_time:
+```
+- [ ] Recorded unkown popup that briefly covered my screen a few occasions
+![image](https://user-images.githubusercontent.com/106760508/178789956-ab9e3120-4bec-4c88-b221-6973da52c761.png)
+- [ ] Got basic plugin to run without errors, but ran into problems getting input to download to directory
+- [ ] Notes on plugin
+  - [ ] As beehive is currently not accessible, we have to test our code via pushes to local directories,
+  - [ ] Although any local file that refernces waggle.plugin can run the necessary plublish functions, the documentation to be submitted to the edge database is somewhat extensive and is to be contained on Github
 
 Things to do:
-- [ ] 
+- [ ] Get threading to work in multiple files
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] Look into possible sources of pop up to ensure it is not part of something malicious
 
 #### Wednesday June 15th ####
 - [ ] 
