@@ -1,11 +1,13 @@
-from ubnt import UnifiSwitchClient
-import json
-import math
-import time
-import requests
-import csv
+from threading import Thread
+import threethread #haven't been able to get threading to talk with other 
+#files well, so temporarily usless
+'''error message
+File "/home/isaiah/code/main.py", line 3, in <module>
+    Queofjson= queue.Queue()#maxsize=buffer_length)
+NameError: name 'queue' is not defined
+
+'''
 import statisticgetter
-import password
 '''
 #pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
 #getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
@@ -20,11 +22,24 @@ def getPOEAverages(jsonqueue):
 def getPOEMaxes(jsonqueue):
 def getPOEMins(jsonqueue):  
 '''
-import threethread #haven't been able to get threading totalk with other files well, so temporarily usless
-from threading import Thread
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+import password
 import queue
-#from waggle.plugin import Plugin
+Queofjson= queue.Queue()#maxsize=buffer_length)
+
+
+
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from ubnt import UnifiSwitchClient
+import json
+import math
+import time
+import requests
+import csv
+
+
+
+
+from waggle.plugin import Plugin
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
@@ -41,14 +56,11 @@ testingtimestamp =0
 numberofports= 1
 
 starttime = time.time()
-Queofjson= queue.Queue()#maxsize=buffer_length)
-
-#Queofjson=collections.deque(maxlen=buffer_length)
 def getJson(Timestamp):
         temp=Queofjson.queue #this makes a copy of the given que in dque format which makes it possible to operate on its individual members
         for x in range(len(temp)):
                 time, json=temp[x]
-                print(time, (time-Timestamp))
+                #print(time, (time-Timestamp))
                 if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
                         break
         return json
@@ -84,26 +96,41 @@ def Read(threadname, Queofjson):
                 #print(Queofjson[-1])
                 time.sleep(frequency_read)
 def Dostuff(threadname, Queofjson):
+             #with Plugin() as plugin:
+                #plugin.subscribe("LengthEdgeSwitchQue") #still non-functional
              while True:
                 time.sleep(execution_check)
+                #msg= plugin.get()
+                #print("recieved from database", msg.value)
+                
+                '''
                 print(int(time.time()*1000)-10000)
                 print("----")
                 print(getJson(int(time.time()*1000)-10000))
+                
+                '''
 def Write(threadname, Queofjson):
         while True:
         #while (time.time()-starttime)<total_time:
                 #pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
-                #print('write called')
                 timestamps=getquetimestamps()
                 #print(timestamps)
                 header = ['timestamps']
                 Port1 = [timestamps]
                 #header2 = ['what time started', 'started on', 'every time it changed', 'what it changed to each time']
+                
+                with Plugin() as plugin:
+                        rightnow=time.time_ns()
+                        #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
+                        plugin.publish("test.bytes", 1234, timestamp=rightnow)#,timestamp=rightnow)
+                #can likly use 'edgeswitch' to publish edgeswitch contents
+                
                 with open('edgeswitch.csv', 'w', encoding='UTF8') as f:
                         writer = csv.writer(f)
                         writer.writerow(header)
                         writer.writerow(Port1)
                 time.sleep(frequency_write)           
+
 def Main():
         #ReadingProcess =multiprocessing.Process(target=Read, args=("thread-1", Queofjson))
         ReadingProcess =Thread(target=Read, args=("thread-1", Queofjson)) 
@@ -115,7 +142,6 @@ def Main():
         #ReadingProcess.join()
         #WritingProcess.join()
         #OtherProcess.join()
-        #print('ending main')
         #print(getJson(testingtimestamp))
 Main()
 '''
