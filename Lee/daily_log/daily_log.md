@@ -190,7 +190,7 @@ Things to do:
 - [ ] Finishing the Ansible script by July 15th
 
 ----------------------------------------------
-### Week 7: 7/4 to 7/8 ###
+### Week 6: 7/4 to 7/8 ###
 #### Monday July 4th (Happy July 4th!)
 
 #### Tuesday July 5th ####
@@ -209,16 +209,14 @@ Things to do:
 - [x] Conducting research into Ansible running on Nano VS Ansible running on Docker: which one is suitable for WaggleOS?
 
 #### Thursday July 7th ####
-- [x] Had a meeting weekly EDU; summary: 
-(1) Need to figure out hw to add the sensor on our OS (like building a tutorial for the educational points)
-(2) Add another type sensor such as soil moisture sensor
-
+- [x] Had a meeting weekly EDU; summary: (1) Need to figure out hw to add the sensor on our OS (like building a tutorial for the educational points), (2) Add another type sensor such as soil moisture sensor  
 - [x] Had a meeting with Francisco and Sean: how to configure the microphone setup: Completed! (update device manager (labeling) PulseAudio)
 - [x] Had a weekly Robot (ROS) meeting
  
 Things to do:  
 Linux(Waggle) should know about the itemized list such as different types of sensors 
  
+#### Friday July 8th ####
 - [x] Had a meeting with Joe to talk about Ansible script
 - Configuration on MAC
 
@@ -239,11 +237,29 @@ Linux(Waggle) should know about the itemized list such as different types of sen
 
 ```cd nvidia-nano```
 
-```ansible-playbook -i ansible_inventory 01_ansible_nvidia-nano_base.yaml //error will occur if it is your own host
+```ansible-playbook -i ansible_inventory 01_ansible_nvidia-nano_base.yaml //error will occur if it is your own host```
 
-```ansible-playbook -i ansible_inventory --user root 01_ansible_nvidia-nano_base.yaml //should work as "--user" included
+```ansible-playbook -i ansible_inventory --user root 01_ansible_nvidia-nano_base.yaml //should work as "--user" included```
 
 Ref
 https://formulae.brew.sh/formula/ansible 
 https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#:~:text=Group%20variables%20are%20a%20convenient,from%20all%20of%20those%20groups.
 
+----------------------------------------------
+### Week 7: 7/11 to 7/15 ###
+#### Monday July 11th
+- [x] Configured out how to set up sensors on Nano (Microphone and BME680 Sensor)
+
+#### Tuesday July 12th
+- [x] Half done with building Ansible script
+- [x] Had a meeting with Raj, Joe, Francisco and Sammi to discuss about the WES and Ansible
+
+Things to do:  
+- [ ] Finishing up creating the Ansible script by this Friday (or ASAP)
+
+#### Wednesday July 13th
+- [x] Attended Yomi presentation presentation regarding his current work on application profiling
+- [x] SSH setup and tested the Ansible script on the New Nano 
+
+#### Thursday July 14th
+#### Friday July 15th
