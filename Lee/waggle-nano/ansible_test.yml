@@ -1,0 +1,61 @@
+# Ansible Playbook. Note. This Ansible script breaks down multiple parts: (1) Setup HW, (2) Flash L4T 4.4.1, (3) Pre-Ansible steps: ssh key access to node and (4) Run Ansible
+
+---
+- name: Manual: Ensuring Hardware setup
+  hosts: all
+  user: root
+  tasks:
+    - name: Ensuring Hardware setup
+        content: 
+        state: latest
+        dest: 
+
+- name: Manual: Flash L4T 4.4.1
+  user: root
+  hosts: all
+  tasks:
+    - name: Flash L4T 4.4.1
+        content: 
+        state: latest
+        dest: /tmp/testfile.txt
+        
+- name: Pre-Ansible steps (ssh, install ansible etc)
+  hosts: all
+  user: root
+  tasks:
+    - name: Enabling root SSH key access to node 
+        content: ifconfig eth0
+        state: latest
+        dest: 
+
+- name: Run Ansible (4-16)
+  hosts: all
+  tasks:
+    - name: Run Ansible
+        content: 
+        state: latest
+        dest: /tmp/testfile.txt
+        
+        
+        
+        
+# Ansible Playbook. Note 07/12
+- name: Setup the Extra Drive
+  hosts: all
+  become: true
+  lvg:
+      vg: sample-pv
+      pvs: /dev/sda
+      pesize: 512
+  tasks:
+    - name: create partition
+      parted:
+        device: /dev/sda
+        number: 1
+        flags: [ lvm ]
+        state: present
+        part_end: 16GB
+        
+        
+        
+        

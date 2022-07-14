@@ -142,7 +142,7 @@ Things to do:
 - [ ] Setup linux laptop so I can use it as my main computer at work
 - [ ] Talk to Raj about: when arduinos will be in, when I will set up bike racks, how I should go about setting up a network server,
 
-### Week 3: 6/20 to 6/24 ###
+### Week 4: 6/20 to 6/24 ###
 #### Monday June 20th ####
 - [ ] Got outlook/Github/slack/setup on linux computer
 - [ ] Talked with Raj about: arduino arrvial date, when we would be setting up bike racks to act as testing rigs, how I should go a bout testing the nano's interaction with the WisGate
@@ -184,7 +184,7 @@ Things to do:
 Things to do:
 - [ ] Get WisGate to accept some fake data via RAK serial port tool 
 
-### Week 3: 6/27 to 6/31 ###
+### Week 5: 6/27 to 6/31 ###
 #### Monday June 27th ####
 - [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
 - [ ] messed up wireless network while trying to implement previous test
@@ -230,7 +230,7 @@ Things to do:
 - [ ] my code essentially excepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific value we are looking for, in this case the first poe wattage value
 
-### Week 3: 6/27 to 6/31 ###
+### Week 6: 6/27 to 6/31 ###
 #### Monday June 27th ####
 - [ ] discovered that RAK serial port tool can only be used on "devices" that are sensors
 - [ ] messed up wireless network while trying to implement previous test
@@ -276,7 +276,7 @@ Things to do:
 - [ ] my code essentially accepts a passed list, which is obtained from a local api using the given credentials, reformats it, then accesses the first element of it which is actually a python dictionary
 - [ ] after that a specific section of that library that conatins details useful to us, (interfaces), is taken and then sliced again to find the specific 
  
-### Week 3: 7/5 to 6/31 ###
+### Week 7: 7/5 to 6/31 ###
 #### Tuesday July 5 ####
 - [ ] WFH due to family member catching covid
 - [ ] wrote basic code for prcessing POE outputs by minimum maximum and average in file over 5min interval
@@ -397,6 +397,327 @@ Things to do:
 - [ ] figure out full system of storing json objects, then recalling and analizing them
 
 #### Friday June 31th ####
+- [ ] Made list of all availible values accessible on api page 
+```
+0.timestamp
+0.device.0.identifier
+0.device.0.usage
+0.device.ram.usage
+0.device.ram.free
+0.device.ram.total
+
+x is between 0 and 3
+0.device.temperatures.x.name
+0.device.temperatures.x.type 
+0.device.temperatures.x.value
+  #two lower ports are poe ports, all types are other
+0.device.uptime
+
+x is between 0 and 15
+0.interfaces.x.statistics.dropped
+0.interfaces.x.statistics.errors
+0.interfaces.x.statistics.txErrors
+0.interfaces.x.statistics.rxErrors
+0.interfaces.x.statistics.rate
+0.interfaces.x.statistics.txRate
+0.interfaces.x.statistics.rxRate
+0.interfaces.x.statistics.bytes
+0.interfaces.x.statistics.txBytes
+0.interfaces.x.statistics.rxBytes
+0.interfaces.x.statistics.packets
+0.interfaces.x.statistics.txPackets
+0.interfaces.x.statistics.rxPackets
+0.interfaces.x.statistics.pps
+0.interfaces.x.statistics.txPPS
+0.interfaces.x.statistics.rxPPS
+0.interfaces.x.statistics.poePower
+```
+- [ ] Made functions to return particular specified values after receiving the json of a particular iteration
+```
+def getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
+        data=json.loads(jsonObject)
+        Statistic=data[0]['interfaces'][portnumber]['statistics'][variable]#port= 0-15, 
+        #variable= dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower
+        #print('from statistic')
+        #print(Statistic, data[0]['timestamp'])
+        return(Statistic,data[0]['timestamp'])#return as tuple with timestamp
+def getRaminfo(jsonObject,variable):
+        data=json.loads(jsonObject)
+        RamInfo=data[0]['device']['ram'][variable]#variable = usage, free, total
+        return(RamInfo,data[0]['timestamp'])
+def getTempinfo(jsonObject,area,variable):#area= 0-3, 
+        #variable= name, value, as well as type which is always other
+        data=json.loads(jsonObject)
+        TempInfo=data[0]['device']['temperatures'][area][variable]
+        return(TempInfo,data[0]['timestamp'])
+def getTimestamp(jsonObject):
+        data=json.loads(jsonObject)
+        Timestamp=data[0]['timestamp']
+        return(Timestamp) 
+def getProcessorUsage(jsonObject):
+        data=json.loads(jsonObject)
+        ProcessorUsage=data[0]['device']['cpu'][0]['usage'] #second zero might be cpu
+        return(ProcessorUsage,data[0]['timestamp'])
+def getUptime(jsonObject):
+        data=json.loads(jsonObject)
+        Uptime=data[0]['device']['uptime']
+        return(Uptime,data[0]['timestamp'])
+```
+- [ ] Figured out how make que of json objects as well as how to run through that que when doing processing for a particular value
+```
+Queofjson.put(json.dumps(info))
+jsonObject=Queofjson.get()
+```
+- [ ] Figured out how to send out and receive all values in the form of tuples which contain the wanted value as well as the timestamp of when that value occured
+```
+ Averages =[(0,0)*numberofports]# error creates (0, 0, 0, 0, 0, 0)
+temp =Averages[x][0]+(poePower-Averages[x][0])/(y+1) #rolling average calculation
+                        Averages[x]=(temp, time)
+```
+- [ ] Made new versions of previous average, minimum and maximum value finders, sussessfully got average function fully operational
+```
+def getPOEAverages(jsonqueue):
+        #Averages = [0] * numberofports
+        #Averages= [0.0 for i in range(numberofports)]
+        Averages =[(0,0)*numberofports]# error creates (0, 0, 0, 0, 0, 0)
+        #print (type(Averages[0]))
+        for y in range(numberiterations):
+                jsonObject=jsonqueue.get()
+              
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time = getStatistics(jsonObject,1,'poePower')
+                        temp =Averages[x][0]+(poePower-Averages[x][0])/(y+1) #rolling average calculation
+                        Averages[x]=(temp, time)
+        return (Averages)                       
+def getPOEMaxes(jsonqueue):
+        #timestamps = [0] * 8#not sure how to initialize list of timestamps want 
+        #Maximums = [0] * 8
+        print('max was called')
+        Maximums =[(0,0)*numberofports]
+        for y in range(numberiterations):
+                print(y)
+                jsonObject=jsonqueue.get()
+                print('max should end')
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time= getStatistics(jsonObject,1,'poePower')
+                        if poePower>Maximums[x][0]:
+                                Maximums[x]=(poePower,time)
+        
+        return (Maximums)
+def getPOEMins(jsonqueue):  
+        #timestamps = [0] * 8#not sure how to initialize list of timestamps
+        Minimums =[(150,0)*numberofports]
+        #Minimums = [0] * 8
+        #Minimums = [150 for i in range(8)]#assumes that no port will have a higher minimum then 150 watts
+        for y in range(numberiterations):
+                jsonObject=jsonqueue.get()
+                for x in range(numberofports): #iterates through each port, 8-15 in final
+                        poePower, time= getStatistics(jsonObject,1,'poePower')
+                        if poePower<Minimums[x][0]: #compars and sets maximums and mins per port
+                                Minimums[x]=(poePower,time)                    
+        return (Minimums)
+output:functions
+functionqueue1= copy.copy(Queofjson)
+print(getPOEAverages(functionqueue1))#there is definitly a way to set the functions to static
+functionqueue= copy.copy(Queofjson)
+print(getPOEMaxes(functionqueue))
+output:
+python3 main.py
+[(0.96, 1657550520513)]
+max was called
+0
+
+```
+
+Things to do
+- [ ] Fix bug that occures when passing queue to max function
+- [ ] Fix Average value function so it doesn't just return the last timestamp it received
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] make function to return any specific value of a specific iteration given the full json que
+
+### Week 8: 7/11 to 7/15 ###
+#### Monday June 13th ####
+- [ ] Talked with Raj, he wants: circular buffer, three threads that operate at smae time-> reading standard writing and intercetion writing, three variables to control-> the total time the function is active, the delay between occurances of reading as well as writing
+- [ ] Wrote code for the three basic threads as separate functions
+```
+def Read(threadname, Queofjson):
+def Dostuff(threadname, Queofjson):
+        #global Queofjson
+        while (time.time()-starttime)<Totaltime:
+                if(Queofjson.qsize()==1):
+                        print('there are 1 jsons')
+                #print(len(Queofjson))
+                time.sleep(execution_check)
+def Write(threadname, Queofjson):
+        while (time.time()-starttime)<Totaltime:
+                #print('write called')
+                timestamps=getquetimestamps()
+                #print(timestamps)
+                header = ['timestamps']
+                Port1 = [timestamps]
+                #header2 = ['what time started', 'started on', 'every time it changed', 'what it changed to each time']
+                with open('edgeswitch.csv', 'w', encoding='UTF8') as f:
+                        writer = csv.writer(f)
+                        writer.writerow(header)
+                        writer.writerow(Port1)
+                time.sleep(frequency_write)       
+```
+- [ ] Created Cycling Queue system primarily within Read function
+```
+def Read(threadname, Queofjson):
+        #global Queofjson
+        while (time.time()-starttime)<Totaltime:
+                
+                #print('read called')
+                with UnifiSwitchClient(
+                        host='https://192.168.0.5',
+                        username='ubnt',
+                        password='why1not2') as client:
+                        info = client.get_POE_info()
+                if Queofjson.qsize()==numberiterations:#this makes the que circular might be unneeded due to maxlength
+                         Queofjson.get()
+                Timestamp=getTimestamp(json.dumps(info))
+                testingtimestamp= Timestamp
+                Queofjson.put(( Timestamp,json.dumps(info)))
+                print(Queofjson.qsize())
+                #print(Queofjson[-1])
+                time.sleep(frequency_read)
+```
+- [ ] Changed the libraries used by Queue so as to allow the threads to act opon common variables
+```
+#import multiprocessing
+from threading import Thread
+import queue
+```
+- [ ] Added function to return respective timestamps for all jsons currently in que
+```
+def getquetimestamps():
+        Timestamps= [0 for i in range(Queofjson.qsize())]
+        temp=Queofjson.queue
+        for x in range(Queofjson.qsize()):
+                Timestamps[x], json = temp[x]
+        print(Timestamps)
+        return (Timestamps)
+```
+- [ ] Added funtion to return a json from Queue given its timestamp, this timestamp is currently automatically called
+```
+def getJson(Timestamp):
+        temp=Queofjson.queue #this makes a copy of the given que in dque format which makes it possible to operate on its individual members
+        for x in range(len(temp)):
+                time, json=temp[x]
+                if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
+                        return json 
+        return ('error submitted timestamp too low')
+```
+output:
+```
+[]
+1
+there are 1 jsons
+[1657577106639]
+2
+[1657577106639, 1657577108339]
+2
+[1657577108339, 1657577110282]
+2
+ending main
+[{"timestamp": 1657577110282, "device":......
+```
+
+
+Things to do:
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+
+#### Tuesday June 14th ####
+- [ ] Talked with and provided demo of current process to Raj, 
+he wants:
+- [ ] login password removed from commited file and password changed in device
+  - [ ] My solution: storing the password in a noncommited python file as a variable
+```
+ with UnifiSwitchClient(
+                        host='https://192.168.0.5',
+                        username='ubnt',
+                        password=password.password) as client:#password is from another not included file
+                        info = client.get_POE_info()
+```
+- [ ] Current main Python file broken up into multiple other files
+  - [ ] Unfortunatly I ran into significant trouble trying to divide out the three threads into thier own file apart from main, with variables not passing themselves over and between the threads correctly, so for now the threethreads.py file is nonfuctional, instead the three threads are located within main.py
+```
+import threethread #haven't been able to get threading to talk with other 
+#files well, so temporarily usless
+'''error message
+File "/home/isaiah/code/main.py", line 3, in <module>
+    Queofjson= queue.Queue()#maxsize=buffer_length)
+NameError: name 'queue' is not defined
+
+'''
+import statisticgetter
+'''
+#pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
+#getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
+#getRaminfo(jsonObject,variable):
+#getTempinfo(jsonObject,area,variable):#area= 0-3, 
+#getProcessorUsage(jsonObject):
+#getUptime(jsonObject):
+'''
+import secondarys
+'''
+def getPOEAverages(jsonqueue):      
+def getPOEMaxes(jsonqueue):
+def getPOEMins(jsonqueue):  
+'''
+import password
+```
+- [ ] Initial plugin setup to publish to local filesystem
+  - [ ] I eventually got the basic plugin to run without errors, but ran into problems getting input to download to the directory designated by:
+```
+ commmand line: env PYWAGGLE_LOG_DIR=/plugin-log
+
+```
+```
+with Plugin() as plugin:
+                        rightnow=time.time_ns()
+                        #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
+                        plugin.publish("plugin.log", 1234, timestamp=rightnow)#,timestamp=rightnow)
+```
+![image](https://user-images.githubusercontent.com/106760508/178788373-ae196cda-59f1-4948-9360-bc2245290393.png)
+- [ ] His edits during demo commited into main file
+  - [ ] Removed time limit set on threads so they continue until ended by keyboard input
+  - [ ] Discovered my functions are reading miliseconds instead of seconds
+```
+ while True:
+        #while (time.time()-starttime)<total_time:
+```
+- [ ] Recorded unkown popup that briefly covered my screen a few occasions
+![image](https://user-images.githubusercontent.com/106760508/178789956-ab9e3120-4bec-4c88-b221-6973da52c761.png)
+- [ ] Got basic plugin to run without errors, but ran into problems getting input to download to directory
+- [ ] Notes on plugin
+  - [ ] As beehive is currently not accessible, we have to test our code via pushes to local directories,
+  - [ ] Although any local file that refernces waggle.plugin can run the necessary plublish functions, the documentation to be submitted to the edge database is somewhat extensive and is to be contained on Github
+
+Things to do:
+- [ ] Get threading to work in multiple files
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] Look into possible sources of pop up to ensure it is not part of something malicious
+
+#### Wednesday June 15th ####
+- [ ] 
+
+Things to do:  
+- [ ] 
+
+#### Thursday June 16th ####
+- [ ]  
+
+Things to do: 
+- [ ] 
+#### Friday June 17th ####
+- [ ] 
+
+Things to do:
 - [ ] 
 
 

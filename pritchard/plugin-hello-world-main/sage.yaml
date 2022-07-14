@@ -1,0 +1,12 @@
+name: "hello-world"
+description: "Intro example which publishes hello world."
+authors: "Isaiah Prithard <ipritchard@anl.gov>"
+keywords: "hello, testing"
+funding: ""
+license: ""
+source: "https://github.com/waggle-sensor/plugin-hello-world"
+  architectures:
+    - "linux/amd64"
+    - "linux/arm64"
+  url: "https://github.com/waggle-sensor/summer2022/pritchard/plugin-hello-world/"
+  branch: "main"

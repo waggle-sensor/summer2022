@@ -327,4 +327,17 @@ Things to added to dockerfile.
 
 - Worked on presentation and designing experiment.
 
+### Week 8 ###
 
+------------------------------------------------
+
+#### Monday July 11, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Tuesday July 12, 2022 ####
+
+- Worked on presentation and designing experiment.
+#### Wednesday July 13, 2022 ####
+
+- Completed internship presentation.

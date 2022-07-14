@@ -1,6 +1,33 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 5: 7/11 to 7/15
+
+### Tuesday 7/12
+- finished current version of [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_7-12-2022.pdf)
+  - setting up a meeting with Very Important People (just Raj, Randy, and Joaquin) to discuss!
+- Also found out OAI has another project group that manages their core network, so that changes some things (it's still not as ready in my opinion)
+  - added that information to the 5G core notes file
+
+#### To Do
+- one of these days we'll downlink and debug Linux, but the lab is indefinitely under construction sooo
+- Get in person help with logging into/getting access to the Nokia DAC
+- meet with people about decision matrix and get next steps, if needed
+
+### Monday 7/11
+
+- Met with Joaquin to check in on decision matrix
+  - Need to add a row about simulated UE/RAN that each core has used
+  - find use cases of them connecting real hardware, especially with Nokia products
+  - go back and check if Magma has closed-loop control and double check hardware requirements
+  - double check that I can delete the OAI column
+
+#### To Do
+
+- implement decision matrix notes and email Raj, Joaquin, and Randy when finished to set up meeting to discuss!
+- downlink, debug Linux
+- Get in person help with logging into/getting access to the Nokia DAC
+
 ## Week 4: 7/5 to 7/8
 
 ### Friday 7/8
