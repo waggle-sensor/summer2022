@@ -3,8 +3,9 @@
 ### Overall Project Goals
 
 - [x] Establish documentation in the Waggle GitHub Repository
-- [ ] Radar image processing using OpenCV and determine which parameters give the best insight
-- [ ] Utilize k-means clustering to place the radar images into distinct categories
+- [x] Radar image processing using OpenCV to perform morphology computations
+- [x] Utilize k-means clustering to place the radar images into distinct categories
+- [ ] Apply algorithm to a season of radar data
 - [ ] Complete deliverables (presentation, poster, paper)
 
 ### Week 1
@@ -311,6 +312,42 @@ I have learned so much about the research process throughout my internship at AN
 My mentor, Bhupendra, gave me great advice. He told me that research is like learning how to ride a bike, you have to fall down before you can figure it out. I definitely needed to hear that!
 
 ---
+
+### Week 7
+
+##### Goals for this week:
+
+- [x] Export data to tabular format
+- [x] Perform more morphology computations
+- [x] Start using k-means clustering
+
+---
+
+#### Monday July 11th, 2022
+
+- Exported and formatted data into CSV file
+- Attended TRACER briefing
+
+#### Tuesday July 12th, 2022
+
+- Performed additional morphology computations and exported to CSV file
+- Attended TRACER briefing
+- Attended 1:1 student check-in
+
+#### Wednesday July 13th, 2022
+
+- Worked on scaling up script to include 500+ radar files from the May KILX data set
+- Troubleshooting and dealing with special cases that came up when I added more files into the script
+- Improved contouring methods by performing further thresholding (eliminating radar echoes that contain < 200 pixels).
+
+#### Thursday July 14th, 2022
+
+- Attended weekly AI meeting
+- Attended TRACER briefing
+- Requested full season of NEXRAD data from Bobby, will be ready Friday evening or by Monday at the latest.
+- Started developing poster presentation (due next Thursday July 21st)
+
+#### Friday July 15th, 2022
 
 
 
