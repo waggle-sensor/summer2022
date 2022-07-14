@@ -78,3 +78,14 @@
 ### Friday 07/08
 
 - [x] ROS2 Setup and Beginner tutorials (to be continued)
+
+
+## Week 4: 07/11 - 07/15
+
+Goals
+
+- Execute [06/30 Protocols Examples Meeting] script on Nano
+- Implement a multi-Nano, multi-container(docker for now) ROS(or other)-based network interfacing with a scheduler node to simulate multi-robot coordination
+- ROS2
+
+### Monday 07/11
