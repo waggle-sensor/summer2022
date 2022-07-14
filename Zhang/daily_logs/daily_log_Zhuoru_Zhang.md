@@ -14,12 +14,18 @@
 
 7.6
 - go over introduction to distributed systems
-- try ROS publisher/subscriber on multiple machines/dockers
-
-
+- try ROS publisher/subscriber on multiple machines/dockers: ROS1 successful
 
 7.11
 
--Using dockerd to manager dockers
+- Using dockerd to manager dockers,spin up docker on remote machine: refer to docker_related.md
 
--Go through OT2 basic tutorial
+- Go through OT2 basic tutorial
+
+7.12
+- Go though OT2-driver and OT2-workcell github repo
+
+7.13 
+- find examples for multi-robot middleware like open-RMF
+- Learn about ROS2
+
