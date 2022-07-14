@@ -818,7 +818,8 @@ def getlisttimestamps():
                 Timestamps[x], json = myconfig.Listofjson[x]
         return (Timestamps)
 ```
-![image](https://user-images.githubusercontent.com/106760508/179078440-caa8342a-1b98-408f-896b-3c9df37730c9.png)
+here is an example plot of the change in poe power draw from a dummy device over 29 iterations, which repersents roughly a 1 minute 
+![image](https://user-images.githubusercontent.com/106760508/179082793-b77a4f80-8952-4a3a-af89-80c9af90f51e.png)
 
 Things to do: 
 - [ ] 
