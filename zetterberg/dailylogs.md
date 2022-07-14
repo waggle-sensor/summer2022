@@ -188,8 +188,58 @@
 
 ---
 
-#### Tuesday July 5th, 202
+#### Tuesday July 5th, 2022
 
 - Restarted bash jobs
 - Converted Jupyter notebook to plotting tools
 - Worked on plotting the power spectra
+
+#### Wednesday July 6th, 2022
+
+- Continued working on getting clusters for all 2 months of data
+- Student Connects Group
+- Weekly Student Seminar
+
+#### Thursday July 7th, 2022
+
+- Created an elbow plot to find ideal number of clusters for all 2 months of data
+- Ideal number of clusters is 5
+- AI Algorithm student group meeting
+
+#### Friday July 8th, 2022
+
+- Ran bebop job to get cluster labels for all 2 months of data
+- Created plots that show clustering of data in principal component space
+
+---
+
+### Week 7
+
+### Goals for the week:
+- Create a rough draft of the poster
+- Make plots to include in the poster
+- Find average power spectra for each cluster
+
+---
+
+#### Monday July 11th, 2022
+
+- Continued working on power spectra job to run in Bebop
+- Continued working on heatmap and cluster plots in PCA space
+- Compared old clusters to new clusters
+
+#### Tuesday July 12th, 2022
+
+- Begun work on poster
+- Coninued working on power spectra job
+- Improved appearance of plots
+
+#### Wednesday July 13th, 2022
+
+- Continued working on poster
+- Student connects group
+- Weekly student seminar
+- Begun improving power spectra plot code to use less memory
+
+
+
