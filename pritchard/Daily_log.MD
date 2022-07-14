@@ -704,13 +704,121 @@ Things to do:
 - [ ] Look into possible sources of pop up to ensure it is not part of something malicious
 
 #### Wednesday June 15th ####
-- [ ] 
+- [ ] Attended mandatory meeting on how "on the lawn" and "off the lawn" will work
+- [ ] Went outside due to fire drill
+- [ ] Looked into white pop-up and confirmed it is part of the gnome network connectivity manager, which continued to fail as I do not actually have gnome installed
+- [ ] Talked to Sean about how to publish data from the .py file my project is in
+- [ ] Successfully published an arbitrary value
+```
+ with Plugin() as plugin:
+                        rightnow=time.time_ns()
+                        #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
+                        plugin.publish("test.bytes", 1234, timestamp=rightnow)#,timestamp=rightnow)
+                #can likly use 'edgeswitch' to publish edgeswitch contents
+```                
+![image](https://user-images.githubusercontent.com/106760508/179076564-2bf7df2e-88c6-4d05-a012-2b132ffd4c68.png)
+
+- [ ] Talked to Sean about my code: he reccomended not using multiple threads
+- [ ] Talked to Raj, he clarified the reasoning on why we need to use different reoccurring delays for each thread,also gave me a written version of previously expressed requirements
+```
+This is what we need in terms of capabilities:
+We should be able to read and store in memory (transient/RAM/Variables) values that we can get from the Switch. These values should ideally be in the original form they were received and in full. Don't waste resources converting, don't loose data because we did not have a clear understanding of what it could be used for. Filtering can happen later. The read rate should be definable.
+We should be able to write the raw values read to Beehive using pywaggle. We should also be able to write secondary digested values based on the buffer of values we have collected in our reading and buffering process. This can happen periodically, and we should be able to set the rate.
+We should be able to catch when some event happens, and report it to beehive. The latency in detecting an event is ideally less that the latency of the periodic process. I.e. We may periodically report every 5 min, our buffer may be 10 min long, read every 1 second and want to report the events ASAP ( of course there is a latency Vs Performance trade off).
+After having completed a single sequential loop, design a program that can do the above.
+```
+- [ ] Began reforming my code aroud a List of Jsons instead of a Queue, so as to avoid potential problems stemming from how I would have to access a value within the queue by altering the queue from multiple threads and functions    
 
 Things to do:  
-- [ ] 
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+- [ ] Complete transformation of code to safer List focussed version
+- [ ] Create functionality to make a graph of changes in a given value over a time period
 
 #### Thursday June 16th ####
-- [ ]  
+- [ ]  Finished reforming project to use a large list instead of a queue
+```
+if len(myconfig.Listofjson)==buffer_length:#this makes the que circular might be unneeded due to maxlen(myconfig.Listofjson)
+                         myconfig.Listofjson.pop(0)
+                dumpedjson=json.dumps(info)
+                Timestamp=statisticgetter.getTimestamp(dumpedjson)
+                myconfig.Listofjson.append(( Timestamp,dumpedjson))
+                            
+                
+
+```
+instead of having to make a copy which I wold then edit, I could now look directly at values that were within the Listofjsons
+```
+def getJson(Timestamp):
+        for x in range(len(myconfig.Listofjson)):
+                time, json=myconfig.Listofjson[x]
+                #print(time, (time-Timestamp))
+                if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
+                        break
+        return json
+```
+- [ ]  Eliminated unnessary passed variables, instead referencing them within a new config file
+```
+def getPOEMaxes():
+        Maximums =[(0,0)*myconfig.numberofports]
+        for y in range(len(myconfig.Listofjson)):#I previously passed in a copy of the Que of Jsons
+                print(y)
+                jsonObject=myconfig.Listofjson[y]
+                print('max should end')
+                for x in range(myconfig.numberofports): #iterates through each port, 8-15 in final, I previously stored the number of ports locally
+                        poePower, time= statisticgetter.getStatistics(jsonObject,1,'poePower')
+                        if poePower>Maximums[x][0]:
+                                Maximums[x]=(poePower,time)
+        
+        return (Maximums)
+```
+- [ ]  Hunted down a now unneeded print that originated from a statisticsgetters function, in the process re-discovering the 'find' command
+```
+def getTimestamp(jsonObject):
+        data=json.loads(jsonObject)
+        Timestamp=data[0]['timestamp']
+        #print(Timestamp) #this is the offending print statement
+        return(Timestamp)
+```
+- [ ]  Printed out a graph of poe values over the timeperiod contained within the buffer using a few new functions
+```
+def Getshortenedlist(firsttimestamp, secondtimestamp):
+    shortlist =[]
+    for i in range(len(myconfig.Listofjson)):
+        timestamp, json= myconfig.Listofjson[i]
+        if(timestamp>=firsttimestamp):
+            shortlist.append((timestamp, json))
+        if(timestamp>secondtimestamp):
+            break
+    return(shortlist)
+def getStatisticPlot(variable, port, firsttimestamp, secondtimestamp):
+    shortlist=Getshortenedlist(firsttimestamp, secondtimestamp)
+    Timestamps=[0]*len(shortlist)
+    Poes=[]
+    values=[0]*len(shortlist)
+    for x in range(len(shortlist)):
+        Timestamps[x], json = shortlist[x]
+        values[x], othertimestamps=statisticgetter.getStatistics(json,port,variable)
+    print(Timestamps)
+    print(values)
+    plt.plot(Timestamps, values)
+    plt.xlabel('Timestamps')
+    plt.ylabel('variable')
+    plt.title('variable Vs Time')
+    plt.show()
+def getPlotofbufferStatistic(variable, port):
+    Listoftimestamps=getlisttimestamps()
+    firsttimestamp=Listoftimestamps[0]
+    lasttimestamp=Listoftimestamps[-1]
+    getStatisticPlot(variable, port, firsttimestamp, lasttimestamp)
+def getlisttimestamps():
+        Timestamps= [0 for i in range(len(myconfig.Listofjson))]
+        for x in range(len(myconfig.Listofjson)):
+                Timestamps[x], json = myconfig.Listofjson[x]
+        return (Timestamps)
+```
+![image](https://user-images.githubusercontent.com/106760508/179078440-caa8342a-1b98-408f-896b-3c9df37730c9.png)
 
 Things to do: 
 - [ ] 
