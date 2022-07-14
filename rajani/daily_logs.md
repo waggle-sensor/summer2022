@@ -74,3 +74,105 @@
 - Learned many more features of torchaudio, including how to pre-process audio to make the dataset more uniform in length, number of channels, etc.
 - Implemented a CNN for sound classification using torchaudio
 - Planned modified augmentations to training stage of VICReg that would make the model less robust to anomalous images
+
+## Week 3
+
+### Monday, June 20
+
+- Got access to ThetaGPU and learned how to submit jobs, start interactive sessions, forward ports, etc.
+- Learned in more detail how to use the Linux command line (piping, etc.)
+- Set up pretrained VICReg model on ThetaGPU; assessed performance on ImageNet
+
+### Tuesday, June 21
+
+- Read Hojjati et. al.’s survey paper on self-supervised anomaly detection to come up with alternative ideas for detecting anomalies in the spectrograms
+- Trained my own VICReg model on ThetaGPU, assessed performance, and set up anomalous images. The network was unable to distinguish between normal images and anomalous images based on the terms in the loss function
+- Set up visualization of terms in loss function and the invariance value of different images using Tensorboard
+
+### Wednesday, June 22
+
+- Since anomaly detection did not work with training on ImageNet, hypothesized that the model was too robust in feature extraction to distinguish between normal and anomalous images in the loss function
+- Modified VICReg augmentations to consist solely of a crop, and varied the scale of the crop to attempt to improve contrast between normal and anomalous images, which was unsuccessful
+- Devised a more curated task for anomaly detection, in which the network was trained solely on images from two classes of dogs, and then images of beverages were fed to the network as anomalies
+- Sped up evaluation by switching from training images to anomalous images (and freezing the network weights) partway through training, logging the terms in the loss function
+
+### Thursday, June 23
+
+- Modified the loss function to consist solely of the covariance term; this was unsuccessful, and the covariance approached zero for all input images as training proceeded
+- Presented solid color images to the network in training, and ImageNet images after freezing network weights; this allowed for distinction between normal and anomalous images using any one of the three terms in the loss function
+  - Modifying the augmentations to include only the crop (and excluding the normalization) significantly improved performance by increasing the contrast between the loss terms between normal and anomalous images
+
+### Friday, June 24
+
+- Formed a hybrid neural network in which the Resnet50 used in the VICReg paper was replaced by the vision transformer used in DINO
+- Assessed performance of the hybrid network on anomaly detection and found that it could distinguish between training images (two classes of dogs) and anomalous images (beverages) using the covariance term, but only for large batch sizes (e.g., 64), and not on the scale of individual images
+- Implemented a basic autoencoder for anomaly detection, which I will adapt to audio spectrograms next week
+
+## Week 4
+
+### Monday, June 27
+
+- Wrote a convolutional autoencoder to reconstruct audio spectrograms based on basic last week's basic autoencoder, with the plan to monitor reconstruction error to detect anomalies
+- Met with Dario to discuss some alternate approaches for anomaly detection
+
+### Tuesday, June 28
+
+- Debugged and tried out many layer combinations for the autoencoder
+- Evaluated performance of different network architectures based on training loss, monitored by viewing plot in Tensorboard
+
+### Wednesday, June 29
+
+- Career Day!
+
+### Thursday, June 30
+
+- Wrote an evaluation script to reconstruct audio from spectrograms and to display original and reconstructed spectrograms
+- Evaluated chosen network architecture to assess whether reconstruction performance increased as training proceeded
+
+### Friday, July 1
+
+- Tested out several hyperparameters of model (batch size, learning rate, etc.)
+- Learned how to use Singularity, and created an image to prepare convolutional autoencoder for ThetaGPU training
+
+## Week 5
+
+### Monday, July 4
+
+- Holiday!
+
+### Tuesday, July 5
+
+- Librosa was not working properly with the Singularity container, which I needed to reconstruct audio files from the spectrograms. After many failed attempts, I resorted to training the model on ThetaGPU and evaluating on my local machine
+- Used argparse to add arguments to training code to streamline training the model
+
+### Wednesday, July 6
+
+- Attended one seminar on poster presentations and the LANS seminar on the use of AI in mathematics.
+- Learned in depth how parallelization works in PyTorch, and implemented a basic version in my training code (DataParallel), with plans to use DistributedDataParallel to decrease the overhead time cost and allow for training across multiple nodes
+
+### Thursday, July 7
+
+- Added more command line arguments to my code and set up model checkpoints in the manner done on the VICReg GitHub
+- Created `anomaly_usd` GitHub repository to track progress on training on the Urban Sound Dataset
+- Created separate `anomaly_bird` workspace for working with the BirdAudio dataset, and wrote a script that splits up a long (~6 hr.) audio clip into one-second samples and uses these samples as training data
+  - Audio preprocessing occurs before the `__getitem__` method in order to speed up multiple-epoch training
+- Performed a long (~3 hr.) training on BirdAudio dataset, for which the loss seemed to decrease very slowly, suggesting that the hyperparameter analysis would need to be re-done for this dataset
+
+### Friday, July 8
+
+- Wrote a script to scan through several combinations of hyperparameters for the new dataset, and found that a learning rate of 0.0001, a weight decay of 1e-7, and a batch size of 256 worked best
+- Reformatted evaluation script as a `.ipynb` file to avoid having to re-load the dataset each time a different section of the data is to be analyzed
+- Re-trained the model on daytime, rather than nighttime sounds and realized that the loss decreased much more smoothly (this dataset actually contained bird sounds, and wasn't just noise)
+- Wrote code to report the timestamp of the largest reconstruction error, and found that it corresponded precisely with a very loud plane flying directly overhead, indeed an anomaly! It seems the autoencoder is working :)
+
+## Week 6
+
+### Monday, July 11
+
+- Cleaned up and added new functionality to the evaluation component of the autoencoder, including:
+  - Using `torch.utils.data.Subset` to allow for evaluation on a smaller portion of the dataset
+  - Splitting evaluation into three functions:
+    - `plot_recons()`: plots the original and reconstructed spectrograms of a specified set of frames
+    - `save_audio()`: converts the original and reconstructed spectrograms to `.wav` files and saves them, for a specified set of frames
+    - `get_max_loss()`: gives the timestamp of the maximum reconstruction error, as well as its value, and the average reconstruction error across the dataset
+  - Added functionality to stitch together original audio and reconstructed audio from multiple training samples. The elevated noise level in the audio derived from the spectrograms suggests using more mels would be beneficial.

@@ -272,3 +272,72 @@ Things to added to dockerfile.
 - Parallel application - suggested metrics
   - Tau MPI 
 
+
+
+
+### Week 7 ###
+
+------------------------------------------------
+
+#### Monday June 27, 2022 ####
+
+- Worked on dockerizing [plugin-surface-water-detection](https://github.com/aabayomi/plugin-surface-water-detection) to work on Jetson NX
+
+#### Tuesday June 28, 2022 ####
+
+- Worked on dockerizing [plugin-surface-water-detection](https://github.com/aabayomi/plugin-surface-water-detection) to work on Jetson NX
+
+- Meet with Yongho,Seongha and Raj and pivoting to modeling a simple app for profile snapshots.
+
+#### Wednesday June 29, 2022 ####
+
+- Career day
+
+#### Thursday June 30, 2022 ####
+
+- Worked on installing PAPI to collect snapshot data
+
+#### Friday July 1, 2022 ####
+
+- Worked on Installing PAPI to collect snapshot on docker container
+
+### Week 8 ###
+
+------------------------------------------------
+
+#### Monday July 4, 2022 ####
+
+- Independence day
+
+#### Tuesday July 5, 2022 ####
+
+- Continued debug to run PAPI on Jetson NX
+
+#### Wednesday July 6, 2022 ####
+
+- Started working on final presentation
+- Continued debug to run PAPI on Jetson NX
+- Created a docker compose for app profiling example
+
+#### Thursday July 7, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Friday July 8, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+### Week 8 ###
+
+------------------------------------------------
+
+#### Monday July 11, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Tuesday July 12, 2022 ####
+
+- Worked on presentation and designing experiment.
+#### Wednesday July 13, 2022 ####
+
+- Completed internship presentation.

@@ -115,3 +115,81 @@ Chirpstack AS:
     - ![](https://i.imgur.com/q9SBtur.png)
     - Successfully linked up the gateway
     - *when the arduino sensors get here, we can try setting up the applications and see if it shows up on the chirpstack application*
+
+**June 27-28th**
+* [x] Understand different components of the chirpstack
+    - Gateways
+        - demodulates LoRa packets
+        - forwards the packets to the Network Server via the internet or LAN
+    - Network Server
+        - handles authentication
+        - communicates with the Application Server
+        - deduplicates number of uplinks
+        - schedules downlink messages
+        - handles join request and join accept messages between device and Join Server
+    - Application Server
+        - application layer, user interface
+        - receives frame from Network Server and decrypt the data
+        - encrypts the data and send downlinks to the end nodes
+        - data events can be integrated with third party platform or storage like AWS, MQTT broker, HTTP, etc
+    - Join Server
+        - used for Over the Air Activation
+        - generates security keys for encrypting and signing the messages
+        - responsible for join request and join accept messages
+        - from shared application key inside the device:
+            - a dynamic device address
+            - network session key
+            - a appllication session key is generated to enable secure transmission of LoRaWAN messages
+
+**June 30th**
+- the live LoRaWAN frames given by the gateway has an issue because the WebSocket API is not connected
+* [x] Fix the WebSocket API issue
+    - with the new chirpstack update, the redis server needs to be version 5+. I was able to fix the websocket API not connected issue
+- After the websocket issue is fixed, the Live LoRaWAN frames just continuously loads -> doesn't show any frames
+* [ ] Fix the frame not showing issue
+    - I checked the mqtt log files and it seems like the network server is receiving packets from the gateway, but it is not showing up on the application
+    - ![](https://i.imgur.com/6NksVSa.jpg)
+    - `gateway/mqtt: gateway stats packet received` are logged
+* [x] look into the pywaggle plugin and see how the Application server can be integrated with it
+
+**July 1st**
+- MKRWAN 1310 and the antennas are here, so today's agenda is to get them to connect with the LoRa gateway and display packets on the Application Server
+* [x] Look through the Arduino LoRamodem library
+* [x] Code up a straightfoward message sending arduino code to send to the gateway
+    - successfully sent messages to the gateway and have it show on the application
+    - ![](https://i.imgur.com/nx8cLdw.jpg)
+* [x] Edit code so the MKRWAN 1310 can connect to gateway with network and application session keys by itself without Serial write
+* [x] Test the distance of connection
+    - put the MKRWAN 1310 different floors of the buildingr
+    - setup the MKRWAN 1310 on the 7th floor and it was able to send messages to the gateway on 3rd floor
+
+**July 5th, 6th**
+* [x] Set up router to connect both the gateway and the chirpstack network server -> so gateway can have communication with the server
+* [x] Replicate work on Friday from home's environment
+* [x] Create a new device with unique NWSKEY and APPKEY and DEV id
+* [ ] Connect a second device simultaneously
+    - unable to receive frames from the second device
+* [x] Familiarize with the seeed modules that came in
+
+**July 7th, 8th**
+* [x] Connect a second device to the same gateway
+    - successfully connected two device that sends data together at the same time
+    - the application is able to see both devices' messages entering
+    - ![](https://i.imgur.com/KzGeYt7.jpg)
+    - ![](https://i.imgur.com/V2BFF2c.jpg)
+    - The `TQ==` is a Base64 message that is translated into 'M', which was what I was sending to the gateway repeatedly
+    - I also tried sending different messages like "Hello" and "Andre Tsai" >> all sends successfully
+* [x] Send 10 messages of 'M' and see the packet loss
+    - I was able to receive five out of the ten packets
+    - Lots of theories:
+        - could be that the gateway is unable to receive from a certain port when it is in use by another
+        - could be that the message just simply did not send properly, etc
+    - I also noticed that when there are no particular message being sent by the arduino devices, the gateway still receives a "AA==", which translates to ? when converting from base64
+
+**July 11th, 12th**
+* [x] Fixed packet loss issue
+    - tried multiple different ways
+    - in the end, delaying the sending of each packet solves the issue
+        - this is consistent with the theory that the arduino was still in the process of communicating the previous message when another is sent. That will cause an error
+    - I also tried resending each time we meet an error, and that also allows us to send all 10 packets
+* [x] Look into Seeed lora E5 mini

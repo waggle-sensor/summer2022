@@ -1,87 +1,83 @@
-from live_metrics import SageAppMetricsServer
+from cProfile import run
 from runtime_metrics import profiler
-from thread import thread
 import logging
 import threading
 import time
 import os
 import psutil
-import sched,time
+import sys, getopt
+import sched, schedule, time
 
-s = sched.scheduler(time.time,time.sleep)
-
+s = sched.scheduler(time.time, time.sleep)
+stack = []
 
 
 def is_proccess_found(name):
     is_running = False
-    for p in psutil.process_iter(attrs=["name","exe","cmdline"]):
-        if p.info["cmdline"] == ["python","firstprime.py"]:
+    for p in psutil.process_iter(attrs=["name", "exe", "cmdline"]):
+        l = ","
+        running_command = l.join(p.info["cmdline"])
+        app_command_list = ["python", "-m", "tau_python_wrapper", "firstprime.py"]
+        app_command = l.join(app_command_list)
+        if app_command in running_command:
             is_running = True
     return is_running
 
-if __name__ == '__main__':
+
+def find_proccess(stack,metric_service):
+    logging.info("Finding Application")
+    if is_proccess_found("firstprime.py") == True:
+        if len(stack) == 0:
+            stack.append(time.time())
+            logging.info("Profiling Application Started")
+        else:
+            logging.info("Profiling ... ")
+        metric_service.runSystemProfile()
+    else:
+        if len(stack) == 1:
+            stack.append(time.time())
+        logging.info("No Application to profile")
+
+def runtime(stack,metric_service):
+
+    job = schedule.every(2).seconds.do(lambda: find_proccess(stack,metric_service))
+
+    while True:
+        schedule.run_pending()
+        if len(stack) == 2:
+            schedule.cancel_job(job)
+            logging.info("Profiling completed")
+            break
+        time.sleep(1)
+    
+
+def main(argv):
     format = "%(asctime)s: %(message)s"
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
-    metric_service = profiler('firstprime.py')
-    #print(metric_service.metric)
+    metric_service = profiler("firstprime.py")
 
-    # job_list = [metric_service.runTau,metric_service.runSystemProfile]
-    # job = thread(job_list)
-    # job.run_job()
+    # parse command line options:
+    try:
+       opts, args = getopt.getopt(argv,"hr:l",["runtime","live"])
+    except getopt.GetoptError:
+       print("Error")
+       sys.exit(2)
 
-    def find_proccess(sc):
-        logging.info('Finding Application')
-        if is_proccess_found("firstprime.py") == True:
-            logging.info('Profiling Application')
-            metric_service.runSystemProfile
-        else:
-            logging.info('No Application to profile')
-        sc.enter(60,1,find_proccess,(sc,))
+    for opt, arg in opts:
+       if opt == "-h":
+         print('app.py -r runtime -l live')
+         sys.exit()
+       elif opt in ("-l", "--live"):
+         print("live")
+       elif opt in ("-r", "--runtime"):
+          runtime(stack,metric_service)
+          
+
+   
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+
     
-    s.enter(60,0,find_proccess,(s,))
-    s.run()
-
-
-
-
-    # logging.info('')
-
-
-
-
-
-
-
-
-
-
-
-
-    # while True:
-    #     time.sleep(1)
-        # metric_service.
-
-
-    # Setup custom Prometheus metric exporter
-    # metrics_service = SageAppMetricsServer({'latency': SageAppMetricsServer.METRIC_TIMER,
-    #                                         'fps': SageAppMetricsServer.METRIC_RATE,
-    #                                         'x': SageAppMetricsServer.METRIC_NUMBER})
-
-    # # This would be the app main function below doing some heavy-lifting neural network inferencing
-    # while True:
-    #     metrics_service.start_timer('latency')  # Start a timer for the metric "latency"
-
-    #     # This could be setup/preprocessing code that is relevant to the latency metric but maybe not the fps metric
-    #     print('This whole code block is being timed for latency...')
-    #     time.sleep(1)
-
-    #     # This could be a code block where FPS is relevant (I just put a useless for loop in here for example)
-    #     metrics_service.start_timer("fps")
-    #     x = 1
-    #     for i in range(1, 1000):
-    #         x = x * i
-    #     metrics_service.push_metric('x', x)
-    #     metrics_service.stop_timer("fps")
-
-    #     metrics_service.stop_timer('latency')  # Stop the timer for the latency metric and let the server push the metric onto the stack
+    # print(metric_service.metric)
