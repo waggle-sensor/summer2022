@@ -1,12 +1,13 @@
+from sqlite3 import TimestampFromTicks
 from threading import Thread
-import threethread #haven't been able to get threading to talk with other 
 #files well, so temporarily usless
 '''error message
 File "/home/isaiah/code/main.py", line 3, in <module>
-    Queofjson= queue.Queue()#maxsize=buffer_length)
+    Listofjson= queue.Queue()#maxsize=buffer_len(myconfig.Listofjson))
 NameError: name 'queue' is not defined
 
 '''
+import myconfig
 import statisticgetter
 '''
 #pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
@@ -15,71 +16,28 @@ import statisticgetter
 #getTempinfo(jsonObject,area,variable):#area= 0-3, 
 #getProcessorUsage(jsonObject):
 #getUptime(jsonObject):
+#getTimestamp
 '''
 import secondarys
 '''
-def getPOEAverages(jsonqueue):      
-def getPOEMaxes(jsonqueue):
-def getPOEMins(jsonqueue):  
+def getPOEAverages(iListofjson):      
+def getPOEMaxes(iListofjson):
+def getPOEMins(iListofjson):  
 '''
 import password
-import queue
-Queofjson= queue.Queue()#maxsize=buffer_length)
-
-
-
+#import queue
+#Listofjson= queue.Queue()#maxsize=buffer_len(myconfig.Listofjson))
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from ubnt import UnifiSwitchClient
 import json
-import math
+import matplotlib.pyplot as plt
 import time
 import requests
 import csv
-
-
-
-
 from waggle.plugin import Plugin
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-
-frequency_read = 2 #time in seconds
-frequency_write = 4 #time in seconds
-buffer_timeperiod = 60 # time in seconds
-execution_check = 4
-
-buffer_length = math.ceil(int(buffer_timeperiod/frequency_read))
-total_time= 7 #due to how long the parts take if set normally there will not be enough time for all iterations
-
-testingtimestamp =0
-#total_time=frequency_read*buffer_length
-numberofports= 1
-
 starttime = time.time()
-def getJson(Timestamp):
-        temp=Queofjson.queue #this makes a copy of the given que in dque format which makes it possible to operate on its individual members
-        for x in range(len(temp)):
-                time, json=temp[x]
-                #print(time, (time-Timestamp))
-                if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
-                        break
-        return json
-def getTimestamp(jsonObject):
-        data=json.loads(jsonObject)
-        Timestamp=data[0]['timestamp']
-        return(Timestamp)
-
-def getquetimestamps():
-        Timestamps= [0 for i in range(Queofjson.qsize())]
-        temp=Queofjson.queue
-        #print(temp)
-        for x in range(Queofjson.qsize()):
-                Timestamps[x], json = temp[x]
-        #print(Timestamps)
-        return (Timestamps)
-def Read(threadname, Queofjson):
-        #global Queofjson
-        #while (time.time()-starttime)<total_time:
+def Read(threadname, frequency_read, buffer_length):
         while True:
                 #print('read called')
                 with UnifiSwitchClient(
@@ -87,18 +45,22 @@ def Read(threadname, Queofjson):
                         username='ubnt',
                         password=password.password) as client:#password is from another not included file
                         info = client.get_POE_info()
-                if Queofjson.qsize()==buffer_length:#this makes the que circular might be unneeded due to maxlength
-                         Queofjson.get()
-                Timestamp=statisticgetter.getTimestamp(json.dumps(info))
-                testingtimestamp= Timestamp
-                Queofjson.put(( Timestamp,json.dumps(info)))
-                print(Queofjson.qsize())
-                #print(Queofjson[-1])
+                if len(myconfig.Listofjson)==buffer_length:#this makes the que circular might be unneeded due to maxlen(myconfig.Listofjson)
+                         myconfig.Listofjson.pop(0)
+                dumpedjson=json.dumps(info)
+                #print(dumpedjson)
+                Timestamp=statisticgetter.getTimestamp(dumpedjson)
+                #print(Timestamp)
+                myconfig.Listofjson.append(( Timestamp,dumpedjson))
+                #if(len(myconfig.Listofjson)<2):
+                       #print(dumpedjson)
                 time.sleep(frequency_read)
-def Dostuff(threadname, Queofjson):
+def Dostuff(threadname, execution_check):
              #with Plugin() as plugin:
-                #plugin.subscribe("LengthEdgeSwitchQue") #still non-functional
+                #plugin.subscribe("len(myconfig.Listofjson)EdgeSwitchQue") #still non-functional
              while True:
+                #if len(myconfig.Listofjson)==29:
+                        #secondarys.getPlotofbufferStatistic('poePower', 0)
                 time.sleep(execution_check)
                 #msg= plugin.get()
                 #print("recieved from database", msg.value)
@@ -109,45 +71,72 @@ def Dostuff(threadname, Queofjson):
                 print(getJson(int(time.time()*1000)-10000))
                 
                 '''
-def Write(threadname, Queofjson):
+def Write(threadname, frequency_write):
         while True:
-        #while (time.time()-starttime)<total_time:
-                #pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
-                timestamps=getquetimestamps()
+                timestamps=secondarys.getlisttimestamps()
                 #print(timestamps)
-                header = ['timestamps']
-                Port1 = [timestamps]
-                #header2 = ['what time started', 'started on', 'every time it changed', 'what it changed to each time']
-                
+                #header = ['timestamps']
+                #Port1 = [timestamps]
+                if(len(myconfig.Listofjson)!=0):
+                        (timestamp, jsonobject)=myconfig.Listofjson[0]
+                        #print(type(jsonobject))
+                        poePower, now = statisticgetter.getStatistics(jsonobject, 0,'poePower')
+                        pair= str(now), str(poePower)
+                        with open('edgeswitch.csv', 'a', encoding='UTF8') as f:
+                                writer = csv.writer(f)
+                                writer.writerow(pair)
+                                #writer.writerow(Port1)
+
+                print(len(myconfig.Listofjson))
+                #print(timestamps)
+                #if(len(myconfig.Listofjson)!=0):
+                        #print(myconfig.Listofjson[0])
                 with Plugin() as plugin:
                         rightnow=time.time_ns()
                         #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
                         plugin.publish("test.bytes", 1234, timestamp=rightnow)#,timestamp=rightnow)
                 #can likly use 'edgeswitch' to publish edgeswitch contents
                 
-                with open('edgeswitch.csv', 'w', encoding='UTF8') as f:
-                        writer = csv.writer(f)
-                        writer.writerow(header)
-                        writer.writerow(Port1)
                 time.sleep(frequency_write)           
 
 def Main():
-        #ReadingProcess =multiprocessing.Process(target=Read, args=("thread-1", Queofjson))
-        ReadingProcess =Thread(target=Read, args=("thread-1", Queofjson)) 
-        WritingProcess =Thread(target=Write, args=("thread-2", Queofjson))
-        OtherProcess =Thread(target=Dostuff, args=("thread-3", Queofjson))
+        #ReadingProcess =multiprocessing.Process(target=Read, args=("thread-1", Listofjson))
+        ReadingProcess =Thread(target=Read, args=("thread-1", myconfig.frequency_read, myconfig.buffer_length)) 
+        WritingProcess =Thread(target=Write, args=("thread-2", myconfig.frequency_write))
+        OtherProcess =Thread(target=Dostuff, args=("thread-3", myconfig.execution_check))
         ReadingProcess.start()
         WritingProcess.start()
         OtherProcess.start()
+"""
+                        Listoftimestamps=secondarys.getlisttimestamps()
+                        firsttimestamp=Listoftimestamps[0]
+                        lasttimestamp=Listoftimestamps[-1]
+                        shortlist=secondarys.Getshortenedlist(firsttimestamp, lasttimestamp)
+                        Timestamps=[0]*len(shortlist)
+                        values=[0]*len(shortlist)
+                        for x in range(len(shortlist)):
+                                Timestamps[x], json = shortlist[x]
+                                values[x], othertimestamps=statisticgetter.getStatistics(json,0,'poePower')
+                        print(Timestamps)
+                        print(type(Timestamps))
+                        print(type(Timestamps[0]))
+                        print(values)
+                        print(type(values))
+                        print(type(values[0]))
+                        plt.plot(Timestamps, values)
+                        print('where bug')
+                        plt.xlabel('Timestamps')
+                        plt.ylabel('poePower')
+                        plt.title('poePower Vs Time')
+                        plt.show()  
+                        
+                        
+                        
+                        
+"""
+                        
         #ReadingProcess.join()
         #WritingProcess.join()
         #OtherProcess.join()
         #print(getJson(testingtimestamp))
 Main()
-'''
-with Plugin() as plugin:
-        plugin.upload_file('edgeswitch', timestamp=str(datetime.now()))
-
-Plugin.publish('test.bytes',self.parse())
-
-'''
