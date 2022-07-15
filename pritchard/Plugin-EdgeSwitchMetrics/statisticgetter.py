@@ -3,8 +3,6 @@ def getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
         data=json.loads(jsonObject)
         Statistic=data[0]['interfaces'][portnumber]['statistics'][variable]#port= 0-15, 
         #variable= dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower
-        #print('from statistic')
-        #print(Statistic, data[0]['timestamp'])
         return(Statistic,data[0]['timestamp'])#return as tuple with timestamp
 def getRaminfo(jsonObject,variable):
         data=json.loads(jsonObject)
@@ -25,6 +23,6 @@ def getUptime(jsonObject):
         return(Uptime,data[0]['timestamp'])
 def getTimestamp(jsonObject):
         data=json.loads(jsonObject)
-        print('gettingtimestamp')
         Timestamp=data[0]['timestamp']
+        #print(Timestamp)
         return(Timestamp)
