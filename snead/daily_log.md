@@ -3,6 +3,23 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 5: 7/11 to 7/15
 
+### Friday 7/15
+
+- had meeting with advisors about 5G decision matrix
+  - we (Raj) are going to reach out to other organization that have O-RAN running to set up calls
+  - I sent a list of questions I would have for those org.s if they have 5G cores
+  - Seems like our best bet is to move forward with ONAP
+
+#### To Do
+
+- Email someone at ONAP and ask if we could scale down their hardware requirements, also ask what deployment would look like, etc.
+- downlink, debug, etc.
+- Nokia DAC
+
+### Wednesay 7/13 & Thursday 7/14
+
+- out with COVID-19
+
 ### Tuesday 7/12
 - finished current version of [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_7-12-2022.pdf)
   - setting up a meeting with Very Important People (just Raj, Randy, and Joaquin) to discuss!
