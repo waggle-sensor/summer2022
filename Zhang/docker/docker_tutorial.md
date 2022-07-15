@@ -1,51 +1,24 @@
 ### Docker basic commands
 
-```bash
-docker build -t $(tag_name) -f $(file_path)
 ```
-
-```bash
-docker run -it --rm $(tag_name)
-```
-
+$docker build -t $(tag_name) $(file_path)
+$docker run -it --rm $(tag_name)
 -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
 --rm Automatically remove the container when it exits
-
-```bash
-docker exec $(NAMES) bash
-```
-
+$docker exec $(NAMES) bash
 exec help you to bash into the existing docker environments
-
-```
-docker ps
-```
-
+$docker ps
 showing all the running docker container
-
-```
-docker images
-```
-
+$docker images
 showing all the existing docker images
-
-```
-docker image rm $(tag_name) --force
-```
-
+$docker image rm $(tag_name) --force
 remove the docker images
-
-```
-docker rmi $(docker images --filter "dangling=true" -q --no-trunc) --force
-```
-
+$docker rmi $(docker images --filter "dangling=true" -q --no-trunc) --force
 remove the docker images with none tag and also make sure they are not used by other images
 
 ```
-docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH
-```
 
-copy files from docker containers to host machine
+
 
 ### Docker remote running 
 
