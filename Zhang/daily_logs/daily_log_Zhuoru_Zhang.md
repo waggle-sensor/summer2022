@@ -53,3 +53,5 @@ https://support.opentrons.com/s/ Ethernet supported, scp protocols to OT2 robot
  7.15
  - rewrite the Dockerfile for ros2 based on waggle plugin
  - test ROS2 publisher/subscriber across docker in different machines withint same local network: successful
+ - no more host network! configure fast DDS to use specified ports for ros2 to communicate across containers on machines within same local network
+ https://github.com/eProsima/Fast-DDS/issues/1698
