@@ -49,3 +49,7 @@ https://support.opentrons.com/s/ Ethernet supported, scp protocols to OT2 robot
 - test ROS2 publisher/subscriber within Docker: successful
 
   All devices will be within the same waggle Node, K3s cluster
+  
+ 7.15
+ - rewrite the Dockerfile for ros2 based on waggle plugin
+ - test ROS2 publisher/subscriber across docker in different machines withint same local network: successful

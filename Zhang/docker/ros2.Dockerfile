@@ -11,7 +11,7 @@ ENV ROS_DISTRO=foxy
 
 ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
 ENV ROS_PYTHON_VERSION=3
-ENV ROS_WS = /root/ros_ws
+ENV ROS_WS=/root/ros_ws
 
 
 # install system packages
