@@ -241,5 +241,13 @@
 - Weekly student seminar
 - Begun improving power spectra plot code to use less memory
 
+#### Thursday July 14th, 2022
+
+- Updated daily logs for the past 2 weeks
+- AI Student algorhithm group meeting
+- Continued improving power spectra plot code to use less memory
+- Toured sensors on sight at Argonnne, tour led by Matt
+- Continued working on poster presentation
+
 
 
