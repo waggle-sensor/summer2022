@@ -1,13 +1,23 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 6: 7/18 to 7/22
+
+### Monday 7/18
+
+#### To Do
+
+- contact ONAP
+- Research how they implement UPF to check for edge computing ability
+- what is the biggest R&D group in NSF community
+
 ## Week 5: 7/11 to 7/15
 
 ### Friday 7/15
 
 - had meeting with advisors about 5G decision matrix
   - we (Raj) are going to reach out to other organization that have O-RAN running to set up calls
-  - I sent a list of questions I would have for those org.s if they have 5G cores
+  - I sent a list of questions I would have for those orgs if they have 5G cores
   - Seems like our best bet is to move forward with ONAP
 
 #### To Do
