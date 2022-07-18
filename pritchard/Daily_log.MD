@@ -822,7 +822,10 @@ here is an example plot of the change in poe power draw from a dummy device over
 ![image](https://user-images.githubusercontent.com/106760508/179082793-b77a4f80-8952-4a3a-af89-80c9af90f51e.png)
 
 Things to do: 
-- [ ] 
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
 #### Friday June 17th ####
 - [ ] 
 
