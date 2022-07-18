@@ -249,5 +249,11 @@
 - Toured sensors on sight at Argonnne, tour led by Matt
 - Continued working on poster presentation
 
+#### Friday July 15th, 2022
+
+- Continued working on poster
+- Continued improving power spectra plot code to run in a reasonable amount of time
+- Worked on figures for final presentation
+
 
 

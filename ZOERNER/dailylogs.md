@@ -349,7 +349,23 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 #### Friday July 15th, 2022
 
+- Waiting on NEXRAD data for entire season to finish gridding on supercomputer
+- Completed all sections of poster except for Data & Results
+- Had poster reviewed
+- Attended TRACER briefing
 
+---
+
+#### Week 7 Overview
+
+---
+
+- Figured out how to export to tabular CSV format
+- Performed additional computations (goal is to get as many as possible)
+- Improved the contour/edge detection performance by further eliminating noise. Previously eliminated echoes < 100 pixels, currently < 200 pixels. This was done so that the shape of the echo can be more accurately represented by the external contour before the contour is passed to OpenCV for calculations.
+- Requested an entire season of NEXRAD data that will be ready for use at the beginning of next week.
+
+---
 
 
 
