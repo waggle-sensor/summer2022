@@ -974,7 +974,54 @@ updated trigger buffer
                                 print(currenttimestamp, "the switch has restarted")
                                 originaluptime=currentuptime           
 ```
-- [ ] 
+- [ ] Revised method of testing for events so now each iterations values are tested against either the first readings or the last time the value was detected as being substantually different, this way total change can be tested against instead of change since last iteration
+                ```
+                if (len(buffer)==1): #this provides the first values submitted into the que which will be the original values compared against
+                        firsttimestamp, comparingjsonobject=buffer[0]
+                        comparinguptime=statisticgetter.noIndexGetter(comparingjsonobject, 'uptime')
+                        """
+                        noIndexGetter(jsonObject, variable):
+                                variable= 'timestamp' 'uptime' 'processor usage'):
+                                'usage' or 'free' or 'total'):(ram)
+                                return(variable, value)
+                        """
+                        for i in range(myconfig.numberofports):
+                                POEvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'poePower')
+                                previousvalues[i]= originalvalue
+
+                elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                      
+                        if(currentuptime < comparinguptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                comparinguptime=currentuptime                      
+                        
+                        for i in range(myconfig.numberofports):
+                                POEvariable, indexstring, currentvalue= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')
+                                normalcheck=secondarys.isnormalcheck(POEvariable, previousvalues[i], currentvalue)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousvalues[i]=currentvalue
+                  
+sample output:
+updated trigger buffer
+updated trigger buffer
+1658178469525 port:2 ('poePower', 'dropped is now this fraction of former value:', 0.0)
+updated trigger buffer
+updated trigger buffer
+1658178473150 port:2 ('poePower', 'raised is now this fraction of former value:', 4.47)
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer 
+1658178484474 port:2 ('poePower', 'raised is now this fraction of former value:', 1.5436241610738255) <---- this incerease was previously undetected
+updated trigger buffer
+updated trigger buffer
+                  ```
+- [ ]  
 
 
 Things to do:
