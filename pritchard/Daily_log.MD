@@ -936,7 +936,6 @@ def isnormalcheck(variable, standardvalue, currentvalue):#later add in details o
         else: return None
 ```
 - [ ] Implemented said function in the interupt thread to detect whether two most recent jsons objects in dequeue contain very different Poe values
-
 ``` if(len(buffer)>2):
                     currenttimestamp, currentjsonobject=buffer[-1]
                     #print(currentjsonobject)
@@ -961,6 +960,23 @@ updated trigger buffer
 
 
 ```
+- [ ] Implemented function to tell if uptime goes down, which would mean switch restarted
+```
+                  if (len(buffer)==1):
+                        firsttimestamp, firstjsonobject=buffer[0]
+                        originaluptime=statisticgetter.noIndexGetter(firstjsonobject, 'uptime')
+
+                elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        pasttimestamp, pastjsonobject=buffer[-2]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                        if(currentuptime < originaluptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                originaluptime=currentuptime           
+```
+- [ ] 
+
+
 Things to do:
 - [ ] Add previous WisGate work to Github
 - [ ] Link up local repo for easy commits
