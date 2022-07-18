@@ -67,20 +67,25 @@ def Trigger(execution_check, bufferlength, queue):
                 while len(buffer) > bufferlength:
                         buffer.popleft()
                 print("updated trigger buffer")
-                if(len(buffer)>2):
-                    currenttimestamp, currentjsonobject=buffer[-1]
-                    #print(currentjsonobject)
-                    pasttimestamp, pastjsonobject=buffer[-2]
-                    #print(pastjsonobject)
-                    for i in range(myconfig.numberofports):
-                            POEvariable, indexstring, currentvalue= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')# return(Statistic,data[0]['timestamp'], portnumber, variable, 'basicstatis')
-                            #print(currentvalue, i)
-                            POEvariable, indexstring, pastvalue= statisticgetter.withIndexGetter(pastjsonobject, i,'poePower')
-                            normalcheck=secondarys.isnormalcheck(POEvariable, pastvalue, currentvalue)
-                            #if i==3:
-                                #print(currentvalue, pastvalue)
-                            if normalcheck is not None:
-                                print(currenttimestamp,indexstring, normalcheck)#return(variable,"dropped is now this fraction of former value:",proportion)
+                if (len(buffer)==1):
+                        firsttimestamp, firstjsonobject=buffer[0]
+                        originaluptime=statisticgetter.noIndexGetter(firstjsonobject, 'uptime')
+
+                elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        pasttimestamp, pastjsonobject=buffer[-2]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                        if(currentuptime < originaluptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                originaluptime=currentuptime                      
+                        
+                        for i in range(myconfig.numberofports):
+                                POEvariable, indexstring, currentvalue= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')# return(Statistic,data[0]['timestamp'], portnumber, variable, 'basicstatis')
+                                #print(currentvalue, i)
+                                POEvariable, indexstring, pastvalue= statisticgetter.withIndexGetter(pastjsonobject, i,'poePower')
+                                normalcheck=secondarys.isnormalcheck(POEvariable, pastvalue, currentvalue)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)#return(variable,"dropped is now this fraction of former value:",proportion)
                     
                 #for i, item in enumerate(buffer):
                         #print(i, item)
@@ -100,13 +105,9 @@ def Write(frequency_write, queue):
                                 #print(isdropped, indexstring)
                                 stringoutput=','.join(pair)
                                 
-                                """
                                 with open('edgeswitch.csv', 'a', encoding='UTF8') as f:
                                         writer = csv.writer(f)
                                         writer.writerow(pair)
-                                                #writer.writerow(Port1)
-                                """
-                                
                                 
                                 """   with Plugin() as plugin:
                                         rightnow =time.time_ns()
@@ -138,4 +139,5 @@ if __name__=="__main__":
         #WritingProcess.join()
         #OtherProcess.join()
         #print(getJson(testingtimestamp))
+
 
