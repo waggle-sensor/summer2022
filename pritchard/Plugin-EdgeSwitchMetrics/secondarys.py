@@ -2,6 +2,7 @@ import queue
 import matplotlib.pyplot as plt
 import myconfig
 import statisticgetter
+import csv
 """
 def noIndexGetter(jsonObject, variable):
         if(variable=='timestamp'):
@@ -18,6 +19,12 @@ def withIndexGetter(jsonObject, index, variable):
 
 
 """
+def RecordBigChanges(change): 
+        with open('bigchanges.csv', 'a', encoding='UTF8') as f:
+                writer = csv.writer(f)
+                writer.writerow(change)
+
+
 def Getshortenedlist(firsttimestamp, secondtimestamp):
     shortlist =[]
     for i in range(len(myconfig.Listofjson)):
@@ -74,16 +81,32 @@ def isnormalcheck(variable, standardvalue, currentvalue):#later add in details o
         if standardvalue== 0 and currentvalue==0:
                 proportion=1
         elif standardvalue== 0:
-                proportion= 3*currentvalue
+                proportion= 1.5*currentvalue#this has the possibility of making a bug
         else: proportion=currentvalue/standardvalue
-        if(proportion>1.5):
-                return(variable,"raised is now this fraction of former value:",proportion)
-        elif(proportion<0.75):
-                return(variable,"dropped is now this fraction of former value:",proportion)
-        else: return None
-
-
-
+        if variable== 'poePower':
+                if(proportion>myconfig.POEwarningproportion):
+                        return(variable,"raised is now this fraction of former value:",proportion)
+                elif(proportion<1/myconfig.POEwarningproportion):
+                        return(variable,"dropped is now this fraction of former value:",proportion)
+                else: return None
+        elif variable== 'errors':
+                if(proportion>myconfig.Errorwarningproportion):
+                        return(variable,"raised is now this fraction of former value:",proportion)
+                elif(proportion<1/myconfig.Errorwarningproportion):
+                        return(variable,"dropped is now this fraction of former value:",proportion)
+                else: return None
+        elif variable== 'temperature':
+                if(proportion>myconfig.Tempwarningproportion):
+                        return(variable,"raised is now this fraction of former value:",proportion)
+                elif(proportion<1/myconfig.Tempwarningproportion):
+                        return(variable,"dropped is now this fraction of former value:",proportion)
+                else: return None
+        elif variable== 'rate':
+                if(proportion>myconfig.Ratewarningproportion):
+                        return(variable,"raised is now this fraction of former value:",proportion)
+                elif(proportion<1/myconfig.Ratewarningproportion):
+                        return(variable,"dropped is now this fraction of former value:",proportion)
+                else: return None
 def getMaxes(variable):
         Maximums =[(0,0)]*myconfig.numberofports
         for y in range(len(myconfig.Listofjson)):#I previously passed in a copy of the Que of Jsons
