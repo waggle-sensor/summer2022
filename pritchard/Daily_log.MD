@@ -1033,10 +1033,119 @@ Things to do:
 - [ ] Link up local repo for easy commits
 
 #### Tuesday July 19th ####
-- [ ] 
+- [ ] Added functionality to test for temperature, rate and error changes
+```
+             previouspoes= [0]*myconfig.numberofports
+             previousTemps= [0]*myconfig.numberofareastemp #need to do over temp areas
+             previousRates= [0]*myconfig.numberofports
+             previousErrors= [0]*myconfig.numberofports
+                          
+                          #this is where the preseting comparison variables takes place
+                          
+                          for i in range(myconfig.numberofports):
+                                Ratevariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'rate')
+                                previousRates[i]= originalvalue
+                                POEvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'poePower')
+                                previouspoes[i]= originalvalue
+                                
+                                Errorsvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'errors')
+                                previousErrors[i]= originalvalue
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')
+                                previousTemps[i]= originalvalue      
+                        
+                      #this is where I compare curren values of the variables against the comparison values
+                      
+                        
+                   elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                      
+                        if(currentuptime < comparinguptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                comparinguptime=currentuptime                      
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, currentTemp= statisticgetter.withIndexGetter(currentjsonobject, i,'value')
+                                normalcheck=secondarys.isnormalcheck('temperature', previousTemps[i], currentTemp)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                #print(currentTemp, i)
+                                
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousTemps[i]=currentTemp
+                                        
+                        for i in range(myconfig.numberofports):
+                                
+                                Ratevariable, indexstring, currentRate= statisticgetter.withIndexGetter(currentjsonobject, i,'rate')                            
+                                normalcheck=secondarys.isnormalcheck('rate', previousRates[i], currentRate)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        #print("pps recorded as", normalcheck)
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        if i==5:print("comparison rate should change")
+                                        previousRates[i]=currentRate
+                                        secondarys.RecordBigChanges(string)
+                                        
+                                
+                                POEvariable, indexstring, currentPoe= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')
+                                normalcheck=secondarys.isnormalcheck('poePower', previouspoes[i], currentPoe)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        secondarys.RecordBigChanges(string)
+                                        previouspoes[i]=currentPoe
+                                Errorsvariable, indexstring, currentErrors= statisticgetter.withIndexGetter(currentjsonobject, i,'errors')
+                                normalcheck=secondarys.isnormalcheck('errors', previousErrors[i], currentErrors)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousErrors[i]=currentErrors
+
+
+
+sample output:
+when buffer is 55 Rate is 106408 compared rate is 135024
+updated trigger buffer
+when buffer is 56 Rate is 106408 compared rate is 135024
+updated trigger buffer
+1658263217176 port:1 ('rate', 'dropped is now this fraction of former value:', 0.2323943661971831)
+1658263217176 port:1 ('poePower', 'dropped is now this fraction of former value:', 0.0)
+1658263217176 port:4 ('rate', 'dropped is now this fraction of former value:', 0.14842578710644677)
+when buffer is 57 Rate is 51392 compared rate is 135024
+updated trigger buffer
+
+
+
+```
+- [ ] Fixed numerous bugs in first implemenatation, which included: unchanging comparison values for numerous variables, wrong variables sometimes getting passed to display functions
+- [ ] Added a new function to display values from interjection thread in new csv file
+```
+def RecordBigChanges(change): 
+        with open('bigchanges.csv', 'a', encoding='UTF8') as f:
+                writer = csv.writer(f)
+                writer.writerow(change)
+
+sample output:
+1658263274531,port:1,"('rate', 'dropped is now this fraction of former value:', 0.28314606741573034)"
+1658263274531,port:3,"('rate', 'dropped is now this fraction of former value:', 0.28125)"
+1658263274531,port:4,"('rate', 'dropped is now this fraction of former value:', 0.31777777777777777)"
+1658263296152,port:4,"('rate', 'dropped is now this fraction of former value:', 0.32867132867132864)"
+1658263356736,port:1,"('rate', 'raised is now this fraction of former value:', 6.238095238095238)"
+1658263356736,port:3,"('rate', 'raised is now this fraction of former value:', 6.238095238095238)"
+1658263356736,port:4,"('rate', 'raised is now this fraction of former value:', 16.76595744680851)"
+1658263370772,port:1,"('rate', 'dropped is now this fraction of former value:', 0.2862595419847328)"
+1658263370772,port:3,"('rate', 'dropped is now this fraction of former value:', 0.2862595419847328)"
+1658263370772,port:4,"('rate', 'dropped is now this fraction of former value:', 0.28553299492385786)"
+1658263389999,port:1,"('rate', 'dropped is now this fraction of former value:', 0.31555555555555553)"
+1658263389999,port:3,"('rate', 'dropped is now this fraction of former value:', 0.32)"
+1658263389999,port:4,"('rate', 'dropped is now this fraction of former value:', 0.31555555555555553)"
+
+
+
+```
 
 Things to do:
-- [ ] 
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
 #### Wednesday July 20th ####
 - [ ] 
 Things to do:  
