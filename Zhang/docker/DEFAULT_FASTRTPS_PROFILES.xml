@@ -12,7 +12,7 @@
                 <metatrafficUnicastLocatorList>
                     <locator>
                         <udpv4>
-                            <address>129.105.69.179</address>
+                            <address>130.202.135.121</address>
                             <port>7414</port>
                         </udpv4>
                     </locator>
@@ -23,7 +23,7 @@
                 <initialPeersList>
                     <locator>
                         <udpv4>
-                            <address>129.105.69.155</address>
+                            <address>130.202.135.167</address>
                         </udpv4>
                     </locator>
                 </initialPeersList>
@@ -34,7 +34,7 @@
             <defaultUnicastLocatorList>
                 <locator>
                     <udpv4>
-                        <address>129.105.69.179</address>
+                        <address>130.202.135.121</address>
                         <port>7415</port>
                     </udpv4>
                 </locator>

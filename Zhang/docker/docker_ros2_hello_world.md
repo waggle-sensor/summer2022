@@ -1,6 +1,6 @@
 ### System Requirements
 
-software requirements: docker, two host machines connected within local network
+software requirements: docker, two host machines connected within local network(only Ethernet is supported)
 
 ### Set up environment
 
@@ -51,6 +51,7 @@ ros2 run py_pubsub listenr
 
 
 ### Alternative way to run docker containers(no host network)
+currently, this one works both on Wifi and Ethernet.
 
 1.run docker image and open port 7414, 7415
 

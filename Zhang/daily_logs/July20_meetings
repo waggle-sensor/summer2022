@@ -1,0 +1,13 @@
+pipespipes configuration be careful with channels 8/single
+ot2_driver working fine check with kyle
+scehduler not working just with OT2
+zeroMQ socket, client, server configuration, already installed on rasperry pi for OT2
+opentrons not currently using ros directly
+scp protocol file to the robot, zeroMQ to let robot run the script and send the status back to master. Scheduler decide which OT2 to run the protocol, RPL datebase, keep track of protocol. Master send protocol file to database. External rosnode scp file to OT2, get protocol file from database. OT2 listener wait until protocol compelete it, and send message back to rosnode. (follow the chart on github)
+set up ssh and save it inside opentron  different type of ssh key https://support.opentrons.com/s/article/Setting-up-SSH-access-to-your-OT-2
+username=root
+port should be the same as the server side
+listener.py listener = server ; * equals to accept any ip address execute command directly 
+https://github.com/AD-SDL/ot2_driver $pip3 install -e . (maybe pip3 install zmq) 1.create ssh key;2.ssh into OT2 and start listener.py 3.on my computer, git clone, pip install run the code
+Maybe some other ways to control the robot, ask kyle
+next meeting about ros. workflow.json file 
