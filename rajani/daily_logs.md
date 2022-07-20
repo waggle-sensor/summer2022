@@ -176,3 +176,26 @@
     - `save_audio()`: converts the original and reconstructed spectrograms to `.wav` files and saves them, for a specified set of frames
     - `get_max_loss()`: gives the timestamp of the maximum reconstruction error, as well as its value, and the average reconstruction error across the dataset
   - Added functionality to stitch together original audio and reconstructed audio from multiple training samples. The elevated noise level in the audio derived from the spectrograms suggests using more mels would be beneficial.
+
+### Tuesday, July 12
+
+- Implemented spectrogram cropping, whereby 128 mels are allocated for the entire spectogram, and only the frequencies corresponding with the highest 64 mels are used in training.
+  - Met with Dario to discuss in which situations it makes sense to crop the spectrograms (e.g. clustering embeddings) and in which situations it doens't (e.g. anomaly detection based on monitoring the loss function)
+- Modified the VICReg and resnet50 code to work with the custom BirdAudio dataset, implementing time-cropping of spectrogram clips as the joint embedding augmentations.
+
+### Wednesday, July 13
+
+- Trained VICReg on the spectrograms from a BirdAudio file, and found that anomalies generally occur when a bird sound appears in one half of a spectrogram, but does not appear in the other. Moreover, anomalies don't spike the invariance term in the loss, indicating that there are likely distinct embeddings corresponding with the anomalies (e.g. a plane).
+- Attempted several variations on training, such as training on data known to contain no major anomalies and testing on data with anomalies, but found no spikes in the loss function corresponding with anomalous data points.
+
+### Thursday, July 14
+
+- Tested the effect of the autoencoder dimensionality on training speed and reconstruction quality.
+- Implemented appropriate scaling for reconstructed spectrograms.
+- Devised an alternate method of anomaly detection using attentional maps and met with Dario to discuss.
+
+### Friday, July 15
+
+- Tested the effect of the autoencoder dimensionality on training speed and reconstruction quality.
+- Implemented appropriate scaling for reconstructed spectrograms.
+-
