@@ -284,3 +284,105 @@ LSTM to predict solar irradiance based on cloud coverage
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage
+
+# Week 7 (7/11 - 7/15)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| ✅ | Wrap up manual implementation (cross validation, early stopping, tuner) | High |  |
+| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked LSTM models</li><li>epochs, batch size, number folds</li><li>Discuss initial findings with mentors</li></ul> |
+| ✅ | Research variations in LSTM models if model performance unsatisfactory | Low | <ul><li>Some nice elementary explanations [x](https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/)</li></ul> |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 11
+
+- Set up weekly goals
+- Implemented manual time series validation, early stopping, hyperparameter tuning
+    - Could not use sklearn due to lack of GPU support nor keras due to different training methodologies, so manually implemented
+- Researched variations in RNN architectures
+- Note: LCRC maintenace day
+    - Need to check if all methods still function on GPU tomorrow
+    - Need to check if optuna works with environment
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Tuesday, June 12
+
+- Checked that new implementations compatible with GPU
+- Researched variations in RNN architectures
+- Fixed bug in scaling data
+- Worked on rewriting data loading to ensure all days have consistent number of timestamps
+    - Discovered heavy gaps in data (specifically cloud data, it seems): entire days without data, days missing many data points, etc.
+    - For entire days, days missing many data points: remove from dataset, check on resampling without including those days
+    - Shorter days (i.e., in the winter): pad with 0’s for night
+        - Looks like 900 data points is a safe choice? 850 a slightly tighter bound
+        - Figure out how to do this
+            - Select times each day to add 0’s to if no existing value (perhaps: 10:30 - 3:00 UTC? Based on graph and Ohio weather data)
+            - Remember that times are in UTC which may be funky for indexing (espepecially first day, since there’s data from the previous day’s sunset)
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Wednesday, June 13
+
+- Attended EDU Weekly Seminar - Overview of Learning On/Off the Lawn and Open Q&A on Deliverables
+- Preprocessing
+    - Changed data timezone
+    - Removed dates with large amounts of missing data
+    - Padded and trimmed data so days have consistent length
+    - Rewrote data resampling to avoid creating nonexistant data
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Thursday, June 14
+
+- Fixed error with timezone of data
+- Met with AI/Algorithm student group
+- Fixed bug with missing data values in-between other data values
+- Modified train/test split and batch size to be by day
+    - Not perfect since time series carries between days
+    - Validation is also not by day
+    - If wanted to make it perfectly by day would make more sense to have input/output be based on day instead of timestamps. I think for these purposes it makes sense though? Hyperlocal prediction for the next x hours
+- Fixed bug with y values being scaled improperly
+- Performed preliminary training
+    - Long-term: fairly decent. It looks like it tends to follow the days given (e.g. if given 6 sunny days predicts next day sunny as well)
+    - Short-term: quite good I think
+- Researched energy forecasting for smart grid management
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Friday, June 15
+
+- Learned to use slurm to submit jobs (for eventual purpose of running training overnight)
+    - Followed [x](https://www.lcrc.anl.gov/for-users/using-lcrc/running-jobs/running-jobs-on-swing/) tutorial from LCRC website
+- Pre-loaded variations of dataset (two weeks in, one week out)
+    - Not sure if will actually use this since 1) is big and bulky 2) Seongha recommended just one hour and I think the day-ahead search will be sufficient enough to show long-term accuracy 3) haven’t seen ML-focused papers do this, though some energy management papers have listed week or month or even year-ahead forecasting as being valuable
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+# Week 8 (7/18 - 7/22)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Wrap up python job for submission to Swing | High |  |
+| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked cells</li><li>LSTM vs GRU vs SimpleRNN</li><li>Start w/ one-hour ahead, then try one-day ahead</li></ul> |
+| 🟩 | Create poster for Learning on the Lawn | High | Due **Thursday, 5PM** |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 18
+
+- Set up goals for week
+- 
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance

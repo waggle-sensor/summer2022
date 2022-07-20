@@ -1,127 +1,170 @@
+from sqlite3 import TimestampFromTicks
+from threading import Thread
+import myconfig
+import statisticgetter
+import secondarys
+import password
+from queue import Queue, Empty
+from collections import deque
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from ubnt import UnifiSwitchClient
 import json
-import math
 import time
 import requests
 import csv
-import statisticgetter
-import password
-'''
-#pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
-#getStatistics(jsonObject,portnumber,variable):# ex: 3 'poePower'
-#getRaminfo(jsonObject,variable):
-#getTempinfo(jsonObject,area,variable):#area= 0-3, 
-#getProcessorUsage(jsonObject):
-#getUptime(jsonObject):
-'''
-import secondarys
-'''
-def getPOEAverages(jsonqueue):      
-def getPOEMaxes(jsonqueue):
-def getPOEMins(jsonqueue):  
-'''
-import threethread #haven't been able to get threading totalk with other files well, so temporarily usless
-from threading import Thread
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
-import queue
-#from waggle.plugin import Plugin
+from waggle.plugin import Plugin
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-
-frequency_read = 2 #time in seconds
-frequency_write = 4 #time in seconds
-buffer_timeperiod = 60 # time in seconds
-execution_check = 4
-
-buffer_length = math.ceil(int(buffer_timeperiod/frequency_read))
-total_time= 7 #due to how long the parts take if set normally there will not be enough time for all iterations
-
-testingtimestamp =0
-#total_time=frequency_read*buffer_length
-numberofports= 1
-
 starttime = time.time()
-Queofjson= queue.Queue()#maxsize=buffer_length)
 
-#Queofjson=collections.deque(maxlen=buffer_length)
-def getJson(Timestamp):
-        temp=Queofjson.queue #this makes a copy of the given que in dque format which makes it possible to operate on its individual members
-        for x in range(len(temp)):
-                time, json=temp[x]
-                print(time, (time-Timestamp))
-                if time>=Timestamp:#returns if timestamp is equal or has already been passed by iteration
-                        break
-        return json
-def getTimestamp(jsonObject):
-        data=json.loads(jsonObject)
-        Timestamp=data[0]['timestamp']
-        return(Timestamp)
-
-def getquetimestamps():
-        Timestamps= [0 for i in range(Queofjson.qsize())]
-        temp=Queofjson.queue
-        #print(temp)
-        for x in range(Queofjson.qsize()):
-                Timestamps[x], json = temp[x]
-        #print(Timestamps)
-        return (Timestamps)
-def Read(threadname, Queofjson):
-        #global Queofjson
-        #while (time.time()-starttime)<total_time:
+def Read(frequency_read, queues):
         while True:
-                #print('read called')
                 with UnifiSwitchClient(
                         host='https://192.168.0.5',
                         username='ubnt',
                         password=password.password) as client:#password is from another not included file
-                        info = client.get_POE_info()
-                if Queofjson.qsize()==buffer_length:#this makes the que circular might be unneeded due to maxlength
-                         Queofjson.get()
-                Timestamp=statisticgetter.getTimestamp(json.dumps(info))
-                testingtimestamp= Timestamp
-                Queofjson.put(( Timestamp,json.dumps(info)))
-                print(Queofjson.qsize())
-                #print(Queofjson[-1])
+                        info = client.get_statistic_info()
+                        #print("trying to close")
+                        #A=client.close()#because most information doesn't refresh within same session 
+                dumpedjson=json.dumps(info)
+                #print(dumpedjson) 
+                variabletype, timestamp=statisticgetter.noIndexGetter(dumpedjson, 'timestamp')#gets timestamp from within json
+                for queue in queues:
+                        queue.put((timestamp, dumpedjson))
                 time.sleep(frequency_read)
-def Dostuff(threadname, Queofjson):
+def Trigger(execution_check, bufferlength, queue):
+             #with Plugin() as plugin:
+                #plugin.subscribe("len(myconfig.Listofjson)EdgeSwitchQue") #still non-functional
+             buffer = deque()
+             previouspoes= [0]*myconfig.numberofports
+             previousTemps= [0]*myconfig.numberofareastemp #need to do over temp areas
+             previousRates= [0]*myconfig.numberofports
+             previousErrors= [0]*myconfig.numberofports
+
+
              while True:
+                try:
+                        item = queue.get(timeout=60)
+                except Empty:
+                        print("warning! no switch data!")
+                buffer.append(item)
+                while len(buffer) > bufferlength:
+                        buffer.popleft()
+                print("updated trigger buffer")
+                if (len(buffer)==1): #this provides the first values submitted into the que which will be the original values compared against
+                        firsttimestamp, comparingjsonobject=buffer[0]
+                        comparinguptime=statisticgetter.noIndexGetter(comparingjsonobject, 'uptime')
+                        """
+                        noIndexGetter(jsonObject, variable):
+                                variable= 'timestamp' 'uptime' 'processor usage'):
+                                'usage' or 'free' or 'total'):(ram)
+                                return(variable, value)
+                        """
+                        for i in range(myconfig.numberofports):
+                                Ratevariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'rate')
+                                previousRates[i]= originalvalue
+                                #if i ==1:print("this is the original rate", originalvalue)
+                                POEvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'poePower')
+                                """
+                                withIndexGetter(jsonObject, index, variable):
+                                        if('name' or 'value' or 'type'):#this triggers if temperature info is requested, max index of 3
+                                        else:dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower, max index 15  
+                                        return(variable, indexstring, value)
+                                """
+                                previouspoes[i]= originalvalue
+                                
+                                Errorsvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'errors')
+                                previousErrors[i]= originalvalue
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')
+                                previousTemps[i]= originalvalue      
+                        
+                                #Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')# need to alter this into a for loop to run through 4 temperatures
+                elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                      
+                        if(currentuptime < comparinguptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                comparinguptime=currentuptime                      
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, currentTemp= statisticgetter.withIndexGetter(currentjsonobject, i,'value')
+                                normalcheck=secondarys.isnormalcheck('temperature', previousTemps[i], currentTemp)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                #print(currentTemp, i)
+                                
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousTemps[i]=currentTemp
+                                        
+                        for i in range(myconfig.numberofports):
+                                
+                                Ratevariable, indexstring, currentRate= statisticgetter.withIndexGetter(currentjsonobject, i,'rate')                            
+                                normalcheck=secondarys.isnormalcheck('rate', previousRates[i], currentRate)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        #print("pps recorded as", normalcheck)
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        if i==5:print("comparison rate should change")
+                                        previousRates[i]=currentRate
+                                        secondarys.RecordBigChanges(string)
+                                        
+                                if i== 5:print("when buffer is",len(buffer), "Rate is", currentRate, "compared rate is",previousRates[i])
+                                
+                                POEvariable, indexstring, currentPoe= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')
+                                normalcheck=secondarys.isnormalcheck('poePower', previouspoes[i], currentPoe)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        secondarys.RecordBigChanges(string)
+                                        previouspoes[i]=currentPoe
+                                Errorsvariable, indexstring, currentErrors= statisticgetter.withIndexGetter(currentjsonobject, i,'errors')
+                                normalcheck=secondarys.isnormalcheck('errors', previousErrors[i], currentErrors)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousErrors[i]=currentErrors
+                                #if i==0 or i==5:
+                                        #print(currentRate, i)
+                                        #print(currentErrors, i)
                 time.sleep(execution_check)
-                print(int(time.time()*1000)-10000)
-                print("----")
-                print(getJson(int(time.time()*1000)-10000))
-def Write(threadname, Queofjson):
+                #msg= plugin.get()
+                #print("recieved from database", msg.value)
+
+def Write(frequency_write, queue):
         while True:
-        #while (time.time()-starttime)<total_time:
-                #pp = pprint.PrettyPrinter(indent=2, width=30, compact=True) #read when pretty print is desired
-                #print('write called')
-                timestamps=getquetimestamps()
-                #print(timestamps)
-                header = ['timestamps']
-                Port1 = [timestamps]
-                #header2 = ['what time started', 'started on', 'every time it changed', 'what it changed to each time']
-                with open('edgeswitch.csv', 'w', encoding='UTF8') as f:
-                        writer = csv.writer(f)
-                        writer.writerow(header)
-                        writer.writerow(Port1)
+                try:
+                        item=queue.get(timeout=60)
+                        timestamp, jsonobject=item
+                        for i in range(myconfig.numberofports):
+                                variablecalled, indexstring, value= statisticgetter.withIndexGetter(jsonobject, i,'poePower')
+                                """
+                                withIndexGetter(jsonObject, index, variable):
+                                        if('name' or 'value' or 'type'):#this triggers if temperature info is requested, max index of 3
+                                        else:dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower, max index 15  
+                                        return(variable, indexstring, value)
+                                """
+                                pair= str(timestamp), variablecalled, indexstring, str(value) 
+                                with open('edgeswitch.csv', 'a', encoding='UTF8') as f:
+                                        writer = csv.writer(f)
+                                        writer.writerow(pair)
+                                """   
+                                stringoutput=','.join(pair)
+                                with Plugin() as plugin:
+                                        rightnow =time.time_ns()
+                                        #plugin.upload_file('edgeswitch.csv')#, timestamp=rightnow)
+                                        plugin.publish("test.bytes", stringoutput, timestamp=rightnow)#,timestamp=rightnow) 
+                                """
+                except Empty:
+                        print("warning! no switch data!")
+                        continue  
                 time.sleep(frequency_write)           
 def Main():
-        #ReadingProcess =multiprocessing.Process(target=Read, args=("thread-1", Queofjson))
-        ReadingProcess =Thread(target=Read, args=("thread-1", Queofjson)) 
-        WritingProcess =Thread(target=Write, args=("thread-2", Queofjson))
-        OtherProcess =Thread(target=Dostuff, args=("thread-3", Queofjson))
-        ReadingProcess.start()
-        WritingProcess.start()
-        OtherProcess.start()
-        #ReadingProcess.join()
-        #WritingProcess.join()
-        #OtherProcess.join()
-        #print('ending main')
-        #print(getJson(testingtimestamp))
-Main()
-'''
-with Plugin() as plugin:
-        plugin.upload_file('edgeswitch', timestamp=str(datetime.now()))
+        writer_queue =Queue()
+        Thread(target=Write, args=(myconfig.frequency_write, writer_queue,), daemon=True).start()
+        
+        trigger_queue =Queue()
+        Thread(target=Trigger, args=(myconfig.execution_check, myconfig.buffer_length, trigger_queue,), daemon=True).start()
 
-Plugin.publish('test.bytes',self.parse())
+        Read(myconfig.frequency_read,[writer_queue, trigger_queue])
+       
+if __name__=="__main__":
+        Main()                     
 
-'''

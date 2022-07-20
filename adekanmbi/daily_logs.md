@@ -327,4 +327,30 @@ Things to added to dockerfile.
 
 - Worked on presentation and designing experiment.
 
+### Week 8 ###
+
+------------------------------------------------
+
+#### Monday July 11, 2022 ####
+
+- Worked on presentation and designing experiment.
+
+#### Tuesday July 12, 2022 ####
+
+- Worked on presentation and designing experiment.
+#### Wednesday July 13, 2022 ####
+
+- Completed internship presentation.
+
+#### Thursday July 14, 2022 ####
+
+- Worked on using vector as profiling visualization.
+
+#### Friday July 15, 2022 ####
+
+- Worked on using PCP on Linux
+- Started implementing using psutil
+
+
+
 

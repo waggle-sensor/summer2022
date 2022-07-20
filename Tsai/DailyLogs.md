@@ -171,7 +171,7 @@ Chirpstack AS:
     - unable to receive frames from the second device
 * [x] Familiarize with the seeed modules that came in
 
-**July 7th**
+**July 7th, 8th**
 * [x] Connect a second device to the same gateway
     - successfully connected two device that sends data together at the same time
     - the application is able to see both devices' messages entering
@@ -185,3 +185,25 @@ Chirpstack AS:
         - could be that the gateway is unable to receive from a certain port when it is in use by another
         - could be that the message just simply did not send properly, etc
     - I also noticed that when there are no particular message being sent by the arduino devices, the gateway still receives a "AA==", which translates to ? when converting from base64
+
+**July 11th, 12th**
+* [x] Fixed packet loss issue
+    - tried multiple different ways
+    - in the end, delaying the sending of each packet solves the issue
+        - this is consistent with the theory that the arduino was still in the process of communicating the previous message when another is sent. That will cause an error
+    - I also tried resending each time we meet an error, and that also allows us to send all 10 packets
+* [x] Look into Seeed lora E5 mini
+
+**July 14,15th**
+* [x] Connected LoRaE5 mini to the gateway and communicate with Chirpstack via lora connection
+    - Use AT commands to personalize the LoRaE5 mini
+    - Able to customize message after activating the OTAA connection
+    - One issue that the message are often dropped
+* [x] Switch to OTAA connect instead of ABP
+    - OTAA allows the NWSKEY and other sessions keys to be rotatable and therefore increasing security of the connections
+
+**July 18th**
+- Carpool was cancelled so I was unable to go into office
+* [x] Work with the E5 mini and see what is causing the message dropping issues
+    - I looked into multiple write ups on OTAA connection issues and most are dealing with joining session which we don't have an issue with. I believe packet losses are inevitable and is what's causing the unsent messages
+    - A pretty clear idea of the process of joining OTAA session as well as the comparison to ABP: https://www.techplayon.com/lora-device-activation-call-flow-join-procedure-using-otaa-and-abp/

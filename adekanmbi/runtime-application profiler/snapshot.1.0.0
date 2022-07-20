@@ -1,0 +1,537 @@
+<profile_xml>
+
+<thread id="1.0.0.207" node="1" context="0" thread="0">
+<metadata>
+<attribute>
+<name>CPU Cores</name>
+<value>1</value>
+</attribute>
+<attribute>
+<name>CPU MHz</name>
+<value>2000.000</value>
+</attribute>
+<attribute>
+<name>CPU Type</name>
+<value>Intel(R) Core(TM) i5-6360U CPU @ 2.00GHz</value>
+</attribute>
+<attribute>
+<name>CPU Vendor</name>
+<value>GenuineIntel</value>
+</attribute>
+<attribute>
+<name>CWD</name>
+<value>/tau-2.31.1/examples/python</value>
+</attribute>
+<attribute>
+<name>Cache Size</name>
+<value>4096 KB</value>
+</attribute>
+<attribute>
+<name>Command Line</name>
+<value>python -m tau_python_wrapper manual.py</value>
+</attribute>
+<attribute>
+<name>Executable</name>
+<value>/usr/bin/python3.6</value>
+</attribute>
+<attribute>
+<name>Hostname</name>
+<value>392ff3c7e244</value>
+</attribute>
+<attribute>
+<name>Local Time</name>
+<value>2022-07-11T20:34:46+00:00</value>
+</attribute>
+<attribute>
+<name>Memory Size</name>
+<value>4029192 kB</value>
+</attribute>
+<attribute>
+<name>Node Name</name>
+<value>392ff3c7e244</value>
+</attribute>
+<attribute>
+<name>OS Machine</name>
+<value>aarch64</value>
+</attribute>
+<attribute>
+<name>OS Name</name>
+<value>Linux</value>
+</attribute>
+<attribute>
+<name>OS Release</name>
+<value>5.10.104-linuxkit</value>
+</attribute>
+<attribute>
+<name>OS Version</name>
+<value>#1 SMP Thu Mar 17 17:08:06 UTC 2022</value>
+</attribute>
+<attribute>
+<name>Starting Timestamp</name>
+<value>1657571686089506</value>
+</attribute>
+<attribute>
+<name>TAU Architecture</name>
+<value>default</value>
+</attribute>
+<attribute>
+<name>TAU Config</name>
+<value> -bfd=download -python -pythonlib=/usr/lib/python3.6/config-3.6m-aarch64-linux-gnu -pythoninc=/usr/include/python3.6m -unwind=download -c++=g++ -cc=gcc</value>
+</attribute>
+<attribute>
+<name>TAU Makefile</name>
+<value>/tau-2.31.1/arm64_linux/lib/Makefile.tau-python</value>
+</attribute>
+<attribute>
+<name>TAU Version</name>
+<value>2.31.1-git</value>
+</attribute>
+<attribute>
+<name>TAU_BFD_LOOKUP</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_CALLPATH</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_CALLPATH_DEPTH</name>
+<value>2</value>
+</attribute>
+<attribute>
+<name>TAU_CALLSITE_DEPTH</name>
+<value>1</value>
+</attribute>
+<attribute>
+<name>TAU_COMPENSATE</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_CUDA_BINARY_EXE</name>
+<value></value>
+</attribute>
+<attribute>
+<name>TAU_CUPTI_API</name>
+<value>runtime</value>
+</attribute>
+<attribute>
+<name>TAU_CURRENT_TIMER_EXIT_PARAMS</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_EBS_INCLUSIVE</name>
+<value>0 usec</value>
+</attribute>
+<attribute>
+<name>TAU_EBS_KEEP_UNRESOLVED_ADDR</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_EBS_PERIOD</name>
+<value>30000</value>
+</attribute>
+<attribute>
+<name>TAU_EBS_SOURCE</name>
+<value>itimer</value>
+</attribute>
+<attribute>
+<name>TAU_EBS_UNWIND</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_ENABLE_THREAD_CONTEXT</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_IBM_BG_HWP_COUNTERS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_MAX_THREADS</name>
+<value>1</value>
+</attribute>
+<attribute>
+<name>TAU_MEASURE_TAU</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_MEMDBG_PROTECT_ABOVE</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_MEMDBG_PROTECT_BELOW</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_MEMDBG_PROTECT_FREE</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_OPENMP_RUNTIME</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_OPENMP_RUNTIME_EVENTS</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_OPENMP_RUNTIME_STATES</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_OUTPUT_CUDA_CSV</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_PAPI_MULTIPLEXING</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_PROFILE</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_PROFILE_FORMAT</name>
+<value>profile</value>
+</attribute>
+<attribute>
+<name>TAU_RECYCLE_THREADS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_REGION_ADDRESSES</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_SAMPLING</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_SHOW_MEMORY_FUNCTIONS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_SIGNALS_GDB</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_THROTTLE</name>
+<value>on</value>
+</attribute>
+<attribute>
+<name>TAU_THROTTLE_NUMCALLS</name>
+<value>100000</value>
+</attribute>
+<attribute>
+<name>TAU_THROTTLE_PERCALL</name>
+<value>10</value>
+</attribute>
+<attribute>
+<name>TAU_TRACE</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACE_FORMAT</name>
+<value>tau</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_CUDA_CDP</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_CUDA_ENV</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_CUDA_INSTRUCTIONS</name>
+<value></value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_CUDA_SASS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_HEADROOM</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_HEAP</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_IO_PARAMS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_MEMORY_FOOTPRINT</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_MEMORY_LEAKS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_SIGNALS</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_TRACK_UNIFIED_MEMORY</name>
+<value>off</value>
+</attribute>
+<attribute>
+<name>TAU_VERBOSE_RANK</name>
+<value>-1</value>
+</attribute>
+<attribute>
+<name>Timestamp</name>
+<value>1657571686145577</value>
+</attribute>
+<attribute>
+<name>UTC Time</name>
+<value>2022-07-11T20:34:46Z</value>
+</attribute>
+<attribute>
+<name>pid</name>
+<value>207</value>
+</attribute>
+<attribute>
+<name>tid</name>
+<value>207</value>
+</attribute>
+<attribute>
+<name>Ending Timestamp</name>
+<value>0</value>
+</attribute>
+</metadata>
+</thread>
+
+<definitions thread="1.0.0.207">
+<metric id="0"><name>TIME</name>
+<units>unknown</units>
+</metric>
+</definitions>
+
+<definitions thread="1.0.0.207">
+<event id="0"><name>.TAU application </name><group>TAU_DEFAULT</group></event>
+<event id="1"><name>find_module [{imp.py}{255}] </name><group>TAU_PYTHON</group></event>
+<event id="2"><name>isinstance </name><group>TAU_PYTHON</group></event>
+<event id="3"><name>is_builtin </name><group>TAU_PYTHON</group></event>
+<event id="4"><name>is_frozen </name><group>TAU_PYTHON</group></event>
+<event id="5"><name>join [{posixpath.py}{75}] </name><group>TAU_PYTHON</group></event>
+<event id="6"><name>fspath </name><group>TAU_PYTHON</group></event>
+<event id="7"><name>_get_sep [{posixpath.py}{41}] </name><group>TAU_PYTHON</group></event>
+<event id="8"><name>startswith </name><group>TAU_PYTHON</group></event>
+<event id="9"><name>endswith </name><group>TAU_PYTHON</group></event>
+<event id="10"><name>isfile [{genericpath.py}{27}] </name><group>TAU_PYTHON</group></event>
+<event id="11"><name>stat </name><group>TAU_PYTHON</group></event>
+<event id="12"><name>get_suffixes [{imp.py}{105}] </name><group>TAU_PYTHON</group></event>
+<event id="13"><name><![CDATA[<listcomp> [{imp.py}{107}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="14"><name><![CDATA[<listcomp> [{imp.py}{108}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="15"><name><![CDATA[<listcomp> [{imp.py}{109}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="16"><name>S_ISREG </name><group>TAU_PYTHON</group></event>
+<event id="17"><name>open </name><group>TAU_PYTHON</group></event>
+<event id="18"><name>detect_encoding [{tokenize.py}{355}] </name><group>TAU_PYTHON</group></event>
+<event id="19"><name>read_or_stop [{tokenize.py}{379}] </name><group>TAU_PYTHON</group></event>
+<event id="20"><name>readline </name><group>TAU_PYTHON</group></event>
+<event id="21"><name>find_cookie [{tokenize.py}{385}] </name><group>TAU_PYTHON</group></event>
+<event id="22"><name>decode </name><group>TAU_PYTHON</group></event>
+<event id="23"><name>match </name><group>TAU_PYTHON</group></event>
+<event id="24"><name>__init__ [{codecs.py}{308}] </name><group>TAU_PYTHON</group></event>
+<event id="25"><name>__init__ [{codecs.py}{259}] </name><group>TAU_PYTHON</group></event>
+<event id="26"><name>read </name><group>TAU_PYTHON</group></event>
+<event id="27"><name>decode [{codecs.py}{318}] </name><group>TAU_PYTHON</group></event>
+<event id="28"><name>utf_8_decode </name><group>TAU_PYTHON</group></event>
+<event id="29"><name>compile </name><group>TAU_PYTHON</group></event>
+<event id="30"><name>new_module [{imp.py}{48}] </name><group>TAU_PYTHON</group></event>
+<event id="31"><name>exec </name><group>TAU_PYTHON</group></event>
+<event id="32"><name><![CDATA[<module> [{manual.py}{3}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="33"><name><![CDATA[_find_and_load [{<frozen importlib._bootstrap>}{966}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="34"><name><![CDATA[__init__ [{<frozen importlib._bootstrap>}{143}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="35"><name><![CDATA[__enter__ [{<frozen importlib._bootstrap>}{147}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="36"><name><![CDATA[_get_module_lock [{<frozen importlib._bootstrap>}{157}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="37"><name>acquire_lock </name><group>TAU_PYTHON</group></event>
+<event id="38"><name><![CDATA[__init__ [{<frozen importlib._bootstrap>}{58}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="39"><name>allocate_lock </name><group>TAU_PYTHON</group></event>
+<event id="40"><name>release_lock </name><group>TAU_PYTHON</group></event>
+<event id="41"><name><![CDATA[acquire [{<frozen importlib._bootstrap>}{78}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="42"><name>get_ident </name><group>TAU_PYTHON</group></event>
+<event id="43"><name>get </name><group>TAU_PYTHON</group></event>
+<event id="44"><name><![CDATA[_find_and_load_unlocked [{<frozen importlib._bootstrap>}{936}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="45"><name>rpartition </name><group>TAU_PYTHON</group></event>
+<event id="46"><name><![CDATA[_find_spec [{<frozen importlib._bootstrap>}{870}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="47"><name><![CDATA[__enter__ [{<frozen importlib._bootstrap>}{843}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="48"><name><![CDATA[find_spec [{<frozen importlib._bootstrap>}{707}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="49"><name><![CDATA[__exit__ [{<frozen importlib._bootstrap>}{847}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="50"><name><![CDATA[find_spec [{<frozen importlib._bootstrap>}{780}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="51"><name><![CDATA[find_spec [{<frozen importlib._bootstrap_external>}{1149}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="52"><name><![CDATA[_get_spec [{<frozen importlib._bootstrap_external>}{1117}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="53"><name><![CDATA[_path_importer_cache [{<frozen importlib._bootstrap_external>}{1080}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="54"><name>getcwd </name><group>TAU_PYTHON</group></event>
+<event id="55"><name>hasattr </name><group>TAU_PYTHON</group></event>
+<event id="56"><name><![CDATA[find_spec [{<frozen importlib._bootstrap_external>}{1233}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="57"><name><![CDATA[_path_stat [{<frozen importlib._bootstrap_external>}{75}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="58"><name><![CDATA[_relax_case [{<frozen importlib._bootstrap_external>}{41}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="59"><name><![CDATA[_path_join [{<frozen importlib._bootstrap_external>}{57}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="60"><name><![CDATA[<listcomp> [{<frozen importlib._bootstrap_external>}{59}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="61"><name>rstrip </name><group>TAU_PYTHON</group></event>
+<event id="62"><name>join </name><group>TAU_PYTHON</group></event>
+<event id="63"><name><![CDATA[_verbose_message [{<frozen importlib._bootstrap>}{222}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="64"><name><![CDATA[_path_isfile [{<frozen importlib._bootstrap_external>}{94}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="65"><name><![CDATA[_path_is_mode_type [{<frozen importlib._bootstrap_external>}{85}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="66"><name><![CDATA[_get_spec [{<frozen importlib._bootstrap_external>}{1228}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="67"><name><![CDATA[__init__ [{<frozen importlib._bootstrap_external>}{908}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="68"><name><![CDATA[spec_from_file_location [{<frozen importlib._bootstrap_external>}{524}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="69"><name><![CDATA[__init__ [{<frozen importlib._bootstrap>}{369}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="70"><name><![CDATA[_load_unlocked [{<frozen importlib._bootstrap>}{651}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="71"><name><![CDATA[module_from_spec [{<frozen importlib._bootstrap>}{564}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="72"><name><![CDATA[create_module [{<frozen importlib._bootstrap_external>}{919}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="73"><name><![CDATA[_call_with_frames_removed [{<frozen importlib._bootstrap>}{211}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="74"><name>create_dynamic </name><group>TAU_PYTHON</group></event>
+<event id="75"><name><![CDATA[_init_module_attrs [{<frozen importlib._bootstrap>}{504}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="76"><name>getattr </name><group>TAU_PYTHON</group></event>
+<event id="77"><name><![CDATA[parent [{<frozen importlib._bootstrap>}{416}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="78"><name><![CDATA[has_location [{<frozen importlib._bootstrap>}{424}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="79"><name><![CDATA[cached [{<frozen importlib._bootstrap>}{403}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="80"><name><![CDATA[_get_cached [{<frozen importlib._bootstrap_external>}{361}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="81"><name><![CDATA[__init__ [{<frozen importlib._bootstrap>}{307}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="82"><name><![CDATA[__enter__ [{<frozen importlib._bootstrap>}{311}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="83"><name><![CDATA[exec_module [{<frozen importlib._bootstrap_external>}{927}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="84"><name>exec_dynamic </name><group>TAU_PYTHON</group></event>
+<event id="85"><name><![CDATA[__exit__ [{<frozen importlib._bootstrap>}{318}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="86"><name>any </name><group>TAU_PYTHON</group></event>
+<event id="87"><name><![CDATA[<genexpr> [{<frozen importlib._bootstrap>}{321}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="88"><name><![CDATA[__exit__ [{<frozen importlib._bootstrap>}{151}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="89"><name><![CDATA[release [{<frozen importlib._bootstrap>}{103}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="90"><name><![CDATA[cb [{<frozen importlib._bootstrap>}{176}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="91"><name><![CDATA[spec_from_loader [{<frozen importlib._bootstrap>}{433}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="92"><name><![CDATA[_requires_builtin_wrapper [{<frozen importlib._bootstrap>}{232}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="93"><name><![CDATA[is_package [{<frozen importlib._bootstrap>}{753}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="94"><name><![CDATA[create_module [{<frozen importlib._bootstrap>}{728}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="95"><name>create_builtin </name><group>TAU_PYTHON</group></event>
+<event id="96"><name><![CDATA[exec_module [{<frozen importlib._bootstrap>}{736}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="97"><name>exec_builtin </name><group>TAU_PYTHON</group></event>
+<event id="98"><name><![CDATA[_handle_fromlist [{<frozen importlib._bootstrap>}{997}]]]> </name><group>TAU_PYTHON</group></event>
+<event id="99"><name>A Sleep for excl 5 secs  </name><group>TAU_PYTHON</group></event>
+<event id="100"><name>B Sleep for excl 2 secs  </name><group>TAU_PYTHON</group></event>
+<event id="101"><name>setNode </name><group>TAU_PYTHON</group></event>
+<event id="102"><name>print </name><group>TAU_PYTHON</group></event>
+<event id="103"><name>sleep </name><group>TAU_PYTHON</group></event>
+<event id="104"><name>snapshot </name><group>TAU_PYTHON</group></event>
+<event id="105"><name>TAU_PROFILE_SNAPSHOT()  </name><group>TAU_IO</group></event>
+</definitions>
+
+<profile thread="1.0.0.207">
+<name>After 5 secs</name>
+<timestamp>1657571693905653</timestamp>
+<interval_data metrics="0 ">
+0 1 5 2692715 7790295 
+1 1 21 6507 34634 
+2 11 0 1960 1960 
+3 3 0 86 86 
+4 2 0 33 33 
+5 7 23 3166 4282 
+6 8 0 138 138 
+7 7 7 630 771 
+8 8 0 618 618 
+9 4 0 241 241 
+10 6 7 770 3254 
+11 9 0 2502 2502 
+12 1 3 421 522 
+13 1 0 40 40 
+14 1 0 37 37 
+15 1 0 24 24 
+16 1 0 285 285 
+17 2 1 887 1020 
+18 1 6 993 17193 
+19 2 2 163 1274 
+20 2 0 1111 1111 
+21 2 4 393 13355 
+22 2 0 53 53 
+23 3 0 14039 14039 
+24 1 1 113 133 
+25 1 0 20 20 
+26 1 1 831 979 
+27 1 1 118 148 
+28 1 0 30 30 
+29 1 0 1552 1552 
+30 1 0 39 39 
+31 1 1 62 5060376 
+32 1 5 5435 5060314 
+33 2 12 898 27417 
+34 2 0 30 30 
+35 2 4 172 1209 
+36 2 6 342 843 
+37 8 0 91 91 
+38 2 4 251 385 
+39 4 0 134 134 
+40 8 0 5010 5010 
+41 2 2 171 194 
+42 4 0 80 80 
+43 4 0 54 54 
+44 2 6 282 19743 
+45 6 0 81 81 
+46 2 12 807 6232 
+47 4 4 92 131 
+48 2 3 208 534 
+49 4 4 99 138 
+50 1 1 26 38 
+51 1 1 161 4584 
+52 1 8 662 4423 
+53 2 1 308 343 
+54 1 0 35 35 
+55 9 0 190 190 
+56 2 24 1149 3361 
+57 3 3 122 425 
+58 2 0 21 21 
+59 8 16 531 1189 
+60 8 16 387 568 
+61 16 0 181 181 
+62 8 0 90 90 
+63 12 0 173 173 
+64 1 1 112 291 
+65 1 1 35 179 
+66 1 2 140 302 
+67 1 0 20 20 
+68 1 2 110 142 
+69 2 0 38 38 
+70 2 12 950 13205 
+71 2 6 310 11042 
+72 1 2 117 1695 
+73 4 4 643 9497 
+74 1 0 1200 1200 
+75 2 15 532 1228 
+76 10 0 222 222 
+77 2 2 79 110 
+78 2 0 25 25 
+79 1 1 81 339 
+80 1 2 59 258 
+81 2 0 39 39 
+82 2 0 46 46 
+83 1 2 52 151 
+84 1 0 15 15 
+85 2 4 309 764 
+86 2 8 255 419 
+87 8 0 164 164 
+88 2 2 119 347 
+89 2 2 171 228 
+90 2 6 229 5167 
+91 1 4 128 284 
+92 1 1 87 97 
+93 1 0 10 10 
+94 1 1 65 7784 
+95 1 0 7619 7619 
+96 1 1 49 185 
+97 1 0 20 20 
+98 1 1 48 115 
+99 1 3 614 5027031 
+101 1 0 316 316 
+102 1 0 4409 4409 
+103 1 0 5001538 5001538 
+104 1 1 2527 20470 
+105 1 0 17943 17943 
+</interval_data>
+<atomic_data>
+</atomic_data>
+</profile>
+
+</profile_xml>
