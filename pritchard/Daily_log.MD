@@ -1141,15 +1141,111 @@ sample output:
 
 
 ```
-
+- [ ] Gave demo of progress to Raj
 Things to do:
 - [ ] Add previous WisGate work to Github
 - [ ] Link up local repo for easy commits
 
 #### Wednesday July 20th ####
-- [ ] 
-Things to do:  
-- [ ] 
+- [ ] Talked with Raj, he wants: to be able to connect and disconnect switch while program is running, removal of various text in some outputs, in favor of just numbers, constant rolling tuple per port that gives current POE and whether it is connected and sendng data to switch, readouts whenever something loses or gains power or data connection
+- [ ] I made a new list of (number of port) able lists, which will store the current POE and whether data is being recieved from the given port
+```
+ connectionStatus= [[0,'off'] for i in range(myconfig.numberofports)]#poe wattage, whether port is currently receiving data
+             pastPOEstatus= ['off']*myconfig.numberofports
+             connectionComparer= ['off','off']
+- [ ] Changed testing code to focus on rxRate and POE,
+                if (len(buffer)!=0):
+                        currenttimestamp, currentjson=buffer[-1]
+                        for i in range(myconfig.numberofports):
+                                Ratevariable, indexstring, currentrxRate= statisticgetter.withIndexGetter(currentjson, i,'rxRate')                            
+                                if currentrxRate== 0:
+                                        connectionComparer[1]='off'
+                                else:
+                                        connectionComparer[1]='on'
+                                POEvariable, indexstring, currentPOE= statisticgetter.withIndexGetter(currentjson, i,'poePower')                            
+                                if currentPOE== 0:
+                                        connectionComparer[0]='off'
+                                else:
+                                        connectionComparer[0]='on'
+                                if connectionComparer[1] is not connectionStatus[i][1]:
+                                        print(currenttimestamp,i+1,"connection changed connection is now ", connectionComparer[1])
+                                        connectionStatus[i][1]=connectionComparer[1]                              
+                                if connectionComparer[0] is not pastPOEstatus[i]:
+                                        print(currenttimestamp,i+1,'POE changed POE is now', connectionComparer[0])
+                                        """
+                                                string=currenttimestamp,indexstring,normalcheck
+                                                if i==5:print("comparison rate should change")
+                                                secondarys.RecordBigChanges(string)
+                                        """
+                                        pastPOEstatus[i]=connectionComparer[0]
+                                connectionStatus[i][0]=currentPOE
+
+
+```
+
+
+```
+updated trigger buffer
+1658351975058 1 POE changed POE is now on
+1658351975058 3 POE changed POE is now on
+1658351975058 4 connection changed connection is now  on
+1658351975058 4 POE changed POE is now on
+1658351975058 6 connection changed connection is now  on
+1658351975058 8 POE changed POE is now on
+readstarted
+```
+
+
+- [ ] Removed previous code which references testifnormal function
+- [ ] Added try clause to catch switch disconnections
+```
+                try:
+                        with UnifiSwitchClient(
+                                host='https://192.168.0.5',
+                                username='ubnt',
+                                password=password.password) as client:#password is from another not included file
+                                info = client.get_statistic_info()
+                                dumpedjson=json.dumps(info)
+                                #print(dumpedjson) 
+                                variabletype, timestamp=statisticgetter.noIndexGetter(dumpedjson, 'timestamp')#gets timestamp from within json
+                                for queue in queues:
+                                        queue.put((timestamp, dumpedjson))
+                                endtime=time.time()
+                                if (frequency_read-(endtime-starttime))>0:     
+                                        time.sleep(frequency_read-(endtime-starttime))
+                except:
+                        print("warning! switch not connected!")
+                        endtime=time.time()
+                        if (30-(endtime-starttime))>0:     
+                                time.sleep(frequency_read-(endtime-starttime))
+
+
+```
+
+```
+sample output:
+updated trigger buffer
+readstarted
+updated trigger buffer
+readstarted
+updated trigger buffer
+warning! no switch data!
+updated trigger buffer
+warning! no switch data!
+warning! switch not connected!
+readstarted
+updated trigger buffer
+readstarted
+updated trigger buffer
+readstarted
+```
+
+- [ ] Adjusted time.sleep() functionality to take into account time take to run thread
+```
+         endtime=time.time()
+         if (execution_check-(endtime-starttime))>0:     
+                    time.sleep(execution_check-(endtime-starttime))
+```
 #### Thursday July 21th ####
 - [ ] 
 Things to do: 
