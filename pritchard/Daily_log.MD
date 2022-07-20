@@ -537,7 +537,7 @@ Things to do
 - [ ] make function to return any specific value of a specific iteration given the full json que
 
 ### Week 8: 7/11 to 7/15 ###
-#### Monday June 13th ####
+#### Monday July 11th ####
 - [ ] Talked with Raj, he wants: circular buffer, three threads that operate at smae time-> reading standard writing and intercetion writing, three variables to control-> the total time the function is active, the delay between occurances of reading as well as writing
 - [ ] Wrote code for the three basic threads as separate functions
 ```
@@ -629,7 +629,7 @@ ending main
 Things to do:
 - [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
 
-#### Tuesday June 14th ####
+#### Tuesday July 12th ####
 - [ ] Talked with and provided demo of current process to Raj, 
 he wants:
 - [ ] login password removed from commited file and password changed in device
@@ -703,7 +703,7 @@ Things to do:
 - [ ] Link up local repo for easy commits
 - [ ] Look into possible sources of pop up to ensure it is not part of something malicious
 
-#### Wednesday June 15th ####
+#### Wednesday July 13th ####
 - [ ] Attended mandatory meeting on how "on the lawn" and "off the lawn" will work
 - [ ] Went outside due to fire drill
 - [ ] Looked into white pop-up and confirmed it is part of the gnome network connectivity manager, which continued to fail as I do not actually have gnome installed
@@ -736,7 +736,7 @@ Things to do:
 - [ ] Complete transformation of code to safer List focussed version
 - [ ] Create functionality to make a graph of changes in a given value over a time period
 
-#### Thursday June 16th ####
+#### Thursday July 14th ####
 - [ ]  Finished reforming project to use a large list instead of a queue
 ```
 if len(myconfig.Listofjson)==buffer_length:#this makes the que circular might be unneeded due to maxlen(myconfig.Listofjson)
@@ -822,13 +822,344 @@ here is an example plot of the change in poe power draw from a dummy device over
 ![image](https://user-images.githubusercontent.com/106760508/179082793-b77a4f80-8952-4a3a-af89-80c9af90f51e.png)
 
 Things to do: 
+- [ ] Write code to improve getaverage() function to return timestamp of when output closest to average ocuured
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
+#### Friday July 15th ####
+- [ ] Talked with Sean over slack about implementing a safer threading system that uses a double que system, so writing and interjection threads don't get in each others way
+- [ ] Assisted Raj with splitting a SAGE node into two for testing purposes
+- [ ] Combined various getter functions that would retrieve values from jsons, so that there are only two function calls, that rely on the variable name called to choose between different indexing outputs
+```
+def withIndexGetter(jsonObject, index, variable):
+        data=json.loads(jsonObject)
+        if(variable=='name' or variable=='value' or variable=='type'):#this triggers if temperature info is requested, max index of 3
+                value=data[0]['device']['temperatures'][index][variable]
+                variable='temperature info'+ variable
+                indexstring= 'area:'+str(index)
+        else:  #variable= dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower
+              value=data[0]['interfaces'][index]['statistics'][variable]#this triggers if ports information is requested, port= 0-15
+              indexstring= 'port:'+str(index+1)  
+        return(variable, indexstring, value)
+
+def noIndexGetter(jsonObject, variable):
+        data=json.loads(jsonObject)
+        if(variable=='timestamp'):# if the variable requested is timestamp
+                value=data[0]['timestamp']
+        elif(variable=='uptime'):
+                value=data[0]['device']['uptime']
+        elif(variable=='processor usage'):
+                value=data[0]['device']['cpu'][0]['usage']
+        elif(variable=='usage' or variable=='free' or variable=='total'):#if ram information is requested
+                value=data[0]['device']['ram'][variable]#variable = usage, free, total
+                variable='ram '+variable# this makes the requested variable clear in read out
+        else:
+                print("variable not correct")
+        return(variable, value)
+
+```
+- [ ] These two getters divide what values they retreive based on whether the values they retrieve requires an index, ie port or area number
+```
+noIndexGetter(jsonObject, variable): vs withIndexGetter(jsonObject, index, variable)
+```
+- [ ] These functions now return the name of the variable they retrieved, inthe case of the index function a string containing the type of index used as well as its value, and the value itself that was retreived
+```
+else:  #variable= dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower
+              value=data[0]['interfaces'][index]['statistics'][variable]#this triggers if ports information is requested, port= 0-15
+              indexstring= 'port:'+str(index+1)  
+        return(variable, indexstring, value)
+```
+- [ ] Implemented the double que system that Sean reccomended
+```
+writer_queue =Queue()
+        Thread(target=Write, args=(myconfig.frequency_write, writer_queue,), daemon=True).start()
+        
+        trigger_queue =Queue()
+        Thread(target=Trigger, args=(myconfig.execution_check, myconfig.buffer_length, trigger_queue,), daemon=True).start()
+
+        Read(myconfig.frequency_read,[writer_queue, trigger_queue])
+```
+- [ ] Added functionality to retrieve poe values for each port, which now include a variety of devices, and print them into a csv
+```
+in thread:
+for i in range(myconfig.numberofports):
+                                variablecalled, indexstring, value= statisticgetter.withIndexGetter(jsonobject, i,'poePower')# return(Statistic,data[0]['timestamp'], portnumber, variable, 'basicstatis')
+                                pair= str(timestamp), variablecalled, indexstring, str(value) 
+                                #isdropped, indexstring, value= statisticgetter.withIndexGetter(jsonobject, i,'dropped')# return(Statistic,data[0]['timestamp'], portnumber, variable, 'basicstatis')
+                                #print(isdropped, indexstring)
+                                stringoutput=','.join(pair)
+                                
+                                with open('edgeswitch.csv', 'a', encoding='UTF8') as f:
+                                        writer = csv.writer(f)
+                                        writer.writerow(pair)
+                                                      
+```
+```
+1657928912618,poePower,port:1,2.57
+1657928912618,poePower,port:2,2.67
+1657928912618,poePower,port:3,2.14
+1657928912618,poePower,port:4,0.0
+1657928912618,poePower,port:5,13.62
+1657928912618,poePower,port:6,0.0
+1657928912618,poePower,port:7,4.33
+1657928912618,poePower,port:8,2.57
+```
+- [ ] Ran program over the weekend with adjusted write and read rates to create enough data to run other tests
+
+Things to do:
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
+### Week 8: 7/18 to 7/22 ###
+#### Monday July 18th ####
+- [ ] Did Friday daily journal
+- [ ] Made short list of what variabes we should be checking in our interuption thread
+  - [ ] processor usage
+  - [ ] total errors
+  - [ ] per area temperature values
+  - [ ] ram total
+  - [ ] ram free
+  - [ ] POE
+  - [ ] uptime  
+- [ ] Made short function to test for drastic changes between two values, in practice these values will belong to neighboring retreived json files, comparing them will enable the function to interject when an event takes place that greatly alters said value
+```
+def isnormalcheck(variable, standardvalue, currentvalue):#later add in details on acceptable ratio
+        if standardvalue== 0 and currentvalue==0:
+                proportion=1
+        elif standardvalue== 0:
+                proportion= 3*currentvalue
+        else: proportion=currentvalue/standardvalue
+        if(proportion>1.5):
+                return(variable,"raised is now this fraction of former value:",proportion)
+        elif(proportion<0.75):
+                return(variable,"dropped is now this fraction of former value:",proportion)
+        else: return None
+```
+- [ ] Implemented said function in the interupt thread to detect whether two most recent jsons objects in dequeue contain very different Poe values
+``` if(len(buffer)>2):
+                    currenttimestamp, currentjsonobject=buffer[-1]
+                    #print(currentjsonobject)
+                    pasttimestamp, pastjsonobject=buffer[-2]
+                    #print(pastjsonobject)
+                    for i in range(myconfig.numberofports):
+                            POEvariable, indexstring, currentvalue= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')# return(Statistic,data[0]['timestamp'], portnumber, variable, 'basicstatis')
+                            #print(currentvalue, i)
+                            POEvariable, indexstring, pastvalue= statisticgetter.withIndexGetter(pastjsonobject, i,'poePower')
+                            normalcheck=secondarys.isnormalcheck(POEvariable, pastvalue, currentvalue)
+                            #if i==3:
+                                #print(currentvalue, pastvalue)
+                            if normalcheck is not None:
+                                print(currenttimestamp,indexstring, normalcheck)#return(variable,"dropped is now this fraction of former value:",proportion)
+sample output:
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+1658168108394 port:1 ('poePower', 'dropped is now this fraction of former value:', 0.0) <----port refreshed here
+updated trigger buffer
+1658168110234 port:1 ('poePower', 'raised is now this fraction of former value:', 4.71) <----port returns to original value here
+
+
+```
+- [ ] Implemented function to tell if uptime goes down, which would mean switch restarted
+```
+                  if (len(buffer)==1):
+                        firsttimestamp, firstjsonobject=buffer[0]
+                        originaluptime=statisticgetter.noIndexGetter(firstjsonobject, 'uptime')
+
+                elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        pasttimestamp, pastjsonobject=buffer[-2]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                        if(currentuptime < originaluptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                originaluptime=currentuptime           
+```
+- [ ] Revised method of testing for events so now each iterations values are tested against either the first readings or the last time the value was detected as being substantually different, this way total change can be tested against instead of change since last iteration
+                
+```
+if (len(buffer)==1): #this provides the first values submitted into the que which will be the original values compared against
+         firsttimestamp, comparingjsonobject=buffer[0]
+         comparinguptime=statisticgetter.noIndexGetter(comparingjsonobject, 'uptime')
+         """
+         noIndexGetter(jsonObject, variable):
+         variable= 'timestamp' 'uptime' 'processor usage'):
+         'usage' or 'free' or 'total'):(ram)
+         return(variable, value)
+         """
+         for i in range(myconfig.numberofports):
+               POEvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'poePower')
+               reviousvalues[i]= originalvalue              
+```
+```
+elif(len(buffer)>1):
+        currenttimestamp, currentjsonobject=buffer[-1]
+        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                      
+        if(currentuptime < comparinguptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                  print(currenttimestamp, "the switch has restarted")
+                  comparinguptime=currentuptime                      
+                        
+                  for i in range(myconfig.numberofports):
+                             POEvariable, indexstring, currentvalue= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')
+                             normalcheck=secondarys.isnormalcheck(POEvariable, previousvalues[i], currentvalue)
+                             #return(variable,"dropped is now this fraction of former value:",proportion)
+                  if normalcheck is not None:
+                             print(currenttimestamp,indexstring, normalcheck)
+                             previousvalues[i]=currentvalue             
+```
+sample output:
+```
+updated trigger buffer
+updated trigger buffer
+1658178469525 port:2 ('poePower', 'dropped is now this fraction of former value:', 0.0)
+updated trigger buffer
+updated trigger buffer
+1658178473150 port:2 ('poePower', 'raised is now this fraction of former value:', 4.47)
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer
+updated trigger buffer 
+1658178484474 port:2 ('poePower', 'raised is now this fraction of former value:', 1.5436241610738255) <---- this incerease was previously undetected
+updated trigger buffer
+updated trigger buffer
+```                 
+- [ ]  
+
+
+Things to do:
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
+#### Tuesday July 19th ####
+- [ ] Added functionality to test for temperature, rate and error changes
+```
+             previouspoes= [0]*myconfig.numberofports
+             previousTemps= [0]*myconfig.numberofareastemp #need to do over temp areas
+             previousRates= [0]*myconfig.numberofports
+             previousErrors= [0]*myconfig.numberofports
+                          
+                          #this is where the preseting comparison variables takes place
+                          
+                          for i in range(myconfig.numberofports):
+                                Ratevariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'rate')
+                                previousRates[i]= originalvalue
+                                POEvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'poePower')
+                                previouspoes[i]= originalvalue
+                                
+                                Errorsvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'errors')
+                                previousErrors[i]= originalvalue
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')
+                                previousTemps[i]= originalvalue      
+                        
+                      #this is where I compare curren values of the variables against the comparison values
+                      
+                        
+                   elif(len(buffer)>1):
+                        currenttimestamp, currentjsonobject=buffer[-1]
+                        currentuptime=statisticgetter.noIndexGetter(currentjsonobject, 'uptime')
+                      
+                        if(currentuptime < comparinguptime):#there might be a problem with this implemetation not triggering becuase too much delay
+                                print(currenttimestamp, "the switch has restarted")
+                                comparinguptime=currentuptime                      
+                        for i in range(myconfig.numberofareastemp):
+                                Tempvariable, indexstring, currentTemp= statisticgetter.withIndexGetter(currentjsonobject, i,'value')
+                                normalcheck=secondarys.isnormalcheck('temperature', previousTemps[i], currentTemp)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                #print(currentTemp, i)
+                                
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousTemps[i]=currentTemp
+                                        
+                        for i in range(myconfig.numberofports):
+                                
+                                Ratevariable, indexstring, currentRate= statisticgetter.withIndexGetter(currentjsonobject, i,'rate')                            
+                                normalcheck=secondarys.isnormalcheck('rate', previousRates[i], currentRate)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        #print("pps recorded as", normalcheck)
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        if i==5:print("comparison rate should change")
+                                        previousRates[i]=currentRate
+                                        secondarys.RecordBigChanges(string)
+                                        
+                                
+                                POEvariable, indexstring, currentPoe= statisticgetter.withIndexGetter(currentjsonobject, i,'poePower')
+                                normalcheck=secondarys.isnormalcheck('poePower', previouspoes[i], currentPoe)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        string=currenttimestamp,indexstring,normalcheck
+                                        secondarys.RecordBigChanges(string)
+                                        previouspoes[i]=currentPoe
+                                Errorsvariable, indexstring, currentErrors= statisticgetter.withIndexGetter(currentjsonobject, i,'errors')
+                                normalcheck=secondarys.isnormalcheck('errors', previousErrors[i], currentErrors)#return(variable,"dropped is now this fraction of former value:",proportion)
+                                if normalcheck is not None:
+                                        print(currenttimestamp,indexstring, normalcheck)
+                                        previousErrors[i]=currentErrors
+
+
+
+sample output:
+when buffer is 55 Rate is 106408 compared rate is 135024
+updated trigger buffer
+when buffer is 56 Rate is 106408 compared rate is 135024
+updated trigger buffer
+1658263217176 port:1 ('rate', 'dropped is now this fraction of former value:', 0.2323943661971831)
+1658263217176 port:1 ('poePower', 'dropped is now this fraction of former value:', 0.0)
+1658263217176 port:4 ('rate', 'dropped is now this fraction of former value:', 0.14842578710644677)
+when buffer is 57 Rate is 51392 compared rate is 135024
+updated trigger buffer
+
+
+
+```
+- [ ] Fixed numerous bugs in first implemenatation, which included: unchanging comparison values for numerous variables, wrong variables sometimes getting passed to display functions
+- [ ] Added a new function to display values from interjection thread in new csv file
+```
+def RecordBigChanges(change): 
+        with open('bigchanges.csv', 'a', encoding='UTF8') as f:
+                writer = csv.writer(f)
+                writer.writerow(change)
+
+sample output:
+1658263274531,port:1,"('rate', 'dropped is now this fraction of former value:', 0.28314606741573034)"
+1658263274531,port:3,"('rate', 'dropped is now this fraction of former value:', 0.28125)"
+1658263274531,port:4,"('rate', 'dropped is now this fraction of former value:', 0.31777777777777777)"
+1658263296152,port:4,"('rate', 'dropped is now this fraction of former value:', 0.32867132867132864)"
+1658263356736,port:1,"('rate', 'raised is now this fraction of former value:', 6.238095238095238)"
+1658263356736,port:3,"('rate', 'raised is now this fraction of former value:', 6.238095238095238)"
+1658263356736,port:4,"('rate', 'raised is now this fraction of former value:', 16.76595744680851)"
+1658263370772,port:1,"('rate', 'dropped is now this fraction of former value:', 0.2862595419847328)"
+1658263370772,port:3,"('rate', 'dropped is now this fraction of former value:', 0.2862595419847328)"
+1658263370772,port:4,"('rate', 'dropped is now this fraction of former value:', 0.28553299492385786)"
+1658263389999,port:1,"('rate', 'dropped is now this fraction of former value:', 0.31555555555555553)"
+1658263389999,port:3,"('rate', 'dropped is now this fraction of former value:', 0.32)"
+1658263389999,port:4,"('rate', 'dropped is now this fraction of former value:', 0.31555555555555553)"
+
+
+
+```
+
+Things to do:
+- [ ] Add previous WisGate work to Github
+- [ ] Link up local repo for easy commits
+
+#### Wednesday July 20th ####
 - [ ] 
-#### Friday June 17th ####
+Things to do:  
+- [ ] 
+#### Thursday July 21th ####
+- [ ] 
+Things to do: 
+- [ ] 
+
+#### Friday July 22th ####
 - [ ] 
 
 Things to do:
 - [ ] 
-
 
 
 
