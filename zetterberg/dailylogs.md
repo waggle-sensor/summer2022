@@ -255,5 +255,36 @@
 - Continued improving power spectra plot code to run in a reasonable amount of time
 - Worked on figures for final presentation
 
+---
+
+### Week 8
+
+#### Goals for the Week
+- Finish and submit poster
+- Do Power Spectra Plot for all 2 months
+- Solidify physical interpretation of clusters
+- Begin poster presentation and paper
+
+#### Monday July 18th, 2022
+
+- Continued working on poster
+- Continued power spectra plotting
+
+#### Tuesday July 19th, 2022
+
+- Continued working on poster
+- Finished power spectra plot for poster
+
+#### Wednesday July 20th, 2022
+
+- Weekly Student Seminar
+- Finished poster
+
+#### Thursday July 21st, 2022
+
+- AI Algorithm Student Group meeting
+- Submitted poster
+- Draft for paper
+
 
 
