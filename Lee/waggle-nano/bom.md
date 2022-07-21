@@ -10,7 +10,7 @@
 |1|Outdoor Desktop Microphone|https://www.surveillance-video.com/audio-ml1-ws-ip54.html
 |1|Micro SD Card|https://www.amazon.com/Silicon-Power-Nintendo-Switch-Compatible-microsdxc/dp/B091B2MX9S/
 |1|TPH Sensor (BME 680)|https://www.sparkfun.com/products/15743/
-|1|Linux WiFi Adapter|https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S/ref=asc_df_B01GC8XH0S/
+|1|Linux WiFi Adapter|https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S/
 |1|Short Circuit Shunt|https://www.amazon.com/TOTOT-Standard-Lengthened-Connection-Circuit/dp/B07H8XKY71/
 |1|USB/USB-C Card Reader|https://www.amazon.com/UGREEN-Reader-Adapter-Portable-Windows/dp/B07D1J88CF/
 |1|USB to Ethernet Adapter|https://www.amazon.com/uni-Ethernet-Internet-Compatible-Notebook/dp/B087QFQW6F
