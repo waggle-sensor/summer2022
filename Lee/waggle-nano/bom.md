@@ -8,7 +8,7 @@
 |1|USB to Ethernet Adapter|https://www.amazon.com/uni-Ethernet-Internet-Compatible-Notebook/dp/B087QFQW6F
 |1|Fan|https://www.amazon.com/Noctua-NF-A4x20-5V-PWM-Premium-Quality/dp/B071FNHVXN
 |1|Short Circuit Shunt (Jumper)|https://www.amazon.com/TOTOT-Standard-Lengthened-Connection-Circuit/dp/B07H8XKY71/
-|1|Sensor Extension Cable|https://www.amazon.com/StarTech-USBINT5PIN-Internal-Motherboard-Header/dp/B003HHROBG
+|1|Sensor Extension Cable (5 Pin USB)|https://www.amazon.com/StarTech-USBINT5PIN-Internal-Motherboard-Header/dp/B003HHROBG
 |1|USB Cable for WiFi| https://www.amazon.com/C2G-52119-USB-Extension-Cable/dp/B00CJG2ZYM
 |1|Switch|https://www.amazon.com/TP-LINK-TL-SG1024DE-24-Port-Gigabit-Switch/dp/B00CUG8ESM/ref=sr_1_4?crid=29E3PL3D3PXX7&keywords=TP-LINK+TL-SG1024DE+24-PORT+GIGABIT+10%2F100%2F1000MBPS+ETHERNET+EASY+SMART+SWITCH&qid=1658431151&s=electronics&sprefix=tp-link+tl-sg1024de+24-port+gigabit+10%2F100%2F1000mbps+ethernet+easy+smart+switch%2Celectronics%2C79&sr=1-4
 |1|Ethernet Cable|https://www.amazon.com/Ethernet-2000Mhz-Network-Weatherproof-Resistant/dp/B08D9FBLQG/
