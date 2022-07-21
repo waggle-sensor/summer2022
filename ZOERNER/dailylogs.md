@@ -367,5 +367,40 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 ---
 
+##### Goals for this week:
 
+- [x] Scale-up script to work for entire season
+- [x] Perform k-means clustering on all parameters
+- [x] Finish poster
+
+---
+
+#### Monday July 18th, 2022
+
+- Waited for dataset to finish processing
+- Worked on poster
+- Attended TRACER briefing
+
+#### Tuesday July 19th, 2022
+
+- Scaled-up script to work for entire season of data (summer of 2020)
+- Worked on poster
+- Attended TRACER briefing
+
+#### Wednesday July 20th, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Worked on clustering parameters
+- Worked on poster
+- Met with Bhupendra to discuss clustering and review poster
+
+#### Thursday July 21st, 2022
+
+- Attended AI meeting
+- Refined clustering
+- Pulled an example from each cluster
+- Attended weekly student check-in
+- Finished poster
+
+#### Friday July 22nd, 2022
 
