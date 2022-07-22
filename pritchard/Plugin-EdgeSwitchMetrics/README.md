@@ -37,4 +37,5 @@ ect... full json converted to string
 this pluggin requires the pywaggle library, local connection to an EdgeSwitch 8, as well as an additional file containing the password of your switch 
   <br>  
 ![image](https://user-images.githubusercontent.com/106760508/180482614-45add548-1df6-497a-aeb6-5ad1adbb94a8.png)
-
+# Credits
+This pluggin makes use of the ubnt file included, that file is the creation of Joseph Swantek and gemblerz 
