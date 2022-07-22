@@ -1141,19 +1141,181 @@ sample output:
 
 
 ```
-
+- [ ] Gave demo of progress to Raj
 Things to do:
 - [ ] Add previous WisGate work to Github
 - [ ] Link up local repo for easy commits
 
 #### Wednesday July 20th ####
-- [ ] 
-Things to do:  
-- [ ] 
+- [ ] Talked with Raj, he wants: to be able to connect and disconnect switch while program is running, removal of various text in some outputs, in favor of just numbers, constant rolling tuple per port that gives current POE and whether it is connected and sendng data to switch, readouts whenever something loses or gains power or data connection
+- [ ] I made a new list of (number of port) able lists, which will store the current POE and whether data is being recieved from the given port
+```
+ connectionStatus= [[0,'off'] for i in range(myconfig.numberofports)]#poe wattage, whether port is currently receiving data
+             pastPOEstatus= ['off']*myconfig.numberofports
+             connectionComparer= ['off','off']
+- [ ] Changed testing code to focus on rxRate and POE,
+                if (len(buffer)!=0):
+                        currenttimestamp, currentjson=buffer[-1]
+                        for i in range(myconfig.numberofports):
+                                Ratevariable, indexstring, currentrxRate= statisticgetter.withIndexGetter(currentjson, i,'rxRate')                            
+                                if currentrxRate== 0:
+                                        connectionComparer[1]='off'
+                                else:
+                                        connectionComparer[1]='on'
+                                POEvariable, indexstring, currentPOE= statisticgetter.withIndexGetter(currentjson, i,'poePower')                            
+                                if currentPOE== 0:
+                                        connectionComparer[0]='off'
+                                else:
+                                        connectionComparer[0]='on'
+                                if connectionComparer[1] is not connectionStatus[i][1]:
+                                        print(currenttimestamp,i+1,"connection changed connection is now ", connectionComparer[1])
+                                        connectionStatus[i][1]=connectionComparer[1]                              
+                                if connectionComparer[0] is not pastPOEstatus[i]:
+                                        print(currenttimestamp,i+1,'POE changed POE is now', connectionComparer[0])
+                                        """
+                                                string=currenttimestamp,indexstring,normalcheck
+                                                if i==5:print("comparison rate should change")
+                                                secondarys.RecordBigChanges(string)
+                                        """
+                                        pastPOEstatus[i]=connectionComparer[0]
+                                connectionStatus[i][0]=currentPOE
+
+
+```
+
+
+```
+updated trigger buffer
+1658351975058 1 POE changed POE is now on
+1658351975058 3 POE changed POE is now on
+1658351975058 4 connection changed connection is now  on
+1658351975058 4 POE changed POE is now on
+1658351975058 6 connection changed connection is now  on
+1658351975058 8 POE changed POE is now on
+readstarted
+```
+
+
+- [ ] Removed previous code which references testifnormal function
+- [ ] Added try clause to catch switch disconnections
+```
+                try:
+                        with UnifiSwitchClient(
+                                host='https://192.168.0.5',
+                                username='ubnt',
+                                password=password.password) as client:#password is from another not included file
+                                info = client.get_statistic_info()
+                                dumpedjson=json.dumps(info)
+                                #print(dumpedjson) 
+                                variabletype, timestamp=statisticgetter.noIndexGetter(dumpedjson, 'timestamp')#gets timestamp from within json
+                                for queue in queues:
+                                        queue.put((timestamp, dumpedjson))
+                                endtime=time.time()
+                                if (frequency_read-(endtime-starttime))>0:     
+                                        time.sleep(frequency_read-(endtime-starttime))
+                except:
+                        print("warning! switch not connected!")
+                        endtime=time.time()
+                        if (30-(endtime-starttime))>0:     
+                                time.sleep(frequency_read-(endtime-starttime))
+
+
+```
+
+```
+sample output:
+updated trigger buffer
+readstarted
+updated trigger buffer
+readstarted
+updated trigger buffer
+warning! no switch data!
+updated trigger buffer
+warning! no switch data!
+warning! switch not connected!
+readstarted
+updated trigger buffer
+readstarted
+updated trigger buffer
+readstarted
+```
+
+- [ ] Adjusted time.sleep() functionality to take into account time take to run thread
+```
+         endtime=time.time()
+         if (execution_check-(endtime-starttime))>0:     
+                    time.sleep(execution_check-(endtime-starttime))
+```
 #### Thursday July 21th ####
-- [ ] 
+- [ ] Talked to Raj, he wants: every event monitored variable to be tested in terms of user set boundaries, for all responce statements to be sent to plugin directory rather than printed, writing thread to send most recent json every time it is triggered
+- [ ] Created List of dictionaries in config file that allows for setting boundaries for each variable for each port
+```
+variableboundaries = [ {'value': (0,0), 'poePower':(1,50),'rxRate':(0,100)},#value refers to temp, port 1 (lowerboundary,upperboundary)
+{'value': (50,80), 'poePower':(1,50),'rxRate':(0,100)},#port 2 or area2 depending on whether checking temp or ports
+{'value': (100,500), 'poePower':(0,50),'rxRate':(0,7000)},
+{'value': (0,0), 'poePower':(0,50),'rxRate':(0,7000)},
+{'poePower':(0,50),'rxRate':(0,100)},#there are only 4 areas temperatures that can be read
+{'poePower':(0,50),'rxRate':(0,100)},
+{'poePower':(0,50),'rxRate':(0,100)},
+{'poePower':(0,50),'rxRate':(0,5000)}
+]
+```
+- [ ] Created systyem of cycling through previous List while comparing current values by using some complicated iteration and calling a newly created function
+```
+within main function:
+for i in range(8):#number of iterations not adjustable upwards as it is reliant on boundaries set in config
+       Ratevariable, indexstring, currentrxRate= statisticgetter.withIndexGetter(currentjson, i,'rxRate')                         
+       for key in myconfig.variableboundaries[i]:
+             currentvalue=statisticgetter.withIndexGetter(currentjson, i, key)[2]#[2] is becuase statisticgetters return tuples beyond just the value
+             check=secondarys.isnormalcheck(key, i, currentvalue)
+             if(check!=None):#check= low if below boundaries, high if above
+                        pair= str(i+1), key, check 
+new function:
+def isnormalcheck(variable, index, currentvalue):
+        lowerboundary, upperboundary=myconfig.variableboundaries[index][variable]
+        if(currentvalue>upperboundary):
+                return("High")
+        elif(currentvalue<lowerboundary):
+                return("Low")
+        else: return(None)
+```
+- [ ] Spent roughly an hour cleaning code and making previously created but now unused functions presentable
+- [ ] Created and tested method of sending printouts to local directory
+```
+ pair= str(i+1), key, check 
+ stringoutput=','.join(pair)
+ with Plugin() as plugin:
+      timestamp =time.time_ns()#if uncommented, plugin will be sent current time as timestamp rather than the timestamp of the json
+      plugin.publish("test.bytes", stringoutput, timestamp=timestamp)
+      if key!= 'value':
+              plugin.publish("test.bytes", str(connectionStatus[i]), timestamp=timestamp)
+
+sample output:
+
+{"name":"test.bytes","ts":1658442205804326588,"meta":{},"val":"1,value,High"}
+{"name":"test.bytes","ts":1658442206812179926,"meta":{},"val":"3,value,Low"}
+{"name":"test.bytes","ts":1658442207824764287,"meta":{},"val":"4,value,High"}
+{"name":"test.bytes","ts":1658442208840983822,"meta":{},"val":"8,rxRate,High"}
+{"name":"test.bytes","ts":1658442208840983822,"meta":{},"val":"[0.0, 'on']"}
+{"name":"test.bytes","ts":1658442210858644724,"meta":{},"val":"1,value,High"}
+{"name":"test.bytes","ts":1658442211872862993,"meta":{},"val":"3,value,Low"}
+{"name":"test.bytes","ts":1658442212891783477,"meta":{},"val":"4,value,High"}
+{"name":"test.bytes","ts":1658442213900134846,"meta":{},"val":"8,rxRate,High"}
+{"name":"test.bytes","ts":1658442213900134846,"meta":{},"val":"[0.0, 'on']"}
+
+
+```
+- [ ] Added a variable to config that allows user control over what rxRate classifies a port as off 
+
 Things to do: 
-- [ ] 
+- [ ] Set error and warning messages so they are sent to directory 
+- [ ] Talk to Sean about what format to send information in and image processing responsibilitys
+- [ ] Work on code annotations and readme
+- [ ] Work on SULI end deliverables
+- [ ] Give credit to source of ubnt in readme 
+- [ ] Present demo of working system to Raj
+- [ ] Create sytem to accept blank boundaries as ignored values
+- [ ] Figure out timestamp problem that prevents plugin from accepting json's timestamp
 
 #### Friday July 22th ####
 - [ ] 

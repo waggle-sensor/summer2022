@@ -352,5 +352,17 @@ Things to added to dockerfile.
 - Started implementing using psutil
 
 
+### Week 9 ###
 
+------------------------------------------------
 
+#### Monday July 18, 2022 ####
+
+- Worked on shell usable version of CPU,GPU and Memory in docker. Code Changes can be tracked here in the runtime-profiler branch.
+[runtime-profiler](https://github.com/waggle-sensor/application-profiling/tree/runtime-profiler)
+#### Tuesday July 19, 2022 ####
+
+- Worked on shell usable version of CPU,GPU and Memory in docker.
+#### Wednesday July 20, 2022 ####
+
+- Worked on shell usable version of CPU,GPU and Memory in docker.

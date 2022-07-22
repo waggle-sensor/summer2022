@@ -373,16 +373,47 @@ LSTM to predict solar irradiance based on cloud coverage and solar irradiance
 
 |  | Goal | Priority | Notes |
 | --- | --- | --- | --- |
-| 🟩 | Wrap up python job for submission to Swing | High |  |
-| 🟩 | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked cells</li><li>LSTM vs GRU vs SimpleRNN</li><li>Start w/ one-hour ahead, then try one-day ahead</li></ul> |
-| 🟩 | Create poster for Learning on the Lawn | High | Due **Thursday, 5PM** |
+| ✅ | Wrap up python job for submission to Swing | High |  |
+| ✅ | Train model | High | <ul><li>Train:</li><ul><li>Number of stacked cells</li><li>LSTM vs GRU vs SimpleRNN</li><li>Start w/ one-hour ahead, then try one-day ahead</li></ul> |
+| ✅ | Create poster for Learning on the Lawn | High | Due **Thursday, 5PM** |
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
 
 ## Monday, June 18
 
 - Set up goals for week
-- 
+- Finished refactoring training/hyperparameter optimization
+- Configured slurm file to run training/hyperparameter optimization code
+- Scheduled training for overnight
+- Worked on poster (additional research on background)
 
 **Primary Project:**
 LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+
+## Tuesday, June 19
+
+- Worked on poster (text writing, formatting)
+- Fixed a few misc. bugs in code (saving model, saving loss history)
+- Visualized results from training
+    - Looks exciting!
+
+**Primary Project:**
+Poster
+
+## Wednesday, June 20
+
+- Attended EDU Weekly Seminar - Resume Workshop
+- Worked on poster (finished first draft)
+    - Added additional data visualization
+- Attended Summer Interns Check-In
+
+**Primary Project:**
+Poster
+
+## Thursday, June 21
+
+- Met with AI/Algorithm student group
+- Finished poster! (added conclusions, misc retouches and fixes)
+
+**Primary Project:**
+Poster
