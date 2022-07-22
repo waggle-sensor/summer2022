@@ -67,7 +67,7 @@ def Trigger(execution_check, bufferlength, queue):
                                                 pair= str(i+1), key, check 
                                                 stringoutput=','.join(pair)
                                                 with Plugin() as plugin:
-                                                        #timestamp =time.time_ns()#if uncommented, plugin will be sent current time as timestamp rather than the timestamp of the json
+                                                        timestamp =time.time_ns()#if uncommented, plugin will be sent current time as timestamp rather than the timestamp of the json
                                                         plugin.publish("test.bytes", stringoutput, timestamp=timestamp)
                                                         if key!= 'value':
                                                                 plugin.publish("test.bytes", str(connectionStatus[i]), timestamp=timestamp)
