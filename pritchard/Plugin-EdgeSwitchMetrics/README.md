@@ -38,4 +38,4 @@ this pluggin requires the pywaggle library, local connection to an EdgeSwitch 8,
   <br>  
 ![image](https://user-images.githubusercontent.com/106760508/180482614-45add548-1df6-497a-aeb6-5ad1adbb94a8.png)
 # Credits
-This pluggin makes use of the ubnt file included, that file is the creation of Joseph Swantek and gemblerz 
+This pluggin makes use of the unifi_switch_client, that file is the creation of Joseph Swantek and gemblerz, you can find it [here](https://github.com/waggle-sensor/unifi_switch_client)
