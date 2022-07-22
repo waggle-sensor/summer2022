@@ -52,9 +52,9 @@ def Trigger(execution_check, bufferlength, queue):
 
                 if (len(buffer)!=0):
                         timestamp, currentjson=buffer[-1]
-                        for i in range(8):#number of iterations not adjustable upwards as it is reliant on boundaries set in config
-                                Ratevariable, indexstring, currentrxRate= statisticgetter.withIndexGetter(currentjson, i,'rxRate')                            
-                                if currentrxRate== myconfig.rxOnBoundary:#this threshold can be changed in config
+                        for i in range(8):#number of iterations not adjustable upwards as it is reliant on what boundaries are set in config
+                                Ratevariable, indexstring, currentrate= statisticgetter.withIndexGetter(currentjson, i,'rate')                            
+                                if currentrate== myconfig.rateOnBoundary:#this threshold can be changed in config
                                         connectionStatus[i][1]='off'
                                 else:
                                         connectionStatus[i][1]='on'
