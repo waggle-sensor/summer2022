@@ -5,6 +5,7 @@ In this project I worked to design a framework we could use to have a large web 
 
 # Where I got in this project
 I eventually decided on using the built in LoRaWAN network server within the WisGate to communicate with a built in MQTT broker which would then communicate with a MQTT client on the nano. There were some troubles getting the client to enroll correctly as it would not accept the large scale topics used by the WisGate which were denoted by "+". I eventually realized that I could subscibe to any topic that would logically be within those larger topic assignments. I ended up getting moved off of this project when next developement steps required experimental devices to be connected up to the WisGate as I could not give it false data to send to the nano. By that point I had figured out how to enroll a client hosted on the nano to the MQtt broker hosted on the Wisgate and could see basic existence communication between the two. I had also picked out the devices/sensors to hook up to the wisGate, they ended up ariving twoish days after I was reassigned.
+<br>
 sample output of testingpaho.py:
 ```
 creating new instance
