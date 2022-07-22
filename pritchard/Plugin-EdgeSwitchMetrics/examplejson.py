@@ -1,4 +1,4 @@
-
+#this is an example of the json that is routinely pulled from the EdgeSwitches local api
 [
   {
     "timestamp": 1658431405220,
