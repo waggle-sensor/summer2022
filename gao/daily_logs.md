@@ -417,3 +417,38 @@ Poster
 
 **Primary Project:**
 Poster
+
+## Friday, June 22
+
+- Worked on paper (detailed explanations of RNNs, LSTMs, GRUs)
+- Organized meeting time with mentors for next week
+
+**Primary Project:**
+Paper
+
+# Week 9 (7/25 - 7/29)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Look into pywaggle, dockerize model | High |  |
+| 🟩 | Get access to container | High |  |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 25
+
+- Set up goals for week
+- Met with mentors
+    - Notes
+        - Check model performance on other months
+        - Pywaggle
+        - Ask Raj to get access to the container for SGP
+            - Try using Virtual Waggle (ask Sean)
+        - You upload Docker container to ECR (edge computing repo)
+        - Seeing resource usage for different models: plug and chug
+- Checked for seasonality-based errors by visualizing model performance on different months
+
+**Primary Project:**
+LSTM to predict solar irradiance based on cloud coverage and solar irradiance
