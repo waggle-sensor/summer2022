@@ -29,7 +29,7 @@ data sent:
 {"name":"test.bytes","ts":1658503730152837614,"meta":{},"val":"[{\"timestamp\": 1658503730092, \"device\": {\"cpu\": [{\"identifier\": \"ARMv7 Processor rev 1 (v7l)\", \"usage\": 64}],
 ect... full json converted to string
 
-{"name":"test.bytes","ts":1658503730158803000,"meta":{},"val":"8,rxRate,High"}
+{"name":"test.bytes","ts":1658503730158803000,"meta":{},"val":"8,rate,High"}
 {"name":"test.bytes","ts":1658503730158803000,"meta":{},"val":"[0.0, 'on']"}
 
 ```
