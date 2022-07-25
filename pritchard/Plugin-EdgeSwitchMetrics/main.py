@@ -107,4 +107,4 @@ def Main():
         Read(myconfig.frequency_read,[writer_queue, trigger_queue])
        
 if __name__=="__main__":
-        Main()                     
+        Main()     
