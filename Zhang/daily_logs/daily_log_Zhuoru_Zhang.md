@@ -64,3 +64,13 @@ https://support.opentrons.com/s/ Ethernet supported, scp protocols to OT2 robot
 
 - meeting with Doga, go over the connection for OT2, super helpful
 - test zeroMQ socket connection on local machine, successful
+
+https://googlecloudrobotics.github.io/core/how-to/connecting-robot.html
+
+Planning for this week:
+
+Add docker environments to OT2 access
+
+7.25
+
+- get the scp working inside docker, and zeroMQ working.
