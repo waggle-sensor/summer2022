@@ -1,4 +1,4 @@
-# What is the Edge Switch Plugin?
+# What is the Edge Switch Metrics Plugin?
 This plugin works with the Edge Switch 8 to provide various statistics on both  the internal metrics of the edgeswitch itself as well as statistics on the current connection to other devices via its ports. This data is gained via connection to its local api. This plugin uses a three thread system of reading from the switch, routine writing to beehive and an interjection thread to allow for user controlled adjustment of the frequencies these three threads trigger. In the proccess of sending this data to beehive the third thread checks if selected variables are within the boundaries set in config, if they are not the thread sends a message to beehive denoting which variables located at which ports or areas of the switch are behaving strangely, as well as whether the detected value is too high or too low. This third thread also keeps a circular buffer of adjustable size that can be used if there is a desire to use the included max, min and average functions on the buffer data.
 All librarys currently used are common, with exception of waggle.plugin which requires installation using:
 ```
