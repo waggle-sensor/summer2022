@@ -1247,15 +1247,118 @@ readstarted
                     time.sleep(execution_check-(endtime-starttime))
 ```
 #### Thursday July 21th ####
-- [ ] 
+- [ ] Talked to Raj, he wants: every event monitored variable to be tested in terms of user set boundaries, for all responce statements to be sent to plugin directory rather than printed, writing thread to send most recent json every time it is triggered
+- [ ] Created List of dictionaries in config file that allows for setting boundaries for each variable for each port
+```
+variableboundaries = [ {'value': (0,0), 'poePower':(1,50),'rxRate':(0,100)},#value refers to temp, port 1 (lowerboundary,upperboundary)
+{'value': (50,80), 'poePower':(1,50),'rxRate':(0,100)},#port 2 or area2 depending on whether checking temp or ports
+{'value': (100,500), 'poePower':(0,50),'rxRate':(0,7000)},
+{'value': (0,0), 'poePower':(0,50),'rxRate':(0,7000)},
+{'poePower':(0,50),'rxRate':(0,100)},#there are only 4 areas temperatures that can be read
+{'poePower':(0,50),'rxRate':(0,100)},
+{'poePower':(0,50),'rxRate':(0,100)},
+{'poePower':(0,50),'rxRate':(0,5000)}
+]
+```
+- [ ] Created systyem of cycling through previous List while comparing current values by using some complicated iteration and calling a newly created function
+```
+within main function:
+for i in range(8):#number of iterations not adjustable upwards as it is reliant on boundaries set in config
+       Ratevariable, indexstring, currentrxRate= statisticgetter.withIndexGetter(currentjson, i,'rxRate')                         
+       for key in myconfig.variableboundaries[i]:
+             currentvalue=statisticgetter.withIndexGetter(currentjson, i, key)[2]#[2] is becuase statisticgetters return tuples beyond just the value
+             check=secondarys.isnormalcheck(key, i, currentvalue)
+             if(check!=None):#check= low if below boundaries, high if above
+                        pair= str(i+1), key, check 
+new function:
+def isnormalcheck(variable, index, currentvalue):
+        lowerboundary, upperboundary=myconfig.variableboundaries[index][variable]
+        if(currentvalue>upperboundary):
+                return("High")
+        elif(currentvalue<lowerboundary):
+                return("Low")
+        else: return(None)
+```
+- [ ] Spent roughly an hour cleaning code and making previously created but now unused functions presentable
+- [ ] Created and tested method of sending printouts to local directory
+```
+ pair= str(i+1), key, check 
+ stringoutput=','.join(pair)
+ with Plugin() as plugin:
+      timestamp =time.time_ns()#if uncommented, plugin will be sent current time as timestamp rather than the timestamp of the json
+      plugin.publish("test.bytes", stringoutput, timestamp=timestamp)
+      if key!= 'value':
+              plugin.publish("test.bytes", str(connectionStatus[i]), timestamp=timestamp)
+
+sample output:
+
+{"name":"test.bytes","ts":1658442205804326588,"meta":{},"val":"1,value,High"}
+{"name":"test.bytes","ts":1658442206812179926,"meta":{},"val":"3,value,Low"}
+{"name":"test.bytes","ts":1658442207824764287,"meta":{},"val":"4,value,High"}
+{"name":"test.bytes","ts":1658442208840983822,"meta":{},"val":"8,rxRate,High"}
+{"name":"test.bytes","ts":1658442208840983822,"meta":{},"val":"[0.0, 'on']"}
+{"name":"test.bytes","ts":1658442210858644724,"meta":{},"val":"1,value,High"}
+{"name":"test.bytes","ts":1658442211872862993,"meta":{},"val":"3,value,Low"}
+{"name":"test.bytes","ts":1658442212891783477,"meta":{},"val":"4,value,High"}
+{"name":"test.bytes","ts":1658442213900134846,"meta":{},"val":"8,rxRate,High"}
+{"name":"test.bytes","ts":1658442213900134846,"meta":{},"val":"[0.0, 'on']"}
+
+
+```
+- [ ] Added a variable to config that allows user control over what rxRate classifies a port as off 
+
 Things to do: 
-- [ ] 
+- [ ] Set error and warning messages so they are sent to directory 
+- [ ] Talk to Sean about what format to send information in and image processing responsibilitys
+- [ ] Work on code annotations and readme
+- [ ] Work on SULI end deliverables
+- [ ] Give credit to source of ubnt in readme 
+- [ ] Present demo of working system to Raj
+- [ ] Create sytem to accept blank boundaries as ignored values
+- [ ] Figure out timestamp problem that prevents plugin from accepting json's timestamp
 
 #### Friday July 22th ####
+- [ ] Helped Raj manage and inventory some parts
+- [ ] Changed boundary values so there are no warnings in normal state
+- [ ] Upgraded README to current project, adding pictures and examples when helpful
+- [ ] Uploaded previous WisGate progress to GitHub
+- [ ] Gave demo of progress to Raj
+- [ ] Changed rxRate checks to rate, after Raj indicated he wanted any connection where data was sent but not received to still register as a full connection
+- [ ] Took notes on Waggle Github slides to see if I could find anything not said that should be said in order to explain the project to someone who knew nothing of the project
+
+Things to do:
+- [ ] Begin readying SULI end deliverables
+- [ ] Go through READMEs with family and friends to try to do final editing
+### Week 8: 7/25 to 7/29 ###
+#### Monday July 25th ####
+- [ ] Touched up READMEs
+- [ ] Assigned Project to get data from Sage related camera
+- [ ] Found command to do above, failed in implementation 
+- [ ] Helped Raj solder on ports for Waggle
+- [ ] Helped Raj test new Sine wave generator equipment for SAGE node
+
+Things to do:
+- [ ] go through and edit past daily logs
+- [ ] Get video puller working
+#### Tuesday July 26th ####
+- [ ] 
+Things to do:
+- [ ] 
+#### Wednesday July 27th ####
+- [ ] 
+#### Thursday July 28th ####
+- [ ] 
+
+Things to do: 
+- [ ] 
+#### Friday July 29th ####
 - [ ] 
 
 Things to do:
 - [ ] 
+
+
+
 
 
 

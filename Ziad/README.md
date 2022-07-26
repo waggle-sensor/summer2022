@@ -1,36 +1,27 @@
-#Welcome to my README!
+Welcome to my README!
 ----------------------
 
 
-This is mainly resources that I created to implement and setup the MEC server for the waglle-sensor project. There are also usefull links and courses 
-that helped me to figure out some tasks.
+<b>Overall Objective:</b> To demonstrate a real scientific workflow using a Waggle node connected via 5G CBRS to a Multi-access Edge Computing (MEC) resource.
+
+<b>Tasks:</b>
+
+<ol>
+ <li>Integrate Waggle Blade with Argonne’s private 5G network as an MEC resource (Waggle Edge-Blade)</li>
+ <li>Complete installation of Argonne’s 5G testbe MEC server:
+ <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+  <li style="margin-left:2em">Test connectivity, verify remote access, install tools such as Kubernete, etc.</li>
+  <li style="margin-left:2em; padding-bottom: 0;">Optionally, port the software of Waggle Blade</li>
+ </ol>
+ </li>
+ <li>Integrate Waggle nodes on Argonne’s 5G network with MEC resources and show demo.</li>
+ <li>Investigate how to integrate Open RAN into an existing 5G core.</li>
+</ol>
 
 
-##Install SSH server: 
+<b>Other tasks:</b>
+<ol>
+<li>Complete integration of 5G core with router and MEC server</li>
 
-###Install SSH
-
-sudo apt-get install openssh-server
-
-sudo apt update
-
-sudo service ssh status
-
-sudo service ssh start or sudo systemctl start ssh
-
-
-###Create Private Key
-
-ssh-keygen -t rsa -b 4096
-
-cd  .ssh/
-
-cp id_rsa.pub authorized_keys
-
-mkdir .ssh → on the server
-
-scp authorized_keys  username@ip_address:/home/username/.ssh
-
-chmod 700 ~/.ssh → on the server
-
-chmod 600~/.ssh* → on the server
+<li>Configure and evaluate Nokia OSS MediatorCollector API https://use.dac.nokia.com/nokia-dac-oss/nokia-dac-oss-mediator-collector-configuration</li>
+</ol>

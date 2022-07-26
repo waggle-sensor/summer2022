@@ -196,6 +196,34 @@
 
 ### Friday, July 15
 
-- Tested the effect of the autoencoder dimensionality on training speed and reconstruction quality.
-- Implemented appropriate scaling for reconstructed spectrograms.
--
+- Modified the autoencoder architecture to output the embeddings at the bottleneck for analysis.
+- Implemented PCA to reduce the dimensionality of autoencoder embeddings.
+- Plotted the dimension-reduced embeddings in interactive 2D and 3D plots, along with their timestamps and losses, to visualize anomaly embeddings.
+
+## Week 7
+
+### Monday, July 18
+
+- Re-trained autoencoder with higher embedding dimensionality (10-dimensional), both on cropped and uncropped spectrograms
+- Implemented the ability to draw samples from a list containing multiple audio files (which required coming up with a means of indexing audio samples in well-defined way)
+- Devised potential jigsaw puzzle pretext task for self-supervised representation learning; met with Dario to discuss this strategy and a few other ideas
+
+### Tuesday, July 19
+
+- Trained autoencoder with 5-dimensional embeddings on ThetaGPU, plotted embeddings, and analyzed clusters
+  - Audio samples within the same cluster tended to have similar timestamps, suggesting that the noise in audio samples from different times of the day was informing the autoencoder's embeddings
+- Modified VICReg code to save the embeddings during inference, with the idea that monitoring embeddings in addition to the reconstruction error might be a fruitful way of detecting anomalies
+
+### Wednesday, July 20
+
+- Further adjusted VICReg code to add functionality for saving embeddings both from the backbone alone and from the projections
+- Trained VICReg with both the original augmentations from the paper, and the left/right cropping augmentation I implemented
+- Wrote an script to load the backbone and projection embeddings from the saved file, perform PCA, and visualize them
+  - Found that embeddings outside of the distribution did not correspond with anomalies
+
+### Thursday, July 21
+
+- Implemented the functionality to pull all audio files from a specified directory, rather than requiring specifying the path of each audio file
+- Implemented a "tight cropping" mode that uses only the precise frequencies at which bird songs occur when cropping the Mel spectrogram
+- Submitted a three-hour training to ThetaGPU that would use 0.2 second tight-cropped clips, with the hope that this would result in better clustering of birds
+- Read Noroozi et. al (2016), a paper on jigsaw puzzle pretext tasks for self-supervised learning

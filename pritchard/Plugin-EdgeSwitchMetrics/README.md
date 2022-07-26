@@ -1,84 +1,41 @@
-# What is this file?
-This file contains the necessary files to take various metrics from a locally connected edgeswitch8 via its local api. 
-These metrics currently include basic measurements of the POE wattage consumed per each port, as well as wether the port was disconnected or connected to a power consuming device over the period of testing.
-<br />
-All librarys currently used are common:
-
-<!--- 
-<br />
-![image](https://user-images.githubusercontent.com/106760508/177654319-2e67b8ae-99bf-4d99-a3b0-6765ebd82d01.png)
-<br />
---->
-
+# What is the Edge Switch Metrics Plugin?
+This plugin works with the Edge Switch 8 to provide various statistics on both  the internal metrics of the edgeswitch itself as well as statistics on the current connection to other devices via its ports. This data is gained via connection to its local api. This plugin uses a three thread system of reading from the switch, routine writing to beehive and an interjection thread to allow for user controlled adjustment of the frequencies these three threads trigger. In the proccess of sending this data to beehive the third thread checks if selected variables are within the boundaries set in config, if they are not the thread sends a message to beehive denoting which variables located at which ports or areas of the switch are behaving strangely, as well as whether the detected value is too high or too low. This third thread also keeps a circular buffer of adjustable size that can be used if there is a desire to use the included max, min and average functions on the buffer data.
+All librarys currently used are common, with exception of waggle.plugin which requires installation using:
 ```
+pip install -U pywaggle[all]
+```
+libraries:
+```
+#from sqlite3 import TimestampFromTicks
+from threading import Thread
+import myconfig
+from queue import Queue, Empty
+from collections import deque
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import json
 import time
 import requests
-import csv
+#import csv
+from waggle.plugin import Plugin
 ```
-# Example of running the file
-It is intended to be run with python3. Over the test period data is pulled from the api multiple times in order to find metrics that model the data collected over the test period 
-Example of running code: 
-
-
-<!--- 
-<br />
-![image](https://user-images.githubusercontent.com/106760508/177652188-d9b7ca2e-2042-4724-879b-64c3bdc0a2e6.png) 
-<br />
---->
-
+# Example of running the Plugin
+It is intended to be run with python3. Due to difficulties accessing Beehive, my pluggin curently uses the publish function to send the data to a local directory. As such my plugin is currently run using:
 ```
+export PYWAGGLE_LOG_DIR=runlog <-----this sends data to local directory runlog
 python3 main.py
-2.58
-port 1
-0.0
-port 2
-0.0
-port 3
-iterations= 1
-2.62
-port 1
-0.0
-port 2
-0.0
-port 3
-iterations= 2
-2.62
-port 1
-0.0
-port 2
-0.0
-port 3
-iterations= 3
 ```
-here are some example final outputs: 
+data sent:
+```
+{"name":"test.bytes","ts":1658503730152837614,"meta":{},"val":"[{\"timestamp\": 1658503730092, \"device\": {\"cpu\": [{\"identifier\": \"ARMv7 Processor rev 1 (v7l)\", \"usage\": 64}],
+ect... full json converted to string
 
-<!--- 
-<br />
-![image](https://user-images.githubusercontent.com/106760508/177652120-ea8f27b4-1b91-4035-aa40-31a8f1212674.png)
-<br />
---->
-
+{"name":"test.bytes","ts":1658503730158803000,"meta":{},"val":"8,rate,High"}
+{"name":"test.bytes","ts":1658503730158803000,"meta":{},"val":"[0.0, 'on']"}
 
 ```
-2.596
-2.62
-2.58
-0.0
-```
-In order they include:  the average POE wattage used over testing interval by port1, the maximum wattage pulled over that period by said port, the minimum wattage pulled, and a number indicating whether port one either remained plugged in or un plugged= 0,  was originally unplugged in but was plugged in at some point in the testing period= 1, or was originally plugged in but was unplugged at some point in the testing period= 2,   
-After running main.py will append the obtained metrics to edgeswitch.csv. In addition to the earlier referenced variables isonoriginal is also included, it indicates whether a particular port was originaly consuming wattage at the beggining of testing 
-
-<!--- 
-<br />
-![image](https://user-images.githubusercontent.com/106760508/177653691-be3a7f9d-b02a-409b-b3e0-f0b62adec717.png)
-<br />
---->
-```
-tail -f edgeswitch.csv
-minimums,maximums,averages,pluggschanged,Started plugged in
-2.58,2.62,2.596,0.0,True
-```
-
-# Future progress to be made
-Eventually these metrics will be able to be passed to a database from said file using a pywaggle library.
+# Note
+this pluggin requires the pywaggle library, local connection to an EdgeSwitch 8, as well as an additional file containing the password of your switch 
+  <br>  
+![image](https://user-images.githubusercontent.com/106760508/180482614-45add548-1df6-497a-aeb6-5ad1adbb94a8.png)
+# Credits
+This pluggin makes use of the unifi_switch_client, that file is the creation of Joseph Swantek and gemblerz, you can find it [here](https://github.com/waggle-sensor/unifi_switch_client)

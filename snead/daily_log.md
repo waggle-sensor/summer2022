@@ -1,9 +1,30 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 7: 7/25 to 7/29
+
+### Monday 7/25
+
+- Met with Joaquin to check in about progress
+  - it's looking like a demonstration of information flow from a Waggle Node over 5G is not going to be possible given the delays with the fiber installation, so we might look into other avenues for research
+  - asking Raj about the Waggle desktop, seeing if doing something with that would be possible
+- finished looking into UPF implementation and edge computing in 5G cores
+  - ONAP and SD-Core seem to be the only ones with current ability to support edge computing (ONAP a little vague on that front)
+  - Magma has plans for it in the future
+
+#### To Do
+
+- email ONAP, ask about hardware scaling and possible their ability to support EC
+- update decision matrix to include EC info and R&D interest 
+- maybe start on white paper? would basically be the decision matrix then an explanation of each of it's boxes
+- next monday's check in we'll ask about other things I can do with my last two weeks
+
 ## Week 6: 7/18 to 7/22
 
-### Monday 7/18
+- in and out of ability to work due to COVID
+- added info about contributors and members of each 5G core, I'm unsure how to tell which is biggest in the R&D community
+  - [NSF](https://www.prnewswire.com/news-releases/national-science-foundation-funded-platforms-for-advanced-wireless-research-project-office-announces-launch-of-openairx-labs-oax-to-accelerate-development-and-testing-of-an-open-source-5g-standalone-software-stack-301304723.html) has partnered with OAI????
+- started looking into edge computing abilities of each 5G core org
 
 #### To Do
 
