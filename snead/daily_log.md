@@ -11,6 +11,11 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
   - He's talking with Argonne tech about giving us access to the internet
 - Getting my Telit modem from the lab to start testing that ^^ 
 
+#### To Do
+
+- previous unresolved to dos
+- ask Raj about AT&T config settings
+
 ### Monday 7/25
 
 - Met with Joaquin to check in about progress
