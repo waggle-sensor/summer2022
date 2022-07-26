@@ -13,6 +13,7 @@ Please also see my working [glossary](https://github.com/waggle-sensor/summer202
 - Quick dicussion of [PNF and VNF](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni/)
 
 # ONAP
+
 > "Open Network Automation Platform (ONAP) is an open source project hosted by the Linux Foundation. ONAP provides a comprehensive platform for real-time, policy-driven service orchestration and automation. ONAP enables service providers and developers to rapidly automate the instantiation and configuration of physical and virtual network functions and to support complete life cycle management activities." \- [ONAP](https://docs.onap.org/en/honolulu/index.html)
 
 [ONAP Home Page](https://www.onap.org/)
@@ -20,7 +21,13 @@ Please also see my working [glossary](https://github.com/waggle-sensor/summer202
 [ONAP Documentation](https://docs.onap.org/en/honolulu/index.html#)
 
 [Software and Hardware Requirements](https://docs.onap.org/projects/onap-oom/en/honolulu/oom_cloud_setup_guide.html#cloud-setup-guide-label)
+
+### Sponsors / Contributors
+
+ONAP is a Linux Foundation project with [contributing organizations](https://wiki.onap.org/display/DW/Membership) including Amdocs, AT&T, Bell Canada, Edgegap, Samsung, Nokia, Ericsson, Fujitsu, Orange, Huawei, Intel, IBM, NEC/Netcracker, Swisscom, TIM, Turk Telecom, Verizon, ZTE
+
 ## Architecture Notes
+
 ![ONAP-Notes](https://user-images.githubusercontent.com/107580325/176268551-013da326-381a-4dad-b308-e67f7bfd19b1.png "ONAP Architecture")
 
 All pictures and information compiled from [ONAP's Architecture page](https://docs.onap.org/en/honolulu/guides/onap-developer/architecture/index.html)
@@ -38,6 +45,14 @@ Image from [ONAP SDN-R Documentation](https://docs.onap.org/projects/onap-ccsdk-
 
 [RAN-Sim Setup guide](https://wiki.onap.org/display/DW/RAN-Sim+setup) could be relevant to configuration. I think as long as you have the SDN-R config information you can connect RAN?
 [Old 5G RAN Use Case](https://wiki.onap.org/display/DW/Use+case+proposal%3A+5G-+RAN+deployment%2C+Slicing%2C+SON)
+
+## Edge Computing Capabilities
+
+[Edge Automation use case](https://wiki.onap.org/display/DW/Edge+Automation+through+ONAP#EdgeAutomationthroughONAP-KeyPresentations:) is a case aimed at integrating existing edge architectures into ONAP. 
+
+ONAP running [edge resources on K8S](https://wiki.onap.org/pages/viewpage.action?pageId=60889650) 
+
+This use case outlines [goals for implementing cloud driven edge computing](https://wiki.onap.org/display/DW/Edge+Cloud+Infrastructure+Enablement+in+ONAP) and it was written in 2018, so maybe some of these goals are implemented?
 
 ## Attributes
 - Automated closed-loop management
@@ -62,7 +77,17 @@ An opensource 5G Core that can be used commercially without any licensing. To ga
 [free5GC Home Page](https://www.free5gc.org/)
 
 [free5GC Stage 3 GitHub](https://github.com/free5gc/free5gc-stage-3)
+
+### Sponsors / Members
+
+Members: Chungwa Telecom, Fujitsu, Open Networking Foundation (ONF), Edge-core Networks, Wistron NeWeb Corp. (WNC), EstiNet
+
+Hardware Sponsors: Alpha Networks, Intel, Transnet, Advantech Moxa, Accton
+
+Project Host and Main Contributor: Communication Service/software Lab at National Yang Ming Chiao Tung University
+
 ## Versions
+
 free5GC was developed in different stages, and offers each stage as an independent download. Information compiled from free5GC's [roadmap](https://www.free5gc.org/roadmap/)
 #### Stage 1: Non-Standalone 5G
 Based on 4G EPC architecture, with migrated 5G interfaces. This stage was developed when 5G UE and gNB hardware was not yet on the market, so it goes through and communicates with 4G UE and eNB. 
@@ -99,6 +124,10 @@ Other videos they have show demos of how to [configure and run UE, RAN with free
 
 They have set up instructions for [connecting external RAN](https://github.com/free5gc/free5gc/wiki/Configuration#sample-configuration) and for connecting to [non-3GPP RAN](https://www.free5gc.org/installations/stage-3-free5gc/#b-run-the-n3iwf-individually)
 
+## Edge Computing Capabilities
+
+None that I can see? No mention of network slicing or edge computing abilities in UPF documentation. 
+
 ## Attributes
 - Access to different versions in varying stages of 5G integration could be useful as Waggle begins migration to 5G
 - After initial configuration, it seems ready to go "off the shelf," so to speak
@@ -114,7 +143,16 @@ They have set up instructions for [connecting external RAN](https://github.com/f
 
 [Aether Dev Wiki](https://wiki.opennetworking.org/display/COM/Aether)
 
+### Members / Contributors
+
+[Members](https://opennetworking.org/member-listing/): AMD, ARM, AT&T, China Telecom, Cisco, Dell Technologies, Deutsche Telekom, GenXComm, Google, Intel, Microsoft, National Chiao Tung University, Nokia, Rutgers, Verizon, ADTRAN, Aerospace, Airhop Communications, Albot Technologies, Alibaba Group, Amdocs, Amirkabir University of Technology, APS Networks, Arista Networks, Asterfusion, Avesha, Bii, BISDN, Broadcom, Budapest University of Technology, C-DOT, Canopus Networks, China Mobile, China Unicom, Ciena, CNIT, CN Labs, Cohere Technologies, Comtrend, CPQD, Cumucore, Edge-Core, EURECOM, Excelacom, Far EasTone, FEI, FiberHome, FIT, Foxcomasia, Ganpat University, Genew Technologies, GS Lab, GTENT, Hawe Telekom, Infosys, Instituto de Telecomunicacoes, Iowa State, ITA, Kajeet, Kaloom, LabLabee, Lillyneir, Marvell, Merkator, NUS, NEC, Netsia, Neutroon, NGN Apps, NoviFlow, Northeastern University, NTT Group, Nvidia, Open Valley, Parallel Wireless, PalC Networks, Pathfinder Wireless, Pavonis, POSTECH, Purdue University, Qucomm, racksnet, Radisys, Reply, Rimedo Labs, Ruijie, Salient Global Technologies, Selta, Sercomm, Technische Universitat Ilmenau, SUTD, Smoptics, Sorbonne Universite, Sterlite Tech, Sunder Networks, T1 Nexus, Tech Mahindra, Tetrate, TIM, Turk Telecom, Turkcell, Universidade de Aveiro, Universita Deglia Studi Dell’Aguila, Universitat Politecnica de Valencia, University of Bristol, UC San Diego, University of Colorado Boulder, University of Ottawa, U. of Surrey, University of Utah, University of Waterloo, Vector Data, Venko Networks, Virginia Tech, Vodafone, Wiwynn, YADRO, ZTE, Zyxel Communications
+
+<img src="https://user-images.githubusercontent.com/107580325/179571256-cf34baed-4e1f-44b9-8cd1-aa9ece3a6fe8.png" height="300" width="600">
+
+[Full Collaborator list here](https://opennetworking.org/collaborators/). 
+
 ## Architecture
+
 ![Aether Architecture](https://user-images.githubusercontent.com/107580325/176931696-64211a88-295d-403c-9f32-87f96d4017d6.png)
 
 (Image from Aether website)
@@ -156,6 +194,16 @@ SD-Core is [compliant](https://docs.sd-core.opennetworking.org/master/overview/3
 
 [gNB Simulator](https://github.com/omec-project/gnbsim#readme)
 
+### Edge Computing Capability
+
+Advertised: "Hardware-based P4 and software (containeried) UPFS can be intermixed for different application/use cases running in edge clouds" \- from [SD-Core Home page](https://opennetworking.org/sd-core/)
+
+Has multiple [UPF variations](https://docs.sd-core.opennetworking.org/master/overview/architecture.html#multiple-distributed-user-planes) that are assigned to users upon registration with the AMF. ONF's ROC allows for management of APIs that manage [network slices](https://docs.sd-core.opennetworking.org/master/overview/architecture.html#network-slicing). "The behavior of each slice is configurable and can be dynamically changed during run time... Network slice selection is achieved through 3GPP-specified network functions like Network Slice Selection Function (NSSF) and Network Repository Function (NRF)."
+
+"It is possible to deploy all components of SD-Core collocated in an edge cloud or a central cloud for private consumption. It is also possible to distribute the components of SD-Core across multiple clouds, edge and central, to deliver a cloud-managed multi-tenant connectivity service... SD-Core’s hybrid cloud deployment is an important enabler for a managed 4G/5G connectivity service where each customer site may be deployed to serve a different set of use cases and may have different types of underlying cloud environments."
+
+<img src="https://user-images.githubusercontent.com/107580325/180821928-17f53b01-56ae-4aac-afdc-e43f7d64f11a.png" height="250" width="450">
+
 ## SD-Fabric
 > "SD-Fabric is an open source, full stack, deeply programmable network fabric optimized for edge cloud, 5G, and Industry 4.0 applications." - SD-Fabric Documentation
 
@@ -194,6 +242,12 @@ SD-Core is [compliant](https://docs.sd-core.opennetworking.org/master/overview/3
 [Magma Documentation](https://docs.magmacore.org/docs/basics/introduction.html)
 
 [Software Requirements](https://docs.magmacore.org/docs/basics/prerequisites#prerequisites) and [Hardware Requirements](https://docs.magmacore.org/docs/basics/prerequisites#production-hardware) including needs for Access Gatewas and RAN 
+
+### Sponsors / Contributors
+
+[Members](https://magmacore.org/members/): ARM, Meta, Qualcomm, Red Hat, 0Chain, Aarna Networks, Advanced Micro Devices (AMD), Althea, AQSACOM, Canonical Group Limited, Connect 5G, Inc., Ecrio, FreedomFi, Helium Systems, Inc., Highway9 Networks, Platform9 Systems, Inc., RADTONICS, Sempre.ai, Teal Communications, Inc., Telaverge Communications, Wavelabs Technologies Private Limited, Whitestack LLC, ZEDEDA, Inc., OpenStack, OpenAirInterface Software ALliance, free5GC, University of Delhi
+
+<img src="https://user-images.githubusercontent.com/107580325/179582095-4b234350-5b9f-44be-a2bf-6d35fbdced5c.png" height="100" width="550">
 
 ## Architecture
 
@@ -244,6 +298,10 @@ enodebd service in AGW manages eNBs (compatible with TR-069 management interface
 
 In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview), it looks like most of the radio interface is 4G based, so will have to see at the Wavelabs 5G webinar.
 
+### Edge Computing Capabilities
+
+None listed that I can see. They are looking into network slicing in the next 18 months, but that doesn't necessarily mean ability to perform edge computing.
+
 ## Attributes
 
 - Part of the Linux Foundation
@@ -258,6 +316,12 @@ In Domain Proxy [docs](https://docs.magmacore.org/docs/dp/architecture_overview)
 - Orchestrator usually runs on AWS but can be deployed on a provate cloud on existing Kubernetes cluster
 
 # Open Air Interface Mosaic5G & 5G Core Network
+
+### Members
+
+Open Air Interface is founded by Eurecom. The National Science Foundation (NSF) has also [announced the creation of OpenAirX-Labs (OAX)](https://www.prnewswire.com/news-releases/national-science-foundation-funded-platforms-for-advanced-wireless-research-project-office-announces-launch-of-openairx-labs-oax-to-accelerate-development-and-testing-of-an-open-source-5g-standalone-software-stack-301304723.html) to help testing of OAI's 5G research. 
+
+[Members](https://openairinterface.org/osa-members/): Orange, Platforms for Advanced Wireless Research, XILINX, NI, Qualcomm, Meta, Sequans, Nokia Bell Labs, fujitsu, Interdigital, Firecell, Kyocera, Ulak Haberlesme A.S., Developing Solutions, HTP, B-yond, Zengyi TEchnology, allbesmart, Red Hat, Inmarsat, Dolcera, Benetel, Innogence Technology, ID Tolu, Wilab, BINJ Laboratories, ZaiNar, iDAQS, CPQD, Hytec Inter Co., Ltd., FibroLAN, and universities in the UK, China, USA, Spain, Germany, Poland, Czech Republic, and India 
 
 ## Mosaic5G (M5G)
 
@@ -280,6 +344,10 @@ As it looks right now, only FlexCN and FlexRIC are ready to try, though not full
 > "FlexRIC is short for “Flexible RAN Intelligent Controller”. It interfaces with the OAI radio stack over the O-RAN-defined E2-interface to monitor and control the RAN in real-time." - from Mosaic home page
 
 [Demo of FlexRIC](https://youtu.be/k2JDPBKCcNM) that shows some slicing and control of OAI RAN
+
+### Slicing and Edge Computing
+
+FlexRIC can "perform slicing control at a NSA 5G network" in this [demo](https://youtu.be/k2JDPBKCcNM). It looks like FlexRIC can be used to control what radio resources go to what UE, but not slicing as a means to create different use cases and enable edge computing. 
 
 ## 5G CN
 
@@ -310,6 +378,7 @@ As it looks right now, only FlexCN and FlexRIC are ready to try, though not full
 
 **AMF:** Access and Mobility Management Function, receives all session and connection related info from the UE. Forwards session info to SMF <br>
 **AUSF:** Authentication Server Function, receives authentication requests from AMF, works with UDM to mkae sure a User can gain access <br>
+**MNO:** Mobile Network Operator, the companies, usually <br>
 **N3IWF:** Non-3GPP Interworking Function <br>
 **NRF:** Network function Repository Function, provides record of all NFs available <br>
 **NSSF:** Network Slice Selection Function  <br>
