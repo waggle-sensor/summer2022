@@ -367,6 +367,8 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 ---
 
+### Week 8
+
 ##### Goals for this week:
 
 - [x] Scale-up script to work for entire season
@@ -403,4 +405,81 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 - Finished poster
 
 #### Friday July 22nd, 2022
+
+- Goal setting for final 2 weeks
+- Began outlining paper
+
+---
+
+#### Week 8 Overview
+
+---
+
+- Scaled up script to work for a season of data
+- Performed PCA
+- Clustered images based on PCA
+- Pulled example of echo from each cluster
+- Finished poster
+
+---
+
+### Week 9
+
+##### Goals for this week:
+
+- [ ] Finish presentations for next week
+- [ ] Finish first draft of paper
+
+---
+
+#### Monday July 25th, 2022
+
+- Continued outlining paper
+- Nearly completed abstract
+
+#### Tuesday July 26th, 2022
+
+- Finished abstract
+- Started working on PowerPoint presentation
+- Began introduction and read through journal articles for literature review
+
+#### Wednesday July 27th, 2022
+
+#### Thursday July 28th, 2022
+
+#### Friday July 29th, 2022
+
+---
+
+#### Week 9 Overview
+
+---
+
+### Week 10
+
+#### Goals for this week:
+
+- [ ] Rehearsal presentation
+- [ ] Virtual presentation with BNL
+- [ ] Learning on the Lawn
+- [ ] Submit final deliverables
+
+---
+
+#### Monday August  1st, 2022
+
+#### Tuesday August 2nd, 2022
+
+#### Wednesday August 3rd, 2022
+
+#### Thursday August 4th, 2022
+
+#### Friday August 5th, 2022
+
+--- 
+
+
+
+
+
 
