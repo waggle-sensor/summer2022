@@ -4,7 +4,7 @@ This is where I'm compiling my research about different open source 5G Core orga
 - [free5GC](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#free5gc)
 - [Aether](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#aether-onf) and [SD-Core](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#sd-core)
 - [Magma](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#magma)
-- [Open Air Interface 5G CN](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#open-air-interface-5g-core-network)
+- [Open Air Interface 5G CN](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#open-air-interface-mosaic5g--5g-core-network)
 
 Please also see my working [glossary](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#glossary) at the end of this page
 ### Helpful 5GC Resources
