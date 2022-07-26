@@ -3,6 +3,14 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 7: 7/25 to 7/29
 
+### Tuesday 7/26
+
+- Met with Raj to sort out project plans
+  - Gave me an Edge AI Device that Waggle runs on so I can try connecting it to the Telit modem
+  - Gave me an AT&T SIM card so I can connect to that 5G network rather than to our own (will have to leave Argonne campus to connect). This way I can still run tests that we can use to verify our own 5G network if that construction finishes up
+  - He's talking with Argonne tech about giving us access to the internet
+- Getting my Telit modem from the lab to start testing that ^^ 
+
 ### Monday 7/25
 
 - Met with Joaquin to check in about progress
