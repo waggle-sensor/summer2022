@@ -181,3 +181,36 @@ if __name__ == "__main__":
 ```
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 ```
+
+<b>Set up the UI dashboard</b>
+<sub>Deploying the UI dashboard</sub>
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
+```
+
+<sub>Accessing the UI dashboard</sub>
+
+```
+kubectl proxy
+```
+<sub> Kubectl will make Dashboard available at http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.</sub>
+
+<b>Kubernetes dashboard authentication using tokins<b>
+ 
+<sub>Create a new ServiceAccount</sub>
+ 
+```
+ kubectl create serviceaccount k8sadmin -n kube-system
+```
+ 
+<sub>Create a ClusterRoleBinding with Cluster Admin Privileges</sub>
+ 
+```
+ kubectl create clusterrolebinding k8sadmin --clusterrole=cluster-admin --serviceaccount=kube-system:k8sadmin
+```
+ 
+<sub>Get the token</sub>
+ 
+ ```
+kubectl get secret -n kube-system | grep k8sadmin | cut -d " " -f1 | xargs -n 1 | xargs kubectl get secret  -o 'jsonpath={.data.token}' -n kube-system | base64 --decode
+```
