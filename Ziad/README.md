@@ -167,3 +167,17 @@ if __name__ == "__main__":
 <sub>
   Access the server from: http://IP_ADDRESS:PORT_NO
 </sub>
+<br>
+
+
+<br>
+<b>Set up K3D</b>
+<br>
+<sub>Run the script using curl</sub>
+<br>
+<br>
+
+
+```
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+```
