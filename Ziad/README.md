@@ -15,7 +15,7 @@ Welcome to my README!
  </ol>
  </li>
  <li>Integrate Waggle nodes on Argonne’s 5G network with MEC resources and show demo.</li>
- <li>Integrate Waggle nodes on Argonne’s 5G network with MEC resources and show demo.</li>
+ <li>Investigate how to integrate Open RAN into an existing 5G core.</li>
 </ol>
 
 
