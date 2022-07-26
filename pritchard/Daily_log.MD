@@ -1318,10 +1318,47 @@ Things to do:
 - [ ] Figure out timestamp problem that prevents plugin from accepting json's timestamp
 
 #### Friday July 22th ####
+- [ ] Helped Raj manage and inventory some parts
+- [ ] Changed boundary values so there are no warnings in normal state
+- [ ] Upgraded README to current project, adding pictures and examples when helpful
+- [ ] Uploaded previous WisGate progress to GitHub
+- [ ] Gave demo of progress to Raj
+- [ ] Changed rxRate checks to rate, after Raj indicated he wanted any connection where data was sent but not received to still register as a full connection
+- [ ] Took notes on Waggle Github slides to see if I could find anything not said that should be said in order to explain the project to someone who knew nothing of the project
+
+Things to do:
+- [ ] Begin readying SULI end deliverables
+- [ ] Go through READMEs with family and friends to try to do final editing
+### Week 8: 7/25 to 7/29 ###
+#### Monday July 25th ####
+- [ ] Touched up READMEs
+- [ ] Assigned Project to get data from Sage related camera
+- [ ] Found command to do above, failed in implementation 
+- [ ] Helped Raj solder on ports for Waggle
+- [ ] Helped Raj test new Sine wave generator equipment for SAGE node
+
+Things to do:
+- [ ] go through and edit past daily logs
+- [ ] Get video puller working
+#### Tuesday July 26th ####
+- [ ] 
+Things to do:
+- [ ] 
+#### Wednesday July 27th ####
+- [ ] 
+#### Thursday July 28th ####
+- [ ] 
+
+Things to do: 
+- [ ] 
+#### Friday July 29th ####
 - [ ] 
 
 Things to do:
 - [ ] 
+
+
+
 
 
 
