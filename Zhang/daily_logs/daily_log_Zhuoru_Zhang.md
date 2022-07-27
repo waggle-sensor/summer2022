@@ -74,3 +74,14 @@ Add docker environments to OT2 access
 7.25
 
 - get the scp working inside docker, and zeroMQ working.
+
+7.26 
+
+- change to Kyle's OT2 driver, interfacing the robots with ssh and opentron_execute
+
+- test the driver under docker environment
+
+7.27
+
+- add yaml converter to job msg to ros master node
+- test the whole workflow with action server and client on opentron_simulate
