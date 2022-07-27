@@ -3,6 +3,16 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 7: 7/25 to 7/29
 
+### Wednesday 7/27
+
+- issues connecting to the LTE served by the Telit modems. Raj and I tried mmcli, qmicli, and a couple other things. it doesn't connect to my Linux computer, the nano, nor my Windows computer
+  - When I tried connecting via Windows, I ran a troubleshooting wizard and it says that there's just no service to connect to
+
+#### To Do
+
+- first thing tomorrow I am going to drive out of Argonne campus and try to connect from a starbucks or something to see if no service truly is the issue. I don't know what to do after that... more help on orums I guess
+- All previous To Dos...
+
 ### Tuesday 7/26
 
 - Met with Raj to sort out project plans
