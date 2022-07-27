@@ -1,8 +1,8 @@
 import math
-frequency_read = 1 #time in seconds
-frequency_write = 10 #time in seconds
+frequency_read = 5 #time in seconds
+frequency_write = 60 #time in seconds
 buffer_timeperiod = 60 # time in seconds
-execution_check = 1
+execution_check = 5
 
 
 buffer_length = math.ceil(int(buffer_timeperiod/frequency_read))
@@ -11,7 +11,25 @@ buffer_length = math.ceil(int(buffer_timeperiod/frequency_read))
 testingtimestamp =0
 numberofports= 8
 numberofareastemp= 4
+""" gettable index variables
+    withIndexGetter(jsonObject, index, variable):
+        if('name' or 'value' or 'type'):#this triggers if temperature info is requested, max index of 3
+        else:dropped errors txErrors rxErrors rate txRate rxRate bytes txBytes rxBytes packets txPackets rxPackets pps txPPS rxPPS poePower, max index 15  
+        return(variable, indexstring, value)
+"""
+variableboundaries = [ {'value': (0,100), 'poePower':(0,0),'rate':(0,100)},#port 1 (lowerboundary,upperboundary)
+{'value': (50,80), 'poePower':(0,50),'rate':(0,100)},#port 2 or area2 depending on whether checking temp or ports
+{'value': (0,500), 'poePower':(0,50),'rate':(0,7000)},
+{'value': (0,500), 'poePower':(0,50),'rate':(0,7000)},
+{'poePower':(0,50),'rate':(0,7000)},#there are only 4 areas temperatures that can be read
+{'poePower':(0,50),'rate':(0,7000)},
+{'poePower':(0,50),'rate':(0,100)},
+{'poePower':(0,50),'rate':(0,900000)}
+]
+rateOnBoundary=0 #this is the boundary on which a port is concidered on based on received packages
 
+
+#for unused proportion function
 POEwarningproportion = 1.5
 Errorwarningproportion= 1.5
 Tempwarningproportion= 1.5

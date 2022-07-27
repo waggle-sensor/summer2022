@@ -366,3 +366,27 @@ Things to added to dockerfile.
 #### Wednesday July 20, 2022 ####
 
 - Worked on shell usable version of CPU,GPU and Memory in docker.
+
+#### Thursday July 21, 2022 ####
+
+- Worked on shell usable version of CPU,GPU and Memory in docker.
+
+#### Friday July 22, 2022 ####
+
+- Worked on shell usable version of CPU,GPU and Memory in docker.
+
+
+### Week 10 ###
+
+------------------------------------------------
+
+#### Monday July 25, 2022 ####
+
+- - Worked on plotting visualization of profile data.
+#### Tuesday July 26, 2022 ####
+
+- Worked on plotting visualization of profile data.
+#### Wednesday July 27, 2022 ####
+
+- Created plot utility for profiler 
+- Dry run presentation with Raj and Yongho.
