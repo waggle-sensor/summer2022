@@ -50,8 +50,38 @@ https://support.opentrons.com/s/ Ethernet supported, scp protocols to OT2 robot
 
   All devices will be within the same waggle Node, K3s cluster
   
+
  7.15
  - rewrite the Dockerfile for ros2 based on waggle plugin
  - test ROS2 publisher/subscriber across docker in different machines withint same local network: successful
  - no more host network! configure fast DDS to use specified ports for ros2 to communicate across containers on machines within same local network
  https://github.com/eProsima/Fast-DDS/issues/1698
+
+ 7.18
+ - test ros2 docker file in both wireless and Ethernet
+
+7.19
+
+- meeting with Doga, go over the connection for OT2, super helpful
+- test zeroMQ socket connection on local machine, successful
+
+https://googlecloudrobotics.github.io/core/how-to/connecting-robot.html
+
+Planning for this week:
+
+Add docker environments to OT2 access
+
+7.25
+
+- get the scp working inside docker, and zeroMQ working.
+
+7.26 
+
+- change to Kyle's OT2 driver, interfacing the robots with ssh and opentron_execute
+
+- test the driver under docker environment
+
+7.27
+
+- add yaml converter to job msg to ros master node
+- test the whole workflow with action server and client on opentron_simulate
