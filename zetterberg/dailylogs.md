@@ -286,5 +286,36 @@
 - Submitted poster
 - Draft for paper
 
+#### Friday July 22nd, 2022
+
+- Worked on draft for paper
+- Continued working on power spectra plot for all 2 months
+
+---
+
+### Week 9
+
+### Goals for the week
+- Create draft of paper
+- Finish power spectra
+- Create video presentation to turn in to SULI
+- Create presentation for Brookhaven National Lab
+
+#### Monday July 25th, 2022
+- Created final power spectra plot for all 2 months, results lined up with plot used on poster
+- Worked on clustering without using PCA
+- Work on research paper
+
+#### Tuesday July 26th, 2022
+- Compared clusters with and without PCA, only a ~1.5% difference, so PCA is not needed but does not drop relevant information
+- Continued working on research paper
+
+#### Wednesday July 27th, 2022
+- Worked on research paper
+- Finished abstract
+- Student Connects Group
+- Weekly student seminar
+
+
 
 
