@@ -3,6 +3,29 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 7: 7/25 to 7/29
 
+### Wednesday 7/27
+
+- issues connecting to the LTE served by the Telit modems. Raj and I tried mmcli, qmicli, and a couple other things. it doesn't connect to my Linux computer, the nano, nor my Windows computer
+  - When I tried connecting via Windows, I ran a troubleshooting wizard and it says that there's just no service to connect to
+
+#### To Do
+
+- first thing tomorrow I am going to drive out of Argonne campus and try to connect from a starbucks or something to see if no service truly is the issue. I don't know what to do after that... more help on orums I guess
+- All previous To Dos...
+
+### Tuesday 7/26
+
+- Met with Raj to sort out project plans
+  - Gave me an Edge AI Device that Waggle runs on so I can try connecting it to the Telit modem
+  - Gave me an AT&T SIM card so I can connect to that 5G network rather than to our own (will have to leave Argonne campus to connect). This way I can still run tests that we can use to verify our own 5G network if that construction finishes up
+  - He's talking with Argonne tech about giving us access to the internet
+- Getting my Telit modem from the lab to start testing that ^^ 
+
+#### To Do
+
+- previous unresolved to dos
+- ask Raj about AT&T config settings
+
 ### Monday 7/25
 
 - Met with Joaquin to check in about progress
