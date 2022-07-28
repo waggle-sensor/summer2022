@@ -1434,7 +1434,7 @@ FirmwareGroup=XND-8080R
   - [ ] Re-installed xubuntu on loaned laptop to a newer version
   - [ ] Learned that cameras will accept timestamps in a format that refers to universal time without the "T" the timestamps references I previously used had, this indicates the documents are outdated
 ```
-mpv rtsp://username:password@10.31.81.10/recording/20220727225200Z/play.smp
+mpv "rtsp://username:password@10.31.81.10/recording/20220727225200Z/play.smp"
 results in:
 [ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
 [ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
