@@ -1040,7 +1040,7 @@ Things to do:
              previousRates= [0]*myconfig.numberofports
              previousErrors= [0]*myconfig.numberofports
                           
-                          #this is where the preseting comparison variables takes place
+                          #this is where the presetting of comparison variables takes place
                           
                           for i in range(myconfig.numberofports):
                                 Ratevariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'rate')
@@ -1054,7 +1054,7 @@ Things to do:
                                 Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')
                                 previousTemps[i]= originalvalue      
                         
-                      #this is where I compare curren values of the variables against the comparison values
+                      #this is where I compare current values of the variables against the comparison values
                       
                         
                    elif(len(buffer)>1):
@@ -1111,8 +1111,6 @@ updated trigger buffer
 1658263217176 port:4 ('rate', 'dropped is now this fraction of former value:', 0.14842578710644677)
 when buffer is 57 Rate is 51392 compared rate is 135024
 updated trigger buffer
-
-
 
 ```
 - [ ] Fixed numerous bugs in first implemenatation, which included: unchanging comparison values for numerous variables, wrong variables sometimes getting passed to display functions
@@ -1318,7 +1316,7 @@ Things to do:
 - [ ] Figure out timestamp problem that prevents plugin from accepting json's timestamp
 
 #### Friday July 22th ####
-- [ ] Helped Raj manage and inventory some parts
+- [ ] Helped Raj manage and inventory some mail in parts
 - [ ] Changed boundary values so there are no warnings in normal state
 - [ ] Upgraded README to current project, adding pictures and examples when helpful
 - [ ] Uploaded previous WisGate progress to GitHub
@@ -1335,17 +1333,116 @@ Things to do:
 - [ ] Assigned Project to get data from Sage related camera
 - [ ] Found command to do above, failed in implementation 
 - [ ] Helped Raj solder on ports for Waggle
-- [ ] Helped Raj test new Sine wave generator equipment for SAGE node
+- [ ] Helped Raj test a new AC converter which could possible be used by the SAGE node, unfortunatley the converter continued to fail to successfully accept DC and convert the power so it could be used by a sample SAGE node
 
 Things to do:
-- [ ] go through and edit past daily logs
+- [ ] Go through and edit past daily logs
 - [ ] Get video puller working
 #### Tuesday July 26th ####
-- [ ] 
+- [ ] Caught up on previous daily logs
+- [ ] Set password of camera to something without wildcard characters that throw off requests
+- [ ] Attended student connection group to practice speaking on my the work I did this summer
+- [ ] Read through WiseNet documents, the most important of which is SUNAPI: Application Programmer's Guide, and is stored in the relevant project folder
+- [ ] Performed more tests with Raj on AC converter, learened that it requires very high starting current that regular power sources cannot provide
+- [ ] Discovered a reccomended "time" notation in the relevant documentation which I used in my tests
+```
+The time should be specified in the following format:
+<YYYYMMDDTHHMMSS> (e.g, 20141206T111500) for local time and
+<YYYYMMDDTHHMMSSZ>
+(e.g, 20141206T110000Z) for UTC time.
+```
+- [ ] Discovered how to use password and username in rtsp commands so as to pass authorization 
+```
+mpv "rtsp://username:password@10.31.81.10/recording/play.smp"
+```
+- [ ] Tested each "playback" video command to see which one I should focus on trying to get work
+```
+Camera URL format:
+[Type1]
+rtsp://<Device IP>/recording/<Start Time>/play.smp <--- returned 404 not found
+[Type2]
+rtsp://<Device IP>/recording/<Start Time>-<End Time>/play.smp<--- returned 404 not found
+[Type3]
+rtsp://<Device IP>/recording/play.smp<--- returned 501 'Play' :Not implemented
+Camera URL format (multi source device)
+[Type1]
+rtsp://<Device IP>/<chid>/recording/<Start Time>/play.smp<--- returned 404 not found, (I used "0" for "chid")
+[Type2]
+rtsp://<Device IP>/<chid>/recording/<Start Time>-<End Time>/play.smp<--- returned 404 not found
+[Type3]
+rtsp://<Device IP>/<chid>/recording/play.smp<--- returned 501 'Play' :Not implemented
+NVR URL format
+[Type1]
+rtsp://<Device IP>:558/PlaybackChannel/<chid>/media.smp<--- returned 404 not found, (I used 554 as port as that is the port my camera uses)
+[Type2]
+rtsp://<Device IP>:558/PlaybackChannel/<chid>/media.smp/session=<sid><--- returned 404 not found (I used 0 for session id)
+[Type3]
+rtsp://<DeviceIP>:558/PlaybackChannel/<chid>/media.smp/overlap=<id>&session=<sid><--- returned 404 not found
+```
+Note: only the commands with 501 errors showed "unauthorized" errors when the password was not correct
+
+- [ ] Explored UI for settings that were related to "playback" function, discovered a setting that should allow for connections to not require authentication, though I eventually realized that this setting only related to live view
+![image](https://user-images.githubusercontent.com/106760508/181582350-52f262da-c51d-4a33-be0a-72fa8426795f.png)
 Things to do:
-- [ ] 
+- [ ] Discover why authentication still required despite having changed related setting in UI
+- [ ] Go through and edit past daily logs
+- [ ] Get video puller working
 #### Wednesday July 27th ####
-- [ ] 
+- [ ] Retested previously tested commands, received same results
+- [ ] Learned that there is probaly a problem with my method of denoting timestamps because any command where I use them is not recognised by device, in this case by recognized I mean that changing the password provokes an unauthorized error
+```
+EX:
+rtsp://<Device IP>/recording/play.smp-->recognized
+rtsp://<Device IP>/recording/<Start Time>/play.smp-->not recognized
+```
+- [ ] Attended Weekly Lecture, this time on the work that is being done to predict and counter natural disasters 
+- [ ] Began to test other related HTTP url commands, using browser because my ubuntu installation was no longer supported and had an outdated installation of some process related to opening the urls
+- [ ] Discovered a bunch of device info by trying all related commands
+```
+for example:
+http://<Device IP>/stw-cgi/system.cgi?msubmenu=deviceinfo&action=view
+
+returns:
+Model=XNV-8080R
+SerialNumber=ZG996V4R1000CBK
+FirmwareVersion=2.10.02_20220401_R615
+BuildDate=2022.04.01
+WebURL=http://www.hanwha-security.com/
+DeviceType=NWC
+ConnectedMACAddress=E4:30:22:2B:2A:F5
+ISPVersion=1.60_211007
+BootloaderVersion=       
+CGIVersion=2.6.0
+ONVIFVersion=20.12
+DeviceName=Camera
+DeviceLocation=top
+DeviceDescription=Super Camera
+Memo=Memo
+Language=English
+PasswordStrength=Strong
+OpenSDKVersion=4.02_220126
+FirmwareGroup=XND-8080R
+```
+- [ ] As I was testing other URL based commands, I noticed that most of them refer to the "STW" format offered as a video storage option by the camera, I reformatted the sd card using the new format, but after observing no changes in results I eventually returned the format to "AVI"
+<br>
+
+![image](https://user-images.githubusercontent.com/106760508/181581772-f5460ecb-b42d-4292-893a-2a0991f28c15.png)
+
+- [ ] Confirmed that the NVR related commands will not work becuase they are designed to interact with a central computer that runs multiple cameras
+- [ ] With Raj:
+  - [ ] Updated firmware on camera
+  - [ ] Re-installed xubuntu on loaned laptop to a newer version
+  - [ ] Learned that cameras will accept timestamps in a format that refers to universal time without the "T" the timestamps references I previously used had, this indicates the documents are outdated
+```
+mpv rtsp://username:password@10.31.81.10/recording/20220727225200Z/play.smp
+results in:
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+
+```
+Things to do:
+- [ ] Go through and edit past daily logs
+- [ ] Get video puller working by looking into errors that occure when using new timestamp notation
 #### Thursday July 28th ####
 - [ ] 
 
