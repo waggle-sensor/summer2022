@@ -30,10 +30,6 @@ OpenRANGE vCU key benefits:
 <ul>
   <li>Enables interworking with MEC applications through Radio Network Information Service (RNIS) API
 </li>
-  
-<hr>
-  
-
   <li>Segregated user plane/control plane support (over E1AP) maximizes cost efficiency (resource pooling)
 </li>
   <li>High-availability support
