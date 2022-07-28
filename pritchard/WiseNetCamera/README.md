@@ -5,4 +5,4 @@ In this project I was tasked with figuring out how to access portions of saved v
 # Command #
 ffplay rtsp://username:password@10.31.81.10/recording/20220728083000/play.smp
 # Note #
-This command works on firmware version 2.10.02_20220401_R615 on a Model XNV-8080R Hanhwa security camera.
+This command works on firmware version 2.10.02_20220401_R615 on a Model XNV-8080R Hanhwa security camera. In this particular case our security camera is constantly overwriting previous footage so as to allow it to always store the most recent footage. If implemented in the field this could lead to a need to eventually replace the SD cards within deployed nodes. 
