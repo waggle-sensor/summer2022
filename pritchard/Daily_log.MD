@@ -1444,10 +1444,43 @@ Things to do:
 - [ ] Go through and edit past daily logs
 - [ ] Get video puller working by looking into errors that occure when using new timestamp notation
 #### Thursday July 28th ####
-- [ ] 
+- [ ]   Updated Daily logs
+- [ ]   Logged into new xubuntu install with slack, Github, outlook
+- [ ]   Expanded on previous day's progress with new timestamp format
+- [ ]   Looked into what requests the UI makes when it exports footage, in the process learning that it always uses NVR format for all calls, which doesn't translate well over to command line 
+- [ ]   Discovered that the footage is not throwing any errors when requested with new timestamp format, and so likley the problem has somthing to do with the final playing of the video
+```
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 2 (Video: hevc, none): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+ (+) Video --vid=1 (mjpeg)
+     Video --vid=2 (h264 2560x1920)
+     Video --vid=3 (hevc)
+ (+) Audio --aid=1 (pcm_mulaw 1ch 8000Hz)
+     Audio --aid=2 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=3 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=4 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=5 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=6 (aac 1ch 16000Hz)
+File tags:
+ Comment: samsung
+ Title: Media Presentation
+
+```
+- [ ]   Found that I can play the footage with ffplay
+```
+ffplay rtsp://admin:why1not+@10.31.81.10/recording/20220729083000Z/play.smp
+
+```
+
+- [ ]   Made README for camera project
+- [ ]   Collected info from Andre that will hopefully allow me to get the WisGate up and running with its own LoRa devices
+
 
 Things to do: 
-- [ ] 
+- [ ] Go through and edit past daily logs
+- [ ] Get WisGate up and running 
 #### Friday July 29th ####
 - [ ] 
 
