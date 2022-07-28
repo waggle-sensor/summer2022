@@ -3,6 +3,11 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 7: 7/25 to 7/29
 
+### Thursday 7/28
+
+- Went to starbucks in the morning to try connecting to the modem, still no luck. It could be an issue with the home network not being present, maybe the SIM card, or maybe an OS problem. I don't think it's a problem with the modem because it talks and responds properly, it's just a matter of not being able to connect the computer to the data of the modem. Doesn't work on Windows or Linux, so I don't think it's the OS but still...
+  - SIM Card's home network is AT&T with MCCMNC=310170, but that network isn't present in network scans  
+
 ### Wednesday 7/27
 
 - issues connecting to the LTE served by the Telit modems. Raj and I tried mmcli, qmicli, and a couple other things. it doesn't connect to my Linux computer, the nano, nor my Windows computer
