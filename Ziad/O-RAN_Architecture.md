@@ -30,6 +30,10 @@ OpenRANGE vCU key benefits:
 <ul>
   <li>Enables interworking with MEC applications through Radio Network Information Service (RNIS) API
 </li>
+  
+<hr>
+  
+
   <li>Segregated user plane/control plane support (over E1AP) maximizes cost efficiency (resource pooling)
 </li>
   <li>High-availability support
@@ -54,4 +58,6 @@ OpenRANGE vDU key benefits:
 
 <hr>
 
-<b>
+<a href="https://www.casa-systems.com/solutions/open-ran/"><b>Casa Systems</b></a>
+
+
