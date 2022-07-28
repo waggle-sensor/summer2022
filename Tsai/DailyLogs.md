@@ -207,3 +207,57 @@ Chirpstack AS:
 * [x] Work with the E5 mini and see what is causing the message dropping issues
     - I looked into multiple write ups on OTAA connection issues and most are dealing with joining session which we don't have an issue with. I believe packet losses are inevitable and is what's causing the unsent messages
     - A pretty clear idea of the process of joining OTAA session as well as the comparison to ABP: https://www.techplayon.com/lora-device-activation-call-flow-join-procedure-using-otaa-and-abp/
+
+**July 19th**
+* [x] Able to send message after disconnecting and then powering up the LoRaE5 device
+    - previously the issue was that once I join a device, I can't rejoin and was unable to send message again
+    - now, I am able to join the device first, turn off the device, and then continue sending messages successfully after powering on the device again
+
+- Halfway through the day, the device no longer accepts AT commands after I `socat - /dev/ttyUSB0`. I was unable to solve this issue
+
+
+**July 28th**
+- Quite a lot of progress since July 19th
+* [x] New LoRa gateway, network server, application server setup
+    - put everything on the rakpi
+    - this allowed the frames to be sent stably -- the E5 mini commands no longer drop frames when it sends messages
+    - learn that the message can't be too long -- makes sense because LoRa is low bandwidth
+    - E5 mini are connected through OTAA
+    - Arduino MKRWAN1310 is connected through ABP
+* [x] Connected three adruino MKRWAN1310 to the gateway, each sending "MKRWAN!" to the gateway for every 50 seconds
+* [x] Flashed the E5 mini OS a windows base so I can give AT commands from my windows computer
+* [x] Leave the three arduinos around the 240 building overnight
+    - the gateway was able to consistent receive the LoRaWAN frames, the frame count was at 1600 this morning
+    - was able to set one of the arduinos all the way up in 7th floor and was still able to receive message
+* [x] Familiarize with E5mini setup to join OTAA connection
+    - `AT+ID=DevEui,"98f1f997cfe558b5"` sets the devEUI
+    - `AT+KEY=APPKEY,"66a8d4bcfcaf292f10907eef6d8d4545"` sets the APPKEY
+    - `AT+DR=US915` changes frequency place to US frequency
+    - `AT+MODE="LWOTAA"` changes mode to OTAA
+    - `AT+JOIN` joins the OTAA network with corresponding APPKEY
+    - `AT+MSG="Waggle!"` sends a message
+    - `AT+CMSG="Waggle!"` sends a message and expects an ACK reply
+* [x] Setup so the rakpi can be ssh from my computer and my computer is connected to the monitor:
+    - Raj says that using a big screen can increase productivity XD on a more serious note, I will be able to copy paste UNIX commands in the rakpi terminal instead of typing everything in
+* [x] Accessing the LoRaWAN frames from my computer through a shared network (waggle-lora)
+    - initially I thought the frames were saved into the postgresql database
+        - while looking into the postgresql, I needed to use \, which was unavailable on the en_GB keyboard which the raspberry pi locale was based in
+        - Raj helped me change the locale language from GB to US, but then realized that causes an error with the postgres database, so we switched it back
+    - I realized that the postgresql was used for the network server profile, gateway profile, devices, device profiles, applications, etc on the application server. **The frames are actually passed into the MQTT broker where we can subscribe to it to get the messages/frames.**
+* [x] Write a python code that connects to the MQTT server and subscribes to the topic that contains messages from the arduino and e5mini devices
+    - ![](https://i.imgur.com/nI15Its.png)
+    - The "MKRWAN!" messages are auto sent by the arduino devices every 50 seconds. The other messages are typed manually by giving AT commands to the E5mini (eq. `AT+CMSG="This is E5"`)
+    - The code:
+        - converts the bytes into UTF-8 strings and loads the JSON str into a python dictionary
+        - gets the "data" key from the dictionary and converts the base64 string into a UTF-8 string
+        - puts the decoded messages into a queue
+
+
+**UNIX terminal commands**
+- `history` shows all the previous commands, and then use `!{command #}` to enter the previous command
+- to look at the USB devices, use `ls /dev/ttyUSB*`
+- ctrl+y to copy, ctrl+p to paste
+- `mosquitto_sub -v -t '#'` in the terminal subscribes to all topics in the MQTT broker
+- `mosquitto_sub -v -t 'applications/2/device/#'` subscribes to only the topics that contain message sent from the arduino and e5mini devices
+`
+
