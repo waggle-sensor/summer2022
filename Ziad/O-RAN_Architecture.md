@@ -20,7 +20,7 @@ The key concept of Open RAN is “opening” the protocols and interfaces betwee
 
 <hr>
 
-<b>AirSpan</b>
+<a href="https://www.airspan.com/openrange-software/"><b>AirSpan</b></a>
 <p align="center">
 <img width="580" alt="img1" src="https://user-images.githubusercontent.com/39535204/181627825-f4b27035-a425-4570-b5cb-9bf4937cce18.PNG">
 </p>
@@ -50,3 +50,8 @@ OpenRANGE vDU key benefits:
 
 </li>
 </ul>
+
+
+<hr>
+
+<b>
