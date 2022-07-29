@@ -3,6 +3,21 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 7: 7/25 to 7/29
 
+### Friday 7/29
+
+- Went to lab, radios are installed, but something is wrong with the radio SFP, so that will need to be worked by the fiber guys :(
+- The problem was with the SIM card, it was older than we thought and it had been deactivated
+- Got a new SIM card that can connect to 4G!
+  - I scanned the networks around Argonne and outside of Argonne (in a Starbucks) and did not find any 5G signals, so will have to wait until our core is back up to work with that
+  - I can access the internet and ping my phone using the modem, but cannot ping Ziad's computer
+  - I tried connecting the modem to the Nano, and it kept losing connection to the modem. Not just a faltering connection to 4G, but to the modem itself. I want to bring this up with Raj/Joaquin. I have a feeling this Nano can only handle 3G data? Based on the network set up wizard...
+
+#### To Do
+
+- Troubleshoot connecting with the Nano (computer can do fine)
+- maybe write up a how-to type guide on how I would troubleshoot connecting to 5G? Because we are getting close to the end of the internship and  haven't been able to do that yet
+- all other compounding To Do's
+
 ### Thursday 7/28
 
 - Went to starbucks in the morning to try connecting to the modem, still no luck. It could be an issue with the home network not being present, maybe the SIM card, or maybe an OS problem. I don't think it's a problem with the modem because it talks and responds properly, it's just a matter of not being able to connect the computer to the data of the modem. Doesn't work on Windows or Linux, so I don't think it's the OS but still...
