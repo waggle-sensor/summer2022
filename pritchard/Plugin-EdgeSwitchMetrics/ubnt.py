@@ -233,7 +233,7 @@ class UnifiSwitchClient(object):
         else:
             return False, r_body["message"]
 
-    def get_POE_info(self):
+    def get_statistic_info(self):
         """Returns a POE info table
 
         Returns:

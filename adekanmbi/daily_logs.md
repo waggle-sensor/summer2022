@@ -390,3 +390,12 @@ Things to added to dockerfile.
 
 - Created plot utility for profiler 
 - Dry run presentation with Raj and Yongho.
+
+#### Thursday July 28, 2022 ####
+
+- Worked of adding ploy utility to application profiler.
+
+#### Friday July 29, 2022 ####
+
+- Final presentation
+- Completed documentation for application profiling.
