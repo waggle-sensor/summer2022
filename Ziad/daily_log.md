@@ -156,6 +156,7 @@ My daily work on the NAISE 5G project 2022!
 ### 24 June
 
 
+
 ## Week 2
 
 
@@ -185,6 +186,11 @@ My daily work on the NAISE 5G project 2022!
 - [X] Share directories and files using Apache2
 
 ### 24 June
+- trying to run Waggle stack
+- Testing connectivity of modem
+  - we are shut out of WiFi connectivity
+  - something is wrong and our Linux computers can no longer connect to our cellular. Could have something to do with Docker?
+
 
 
 ## Week 1
@@ -192,10 +198,9 @@ My daily work on the NAISE 5G project 2022!
 
 ### 13 June
 
-- [X] Attend rientation sesstion
+- [X] Attend orientation sesstion
 
 - [X] TMS training
-
 
 ### 14 June
 - [X] Finished TMS training
