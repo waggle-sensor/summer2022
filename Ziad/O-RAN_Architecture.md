@@ -56,4 +56,25 @@ OpenRANGE vDU key benefits:
 
 <a href="https://www.casa-systems.com/solutions/open-ran/"><b>Casa Systems</b></a>
 
+<p align="center">
+<img width="734" alt="img3" src="https://user-images.githubusercontent.com/39535204/181787543-f53a8472-5269-4ae8-a0ad-899a889f1983.PNG">
+</p>
 
+key benefits:
+
+<ul>
+  <li>Deliver true gigabit per second speeds across both mid-band and millimeter wave frequencies.
+</li>
+  <li>Deploy on premise or in the cloud for lower latency
+</li>
+  <li>Support deployments as small as 10K square feet and up to 1M square feet
+</li>
+  <il>Enable network components to work together seamlessly
+</li>
+  <li>Avoid vendor lock-in and support the ideal mix of hardware and software solutions
+</li>
+  <li>Support multi-vendor deployments for a more competitive, vibrant ecosystem
+</li>
+  
+ <hr>
+</ul>
