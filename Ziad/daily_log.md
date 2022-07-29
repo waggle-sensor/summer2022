@@ -1,6 +1,159 @@
 # Daily Activity
 
 My daily work on the NAISE 5G project 2022!
+## Week 7
+
+
+### 20 June
+
+- [X] Talked with Joaquin and Zoe about next steps for server
+- [X] install ssh server
+- [X] test ssh protocol with different users
+
+### 21 June
+
+- [X] install HTTP server
+- [X] share multiple directories and files with different users
+
+### 22 June
+
+- [X] read about different file transfer protocols
+- [X] read about different HTTP servers
+- [X] Customized HTTP server using python
+
+### 23 June
+
+- [X] Install file transfer protocol using Globus
+- [X] Test file sharing from multiple computers --> didn't work bec of the firewall
+- [X] Install Apache2 server
+- [X] Coustmize Apache2 server
+- [X] Share directories and files using Apache2
+
+### 24 June
+
+
+## Week 6
+
+
+### 20 June
+
+- [X] Talked with Joaquin and Zoe about next steps for server
+- [X] install ssh server
+- [X] test ssh protocol with different users
+
+### 21 June
+
+- [X] install HTTP server
+- [X] share multiple directories and files with different users
+
+### 22 June
+
+- [X] read about different file transfer protocols
+- [X] read about different HTTP servers
+- [X] Customized HTTP server using python
+
+### 23 June
+
+- [X] Install file transfer protocol using Globus
+- [X] Test file sharing from multiple computers --> didn't work bec of the firewall
+- [X] Install Apache2 server
+- [X] Coustmize Apache2 server
+- [X] Share directories and files using Apache2
+
+### 24 June
+
+
+## Week 5
+
+
+### 20 June
+
+- [X] Talked with Joaquin and Zoe about next steps for server
+- [X] install ssh server
+- [X] test ssh protocol with different users
+
+### 21 June
+
+- [X] install HTTP server
+- [X] share multiple directories and files with different users
+
+### 22 June
+
+- [X] read about different file transfer protocols
+- [X] read about different HTTP servers
+- [X] Customized HTTP server using python
+
+### 23 June
+
+- [X] Install file transfer protocol using Globus
+- [X] Test file sharing from multiple computers --> didn't work bec of the firewall
+- [X] Install Apache2 server
+- [X] Coustmize Apache2 server
+- [X] Share directories and files using Apache2
+
+### 24 June
+
+
+## Week 4
+
+
+### 20 June
+
+- [X] Talked with Joaquin and Zoe about next steps for server
+- [X] install ssh server
+- [X] test ssh protocol with different users
+
+### 21 June
+
+- [X] install HTTP server
+- [X] share multiple directories and files with different users
+
+### 22 June
+
+- [X] read about different file transfer protocols
+- [X] read about different HTTP servers
+- [X] Customized HTTP server using python
+
+### 23 June
+
+- [X] Install file transfer protocol using Globus
+- [X] Test file sharing from multiple computers --> didn't work bec of the firewall
+- [X] Install Apache2 server
+- [X] Coustmize Apache2 server
+- [X] Share directories and files using Apache2
+
+### 24 June
+
+
+## Week 3
+
+
+### 20 June
+
+- [X] Talked with Joaquin and Zoe about next steps for server
+- [X] install ssh server
+- [X] test ssh protocol with different users
+
+### 21 June
+
+- [X] install HTTP server
+- [X] share multiple directories and files with different users
+
+### 22 June
+
+- [X] read about different file transfer protocols
+- [X] read about different HTTP servers
+- [X] Customized HTTP server using python
+
+### 23 June
+
+- [X] Install file transfer protocol using Globus
+- [X] Test file sharing from multiple computers --> didn't work bec of the firewall
+- [X] Install Apache2 server
+- [X] Coustmize Apache2 server
+- [X] Share directories and files using Apache2
+
+### 24 June
 
 
 ## Week 2
