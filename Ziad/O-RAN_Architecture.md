@@ -61,7 +61,6 @@ OpenRANGE vDU key benefits:
 </p>
 
 key benefits:
-
 <ul>
   <li>Deliver true gigabit per second speeds across both mid-band and millimeter wave frequencies.
 </li>
@@ -78,3 +77,20 @@ key benefits:
   
  <hr>
 </ul>
+
+<a href="https://www.radisys.com/solutions/openran"><b>Radisys</b></a>
+<p align="center">
+<img width="760" alt="img4" src="https://user-images.githubusercontent.com/39535204/181791396-8612cc00-6444-41bb-b375-e94ec2c9392d.PNG">
+</p>
+key benefits:
+
+<ul>
+  <li>The software is based on 3GPP Release 15 with upcoming support for Release 16 and Release 17.
+</li>
+  <li>offer a high-performance and feature-rich complete software package that is fully interoperable for multi-vendor Open RAN deployments in public and private network deployments.
+</li>
+  <li>Radisys O-RAN Protocol software solution provides complete control/user plane separation, integration through open interfaces with RAN Intelligent controllers (RICs) and application of AI/ML through various xApps per O-RAN architecture.
+</li>
+
+</ul>
+ <hr>
