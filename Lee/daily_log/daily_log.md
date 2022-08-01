@@ -258,8 +258,27 @@ Things to do:
 - [ ] Finishing up creating the Ansible script by this Friday (or ASAP)
 
 #### Wednesday July 13th
-- [x] Attended Yomi presentation presentation regarding his current work on application profiling
+- [x] Attended Yomi presentation regarding his current work on application profiling
 - [x] SSH setup and tested the Ansible script on the New Nano 
 
 #### Thursday July 14th
+- [x] Done with Ansible script
+- [x] Had a meeting with EDU team and Robotic team
+
 #### Friday July 15th
+- [x] Ansible script final test
+
+----------------------------------------------
+### Week 8: 7/18 to 7/22 ###
+#### Monday July 18th
+- [x] Had a meeting
+
+----------------------------------------------
+### Week 9: 7/25 to 7/29 ###
+#### Monday July 25th
+- [x] ddd
+
+----------------------------------------------
+### Week 10: 8/1 to 8/5 ###
+#### Monday August 1th
+- [x] ddd
