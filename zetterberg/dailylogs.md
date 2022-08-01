@@ -316,6 +316,29 @@
 - Student Connects Group
 - Weekly student seminar
 
+#### Thursday July 28th, 2022
+- Created presentation for Brookhaven National Laboratory
+- AI Algorithm Student Group meeting
+- Worked on research paper
+
+#### Friday July 29th, 2022
+- Worked on presentation for Brookhaven National Laboratory
+
+---
+
+### Week 10
+
+#### Goals for the week
+- Finish presentation for BNL
+- Finish research paper
+- Finish 10 minute Learning on the Lawn video
+
+---
+
+#### Monday August 1st, 2022
+- Met with mentor and other team members to practice presentation
+- Finished presentation for BNL
+- Uploaded recording for Learning on the Lawn
 
 
 
