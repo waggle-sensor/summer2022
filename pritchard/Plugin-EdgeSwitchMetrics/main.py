@@ -114,7 +114,7 @@ def Main():
         #trigger_queue =Queue()
         Thread(target=Trigger, args=(myconfig.execution_check, myconfig.buffer_length,), daemon=True).start()
         
-        #by passing out two seperate queues, the risk of the two action threads is minimized
+        
         Read(myconfig.frequency_read)#writeitem, triggeritem)
 
 if __name__=="__main__":
