@@ -1482,10 +1482,30 @@ Things to do:
 - [ ] Go through and edit past daily logs
 - [ ] Get WisGate up and running 
 #### Friday July 29th ####
-- [ ] 
+- [ ] Learned from Raj that WisGate implementation was now unneeded
+- [ ] Worked on outline for presentation and research paper
+- [ ] Talked with Sean about bug where queues passed to threads will slowly fall behind Read thread due to frequency differences: decided I should ask Raj is I should implement a stack instead of a que or ditch wait times altogether
+- [ ] Raj said that I need to keep wait times in place, thus I need to alter the implemented queue system
+- [ ] I fixed the ubnt file to include the renamed statistic_getter method
+- [ ] Created a altered main.py file that changes two independant couples as way of passing JSONs between threads
+```
+ myconfig.writeitem=(timestamp,dumpedjson)
+ myconfig.triggeritem=(timestamp,dumpedjson)
+ print(timestamp)
+ #for queue in queues:
+     #queue.put((timestamp, dumpedjson))
+```
+- [ ] Created a altered Quemain.py file that keeps the number of items in the queues at 1  
+```
+ for queue in queues:
+      if queue.qsize()!=0:
+          queue.get()
+      queue.put((timestamp, dumpedjson))
+```
+
 
 Things to do:
-- [ ] 
+- [ ] Make presentation
 
 
 
