@@ -3,7 +3,6 @@ from threading import Thread
 import myconfig
 import statisticgetter
 import secondarys
-import password
 from queue import Queue, Empty
 from collections import deque
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -13,20 +12,24 @@ import time
 import requests
 #import csv
 from waggle.plugin import Plugin
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-def Read(frequency_read, queues):
+def Read(frequency_read):
         while True:
                 starttime=time.time()
                 try:
                         with UnifiSwitchClient(
-                                host='https://192.168.0.5',
-                                username='ubnt',
-                                password=password.password) as client:#password is from another not included file
+                                host='https://10.31.81.5',
+                                username=username,
+                                password=password) as client:#password is from another not included file
                                 info = client.get_statistic_info()
                                 dumpedjson=json.dumps(info)
                                 variabletype, timestamp=statisticgetter.noIndexGetter(dumpedjson, 'timestamp')#gets timestamp from within json
-                                for queue in queues:
-                                        queue.put((timestamp, dumpedjson))
+                                myconfig.writeitem=(timestamp,dumpedjson)
+                                myconfig.triggeritem=(timestamp,dumpedjson)
+                                print(timestamp)
+                                #for queue in queues:
+                                        #queue.put((timestamp, dumpedjson))
                                 endtime=time.time()
                                 if (frequency_read-(endtime-starttime))>0:     
                                         time.sleep(frequency_read-(endtime-starttime))
@@ -36,15 +39,18 @@ def Read(frequency_read, queues):
                         if (30-(endtime-starttime))>0:     
                                 time.sleep(frequency_read-(endtime-starttime))
                         
-def Trigger(execution_check, bufferlength, queue):
+def Trigger(execution_check, bufferlength):
              buffer = deque()
              connectionStatus= [[0,'off'] for i in range(myconfig.numberofports)]#(poe wattage, 'on' if port is currently recieving data)
+             myconfig.triggeritem=(0,'')
              while True:
                 starttime=time.time()
-                try:
-                        item = queue.get(timeout=60)
+                if myconfig.triggeritem[1]!='':
+                        item=myconfig.triggeritem
+                        #item = queue.get(timeout=60)
                         buffer.append(item)
-                except Empty:
+                        myconfig.triggeritem=(0,'')
+                else:
                         print("warning! no switch data!")
                 while len(buffer) > bufferlength:
                         buffer.popleft()
@@ -74,12 +80,15 @@ def Trigger(execution_check, bufferlength, queue):
                 endtime=time.time()
                 if (execution_check-(endtime-starttime))>0:     
                         time.sleep(execution_check-(endtime-starttime))      
-def Write(frequency_write, queue):
+def Write(frequency_write):
+        myconfig.writeitem=(0,'')
         while True:
                 starttime=time.time()
-                try:
-                        item=queue.get(timeout=60)
+                if myconfig.writeitem[1]!='':
+                        item=myconfig.writeitem
+                        #item=queue.get(timeout=60)
                         timestamp, jsonobject=item
+                        myconfig.writeitem=(0, '')
                         #as this is implemented currently it cannot connect and publish to beehive,
                                 #instead it publishes to a local directory through a changed environmental variable which is altered via "PYWAGGLE_LOG_DIR=runlog python3 Main.py"
                         with Plugin() as plugin:
@@ -91,20 +100,22 @@ def Write(frequency_write, queue):
                                 writer = csv.writer(f)
                                 writer.writerow(pair)
                         '''
-                except Empty:
-                        print("warning! no switch data!")
-                        continue  
+                else:
+                        print("warning! no switch data!") 
                 endtime=time.time()
                 if (frequency_write-(endtime-starttime))>0:     
                         time.sleep(frequency_write-(endtime-starttime))           
 def Main():
-        writer_queue =Queue()
-        Thread(target=Write, args=(myconfig.frequency_write, writer_queue,), daemon=True).start()
+        #writer_queue =Queue()
+        #writeitem=()
+        Thread(target=Write, args=(myconfig.frequency_write,), daemon=True).start()
+        #
+        #triggeritem=()
+        #trigger_queue =Queue()
+        Thread(target=Trigger, args=(myconfig.execution_check, myconfig.buffer_length,), daemon=True).start()
         
-        trigger_queue =Queue()
-        Thread(target=Trigger, args=(myconfig.execution_check, myconfig.buffer_length, trigger_queue,), daemon=True).start()
         #by passing out two seperate queues, the risk of the two action threads is minimized
-        Read(myconfig.frequency_read,[writer_queue, trigger_queue])
-       
+        Read(myconfig.frequency_read)#writeitem, triggeritem)
+
 if __name__=="__main__":
-        Main()     
+        Main()   
