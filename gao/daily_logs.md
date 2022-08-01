@@ -433,7 +433,7 @@ Paper
 |  | Goal | Priority | Notes |
 | --- | --- | --- | --- |
 | 🟩 | Look into pywaggle, dockerize model | High |  |
-| 🟩 | Get access to container | High |  |
+| ❎ | Get access to container | High |  |
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
 
@@ -442,13 +442,96 @@ Paper
 - Set up goals for week
 - Met with mentors
     - Notes
-        - Check model performance on other months
-        - Pywaggle
-        - Ask Raj to get access to the container for SGP
-            - Try using Virtual Waggle (ask Sean)
-        - You upload Docker container to ECR (edge computing repo)
-        - Seeing resource usage for different models: plug and chug
+        
+        Check model performance on other months
+        
+        Pywaggle
+        
+        Ask Raj to get access to the container for SGP
+        
+        Try using Virtual Waggle (ask Sean)
+        
+        You upload Docker container to ECR (edge computing repo)
+        
+        Seeing resource usage for different models: plug and chug
+        
 - Checked for seasonality-based errors by visualizing model performance on different months
+- Implemented splitting data by seasons for season-based training (i.e., distinct model for each season)
+    - Submitted job to run overnight
+- Researched pywaggle
 
 **Primary Project:**
-LSTM to predict solar irradiance based on cloud coverage and solar irradiance
+Season-based model
+
+## Tuesday, June 26
+
+- Debugged issue in seasonal data splitting
+    - Submitted seasonal training job to run overnight
+- Researched Docker
+    - Installed, went through Getting Started tutorial
+    - Researched dockerizing ML models
+
+**Primary Project:**
+Season-based model, Plug-in
+
+## Wednesday, June 27
+
+- Attended EDU Weekly Seminar - Special Presentation - “Climate and Energy Action” Strategic Science Initiative
+- Worked on dockerizing model (reading codebase, implementing preprocessing)
+    - Reading through: avian-diversity-monitoring
+- Attended Summer Interns Check-In
+- Met with mentors to discuss questions regarding longer-term forecasting and pywaggle
+    - Longer-term forecasting: if using recursive predictions, train model to just look at solar irradiance (don’t try to predict cloud coverage). alternatively, just train new models for different term lengths
+    - May need to ask for more help tomorrow on pywaggle; want to confirm functionality (e.g., plugin.get, what to name publish, how to run test code etc.)
+
+**Primary Project:**
+Season-based model, Plug-in
+
+## Thursday, June 28
+
+- Met with AI/Algorithm student group
+    - Discussed plug-in w/ Sean (nature of plug-in, potentially shifting to data analysis tool for historical data)
+    - Engaged follow-up discussion with Sean, Bobby, and Seongha
+        - Call model once, collect data, and predict once. (Don’t repeatedly collect data and predict with the same plug-in call)
+        - Shifting focus to data analysis tool OK’d
+- Prepared models for tool (extracting from optuna studies, compressed to tflite, saved into file)
+- Debugged issue with running model with tflite
+
+**Primary Project:**
+Data analysis tool
+
+## Friday, June 29
+
+- Continued tool
+    - Finished implementation with dummy data (loading model, running predictions)
+    - Debugged segmentation fault
+        - Looks like issue in package compatability (breaks on pydda_env, runs fine on local tf)
+        - pydda_env: tf 2.7
+        - Duplicating environment seems to run into issues? Look into what version of tf used by sensors
+
+**Primary Project:**
+Data analysis tool
+
+# Week 10 (8/1 - 8/5)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Complete presentation recording | High | Due 8/1, 5PM |
+| 🟩 | Complete project report | High | Due 8/5, 10:59PM |
+| 🟩 | Complete general audience abstract | High | Due 8/5, 10:59PM |
+| 🟩 | Complete peer review | High | Due 8/5, 10:59PM |
+| 🟩 | Get SAGE data access | Med |  |
+| 🟩 | Complete data analysis tool | Med |  |
+| 🟩 | Get access to container | Low | Sean |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, June 25
+
+- Set up goals for week
+- Completed SULI Post-Participation Survey
+
+**Primary Project:**
+Deliverables
