@@ -58,6 +58,53 @@ June 30th
   - First testing aroung with the MNIST dataset to experiment
   - Asked Dario about how to modify this model to mimic the research paper's
   
-July 5th
-  - Spent majority of time using Pandas to organize the researcher's data
-  - Utilized matplot to plot the data
+July 5th - 8th
+  GOALS
+    - Explore existing open-source GANs model for tabular data
+    - Format data to desiried format via pandas
+    - Convert raw data to indexable AQ values
+    - Learn how to present the data
+    
+  ACHEIVED/RESULTS
+    - Attended a student's connects meeting with Daniel Huang
+    - Emailed and received API read key from purple air
+    - Tinkered with batch size and number of epochs for modeling
+    - Realized that previous GANs model used for tabular data is not the best model
+    - Learned how to use pandas to modify input csv to desired output
+    - Found new model for timeseries, but had difficulity implementing it since it was built from tf1
+    - Replicated jamal toutouh's input dataset graphs using matplotlib
+    
+ July 11th - 15th
+   GOALS
+    - Continue searching for GANs model that works with time series with good documentation
+    - Find new model that is not based on tf1, at least tf2 or preferably pytorch
+    - Continue experimenting and learning the basics behind pytorch
+    - Replicate jamal's paper's results
+    
+   ACHEIVED/RESULTS
+    - Discussed internship progress with Daniel Huang
+    - Attend two AI/ML lectures hosted by MCS
+    - Modified automated csv converter to accomodate for jamal's input csv's and purple air csv's
+    - Had difficulty with finding desired model but currently working with CTGAN made by MIT Synthetic Data Vault group
+    - Learning the use/implementation documentation behind CTGAN
+    - Began training dataset using CTGAN and had success
+    - Issue so far is considered discrete vs continous data values in model
+    
+ July 18th - 22th
+   GOALS
+    - Either find new time series GAN or test dataset with CTGAN
+    - Understand how discrete/continous values are evaluated in series
+      - Try to implement or find a model that implements ^
+    - Begin training model on basic datapoints like humidity
+    
+   ACHEIVED/RESULTS
+    - Found interesting time series GAN released one week ago based on pytorch
+    - The model DoppelGANger handles both discrete (attributes) and continuous (features) mutilivariate series
+    - Began training model on humidity data since it is bounded from 0 to 100 (easeier for GANs to model)
+    - Model rounds to 10 minute estimates (may change in futures to hourly dependning on the available data)
+    - Trained on 4 urban nodes in similar areas
+    - Developed correlation matrix between real and synthetic data (showed it synthetic dataset maintained the original temporal correlations)
+    - Trained model on 2020 data and compared to 2021 real data for testing
+    - The model is less diverse and has less extreme points than 2020 dataset
+    - Issue is that many nodes have incomplete data so could only get months' worth for four nodes
+  
