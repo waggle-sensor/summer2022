@@ -1,6 +1,14 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 8: 8/1 to 8/5
+
+### Monday 8/1 and Tuesday 8/2
+
+- Very frustrating, I have spent these past two days trying to figure out why the Nano drops its connection with the modem after connecting
+  - it was a problem with the ModemManager driver, since the nano runs on Ubuntu 18.04, the mmcli was out of date. Follow this [link](https://launchpad.net/~aleksander-m/+archive/ubuntu/modemmanager-bionic) to get a PPA that's a newer versionn (not the newest but still)
+  - problems: the driver isn't the most up to date, so qmicli doesn't work, but that is manageable
+
 ## Week 7: 7/25 to 7/29
 
 ### Friday 7/29
