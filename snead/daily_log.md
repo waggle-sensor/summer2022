@@ -3,11 +3,20 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 8: 8/1 to 8/5
 
+### Wednesday 8/3
+
+- I got the NX to register the device so it can set up the ttyUSB connection, but now it's having trouble with data overruns (the buffer fills with new information before it can read what it has)
+  - Raj is going to see if we can connect the modem to a different computer
+- updated the decision matrix with new information
+
 ### Monday 8/1 and Tuesday 8/2
 
 - Very frustrating, I have spent these past two days trying to figure out why the Nano drops its connection with the modem after connecting
   - it was a problem with the ModemManager driver, since the nano runs on Ubuntu 18.04, the mmcli was out of date. Follow this [link](https://launchpad.net/~aleksander-m/+archive/ubuntu/modemmanager-bionic) to get a PPA that's a newer versionn (not the newest but still)
   - problems: the driver isn't the most up to date, so qmicli doesn't work, but that is manageable
+  - connection is extremely slow over 4G (~1Mbps uploads and downloads), whereas on my laptop it is extremely fast (100 Mbps upload and 200 Mbps download)
+- Raj set me up with a Jetson NX to try the same thing
+  - can't get the computer to establish a ttyUSB connection 
 
 ## Week 7: 7/25 to 7/29
 
