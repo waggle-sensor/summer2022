@@ -910,7 +910,7 @@ Things to do:
 - [ ] Add previous WisGate work to Github
 - [ ] Link up local repo for easy commits
 
-### Week 8: 7/18 to 7/22 ###
+### Week 9: 7/18 to 7/22 ###
 #### Monday July 18th ####
 - [ ] Did Friday daily journal
 - [ ] Made short list of what variabes we should be checking in our interuption thread
@@ -1327,7 +1327,7 @@ Things to do:
 Things to do:
 - [ ] Begin readying SULI end deliverables
 - [ ] Go through READMEs with family and friends to try to do final editing
-### Week 8: 7/25 to 7/29 ###
+### Week 10: 7/25 to 7/29 ###
 #### Monday July 25th ####
 - [ ] Touched up READMEs
 - [ ] Assigned Project to get data from Sage related camera
@@ -1507,7 +1507,7 @@ Things to do:
 Things to do:
 - [ ] Make presentation
 
-### Week 8: 8/1 to 8/5 ###
+### Week 11: 8/1 to 8/5 ###
 #### Monday August 1st ####
 - [ ] Received pointers on presentation from Raj, he reccomended I shrink the number of slides about the MILAN project and add slides about the camera project
 - [ ] Altered presentation acording to Raj's specifications
