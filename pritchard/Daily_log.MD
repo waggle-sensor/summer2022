@@ -1507,8 +1507,8 @@ Things to do:
 Things to do:
 - [ ] Make presentation
 
-### Week 8: 7/25 to 7/29 ###
-#### Monday July 25th ####
+### Week 8: 8/1 to 8/5 ###
+#### Monday August 1st ####
 - [ ] Received pointers on presentation from Raj, he reccomended I shrink the number of slides about the MILAN project and add slides about the camera project
 - [ ] Altered presentation acording to Raj's specifications
 - [ ] Updated previous GitHub READMEs and caught up daily logs
@@ -1519,7 +1519,7 @@ Things to do:
 - [ ] Finish Research paper
 - [ ] Go through and edit past daily logs
 - [ ] Look into how to return camera settings to normal from a reset
-#### Tuesday July 26th ####
+#### Tuesday August 2nd ####
 - [ ] Finished first draft of research paper
 - [ ] Made improvements to presentation
 - [ ] Spoke to Raj about what kind of reset he wanted me to be able to return the Camera from, he wants to be able to return the camera from a total factory reset, he reccommended finding some way to download the config file then reupload it after factory reset
@@ -1530,7 +1530,7 @@ Things to do:
 - [ ] Finish Research paper
 - [ ] Go through and edit past daily logs
 - [ ] Look into getting access to the repo
-#### Wednesday July 27th ####
+#### Wednesday August 3rd ####
 - [ ] Practiced for final presentation
 - [ ] Gave final presentation
 - [ ] Edited Research paper with feedback from people asked
@@ -1544,12 +1544,12 @@ Things to do:
 - [ ] Go through and edit past daily logs
 - [ ] Look through repo to see where I can add setting record settings
 - [ ] Attend Jonathan's presentation and due peer review
-#### Thursday July 28th ####
+#### Thursday August 4th ####
 - [ ]   
 
 Things to do: 
 - [ ] 
-#### Friday July 29th ####
+#### Friday August 5th ####
 - [ ] 
 
 
