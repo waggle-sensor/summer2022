@@ -35,8 +35,9 @@ ect... full json converted to string
 
 ```
 # Note
-this pluggin requires the pywaggle library, local connection to an EdgeSwitch 8, as well as an additional file containing the password of your switch 
+this pluggin requires the pywaggle library, the get_statistic_info method added to the included 'ubnt' file included, connection to an EdgeSwitch 8, as well as an additional file containing the password of your switch 
   <br>  
 ![image](https://user-images.githubusercontent.com/106760508/180482614-45add548-1df6-497a-aeb6-5ad1adbb94a8.png)
 # Credits
-This pluggin makes use of the unifi_switch_client, that file is the creation of Joseph Swantek and gemblerz, you can find it [here](https://github.com/waggle-sensor/unifi_switch_client)
+This pluggin makes use of the unifi_switch_client, that file is the creation of Joseph Swantek and gemblerz AKA Yongho kim, you can find it [here](https://github.com/waggle-sensor/unifi_switch_client)
+as well as the pywaggle module by Sean Shahkarami, which you can find [here](https://github.com/waggle-sensor/pywaggle)
