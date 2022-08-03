@@ -7,7 +7,13 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 - I got the NX to register the device so it can set up the ttyUSB connection, but now it's having trouble with data overruns (the buffer fills with new information before it can read what it has)
   - Raj is going to see if we can connect the modem to a different computer
-- updated the decision matrix with new information
+- updated the [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_8-3-2022.pdf) with new information
+
+#### To Do
+
+- downlink, I think the lab is almost ready?
+- start on whitepaper
+- get the NX connecting to the modem
 
 ### Monday 8/1 and Tuesday 8/2
 
@@ -47,7 +53,7 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 #### To Do
 
-- first thing tomorrow I am going to drive out of Argonne campus and try to connect from a starbucks or something to see if no service truly is the issue. I don't know what to do after that... more help on orums I guess
+- first thing tomorrow I am going to drive out of Argonne campus and try to connect from a starbucks or something to see if no service truly is the issue. I don't know what to do after that... more help on forums I guess
 - All previous To Dos...
 
 ### Tuesday 7/26
