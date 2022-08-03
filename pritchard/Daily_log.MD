@@ -19,7 +19,7 @@
 - [ ] Went through pywaggle code base, compiled questions on portions I didn't understand
 
 Things to do: 
-- [ ] Ask Raj about Taylor University supervisor agreement
+- [ ] Ask Raj about signing Taylor University supervisor agreement
 - [ ] Get github permission to edit Summer2022
 - [ ] Figure out how to record daily logs on github
 - [ ] Gather all questions together for eventual meeting with Raj
