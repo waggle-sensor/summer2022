@@ -29,7 +29,7 @@ Things to do:
 - [ ] Looked through Summer 2020 repo
   - [ ] Followed through tutorials 
   - [ ] Setup required accounts
-  - [ ] Found bugs in repo links
+  - [ ] Found bugs in repo links, in tiles and Dialylogs access
 
 Things to do:
 - [ ] Talk with Raj about questions, bugs in Summer2022 repo and supervisor agreement
@@ -37,7 +37,7 @@ Things to do:
 ### Week 2: 6/6 to 6/10 ###
 #### Monday June 6th ####
 - [ ] Made a word doc containing previous python issues and repo bugs
-- [ ] Messaged Raj about bugs in 
+- [ ] Messaged Raj about bugs in repo 
 - [ ] Organized list of questions
 - [ ] Worked out much of prevoius pywaggle related questions for Raj
 
