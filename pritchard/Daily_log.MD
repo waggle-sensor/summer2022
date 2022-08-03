@@ -1538,6 +1538,7 @@ Things to do:
 - [ ] Got access to repo from Yongho
 - [ ] Took exit survey
 - [ ] Wrote and submitted general audience abstract
+
 Things to do:
 - [ ] Finish Research paper
 - [ ] Go through and edit past daily logs
