@@ -82,7 +82,7 @@ Things to do:
 - [ ] Rewrote paper and recived signature
 - [ ] Finished updating to current Waggle daily journal
 - [ ] Researched for presentation
-- [ ] Gave presentation
+- [ ] Gave presentation, 
 
 Things to do:
 - [ ] Fix broken WisGateway
@@ -101,6 +101,36 @@ Things to do:
 
 #### Tuesday June 14th ####
 - [ ] Make shopping list of sensors and needed parts
+```
+Sensor types
+Arduino:
+MKRWAN1310 https://docs.arduino.cc/hardware/mkr-wan-1310
+Sold out so earlier version :
+https://store-usa.arduino.cc/products/arduino-mkr-wan-1300-lora-connectivity?selectedStore=us
+somehow version still visible on amazon:
+https://www.amazon.com/Arduino-MKR-1310-Antenna-Included/dp/B07XVJYTJG/ref=sr_1_1?crid=34B9JI6FJLYU1&keywords=MKR%2BWAN%2B1310&qid=1655231621&sprefix=mkr%2Bwan%2B1310%2Caps%2C136&sr=8-1&th=1
+Arduino sensors (Light, temp ext.) Breadboard and wires (assuming we have those)
+WisBlock
+Base:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK19007/Overview/
+requires type c- cable to begin development, and additional cables to use remotely
+https://store.rakwireless.com/products/rak19007-wisblock-base-board-2nd-gen
+Core:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Overview/
+https://store.rakwireless.com/products/rak4631-lpwan-node?variant=37505443987654
+if Bluetooth not helpful:
+https://store.rakwireless.com/products/rak11310-wisblock-lpwan-module
+Sensor:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12003/Overview/ temperature
+https://store.rakwireless.com/products/infrared-temperature-sensor-rak12003
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12005/Overview/ Rain
+https://store.rakwireless.com/products/rain-sensor-rak12005-module-and-rak12030-sensor
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12015/Overview/ vibration detection
+https://store.rakwireless.com/products/wisblock-vibration-sensor-rak12015
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK1903/Overview/ light sensor
+https://store.rakwireless.com/products/rak1903-opt3001dnpr-ambient-light-sensor
+
+```
 - [ ] Updated daily journal
 - [ ] Attended student connection group session
 - [ ] Presented shopping list to Raj-> Decided we would use arduinos instead of RAK based WisBlock
@@ -134,7 +164,7 @@ Things to do:
 - [ ] Finishing the presentation on LoraWAN research
 
 #### Friday June 17th ####
-- [ ] Finished the presentation
+- [ ] Finished the presentation, [you can find powerpoint here](https://github.com/waggle-sensor/summer2022/blob/main/pritchard/WisgateProgress/LoRaWAN%20Research.pdf)
 - [ ] Presented the presentation
 - [ ] Found space on 7th floor where I could work
 
@@ -173,6 +203,8 @@ Things to do:
 - [ ]  decided on using Paho library in Python to make barebones client
 - [ ]  successfully sent message to WisGate MQTT broker
 
+![image](https://user-images.githubusercontent.com/106760508/182721700-261c6ff5-670b-417b-a056-a540036d34b0.png)
+<br>
 Things to do: 
 - [ ] get WisGate to send message through MQTT broker from its inputs
 
