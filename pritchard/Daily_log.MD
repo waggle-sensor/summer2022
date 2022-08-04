@@ -19,7 +19,7 @@
 - [ ] Went through pywaggle code base, compiled questions on portions I didn't understand
 
 Things to do: 
-- [ ] Ask Raj about Taylor University supervisor agreement
+- [ ] Ask Raj about signing Taylor University supervisor agreement
 - [ ] Get github permission to edit Summer2022
 - [ ] Figure out how to record daily logs on github
 - [ ] Gather all questions together for eventual meeting with Raj
@@ -29,7 +29,7 @@ Things to do:
 - [ ] Looked through Summer 2020 repo
   - [ ] Followed through tutorials 
   - [ ] Setup required accounts
-  - [ ] Found bugs in repo links
+  - [ ] Found bugs in repo links, in tiles and Dialylogs access
 
 Things to do:
 - [ ] Talk with Raj about questions, bugs in Summer2022 repo and supervisor agreement
@@ -37,7 +37,7 @@ Things to do:
 ### Week 2: 6/6 to 6/10 ###
 #### Monday June 6th ####
 - [ ] Made a word doc containing previous python issues and repo bugs
-- [ ] Messaged Raj about bugs in 
+- [ ] Messaged Raj about bugs in repo 
 - [ ] Organized list of questions
 - [ ] Worked out much of prevoius pywaggle related questions for Raj
 
@@ -82,7 +82,7 @@ Things to do:
 - [ ] Rewrote paper and recived signature
 - [ ] Finished updating to current Waggle daily journal
 - [ ] Researched for presentation
-- [ ] Gave presentation
+- [ ] Gave presentation, 
 
 Things to do:
 - [ ] Fix broken WisGateway
@@ -101,6 +101,36 @@ Things to do:
 
 #### Tuesday June 14th ####
 - [ ] Make shopping list of sensors and needed parts
+```
+Sensor types
+Arduino:
+MKRWAN1310 https://docs.arduino.cc/hardware/mkr-wan-1310
+Sold out so earlier version :
+https://store-usa.arduino.cc/products/arduino-mkr-wan-1300-lora-connectivity?selectedStore=us
+somehow version still visible on amazon:
+https://www.amazon.com/Arduino-MKR-1310-Antenna-Included/dp/B07XVJYTJG/ref=sr_1_1?crid=34B9JI6FJLYU1&keywords=MKR%2BWAN%2B1310&qid=1655231621&sprefix=mkr%2Bwan%2B1310%2Caps%2C136&sr=8-1&th=1
+Arduino sensors (Light, temp ext.) Breadboard and wires (assuming we have those)
+WisBlock
+Base:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK19007/Overview/
+requires type c- cable to begin development, and additional cables to use remotely
+https://store.rakwireless.com/products/rak19007-wisblock-base-board-2nd-gen
+Core:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Overview/
+https://store.rakwireless.com/products/rak4631-lpwan-node?variant=37505443987654
+if Bluetooth not helpful:
+https://store.rakwireless.com/products/rak11310-wisblock-lpwan-module
+Sensor:
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12003/Overview/ temperature
+https://store.rakwireless.com/products/infrared-temperature-sensor-rak12003
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12005/Overview/ Rain
+https://store.rakwireless.com/products/rain-sensor-rak12005-module-and-rak12030-sensor
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK12015/Overview/ vibration detection
+https://store.rakwireless.com/products/wisblock-vibration-sensor-rak12015
+https://docs.rakwireless.com/Product-Categories/WisBlock/RAK1903/Overview/ light sensor
+https://store.rakwireless.com/products/rak1903-opt3001dnpr-ambient-light-sensor
+
+```
 - [ ] Updated daily journal
 - [ ] Attended student connection group session
 - [ ] Presented shopping list to Raj-> Decided we would use arduinos instead of RAK based WisBlock
@@ -134,7 +164,7 @@ Things to do:
 - [ ] Finishing the presentation on LoraWAN research
 
 #### Friday June 17th ####
-- [ ] Finished the presentation
+- [ ] Finished the presentation, [you can find powerpoint here](https://github.com/waggle-sensor/summer2022/blob/main/pritchard/WisgateProgress/LoRaWAN%20Research.pdf)
 - [ ] Presented the presentation
 - [ ] Found space on 7th floor where I could work
 
@@ -173,6 +203,8 @@ Things to do:
 - [ ]  decided on using Paho library in Python to make barebones client
 - [ ]  successfully sent message to WisGate MQTT broker
 
+![image](https://user-images.githubusercontent.com/106760508/182721700-261c6ff5-670b-417b-a056-a540036d34b0.png)
+<br>
 Things to do: 
 - [ ] get WisGate to send message through MQTT broker from its inputs
 
@@ -910,7 +942,7 @@ Things to do:
 - [ ] Add previous WisGate work to Github
 - [ ] Link up local repo for easy commits
 
-### Week 8: 7/18 to 7/22 ###
+### Week 9: 7/18 to 7/22 ###
 #### Monday July 18th ####
 - [ ] Did Friday daily journal
 - [ ] Made short list of what variabes we should be checking in our interuption thread
@@ -1040,7 +1072,7 @@ Things to do:
              previousRates= [0]*myconfig.numberofports
              previousErrors= [0]*myconfig.numberofports
                           
-                          #this is where the preseting comparison variables takes place
+                          #this is where the presetting of comparison variables takes place
                           
                           for i in range(myconfig.numberofports):
                                 Ratevariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'rate')
@@ -1054,7 +1086,7 @@ Things to do:
                                 Tempvariable, indexstring, originalvalue= statisticgetter.withIndexGetter(comparingjsonobject, i,'value')
                                 previousTemps[i]= originalvalue      
                         
-                      #this is where I compare curren values of the variables against the comparison values
+                      #this is where I compare current values of the variables against the comparison values
                       
                         
                    elif(len(buffer)>1):
@@ -1111,8 +1143,6 @@ updated trigger buffer
 1658263217176 port:4 ('rate', 'dropped is now this fraction of former value:', 0.14842578710644677)
 when buffer is 57 Rate is 51392 compared rate is 135024
 updated trigger buffer
-
-
 
 ```
 - [ ] Fixed numerous bugs in first implemenatation, which included: unchanging comparison values for numerous variables, wrong variables sometimes getting passed to display functions
@@ -1318,7 +1348,7 @@ Things to do:
 - [ ] Figure out timestamp problem that prevents plugin from accepting json's timestamp
 
 #### Friday July 22th ####
-- [ ] Helped Raj manage and inventory some parts
+- [ ] Helped Raj manage and inventory some mail in parts
 - [ ] Changed boundary values so there are no warnings in normal state
 - [ ] Upgraded README to current project, adding pictures and examples when helpful
 - [ ] Uploaded previous WisGate progress to GitHub
@@ -1329,34 +1359,234 @@ Things to do:
 Things to do:
 - [ ] Begin readying SULI end deliverables
 - [ ] Go through READMEs with family and friends to try to do final editing
-### Week 8: 7/25 to 7/29 ###
+### Week 10: 7/25 to 7/29 ###
 #### Monday July 25th ####
 - [ ] Touched up READMEs
 - [ ] Assigned Project to get data from Sage related camera
 - [ ] Found command to do above, failed in implementation 
 - [ ] Helped Raj solder on ports for Waggle
-- [ ] Helped Raj test new Sine wave generator equipment for SAGE node
+- [ ] Helped Raj test a new AC converter which could possible be used by the SAGE node, unfortunatley the converter continued to fail to successfully accept DC and convert the power so it could be used by a sample SAGE node
 
 Things to do:
-- [ ] go through and edit past daily logs
+- [ ] Go through and edit past daily logs
 - [ ] Get video puller working
 #### Tuesday July 26th ####
-- [ ] 
+- [ ] Caught up on previous daily logs
+- [ ] Set password of camera to something without wildcard characters that throw off requests
+- [ ] Attended student connection group to practice speaking on my the work I did this summer
+- [ ] Read through WiseNet documents, the most important of which is SUNAPI: Application Programmer's Guide, and is stored in the relevant project folder
+- [ ] Performed more tests with Raj on AC converter, learened that it requires very high starting current that regular power sources cannot provide
+- [ ] Discovered a reccomended "time" notation in the relevant documentation which I used in my tests
+```
+The time should be specified in the following format:
+<YYYYMMDDTHHMMSS> (e.g, 20141206T111500) for local time and
+<YYYYMMDDTHHMMSSZ>
+(e.g, 20141206T110000Z) for UTC time.
+```
+- [ ] Discovered how to use password and username in rtsp commands so as to pass authorization 
+```
+mpv "rtsp://username:password@10.31.81.10/recording/play.smp"
+```
+- [ ] Tested each "playback" video command to see which one I should focus on trying to get work
+```
+Camera URL format:
+[Type1]
+rtsp://<Device IP>/recording/<Start Time>/play.smp <--- returned 404 not found
+[Type2]
+rtsp://<Device IP>/recording/<Start Time>-<End Time>/play.smp<--- returned 404 not found
+[Type3]
+rtsp://<Device IP>/recording/play.smp<--- returned 501 'Play' :Not implemented
+Camera URL format (multi source device)
+[Type1]
+rtsp://<Device IP>/<chid>/recording/<Start Time>/play.smp<--- returned 404 not found, (I used "0" for "chid")
+[Type2]
+rtsp://<Device IP>/<chid>/recording/<Start Time>-<End Time>/play.smp<--- returned 404 not found
+[Type3]
+rtsp://<Device IP>/<chid>/recording/play.smp<--- returned 501 'Play' :Not implemented
+NVR URL format
+[Type1]
+rtsp://<Device IP>:558/PlaybackChannel/<chid>/media.smp<--- returned 404 not found, (I used 554 as port as that is the port my camera uses)
+[Type2]
+rtsp://<Device IP>:558/PlaybackChannel/<chid>/media.smp/session=<sid><--- returned 404 not found (I used 0 for session id)
+[Type3]
+rtsp://<DeviceIP>:558/PlaybackChannel/<chid>/media.smp/overlap=<id>&session=<sid><--- returned 404 not found
+```
+Note: only the commands with 501 errors showed "unauthorized" errors when the password was not correct
+
+- [ ] Explored UI for settings that were related to "playback" function, discovered a setting that should allow for connections to not require authentication, though I eventually realized that this setting only related to live view
+![image](https://user-images.githubusercontent.com/106760508/181582350-52f262da-c51d-4a33-be0a-72fa8426795f.png)
 Things to do:
-- [ ] 
+- [ ] Discover why authentication still required despite having changed related setting in UI
+- [ ] Go through and edit past daily logs
+- [ ] Get video puller working
 #### Wednesday July 27th ####
-- [ ] 
+- [ ] Retested previously tested commands, received same results
+- [ ] Learned that there is probaly a problem with my method of denoting timestamps because any command where I use them is not recognised by device, in this case by recognized I mean that changing the password provokes an unauthorized error
+```
+EX:
+rtsp://<Device IP>/recording/play.smp-->recognized
+rtsp://<Device IP>/recording/<Start Time>/play.smp-->not recognized
+```
+- [ ] Attended Weekly Lecture, this time on the work that is being done to predict and counter natural disasters 
+- [ ] Began to test other related HTTP url commands, using browser because my ubuntu installation was no longer supported and had an outdated installation of some process related to opening the urls
+- [ ] Discovered a bunch of device info by trying all related commands
+```
+for example:
+http://<Device IP>/stw-cgi/system.cgi?msubmenu=deviceinfo&action=view
+
+returns:
+Model=XNV-8080R
+SerialNumber=ZG996V4R1000CBK
+FirmwareVersion=2.10.02_20220401_R615
+BuildDate=2022.04.01
+WebURL=http://www.hanwha-security.com/
+DeviceType=NWC
+ConnectedMACAddress=E4:30:22:2B:2A:F5
+ISPVersion=1.60_211007
+BootloaderVersion=       
+CGIVersion=2.6.0
+ONVIFVersion=20.12
+DeviceName=Camera
+DeviceLocation=top
+DeviceDescription=Super Camera
+Memo=Memo
+Language=English
+PasswordStrength=Strong
+OpenSDKVersion=4.02_220126
+FirmwareGroup=XND-8080R
+```
+- [ ] As I was testing other URL based commands, I noticed that most of them refer to the "STW" format offered as a video storage option by the camera, I reformatted the sd card using the new format, but after observing no changes in results I eventually returned the format to "AVI"
+<br>
+
+![image](https://user-images.githubusercontent.com/106760508/181581772-f5460ecb-b42d-4292-893a-2a0991f28c15.png)
+
+- [ ] Confirmed that the NVR related commands will not work becuase they are designed to interact with a central computer that runs multiple cameras
+- [ ] With Raj:
+  - [ ] Updated firmware on camera
+  - [ ] Re-installed xubuntu on loaned laptop to a newer version
+  - [ ] Learned that cameras will accept timestamps in a format that refers to universal time without the "T" the timestamps references I previously used had, this indicates the documents are outdated
+```
+mpv "rtsp://username:password@10.31.81.10/recording/20220727225200Z/play.smp"
+results in:
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+
+```
+Things to do:
+- [ ] Go through and edit past daily logs
+- [ ] Get video puller working by looking into errors that occure when using new timestamp notation
 #### Thursday July 28th ####
-- [ ] 
+- [ ]   Updated Daily logs
+- [ ]   Logged into new xubuntu install with slack, Github, outlook
+- [ ]   Expanded on previous day's progress with new timestamp format
+- [ ]   Looked into what requests the UI makes when it exports footage, in the process learning that it always uses NVR format for all calls, which doesn't translate well over to command line 
+- [ ]   Discovered that the footage is not throwing any errors when requested with new timestamp format, and so likley the problem has somthing to do with the final playing of the video
+```
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 0 (Video: mjpeg, none(bt470bg/unknown/unknown)): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[ffmpeg/demuxer] rtsp: Could not find codec parameters for stream 2 (Video: hevc, none): unspecified size
+[ffmpeg/demuxer] Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+ (+) Video --vid=1 (mjpeg)
+     Video --vid=2 (h264 2560x1920)
+     Video --vid=3 (hevc)
+ (+) Audio --aid=1 (pcm_mulaw 1ch 8000Hz)
+     Audio --aid=2 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=3 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=4 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=5 (adpcm_g726le 1ch 8000Hz)
+     Audio --aid=6 (aac 1ch 16000Hz)
+File tags:
+ Comment: samsung
+ Title: Media Presentation
+
+```
+- [ ]   Found that I can play the footage with ffplay
+```
+ffplay rtsp://admin:why1not+@10.31.81.10/recording/20220729083000Z/play.smp
+
+```
+
+- [ ]   Made README for camera project
+- [ ]   Collected info from Andre that will hopefully allow me to get the WisGate up and running with its own LoRa devices
+
+
+Things to do: 
+- [ ] Go through and edit past daily logs
+- [ ] Get WisGate up and running 
+#### Friday July 29th ####
+- [ ] Learned from Raj that WisGate implementation was now unneeded
+- [ ] Worked on outline for presentation and research paper
+- [ ] Talked with Sean about bug where queues passed to threads will slowly fall behind Read thread due to frequency differences: decided I should ask Raj is I should implement a stack instead of a que or ditch wait times altogether
+- [ ] Raj said that I need to keep wait times in place, thus I need to alter the implemented queue system
+- [ ] I fixed the ubnt file to include the renamed statistic_getter method
+- [ ] Created a altered main.py file that changes two independant couples as way of passing JSONs between threads
+```
+ myconfig.writeitem=(timestamp,dumpedjson)
+ myconfig.triggeritem=(timestamp,dumpedjson)
+ print(timestamp)
+ #for queue in queues:
+     #queue.put((timestamp, dumpedjson))
+```
+- [ ] Created a altered Quemain.py file that keeps the number of items in the queues at 1  
+```
+ for queue in queues:
+      if queue.qsize()!=0:
+          queue.get()
+      queue.put((timestamp, dumpedjson))
+```
+
+
+Things to do:
+- [ ] Make presentation
+
+### Week 11: 8/1 to 8/5 ###
+#### Monday August 1st ####
+- [ ] Received pointers on presentation from Raj, he reccomended I shrink the number of slides about the MILAN project and add slides about the camera project
+- [ ] Altered presentation acording to Raj's specifications
+- [ ] Updated previous GitHub READMEs and caught up daily logs
+- [ ] Recorded and uploaded presentation to both SULIs site and the box folder where we were told to submit
+- [ ] Completed detailed outline of paper, 1000 out of currently 2000 words
+
+Things to do:
+- [ ] Finish Research paper
+- [ ] Go through and edit past daily logs
+- [ ] Look into how to return camera settings to normal from a reset
+#### Tuesday August 2nd ####
+- [ ] Finished first draft of research paper
+- [ ] Made improvements to presentation
+- [ ] Spoke to Raj about what kind of reset he wanted me to be able to return the Camera from, he wants to be able to return the camera from a total factory reset, he reccommended finding some way to download the config file then reupload it after factory reset
+- [ ] Looked through documentation and found no way to touch the config file, Raj reccomended I poke Yongho about getting access to the repo where they have a script to initialize the camera, I could just add record initialization there
+- [ ] Yongho was poked 
+
+Things to do:
+- [ ] Finish Research paper
+- [ ] Go through and edit past daily logs
+- [ ] Look into getting access to the repo
+#### Wednesday August 3rd ####
+- [ ] Practiced for final presentation
+- [ ] Gave final presentation
+- [ ] Edited Research paper with feedback from people asked
+- [ ] Updated Daily logs
+- [ ] Got access to repo from Yongho
+- [ ] Took exit survey
+- [ ] Wrote and submitted general audience abstract
+
+Things to do:
+- [ ] Finish Research paper
+- [ ] Go through and edit past daily logs
+- [ ] Look through repo to see where I can add setting record settings
+- [ ] Attend Jonathan's presentation and due peer review
+#### Thursday August 4th ####
+- [ ]   
 
 Things to do: 
 - [ ] 
-#### Friday July 29th ####
+#### Friday August 5th ####
 - [ ] 
+
 
 Things to do:
 - [ ] 
-
 
 
 

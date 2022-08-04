@@ -1,7 +1,73 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 8: 8/1 to 8/5
+
+### Wednesday 8/3
+
+- I got the NX to register the device so it can set up the ttyUSB connection, but now it's having trouble with data overruns (the buffer fills with new information before it can read what it has)
+  - Raj is going to see if we can connect the modem to a different computer
+- updated the [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_8-3-2022.pdf) with new information
+
+#### To Do
+
+- downlink, I think the lab is almost ready?
+- start on whitepaper
+- get the NX connecting to the modem
+
+### Monday 8/1 and Tuesday 8/2
+
+- Very frustrating, I have spent these past two days trying to figure out why the Nano drops its connection with the modem after connecting
+  - it was a problem with the ModemManager driver, since the nano runs on Ubuntu 18.04, the mmcli was out of date. Follow this [link](https://launchpad.net/~aleksander-m/+archive/ubuntu/modemmanager-bionic) to get a PPA that's a newer versionn (not the newest but still)
+  - problems: the driver isn't the most up to date, so qmicli doesn't work, but that is manageable
+  - connection is extremely slow over 4G (~1Mbps uploads and downloads), whereas on my laptop it is extremely fast (100 Mbps upload and 200 Mbps download)
+- Raj set me up with a Jetson NX to try the same thing
+  - can't get the computer to establish a ttyUSB connection 
+
 ## Week 7: 7/25 to 7/29
+
+### Friday 7/29
+
+- Went to lab, radios are installed, but something is wrong with the radio SFP, so that will need to be worked by the fiber guys :(
+- The problem was with the SIM card, it was older than we thought and it had been deactivated
+- Got a new SIM card that can connect to 4G!
+  - I scanned the networks around Argonne and outside of Argonne (in a Starbucks) and did not find any 5G signals, so will have to wait until our core is back up to work with that
+  - I can access the internet and ping my phone using the modem, but cannot ping Ziad's computer
+  - I tried connecting the modem to the Nano, and it kept losing connection to the modem. Not just a faltering connection to 4G, but to the modem itself. I want to bring this up with Raj/Joaquin. I have a feeling this Nano can only handle 3G data? Based on the network set up wizard...
+
+#### To Do
+
+- Troubleshoot connecting with the Nano (computer can do fine)
+- maybe write up a how-to type guide on how I would troubleshoot connecting to 5G? Because we are getting close to the end of the internship and  haven't been able to do that yet
+- all other compounding To Do's
+
+### Thursday 7/28
+
+- Went to starbucks in the morning to try connecting to the modem, still no luck. It could be an issue with the home network not being present, maybe the SIM card, or maybe an OS problem. I don't think it's a problem with the modem because it talks and responds properly, it's just a matter of not being able to connect the computer to the data of the modem. Doesn't work on Windows or Linux, so I don't think it's the OS but still...
+  - SIM Card's home network is AT&T with MCCMNC=310170, but that network isn't present in network scans  
+
+### Wednesday 7/27
+
+- issues connecting to the LTE served by the Telit modems. Raj and I tried mmcli, qmicli, and a couple other things. it doesn't connect to my Linux computer, the nano, nor my Windows computer
+  - When I tried connecting via Windows, I ran a troubleshooting wizard and it says that there's just no service to connect to
+
+#### To Do
+
+- first thing tomorrow I am going to drive out of Argonne campus and try to connect from a starbucks or something to see if no service truly is the issue. I don't know what to do after that... more help on forums I guess
+- All previous To Dos...
+
+### Tuesday 7/26
+
+- Met with Raj to sort out project plans
+  - Gave me an Edge AI Device that Waggle runs on so I can try connecting it to the Telit modem
+  - Gave me an AT&T SIM card so I can connect to that 5G network rather than to our own (will have to leave Argonne campus to connect). This way I can still run tests that we can use to verify our own 5G network if that construction finishes up
+  - He's talking with Argonne tech about giving us access to the internet
+- Getting my Telit modem from the lab to start testing that ^^ 
+
+#### To Do
+
+- previous unresolved to dos
+- ask Raj about AT&T config settings
 
 ### Monday 7/25
 
