@@ -6,7 +6,7 @@ Common packages include NumPy, matplotlib, Py-ART, OpenCV, and scikit-learn.
 
 #### Contact info:
 
-Email: maggiezoerner@gmail.com
-LinkedIn: www.linkedin.com/in/maggiezoerner
-Twitter: @mzoernerwx
+Email: maggiezoerner@gmail.com </br>
+LinkedIn: www.linkedin.com/in/maggiezoerner</br>
+Twitter: @mzoernerwxv </br>
 
