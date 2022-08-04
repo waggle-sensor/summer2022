@@ -3,17 +3,24 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 8: 8/1 to 8/5
 
+### Thursday 8/3
+
 ### Wednesday 8/3
 
 - I got the NX to register the device so it can set up the ttyUSB connection, but now it's having trouble with data overruns (the buffer fills with new information before it can read what it has)
-  - Raj is going to see if we can connect the modem to a different computer
+  - Raj is going to see if we can update the the NX system. No success there today, but we might be able to try again Thursday?
 - updated the [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_8-3-2022.pdf) with new information
+- Using Raj's 5G enabled phone SIM, we were able to connect the modem and computer (just regular Linux laptop) to 4G!!
+  - you have to send the modem an AT command `AT+CGDCONT?` and replace it's initial bearer APN (initial bearer is listed in the `mmcli` output)
+  - might try tomorrow to go off campus and connect to 5G, because apparently the SIM cards I've been using aren't 5G equipped even though we were told they were? booo
 
 #### To Do
 
 - downlink, I think the lab is almost ready?
 - start on whitepaper
-- get the NX connecting to the modem
+- update the NX and try to get it connecting to the modem
+- take the old blue modem back to the lab and plug it back into the server
+- go off campus with 5G enabled SIM and try to connect
 
 ### Monday 8/1 and Tuesday 8/2
 

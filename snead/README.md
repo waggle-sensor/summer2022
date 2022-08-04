@@ -22,7 +22,8 @@ This is the module we are using to eventually connect our Waggle Nodes to the 5G
 ## Helpful AT Commands
 
 This section will not tell you the full functionality of the commands, but instead serves as a culled down list of relevant commands. Use this in conjunction with the Telit AT Command manual (not sure if it's kosher to link that here)
-- **AT#BND** selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
+- **AT+CGDCONT?** will let you define the PDP (Packet Data Protocol) context; basically, you can set the initial bearer APN, which is essential to getting the modem to connect
+-  **AT#BND** selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
   - I've actually found there isn't much flexibility for choosing a band for our Telit module. Instead can be used to see what bands are allowed
 - **AT#LTEDS** second returned argument gives current LTE band number
 - **AT#5GLINKSTAT?** will show if connected to 5G (3rd returned argument is 2 if connected)

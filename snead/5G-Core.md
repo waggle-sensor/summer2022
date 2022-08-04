@@ -376,20 +376,23 @@ FlexRIC can "perform slicing control at a NSA 5G network" in this [demo](https:/
 
 # Glossary
 
-**AMF:** Access and Mobility Management Function, receives all session and connection related info from the UE. Forwards session info to SMF <br>
-**AUSF:** Authentication Server Function, receives authentication requests from AMF, works with UDM to mkae sure a User can gain access <br>
-**MNO:** Mobile Network Operator, the companies, usually <br>
-**N3IWF:** Non-3GPP Interworking Function <br>
-**NRF:** Network function Repository Function, provides record of all NFs available <br>
-**NSSF:** Network Slice Selection Function  <br>
-**PCF:** Policy Control Function  <br>
-**PNF:** Physical Network Function, most radios and physical equipment  <br>
-**RAN:** Radio Access Network, series of cllular connection nodes <br>
-**SAS:** Spectrum Access System <br>
-**SMF:** Session Management Function  <br>
-**UDM:** Unified Data Management  <br>
-**UDR:** Unified Data Repository  <br>
-**UE:** User Equipment, e.g. phones, modem, cars
-**UPF:** User Plane Function  <br>
-**URLLC:** Ultra-Reliable Low Latency Connection <br>
-**VNF:** Virutal Network Function, cloud based or otherwise virtual version of NFs <br>  
+_**AF:**_ Application Function, application influecen on traffic routing, accesses NEF <br>
+_**AMF:**_ Access and Mobility Management Function, receives all session and connection related info from the UE. Forwards session info to SMF <br>
+_**AUSF:**_ Authentication Server Function, receives authentication requests from AMF, works with UDM to make sure a User can gain access <br>
+_**MNO:**_ Mobile Network Operator, the companies, usually <br>
+_**N3IWF:**_ Non-3GPP Interworking Function <br>
+_**NEF:**_ Network Exposure Function
+_**NRF:**_ Network function Repository Function, provides record of all NFs available <br>
+_**NSSF:**_ Network Slice Selection Function  <br>
+_**PCF:**_ Policy Control Function  <br>
+_**PNF:**_ Physical Network Function, most radios and physical equipment  <br>
+_**RAN:**_ Radio Access Network, series of cllular connection nodes <br>
+_**SAS:**_ Spectrum Access System <br>
+_**SMF:**_ Session Management Function  <br>
+_**UDM:**_ Unified Data Management  <br>
+_**UDSF:**_ Unstructured Data Storage Function, stores dynamic state data <br>
+_**UDR:**_ Unified Data Repository  <br>
+_**UE:**_ User Equipment, e.g. phones, modem, cars
+_**UPF:**_ User Plane Function  <br>
+_**URLLC:**_ Ultra-Reliable Low Latency Connection <br>
+_**VNF:**_ Virutal Network Function, cloud based or otherwise virtual version of NFs <br>  
