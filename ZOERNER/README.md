@@ -8,5 +8,5 @@ Common packages include NumPy, matplotlib, Py-ART, OpenCV, and scikit-learn.
 
 Email: maggiezoerner@gmail.com </br>
 LinkedIn: www.linkedin.com/in/maggiezoerner</br>
-Twitter: @mzoernerwxv </br>
+Twitter: @mzoernerwx </br>
 
