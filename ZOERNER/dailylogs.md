@@ -459,27 +459,38 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 #### Goals for this week:
 
-- [ ] Rehearsal presentation
-- [ ] Virtual presentation with BNL
-- [ ] Learning on the Lawn
-- [ ] Submit final deliverables
+- [x] Rehearsal presentation
+- [x] Virtual presentation with BNL
+- [x] Learning on the Lawn
+- [x] Submit final deliverables
 
 ---
 
 #### Monday August  1st, 2022
 
+- Continued to work on literature review
+- Practiced presentations with team
+
 #### Tuesday August 2nd, 2022
+
+- Finished introduction to paper, began working on other sections
+- Added material to presentation
 
 #### Wednesday August 3rd, 2022
 
+- Presentation with BNL and PNNL
+- Finished paper and had it reviewed
+
 #### Thursday August 4th, 2022
+
+- Learning on the Lawn poster presentation
+- Finished General Audience Abstract, Peer Review
+- Finished paper
+- Submitted deliverables
 
 #### Friday August 5th, 2022
 
---- 
+- Final day of appointment
 
-
-
-
-
+---
 
