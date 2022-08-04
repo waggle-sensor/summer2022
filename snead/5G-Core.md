@@ -377,7 +377,7 @@ FlexRIC can "perform slicing control at a NSA 5G network" in this [demo](https:/
 # Glossary
 
 **AMF:** Access and Mobility Management Function, receives all session and connection related info from the UE. Forwards session info to SMF <br>
-**AUSF:** Authentication Server Function, receives authentication requests from AMF, works with UDM to mkae sure a User can gain access <br>
+**AUSF:** Authentication Server Function, receives authentication requests from AMF, works with UDM to make sure a User can gain access <br>
 **MNO:** Mobile Network Operator, the companies, usually <br>
 **N3IWF:** Non-3GPP Interworking Function <br>
 **NRF:** Network function Repository Function, provides record of all NFs available <br>
