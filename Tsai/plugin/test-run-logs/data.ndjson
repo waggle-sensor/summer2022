@@ -1,0 +1,258 @@
+{"name":"hello.world.value","ts":1659127507082512800,"meta":{},"val":0}
+{"name":"hello.world.value","ts":1659127508085540600,"meta":{},"val":1}
+{"name":"hello.world.value","ts":1659127509095922500,"meta":{},"val":2}
+{"name":"hello.world.value","ts":1659127510102021000,"meta":{},"val":3}
+{"name":"hello.world.value","ts":1659127511108471100,"meta":{},"val":4}
+{"name":"hello.world.value","ts":1659127512125611300,"meta":{},"val":5}
+{"name":"hello.world.value","ts":1659127513135987500,"meta":{},"val":6}
+{"name":"hello.world.value","ts":1659127514136514500,"meta":{},"val":7}
+{"name":"hello.world.value","ts":1659127515145040500,"meta":{},"val":8}
+{"name":"hello.world.value","ts":1659127516152545000,"meta":{},"val":9}
+{"name":"hello.world.value","ts":1659127549780032800,"meta":{},"val":0}
+{"name":"hello.world.value","ts":1659127550780278800,"meta":{},"val":1}
+{"name":"hello.world.value","ts":1659127551780607000,"meta":{},"val":2}
+{"name":"hello.world.value","ts":1659127552783452000,"meta":{},"val":3}
+{"name":"hello.world.value","ts":1659127553793925900,"meta":{},"val":4}
+{"name":"hello.world.value","ts":1659127554799738400,"meta":{},"val":5}
+{"name":"hello.world.value","ts":1659127555805637900,"meta":{},"val":6}
+{"name":"hello.world.value","ts":1659127556809150600,"meta":{},"val":7}
+{"name":"hello.world.value","ts":1659127557816935600,"meta":{},"val":8}
+{"name":"hello.world.value","ts":1659127558823865800,"meta":{},"val":9}
+{"name":"arduino.msg","ts":1659127722232053100,"meta":{"Number":"1"},"val":0}
+{"name":"arduino.msg","ts":1659127723238584700,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659127724250898500,"meta":{"Number":"1"},"val":2}
+{"name":"arduino.msg","ts":1659127725262732800,"meta":{"Number":"1"},"val":3}
+{"name":"arduino.msg","ts":1659127726268059500,"meta":{"Number":"1"},"val":4}
+{"name":"arduino.msg","ts":1659127727271934900,"meta":{"Number":"1"},"val":5}
+{"name":"arduino.msg","ts":1659127728277352900,"meta":{"Number":"1"},"val":6}
+{"name":"arduino.msg","ts":1659127729291110800,"meta":{"Number":"1"},"val":7}
+{"name":"arduino.msg","ts":1659127730298727200,"meta":{"Number":"1"},"val":8}
+{"name":"arduino.msg","ts":1659127731304543800,"meta":{"Number":"1"},"val":9}
+{"name":"arduino.msg","ts":1659128469764503500,"meta":{"Number":"1"},"val":0}
+{"name":"arduino.msg","ts":1659128470769167300,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659128471769953600,"meta":{"Number":"1"},"val":2}
+{"name":"arduino.msg","ts":1659368457139595400,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659368460439676100,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659368509066062600,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659368541223651300,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659368559105077700,"meta":{"Number":"1"},"val":1}
+{"name":"arduino.msg","ts":1659368572342309900,"meta":{"Number":"1"},"val":1}
+{"name":"mkrwan1310raj","ts":1659368959260028600,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434457d18"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659368963497728500,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434276e19"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659368972364911900,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369026392958700,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369062381922300,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659369068545159000,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434276e19"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369078360116000,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434457d18"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659369117586948800,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434276e19"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659369154248581200,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434276e19"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369159909253800,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434457d18"},"val":"MKRWANRaj"}
+{"name":"device.with.invalid.name","ts":1659369163209592300,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369269442251600,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434457d18"},"val":"MKRWANRaj"}
+{"name":"device.with.invalid.name","ts":1659369278645664300,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434276e19"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369290526187300,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369317505661000,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434327119"},"val":"MKRWAN!"}
+{"name":"device.with.invalid.name","ts":1659369327468359000,"meta":{"deviceProfile":"ABP","Device EUI":"a8610a3434457d18"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310raj","ts":1659369609581426600,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659369634683137200,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659369672824729400,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659369681691830900,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659369712664279900,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369724642959500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659369727934211200,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369783695544500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659369799838170700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659369813708207800,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369821681414700,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659369861735377600,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659369876904482500,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369885736077900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659369899868347000,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659369909709336600,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659369976804643800,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659369984974610700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370009742187500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370022804283700,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370059775647900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370099972114500,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659370107837388200,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370111136507200,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370153966971800,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659370157843415800,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370181858015700,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370227929255400,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659370234055477700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370265857631000,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370269911724000,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370323908634800,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370327173434600,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659370330437161800,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659370357933460000,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370378946786900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370410099368300,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370424962544800,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370440043021200,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659370478148020000,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370509980269000,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370564183314700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370567480515900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370573058505600,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659370615217783700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370674078629100,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370684276024200,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659370708095794000,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659370724257520500,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370733121895800,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659370758117321800,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370764085190400,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659370800279569800,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659370825146362500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"e5mini","ts":1659370830368414500,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"e5mini","ts":1659370912198289100,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"mkrwan13102","ts":1659370915476961300,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"e5mini","ts":1659370945837264400,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"what's up"}
+{"name":"e5mini","ts":1659370953764761700,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"what's up"}
+{"name":"mkrwan1310raj","ts":1659370965165490900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659371000355449300,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"e5mini","ts":1659371018747117100,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"what's up"}
+{"name":"mkrwan1310raj","ts":1659371023234694900,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659371062237114100,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659371083279345600,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310raj","ts":1659371114265638400,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659371124301070400,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659371150437075100,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659371169277389500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan1310","ts":1659371205439471700,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659371239384794700,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659371255469968900,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan13102","ts":1659371292398718300,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659371313523424200,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"e5mini","ts":1659371329538630400,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"what's up"}
+{"name":"mkrwan13102","ts":1659371340411136700,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659371371380952300,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659371383433124700,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659371386731736100,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310","ts":1659371400527049600,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659371423399765600,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"e5mini","ts":1659371458582082000,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"what's up"}
+{"name":"mkrwan1310","ts":1659371463578529400,"meta":{"Device EUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659371468421508800,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"mkrwan13102","ts":1659371475450807600,"meta":{"Device EUI":"a8610a3434327119","deviceProfile":"ABP"},"val":"MKRWAN!"}
+{"name":"mkrwan1310raj","ts":1659379494725982500,"meta":{"Device EUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"MKRWANRaj"}
+{"name":"e5mini","ts":1659379498008521200,"meta":{"Device EUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"hi raj"}
+{"name":"env.humidity","ts":1659451708199587900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"7600"}
+{"name":"env.humidity","ts":1659451713211572200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"7600"}
+{"name":"env.coverage.cloud","ts":1659451744159427300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"5555"}
+{"name":"env.humidity","ts":1659451854210636200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"510"}
+{"name":"env.pressure","ts":1659451884176250000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"960"}
+{"name":"env.detection.sound","ts":1659451948198382900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"2937"}
+{"name":"env.raingauge.eventacc","ts":1659451988178685000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":"498"}
+{"name":"env.count.airplane","ts":1659452047228162000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":2410}
+{"name":"env.coount.car","ts":1659452103209723000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1689}
+{"name":"env.detection.sound","ts":1659452150214028300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3250}
+{"name":"env.pressure","ts":1659452193190909000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3413}
+{"name":"message","ts":1659452397971659300,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"env.temperature","ts":1659452434163806900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3295}
+{"name":"message","ts":1659452449449236000,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"message","ts":1659452487700276000,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"env.raingauge.totalacc","ts":1659452498199707300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":7598}
+{"name":"message","ts":1659452524490916700,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"message","ts":1659452535717588900,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"env.smoke.tileprobs","ts":1659452553793519500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3268}
+{"name":"env.raingauge.eventacc","ts":1659452595192466300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":2154}
+{"name":"env.smoke.tileprobs","ts":1659452653207454400,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3937}
+{"name":"message","ts":1659452702482692600,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"E5mini"}
+{"name":"message","ts":1659452723182444600,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"message"}
+{"name":"message","ts":1659452733257402300,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"message"}
+{"name":"env.raingauge.totalacc","ts":1659452736540251800,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3447}
+{"name":"env.raingauge.totalacc","ts":1659452739826275500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3447}
+{"name":"message","ts":1659452795220185100,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"repeat"}
+{"name":"env.raingauge.eventacc","ts":1659452894129334500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3102}
+{"name":"env.raingauge.totalacc","ts":1659452948132707000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":5630}
+{"name":"env.count.person","ts":1659453034110185200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1210}
+{"name":"env.count.bird","ts":1659453156926866700,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":5949}
+{"name":"env.coverage.cloud","ts":1659453190505308300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1490}
+{"name":"env.coount.car","ts":1659453278612017700,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":4250}
+{"name":"env.coverage.cloud","ts":1659453350028437000,"meta":{"devName":"MKRWAN1310-3","devEUI":"a8610a3434377219","deviceProfile":"ABP"},"val":1490}
+{"name":"env.coverage.cloud","ts":1659453363607245700,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":5555}
+{"name":"env.detection.sound","ts":1659453418634072400,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":2556}
+{"name":"env.humidity","ts":1659453440603026200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":510}
+{"name":"env.coverage.cloud","ts":1659453452804654600,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":1490}
+{"name":"env.pressure","ts":1659453490639782200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":960}
+{"name":"env.coount.car","ts":1659453503814593000,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":4250}
+{"name":"env.humidity","ts":1659453555850501900,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":7600}
+{"name":"env.detection.sound","ts":1659453563681878100,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":2937}
+{"name":"env.raingauge.eventacc","ts":1659453590673071300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":498}
+{"name":"env.coverage.cloud","ts":1659453604844697300,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":5555}
+{"name":"env.raingauge.eventacc","ts":1659453613710238500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":498}
+{"name":"env.detection.sound","ts":1659453658843346800,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2556}
+{"name":"env.humidity","ts":1659453693822138300,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":510}
+{"name":"env.coount.car","ts":1659453702733219200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1689}
+{"name":"env.detection.sound","ts":1659453749749291800,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3250}
+{"name":"env.pressure","ts":1659453753016933200,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":960}
+{"name":"env.pressure","ts":1659453756306572700,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":960}
+{"name":"env.coverage.cloud","ts":1659453759578286300,"meta":{"devName":"MKRWAN1310-3","devEUI":"a8610a3434377219","deviceProfile":"ABP"},"val":1490}
+{"name":"env.detection.sound","ts":1659453816850372600,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2937}
+{"name":"env.pressure","ts":1659453820136155200,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3413}
+{"name":"env.pressure","ts":1659453823820824100,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3413}
+{"name":"env.humidity","ts":1659453828614814400,"meta":{"devName":"MKRWAN1310-3","devEUI":"a8610a3434377219","deviceProfile":"ABP"},"val":7600}
+{"name":"env.raingauge.eventacc","ts":1659453853791635800,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":498}
+{"name":"message","ts":1659453888658088000,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"hello"}
+{"name":"env.count.airplane","ts":1659453899808937600,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2410}
+{"name":"env.raingauge.eventacc","ts":1659453918851250900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":4599}
+{"name":"env.detection.sound","ts":1659454013816132500,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":3250}
+{"name":"env.pressure","ts":1659454048774365700,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":3413}
+{"name":"env.temperature","ts":1659454066879837000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3295}
+{"name":"env.raingauge.totalacc","ts":1659454095846956800,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":7598}
+{"name":"env.coount.car","ts":1659454124887935000,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":4250}
+{"name":"env.coount.car","ts":1659454145928192700,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":4250}
+{"name":"env.smoke.tileprobs","ts":1659454159913987800,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3268}
+{"name":"env.raingauge.eventacc","ts":1659454195906110300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":2154}
+{"name":"env.humidity","ts":1659454199197200200,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":7600}
+{"name":"env.coverage.cloud","ts":1659454204631965700,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":1490}
+{"name":"env.coount.car","ts":1659454231616260500,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":4250}
+{"name":"env.coverage.cloud","ts":1659454237964439900,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":5555}
+{"name":"env.smoke.tileprobs","ts":1659454244913929900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3937}
+{"name":"env.humidity","ts":1659454275642492300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":7600}
+{"name":"env.detection.sound","ts":1659454285983455700,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2556}
+{"name":"env.humidity","ts":1659454318980924300,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":510}
+{"name":"env.coverage.cloud","ts":1659454325688956500,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":5555}
+{"name":"env.raingauge.totalacc","ts":1659454367021464700,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3447}
+{"name":"env.detection.sound","ts":1659454379705203300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":2556}
+{"name":"env.coverage.cloud","ts":1659454391000647800,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":5017}
+{"name":"env.detection.sound","ts":1659454430037748300,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2937}
+{"name":"env.humidity","ts":1659454440789120500,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":510}
+{"name":"env.pressure","ts":1659454491822015400,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":960}
+{"name":"env.raingauge.eventacc","ts":1659454518072021900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":3102}
+{"name":"env.count.airplane","ts":1659454529052005100,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":2410}
+{"name":"env.detection.sound","ts":1659454550885453600,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":2937}
+{"name":"env.raingauge.totalacc","ts":1659454560083568000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":5630}
+{"name":"env.coount.car","ts":1659454574074742000,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":1689}
+{"name":"env.coverage.cloud","ts":1659454591057275900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1611}
+{"name":"env.coverage.cloud","ts":1659454596065331500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1611}
+{"name":"env.raingauge.eventacc","ts":1659454609963218600,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":498}
+{"name":"env.detection.sound","ts":1659454641141103500,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":3250}
+{"name":"env.count.person","ts":1659454658119792000,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1210}
+{"name":"env.count.airplane","ts":1659454662017840800,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":2410}
+{"name":"message","ts":1659457865681323700,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"hello"}
+{"name":"message","ts":1659457868996299200,"meta":{"devName":"e5mini","devEUI":"98f1f997cfe558b7","deviceProfile":"OTAA"},"val":"hello"}
+{"name":"env.temperature","ts":1659457883568345900,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":415}
+{"name":"env.count.airplane","ts":1659457898382704400,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":449}
+{"name":"env.raingauge.totalacc","ts":1659457931437719700,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":6304}
+{"name":"env.count.airplane","ts":1659457937614311100,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":8491}
+{"name":"env.count.person","ts":1659457970429685200,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":5195}
+{"name":"env.coverage.cloud","ts":1659457982649091300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":736}
+{"name":"env.coverage.cloud","ts":1659457998104669300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":736}
+{"name":"env.count.person","ts":1659458018477268900,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1149}
+{"name":"env.temperature","ts":1659458025475047200,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":9198}
+{"name":"env.raingauge.totalacc","ts":1659458044713948800,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":6304}
+{"name":"env.count.person","ts":1659458083746297600,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":5195}
+{"name":"env.raingauge.eventacc","ts":1659458102482890500,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":9808}
+{"name":"env.count.airplane","ts":1659458124513220400,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":6012}
+{"name":"env.temperature","ts":1659458143814439700,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":9198}
+{"name":"env.humidity","ts":1659458156512571700,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":7019}
+{"name":"env.temperature","ts":1659458192856153100,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":6984}
+{"name":"env.count.airplane","ts":1659458196564453500,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":5188}
+{"name":"env.count.bird","ts":1659458210542276300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1133}
+{"name":"env.count.airplane","ts":1659458228893266300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":6012}
+{"name":"env.raingauge.eventacc","ts":1659458232562705400,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":4889}

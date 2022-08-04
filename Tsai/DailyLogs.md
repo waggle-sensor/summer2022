@@ -1,4 +1,4 @@
-## Andre's Daily Logs ##
+# Andre's Daily Logs
 
 **June 13th**
 * [x] Attend 9:00AM virtual orientation for Argonne
@@ -252,12 +252,66 @@ Chirpstack AS:
         - gets the "data" key from the dictionary and converts the base64 string into a UTF-8 string
         - puts the decoded messages into a queue
 
+**July 29th**
+- [x] Talk to Raj about next steps
+- [x] Move the mqtt_client.py to the rakpi
+    - similar code, but have to change the host from 10.31.81.21 to localhost
+- [x] Look into the pywaggle plugin
+    - got the initial plugin set up done on both my laptop and the rakpi
+    - was about to collect published data in the log file, which is important to keep all the previous messages
+- Next steps:
+    - Figure out how to integrate the mqtt_client.py with the plugin.py so we can directly publish the 
 
-**UNIX terminal commands**
+**August 1-4**
+- [x] got the key hierarchy thing working
+- [x] able log the lorawan frames in the local database using the pywaggle plugin
+- [x] worked on the documentation
+
+**Commands to keep in mind**
 - `history` shows all the previous commands, and then use `!{command #}` to enter the previous command
 - to look at the USB devices, use `ls /dev/ttyUSB*`
 - ctrl+y to copy, ctrl+p to paste
 - `mosquitto_sub -v -t '#'` in the terminal subscribes to all topics in the MQTT broker
 - `mosquitto_sub -v -t 'applications/2/device/#'` subscribes to only the topics that contain message sent from the arduino and e5mini devices
-`
+- `touch` creates a file
+
+Todo:
+- find the common data types
+- create a table mapping one character to a data type followed by the value
+- put the data type as the name in the plugin publish
+- put the device name in the meta
+- data types:
+    - env.temperature
+    - env.relative_humidity
+    - env.pressure
+    - env.coverage.cloud
+    - env.count.{smth countable}
+        - ![](https://i.imgur.com/dJZSxMj.png)
+    - env.raingauge
+        - ![](https://i.imgur.com/K7gS71t.png)
+    - env.smoke.tile_probs
+    - env.detection.sound.{smth}
+
+**Key Hierarchy**
+- : env
+    - t: temperature
+    - h: humiditiy
+    - p: pressure
+    - : coverage
+        - c: cloud
+    - : count
+        - 1: bird
+        - 2: person
+        - 3: airplane
+        - 4: car
+    - : raingauge
+        - 5: totalacc
+        - 6: eventacc
+        - 7: rint
+    - : smoke
+        - s: tile_probs
+    - : detection
+        - d: sound
+
+
 
