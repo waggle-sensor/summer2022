@@ -234,11 +234,11 @@ class UnifiSwitchClient(object):
             return False, r_body["message"]
 
     def get_statistic_info(self):
-        """Returns a POE info table
+        """Returns a statistic info table
 
         Returns:
         --------
-        `table` -- A JSON of POE status table
+        `table` -- A JSON of statistic info table
         """
         url = os.path.join(self.host, "api/v1.0/statistics")
         return_code, r_headers, r_body = self._get_response(url)
