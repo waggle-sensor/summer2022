@@ -1,0 +1,16 @@
+{
+    "t": "env.temperature",
+    "h": "env.humidity",
+    "p": "env.pressure",
+    "c": "env.coverage.cloud",
+    "1": "env.count.bird",
+    "2": "env.count.person",
+    "3": "env.count.airplane",
+    "4": "env.coount.car",
+    "5": "env.raingauge.totalacc",
+    "6": "env.raingauge.eventacc",
+    "7": "env.raingauge.rint",
+    "s": "env.smoke.tileprobs",
+    "d": "env.detection.sound",
+    "m": "message"
+}
