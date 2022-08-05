@@ -1598,6 +1598,7 @@ Things to do:
 - [ ] Downloaded config.bin using url in browser
 - [ ] Command to upload config failed
 - [ ] Asked Raj he showed me that the source of my ploblem was: I didn't convert file format, had command on two lines, needed to rearrage command to put "Expect" before sent data
+- [ ] Finished commands [here](https://github.com/waggle-sensor/summer2022/blob/main/pritchard/WiseNetCamera/download%26upload_Config.md)
 
 
 
