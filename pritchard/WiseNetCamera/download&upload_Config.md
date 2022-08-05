@@ -3,7 +3,7 @@ By downoading the config of a camera that has had its settings manually adjusted
 # Downloding Config
 the config can be downloaded using this command
 ```
-curl -v --digest -u "admin":"why1not+" "http://10.31.81.10/stw-cgi/system.cgi?msubmenu=configbackup&action=control" > config.bin
+curl -v --digest -u "admin":"password" "http://10.31.81.10/stw-cgi/system.cgi?msubmenu=configbackup&action=control" > config.bin
 ```
 the downloaded config can be converted into a usable format using this command
 ```
@@ -12,5 +12,5 @@ openssl base64 -in config.bin -out configrestore.bin
 # Uploading Config
 the config can be uploaded using this command
 ```
-curl -v  --digest -u "admin":"why1not+"  -H "Expect:" --data-urlencode @configrestore.bin "http://10.31.81.10/stw-cgi/system.cgi?msubmenu=configrestore&action=control&ExcludeSettings=Network"
+curl -v  --digest -u "admin":"password"  -H "Expect:" --data-urlencode @configrestore.bin "http://10.31.81.10/stw-cgi/system.cgi?msubmenu=configrestore&action=control&ExcludeSettings=Network"
 ```
