@@ -427,8 +427,8 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 ##### Goals for this week:
 
-- [ ] Finish presentations for next week
-- [ ] Finish first draft of paper
+- [x] Finish presentations for next week
+- [x] Finish first draft of paper
 
 ---
 
