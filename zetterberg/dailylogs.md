@@ -332,6 +332,7 @@
 - Finish presentation for BNL
 - Finish research paper
 - Finish 10 minute Learning on the Lawn video
+- Clean up and submit code on Github
 
 ---
 
@@ -339,6 +340,25 @@
 - Met with mentor and other team members to practice presentation
 - Finished presentation for BNL
 - Uploaded recording for Learning on the Lawn
+
+#### Tuesday August 2nd, 2022
+- Changed plot colormaps to colorblind friendly
+- Worked on research paper
+- Created histogram of cluster distribution
+
+#### Wednesday August 3rd, 2022
+- Worked on research paper
+- Presented to BNL
+- Cleaned up codes to upload to Github
+- Worked on SULI Peer Review
+
+#### Thursday August 4th, 2022
+- Finished up SULI deliverables
+- Presented at Learning on the Lawn
+
+#### Friday August 5th, 2022
+- Cleaned out ANL desktop
+- Uploaded code and data for future use
 
 
 
