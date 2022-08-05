@@ -5,6 +5,20 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ### Thursday 8/3
 
+- Met with Raj and tried connecting again to 5G using his phone SIM card
+  - succesfuly connects to 4G, speeds are meh
+  - you can force the modem to only work on 5G but then it just disconnects
+  - using `sudo qmicli -d /dev/cdc-wan0 --device-open-proxy --nas-get-signal-info` it will list the connection speeds for 4G and 5G. It shows it can check the quality of the 5G signal but for some reason can't connect to that signal
+  - we saw that we were connected to LTE band 30, which isn't anywhere near the possible overlap between 4G and 5G
+  - Raj is going to put the SIM card back in his phone and try to see wat 5G band his phone connects to because his phone can definitely connect
+  - Raj thinks there might be some firmware update we could put onto the modem, if the modem is the problem (maybe?)  
+- Returned older blue modem to 446
+
+- Write-Up/White Paper Goals:
+  - Detail what we have tried regarding connecting to 4G/5G and what has and hasn't worked. A what-not-to-do is just as valuable as a what-to-do
+  - list helpful debugging tips and things to try
+  - Explain 5G Core Decision Matrix  
+
 ### Wednesday 8/3
 
 - I got the NX to register the device so it can set up the ttyUSB connection, but now it's having trouble with data overruns (the buffer fills with new information before it can read what it has)
