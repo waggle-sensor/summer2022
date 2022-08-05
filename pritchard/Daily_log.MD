@@ -1577,16 +1577,27 @@ Things to do:
 - [ ] Look through repo to see where I can add setting record settings
 - [ ] Attend Jonathan's presentation and due peer review
 #### Thursday August 4th ####
-- [ ]   
+- [ ] Attended Jonathan's presentation
+- [ ] Completed peer review
+- [ ] Looked through Hanwha camera client
+- [ ] Atempted unsussesfully to get client to run
+- [ ] Looked through Hanwha documentation and took record of settings we have to change with commands
+```
+Resolution, Framerate, Record, overwrite
+relevant commands found in: Applications: 4.2, 5.2, 5.1 and vid &audio:2.4.4.2
+```
+- [ ] Found that there was an option to download and upload config settings
+- [ ] Talked to Raj he pointed to curl command that I should use
+- [ ] Worked on research paper
 
 Things to do: 
-- [ ] 
+- [ ] Finish research paper
+- [ ] Finish process to upload config files
 #### Friday August 5th ####
-- [ ] 
-
-
-Things to do:
-- [ ] 
+- [ ] Finished and submitted research paper
+- [ ] Downloaded config.bin using url in browser
+- [ ] Command to upload config failed
+- [ ] Asked Raj he showed me that the source of my ploblem was: I didn't convert file format, had command on two lines, needed to rearrage command to put "Expect" before sent data
 
 
 
