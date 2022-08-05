@@ -367,5 +367,130 @@ My mentor, Bhupendra, gave me great advice. He told me that research is like lea
 
 ---
 
+### Week 8
 
+##### Goals for this week:
+
+- [x] Scale-up script to work for entire season
+- [x] Perform k-means clustering on all parameters
+- [x] Finish poster
+
+---
+
+#### Monday July 18th, 2022
+
+- Waited for dataset to finish processing
+- Worked on poster
+- Attended TRACER briefing
+
+#### Tuesday July 19th, 2022
+
+- Scaled-up script to work for entire season of data (summer of 2020)
+- Worked on poster
+- Attended TRACER briefing
+
+#### Wednesday July 20th, 2022
+
+- Assisted with TRACER forecasting and attended briefing (weather forecast)
+- Worked on clustering parameters
+- Worked on poster
+- Met with Bhupendra to discuss clustering and review poster
+
+#### Thursday July 21st, 2022
+
+- Attended AI meeting
+- Refined clustering
+- Pulled an example from each cluster
+- Attended weekly student check-in
+- Finished poster
+
+#### Friday July 22nd, 2022
+
+- Goal setting for final 2 weeks
+- Began outlining paper
+
+---
+
+#### Week 8 Overview
+
+---
+
+- Scaled up script to work for a season of data
+- Performed PCA
+- Clustered images based on PCA
+- Pulled example of echo from each cluster
+- Finished poster
+
+---
+
+### Week 9
+
+##### Goals for this week:
+
+- [ ] Finish presentations for next week
+- [ ] Finish first draft of paper
+
+---
+
+#### Monday July 25th, 2022
+
+- Continued outlining paper
+- Nearly completed abstract
+
+#### Tuesday July 26th, 2022
+
+- Finished abstract
+- Started working on PowerPoint presentation
+- Began introduction and read through journal articles for literature review
+
+#### Wednesday July 27th, 2022
+
+#### Thursday July 28th, 2022
+
+#### Friday July 29th, 2022
+
+---
+
+#### Week 9 Overview
+
+---
+
+### Week 10
+
+#### Goals for this week:
+
+- [x] Rehearsal presentation
+- [x] Virtual presentation with BNL
+- [x] Learning on the Lawn
+- [x] Submit final deliverables
+
+---
+
+#### Monday August  1st, 2022
+
+- Continued to work on literature review
+- Practiced presentations with team
+
+#### Tuesday August 2nd, 2022
+
+- Finished introduction to paper, began working on other sections
+- Added material to presentation
+
+#### Wednesday August 3rd, 2022
+
+- Presentation with BNL and PNNL
+- Finished paper and had it reviewed
+
+#### Thursday August 4th, 2022
+
+- Learning on the Lawn poster presentation
+- Finished General Audience Abstract, Peer Review
+- Finished paper
+- Submitted deliverables
+
+#### Friday August 5th, 2022
+
+- Final day of appointment
+
+---
 

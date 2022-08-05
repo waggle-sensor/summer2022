@@ -1,6 +1,7 @@
 # Welcome interns!
 This guide will give you an overview of how to get started working on the SAGE project.
 
+
 ## Part 1: What is SAGE?
 The Sage project's goal is to design and build a new kind of national-scale reusable cyberinfrastructure to enable AI at the edge. To learn about the project, check out the GitHub page, https://github.com/sagecontinuum/sage , and the SAGE project's website, https://sagecontinuum.org/ . I encourage you to explore the SAGE GitHub repository to learn the layout of the project. Be sure to write down any questions you may have while exploring the SAGE GitHub repository. When finished overlooking the repository, contact Joe or Raj regarding questions about the SAGE GitHub repository.
 
