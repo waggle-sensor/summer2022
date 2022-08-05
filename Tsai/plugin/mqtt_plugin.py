@@ -1,12 +1,10 @@
 import paho.mqtt.client as mqtt
-from queue import Queue
 import json
 import base64
 from waggle.plugin import Plugin
 import os
-os.environ["PYWAGGLE_LOG_DIR"] = "Tsai/plugin/test-run-logs"
+os.environ["PYWAGGLE_LOG_DIR"] = "/home/pi/code/test-run-logs"
 
-q = Queue()
 types = {
     "t": "env.temperature",
     "h": "env.humidity",
@@ -42,11 +40,10 @@ def mess(client, userdata, message):
         except KeyError:
             print("invalid type")
             return
-        
         if type == "m":
             msg = val[1:]
         else:
-            try: 
+            try:
                 msg = int(val[1:])
             except:
                 print("value should be interger:", val)
@@ -57,14 +54,12 @@ def mess(client, userdata, message):
             plugin.publish(key,msg,meta={"devName":tmp_dict["deviceName"], "devEUI":tmp_dict["devEUI"]})
         except:
             print("something went wrong")
-        
     print(data)
 
 def mqtt_start():
-    
     client  = mqtt.Client("Andre's Computer")
     print("connecting...")
-    client.connect("192.168.50.101")
+    client.connect("127.0.0.1")
     print("subscribing...")
     client.subscribe("application/2/device/#")
     print("waiting for callback...")

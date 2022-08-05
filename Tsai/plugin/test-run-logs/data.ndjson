@@ -256,3 +256,7 @@
 {"name":"env.count.bird","ts":1659458210542276300,"meta":{"devName":"MKRWAN1310Raj","devEUI":"a8610a3434457d18","deviceProfile":"ABP"},"val":1133}
 {"name":"env.count.airplane","ts":1659458228893266300,"meta":{"devName":"MKRWAN1310-2","devEUI":"a8610a3434327119","deviceProfile":"ABP"},"val":6012}
 {"name":"env.raingauge.eventacc","ts":1659458232562705400,"meta":{"devName":"MKRWAN1310","devEUI":"a8610a3434276e19","deviceProfile":"ABP"},"val":4889}
+{"name":"env.smoke.tileprobs","ts":1659724290308695500,"meta":{"devName":"MKRWAN1310-Raj","devEUI":"qGEKNDRFfRg="},"val":3268}
+{"name":"env.temperature","ts":1659724301029587300,"meta":{"devName":"MKRWAN1310-2","devEUI":"qGEKNDQycRk="},"val":9198}
+{"name":"env.temperature","ts":1659724307474794900,"meta":{"devName":"MKRWAN1310-2","devEUI":"qGEKNDQycRk="},"val":9198}
+{"name":"env.raingauge.eventacc","ts":1659724315280106700,"meta":{"devName":"MKRWAN1310-Raj","devEUI":"qGEKNDRFfRg="},"val":2154}
