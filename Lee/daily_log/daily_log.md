@@ -329,21 +329,22 @@ Thing to do by next week:
 ----------------------------------------------
 ### Week 10: 8/1 to 8/5 ###
 #### Monday August 1th
-- [x] ddd
+- [x] Had a meeting with Yongho, Shirley and Kojo to catch up the robotic works
 
-#### Monday August 2th
+#### Tuesday August 2th
 - [x] Had a meeting with Joe & Aldo to discuss about the Nano documents
 - [x] Finished the Nano kit doc and shared it to edu slack
 
-#### Monday August 3th
-- [x] 
+#### Wednesday August 3th
+- [x] Created a robotic repo
 
-#### Monday August 4th
+#### Thursday August 4th
 - [x] Had a weekly meeting Nano Edu, and robotic
 - [x] Joined the meeting with robotic team (Rory and Kyle) 
 
 Things to do:  
 - [ ] scp set up to run Rory's code: scp nucvision0@130.202.148.70:/home/nucvision0/yolov5/runs/train/exp2/weights/best.pt
 
-#### Monday August 5th
-
+#### Friday August 5th
+Things to do:  
+- [ ] Need to contact to Rory as setting up scp to run his code has an issue
