@@ -3,7 +3,14 @@ My daily activity! Thoughts, questions, quick links. Most recent additions are a
 
 ## Week 8: 8/1 to 8/5
 
-### Thursday 8/3
+### Friday 8/5
+
+- Raj and I went out and tried again with the modems
+  - same problems, but now we have some fun phone apps that prove we COULD connect to 5G NSA
+  - we think it's a problem with the SIM card are the modem, will maybe try getting a firmware update for the modem??
+- started on write-up!
+
+### Thursday 8/4
 
 - Met with Raj and tried connecting again to 5G using his phone SIM card
   - succesfuly connects to 4G, speeds are meh
