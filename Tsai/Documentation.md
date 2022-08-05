@@ -22,9 +22,10 @@ I did everything in root, so when you log in the RAKpi, make sure to `sudo -s`. 
     - `sudo apt install postgresql`
     - `sudo apt install redis-server`
 7. Setting up the Gateway Bridge: https://www.chirpstack.io/gateway-bridge/install/debian/
-    - In the `/etc/chirpstack-network-server/chirpstack-network-server.toml` file, make sure the dsn is: ![](https://i.imgur.com/s4oqZup.png)
 8. Setting up the Network Server: https://www.chirpstack.io/network-server/install/debian/
     - In the `/etc/chirpstack-application-server/chirpstack-application-server.toml` file, edit it to the following:![](https://i.imgur.com/QOdkatM.png)
+8. Setting up the Application Server: https://www.chirpstack.io/application-server/install/debian/
+    - In the `/etc/chirpstack-network-server/chirpstack-network-server.toml` file, make sure the dsn is: ![](https://i.imgur.com/s4oqZup.png)
 9. In the RAKpi terminal, use the gateway GUI by typing `gateway-config`, select the `Setup RAK Gateway Channel Plan`: ![](https://i.imgur.com/b5Wo08l.png)
 10. Select `Server is Chirpstack`: 
 ![](https://i.imgur.com/mEkliNH.png)
@@ -37,12 +38,15 @@ I did everything in root, so when you log in the RAKpi, make sure to `sudo -s`. 
 
 ## Chirpstack Application
 With the setup completed, you should be able to access the chirpstack application on the RAKpi's IP address port 8080. In my case, since the RAKpi IP is 10.31.81.21, I can access the application on `10.31.81.21:8080` in the web browser on my computer (computer has to be connected to the same wifi with same netmask as the RAKpi). ![](https://i.imgur.com/262bR3C.png)
-Once you can get into the application, you'll need to setup device profiles, appliations, and then the individual devices.
+Once you can get into the application, you'll need to setup device profiles.
 
 ### Setup Device Profiles
 There will initially be two default profiles already in the device profile tab: ![](https://i.imgur.com/eVA7ey6.png)
-1. Click into the device_profile_abp and check the "Device supports Class-B" box. Fill in the blanks accordingly:
-
+1. Create a new profile and fill in the blanks accordingly:![](https://i.imgur.com/F8UXcV4.png)
+2. Check the "Device supports type B" in the Class-B tab and choose "every 2 seconds for ping slot periodicity":![](https://i.imgur.com/6J6ejC2.png)
+3. Check the "Device supports type C" in the Class-C tab, then click update device profile
+4. Create another new profile and fill in the blanks accordingly: ![](https://i.imgur.com/iuIMr37.png)
+5. Click "Device supports type A" in the JOIN (OTAA/ABP) tab, then cluck update device profile
 
 
 ## End Nodes
@@ -64,13 +68,15 @@ The MKRWAN 1310 supports both OTAA and ABP while the E5 was only successful in u
 1. Download the arduino IDE at https://www.arduino.cc/en/software
 2. After opening the IDE, go to Tools -> Manage Libraries. In the Library Manager that you just opened up, search up MKRWAN and download "MKRWAN" version 1.1.0
 ![](https://i.imgur.com/FMEgPxP.png)
-4. Download the MKRWAN_SetUp.ino and MKRWAN_RepeatMsg.ino:
-    - Upload MKRWAN_SetUp.ino to MKRWAN1310 and open the serial monitor once it finishes uploading
-    - You will be able to see the device EUI in the serial monitor: ![](https://i.imgur.com/Qe0KL7C.png) Choose ABP, then enter the DevAddr, NWK SKEY, APP SKEY in that order in the serial monitor (these keys and addresses have to match with the device keys and address on Chirpstack)
-    - There should be a Up loraframe shown on the Chirpstack application (this could take up to five minutes)
-    - Once you see the Up loraframe show up on the Chirpstack application, open MKRWAN_RepeatMsg.ino, and change the DeviceAddr, NWK SKEY, APP SKEY accordingly: ![](https://i.imgur.com/5EVVHrx.png)
-    - upload the code to MKRWAN1310
-5. If the chirpstack server is able to receive the repeated messages, you're set to move the arduino anywhere with a power source
+3. Download the MKRWAN_SetUp.ino and MKRWAN_RepeatMsg.ino
+4. Upload MKRWAN_SetUp.ino to MKRWAN1310 and open the serial monitor once it finishes uploading. You will be able to see the device EUI in the serial monitor: ![](https://i.imgur.com/Qe0KL7C.png)
+5. On the Chirpstack Application page, click into "app" in the Application tab and create a new device:![](https://i.imgur.com/fqzwFtw.png)
+6. After you click create device, click back into the device, then go to Activation tab and generate the DevAddr, nwkSKEY, appSKEY and note those hex strings down. Press Reactivate device
+7. Back on the serial monitor, choose ABP by entering 2, then enter the DevAddr, NWK SKEY, APP SKEY in that order (these keys and addresses have to match with the device keys and address on Chirpstack)
+8. There should be a Up loraframe shown on the Chirpstack application (this could take up to five minutes)
+9. Once you see the Up loraframe show up on the Chirpstack application, open MKRWAN_RepeatMsg.ino, and change the DeviceAddr, NWK SKEY, APP SKEY and then upload the code:
+![](https://i.imgur.com/5EVVHrx.png)
+10. If the chirpstack server is able to receive the repeated messages, you're set to move the arduino anywhere with a power source
 
 ### Setting up the E5 Mini
 1. Connect the E5 Mini to a machine to send AT commands to it
@@ -83,14 +89,38 @@ The MKRWAN 1310 supports both OTAA and ABP while the E5 was only successful in u
     - `AT+JOIN` joins the OTAA network with corresponding APPKEY
     - `AT+MSG="Waggle!"` sends a message
     - `AT+CMSG="Waggle!"` sends a message and expects an ACK reply
-3. 
 
 
-## Gateway, Network Server, and Application Server
-The gateway, network server, and application server all use 
+## MQTT and Pywaggle Plugin
+### Installing Dependencies and Code
+1. Upgrade the apt: `apt update`
+2. Check if the python is above version 3.6: `python3 --version`
+3. Install the pip3: `sudo apt install python3-pip`
+4. Install paho mqtt: `pip3 install paho-mqtt`
+5. Install the Pywaggle plugin: `pip3 install -U pywaggle[all]`
+6. Create a directory called `code`, and create a python file called mqtt_plugin.py:![](https://i.imgur.com/8yEOyCI.png)
+7. Copy paste the code in the mqtt_plugin.py: https://github.com/waggle-sensor/summer2022/blob/main/Tsai/plugin/mqtt_plugin.py
+### Creating a Service
+1. `sudo touch /etc/systemd/system/mqtt_plugin.service`
+2. `sudo nano /etc/systemd/system/mqtt_plugin.service`
+3. Copy this into the mqtt_plugin.service file:
+```python
+[Unit]
+Description=My long running script
+After=network.target
+StartLimitIntervalSec=0
 
-temporary notes:
-- packages required in raspi:
-    - `sudo apt-get install python3-pip`
-    - `pip install -U pywaggle[all]`
+[Service]
+Type=simple
+User=pi
+Restart=always
+RestartSec=1
+ExecStart=python3 /home/pi/mqtt_plugin.py
+
+[Install]
+WantedBy=multi-user.target
+```
+4. `sudo systemctl start mqtt_plugin && sudo systemctl enable mqtt_plugin`
+5. Check the status of the service: `sudo systemctl status mqtt_plugin`
+6. The logs of the lorawan frames will be updated live in the test-run-logs/data.ndjson file
 
