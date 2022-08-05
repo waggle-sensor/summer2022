@@ -298,17 +298,52 @@ Thing to do by next week:
 - In general, networking connection and remote access were discussed this week. Next Wednesday (27th) around 10:30AM, we will talk about ROS (workflow.json file)
 
 #### Wednesday July 20th
-- [x] Had a meeting
+- [x] Had a meeting with Joe & Aldo to discuss about Ansible script and Jetson Nano documentations
 
-#### Wednesday July 20th
-- [x] Had a meeting
+#### Thursday July 21th
+- [x] Had a weekly meeting with Nano edu team & Robotic team
+- [x] Make a communication demo with Kojo and Shirley
+
+#### Friday July 22th
+- [x] Conducted research into ROS & docker
+- [x] Jetson Nano re-flashed and re-setup to test Ansible script
 
 ----------------------------------------------
 ### Week 9: 7/25 to 7/29 ###
 #### Monday July 25th
-- [x] 
+- [x] Ansible script review 1 with Joe
+- [x] Attended Cerebras CSL SDK Training
+
+#### Monday July 26th
+- [x] Ansible script review 1 with Joe
+
+#### Monday July 27th
+- [x] Ansible script review 3 with Joe
+
+#### Monday July 28th
+- [x] Ansible script review 4 with Joe
+
+#### Monday July 29th
+- [x] Ansible script review 5 with Joe
 
 ----------------------------------------------
 ### Week 10: 8/1 to 8/5 ###
 #### Monday August 1th
 - [x] ddd
+
+#### Monday August 2th
+- [x] Had a meeting with Joe & Aldo to discuss about the Nano documents
+- [x] Finished the Nano kit doc and shared it to edu slack
+
+#### Monday August 3th
+- [x] 
+
+#### Monday August 4th
+- [x] Had a weekly meeting Nano Edu, and robotic
+- [x] Joined the meeting with robotic team (Rory and Kyle) 
+
+Things to do:  
+- [ ] scp set up to run Rory's code: scp nucvision0@130.202.148.70:/home/nucvision0/yolov5/runs/train/exp2/weights/best.pt
+
+#### Monday August 5th
+
