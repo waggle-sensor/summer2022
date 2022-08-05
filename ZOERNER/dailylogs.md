@@ -5,8 +5,8 @@
 - [x] Establish documentation in the Waggle GitHub Repository
 - [x] Radar image processing using OpenCV to perform morphology computations
 - [x] Utilize k-means clustering to place the radar images into distinct categories
-- [ ] Apply algorithm to a season of radar data
-- [ ] Complete deliverables (presentation, poster, paper)
+- [x] Apply algorithm to a season of radar data
+- [x] Complete deliverables (presentation, poster, paper)
 
 ### Week 1
 
