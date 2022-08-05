@@ -262,7 +262,7 @@ Chirpstack AS:
 - Next steps:
     - Figure out how to integrate the mqtt_client.py with the plugin.py so we can directly publish the 
 
-**August 1-4**
+**August 1-5**
 - [x] got the key hierarchy thing working
 - [x] able log the lorawan frames in the local database using the pywaggle plugin
 - [x] worked on the documentation
