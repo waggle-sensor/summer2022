@@ -518,20 +518,90 @@ Data analysis tool
 
 |  | Goal | Priority | Notes |
 | --- | --- | --- | --- |
-| 🟩 | Complete presentation recording | High | Due 8/1, 5PM |
-| 🟩 | Complete project report | High | Due 8/5, 10:59PM |
-| 🟩 | Complete general audience abstract | High | Due 8/5, 10:59PM |
-| 🟩 | Complete peer review | High | Due 8/5, 10:59PM |
+| ✅ | Complete presentation recording | High | Due 8/1, 5PM |
+| ✅ | Complete project report | High | Due 8/5, 10:59PM |
+| ✅ | Complete general audience abstract | High | Due 8/5, 10:59PM |
+| ✅ | Complete peer review | High | Due 8/5, 10:59PM |
 | 🟩 | Get SAGE data access | Med |  |
 | 🟩 | Complete data analysis tool | Med |  |
 | 🟩 | Get access to container | Low | Sean |
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
 
-## Monday, June 25
+## Monday, August 1
 
 - Set up goals for week
 - Completed SULI Post-Participation Survey
+- Recorded and uploaded poster presentation
+- Wrote (non-general) abstract and uploaded with poster to SULI deliverables website
+- Worked on paper (writing abstract, introduction, reading through AIP formatting)
 
 **Primary Project:**
 Deliverables
+
+## Tuesday, August 2
+
+- Worked on paper (wrote results, future work, acknowledgements, citations)
+    - Did additional data visualization
+- Submitted job for 1-day forecasting to run overnight (6 days in, 1 day out)
+
+**Primary Project:**
+Deliverables
+
+## Wednesday, August 3
+
+- Worked on paper (researched and wrote introduction, citations)
+- Attended Learning Off the Lawn (MCS Room)
+    - Completed peer review (Isaiah Pritchard)
+- Submitted revised job for 1-day forecasting to run overnight (6 days in, 1 day out)
+
+**Primary Project:**
+Deliverables
+
+## Thursday, August 4
+
+- Met with AI/Algorithm student group
+- Presented at and attended Learning On the Lawn!
+- Worked on paper (overall revision/re-read, informal peer review, citations)
+
+**Primary Project:**
+Deliverables
+
+## Friday, August 5
+
+- Finished paper (citations, general last fixes and read-throughs)
+- Finished general audience abstract
+- Submitted job for 6 days in/1 day out (resampled to every 30 minutes)
+
+**Primary Project:**
+Deliverables
+
+# Week 11 (8/8 - 8/12)
+
+## Goals
+
+|  | Goal | Priority | Notes |
+| --- | --- | --- | --- |
+| 🟩 | Train models for other time intervals | High | e.g. 6-in, 1-out |
+| 🟩 | Get SAGE data access | Med |  |
+| 🟩 | Complete data analysis tool | Med |  |
+| 🟩 | Get access to container | Low | Sean |
+
+✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
+
+## Monday, August 8
+
+- Set up goals for week
+- Investigated results for 6-in, 1-out
+    - Obtaining study, data visualization
+- Set up new batch for 6-in, 1-out resampled to every 60 minutes
+
+**Primary Project:**
+Different time-interval model
+
+## Tuesday, August 9
+
+- Todo
+
+**Primary Project:**
+Different time-interval model
