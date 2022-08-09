@@ -233,6 +233,8 @@
 - Implemented distributed parallelization for autoencoder (after dealing with many CUDA errors--I was new to this)
 - Ran evaluation on three-hour training, and found that there were no clear clusters in the embeddings, despite low reconstruction errors
 
+## Week 8
+
 ### Monday, July 25
 
 - Implemented anomaly pruning during training, including parallelization
@@ -268,6 +270,8 @@
 - Implemented a dimensionality reduction through one or more linear layers at the bottleneck; evaluated several differnet layer combinations and hyperparameters
   - Performance was worse than that of a standard convolutional autoencoder, even with the best hyperparameters
   - Clustering seemed to decrease over the course of training, suggesting the model was learning features that generalized well
+
+## Week 9
 
 ### Monday, August 1
 
