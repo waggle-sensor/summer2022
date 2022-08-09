@@ -85,7 +85,7 @@
 
 ### Tuesday, June 21
 
-- Read Hojjati et. al.’s survey paper on self-supervised anomaly detection to come up with alternative ideas for detecting anomalies in the spectrograms
+- Read Hojjati et al.’s survey paper on self-supervised anomaly detection to come up with alternative ideas for detecting anomalies in the spectrograms
 - Trained my own VICReg model on ThetaGPU, assessed performance, and set up anomalous images. The network was unable to distinguish between normal images and anomalous images based on the terms in the loss function
 - Set up visualization of terms in loss function and the invariance value of different images using Tensorboard
 
@@ -226,4 +226,72 @@
 - Implemented the functionality to pull all audio files from a specified directory, rather than requiring specifying the path of each audio file
 - Implemented a "tight cropping" mode that uses only the precise frequencies at which bird songs occur when cropping the Mel spectrogram
 - Submitted a three-hour training to ThetaGPU that would use 0.2 second tight-cropped clips, with the hope that this would result in better clustering of birds
-- Read Noroozi et. al (2016), a paper on jigsaw puzzle pretext tasks for self-supervised learning
+- Read Noroozi et al. (2016), a paper on jigsaw puzzle pretext tasks for self-supervised learning
+
+### Friday, July 22
+
+- Implemented distributed parallelization for autoencoder (after dealing with many CUDA errors--I was new to this)
+- Ran evaluation on three-hour training, and found that there were no clear clusters in the embeddings, despite low reconstruction errors
+
+### Monday, July 25
+
+- Implemented anomaly pruning during training, including parallelization
+  - Losses are computed in parallel across multiple GPUs or nodes
+  - The losses are sychronized together; this had to be implemented manually with `all_gather`
+  - Some statistic (e.g. z-score) is computed across all losses, and samples are appopriately pruned
+  - Data is reloaded each time anomalies are pruned
+- Submitted another three-hour training to ThetaGPU for comparison to the non-pruned training
+
+### Tuesday, July 26
+
+- Implemented a custom distributed sampler by modifying PyTorch's source code, which allows for the masking of particular indices (i.e. pruning) without reloading the data, massively speeding up anomaly pruning
+- In evaluation, the embeddings did not seem to be clustered as well. This could reflect either that:
+  - Anomalies are the only samples with visible clustering, and pruning them early prevents these clusters from forming, or
+  - The embedding dimension of the model is too large, making the model highly generalizable. In other words, it does not need to cluster similar birds to reconstruct inputs accurately
+
+### Wednesday, July 27
+
+- Followed a tutorial to write a transformer from scratch in PyTorch; altered some implementation details to fully understand the code
+- Added several parameters for pruning anomalous samples, such as the z-score cutoff and the frequency of pruning
+- Realized that my autoencoder had a U-Net architecture, which might be the main reason clusters weren't forming at the bottleneck; met with Dario to discuss implications and next steps
+
+### Thursday, July 28
+
+- Began altering an implementation of the original vision transformer for create an autoencoder architecture. This required:
+  - Adding a decoder to the transformer, consisting of self-attention, encoder-decoder attnetion, and a feedforward network
+  - Separating the computations of queries, keys, and values to allow for encoder-decoder attention
+  - Removing the class label prediction and adding a linear layer between patch embedding space and image space
+
+### Friday, July 29
+
+- Finished modifying the vision transformer; evaluated with many combinations of parameters on the MNIST dataset
+- Implemented a dimensionality reduction through one or more linear layers at the bottleneck; evaluated several differnet layer combinations and hyperparameters
+  - Performance was worse than that of a standard convolutional autoencoder, even with the best hyperparameters
+  - Clustering seemed to decrease over the course of training, suggesting the model was learning features that generalized well
+
+### Monday, August 1
+
+- Created and recorded presentation for Learning Off the Lawn event; submitted to library
+- Wrote presentation abstract
+
+### Tuesday, August 2
+
+- Met with Dario to get feedback on my presentation and my progress on the vision transformer autoencoder
+- Studied paper on object detection with transformers (Carion et al. 2020)
+  - An analog to an "object query" could potentially replace masked image patches as the input to the decoder
+
+### Wednesday, August 3
+
+- Rehearsed presentation and presented virtually at Learning Off the Lawn
+- Studied DETR code from Carion et al. (specifically, fully understanding the idea of an object query)
+
+### Thursday, August 4
+
+- Attended Learning on the Lawn; completed peer review of one presentation (required deliverable)
+- Implemented a rotation token to the autoencoding vision transformer from Atito et al. by implementing the ability to perform a random rotation to a sample and having a classifier predict the rotation from the output of the encoder
+- Learned how to use Weights and Biases, a feature-rich alternative to Tensorboard that would speed up the process of analyzing embeddings
+
+### Friday, August 5
+
+- Wrote general-audience abstract (required deliverable) for my project
+- Wrote the bulk of the research report
