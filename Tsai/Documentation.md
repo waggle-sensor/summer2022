@@ -4,9 +4,25 @@
 This project utilitizes the LoRaWAN technology to create a network system spanning from end nodes -> gateways -> network servers -> application servers -> forwarding LoRa frames to pywaggle's data pipeline via its plug-in:
 ![](https://i.imgur.com/G7Nl5s3.png)
 
+## Bill of Materials
+The list of machines used in this project (note that I did not include connection wires, power cords, etc):
+* [RAK2287](https://store.rakwireless.com/products/rak2287-lpwan-gateway-concentrator-module?variant=41826859385030)
+* [Raspberry Pi 4](https://www.digikey.com/en/products/detail/raspberry-pi/RASPBERRY-PI-4B-4GB/10258781?src=raspberrypi) (currently out of stock)
+* [MKR WAN 1310](https://store.arduino.cc/products/arduino-mkr-wan-1310)
+* [LoRa E5-mini](https://www.seeedstudio.com/LoRa-E5-mini-STM32WLE5JC-p-4869.html)
+
+Compiled list of dependencies to be installed on the RAKpi (Raspberry Pi 4 with the RAK2287 mounted on it):
+* `mosquitto`
+* `postgresql`
+* `resdis-server`
+* `chirpstack-network-server`
+* `chirpstack-application-server`
+* Check if the python is above version 3.6: `python3 --version`
+* Install paho mqtt: `pip3 install paho-mqtt`
+* Install the Pywaggle plugin: `pip3 install -U pywaggle[all]`
 
 ## Chirpstack and RAKpi Setup
-In this particular setup, the Gateway, Gateway Bridge, Network Server, and Application Server are all installed in the RAKpi (Raspberry Pi 4 with the RAK2287 mounted on it). The RAKpi log in credentials are:
+In this particular setup, the Gateway, Gateway Bridge, Network Server, and Application Server are all installed in the RAKpi. The RAKpi log in credentials are:
 - username: pi
 - password: raspberry
 
@@ -17,7 +33,7 @@ I did everything in root, so when you log in the RAKpi, make sure to `sudo -s`. 
 4. Select `S1 Wireless LAN`, then enter the SSID and passphrase accordingly
 5. Type `ifconfig` in terminal to check the connections:![](https://i.imgur.com/b0hc66G.png)
     - The wlan0 should have an inet address
-6. Install the dependencies:
+6. Install the dependencies (I have a feeling these dependencies are already included in the image):
     - `sudo apt install mosquitto`
     - `sudo apt install postgresql`
     - `sudo apt install redis-server`
@@ -120,7 +136,7 @@ ExecStart=python3 /home/pi/mqtt_plugin.py
 [Install]
 WantedBy=multi-user.target
 ```
-4. `sudo systemctl start mqtt_plugin && sudo systemctl enable mqtt_plugin`
-5. Check the status of the service: `sudo systemctl status mqtt_plugin`
-6. The logs of the lorawan frames will be updated live in the test-run-logs/data.ndjson file
-
+4. In the /home/pi directory, input the command `chown -R pi:pi code/` to give the service the permission to write to the ndjson file
+5. `sudo systemctl start mqtt_plugin && sudo systemctl enable mqtt_plugin`
+6. Check the status of the service: `sudo systemctl status mqtt_plugin`
+7. The logs of the lorawan frames will be updated live in the test-run-logs/data.ndjson file
