@@ -2,21 +2,21 @@
 
 **Note:** All `mmcli` commands are from the [ModemManager man page](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html)
 
-ANL is using Telit's FN980m 5G capable modems. The primary OS used on the computers connected to the modems is Ubuntu 20.04 and above ([using ealier version?]()). The Telit modems connect to computers using a USB-C port on the front of the upper board of the modem (we have been using a USB-C to USB cable). Once connected, open a terminal and enter `sudo dmesg`, which should show that the modem is connected and the ports are attached to ttyUSBs ([sample output]()).
+ANL is using Telit's FN980m 5G capable modems. The primary OS used on the computers connected to the modems is Ubuntu 20.04 and above ([using ealier version?](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md#running-earlier-version-of-ubuntu)). The Telit modems connect to computers using a USB-C port on the front of the upper board of the modem (we have been using a USB-C to USB cable). Once connected, open a terminal and enter `sudo dmesg`, which should show that the modem is connected and the ports are attached to ttyUSBs ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-sudo-dmesg)).
 
 Next, enter the ModemManager command `mmcli -L` to search for the modem. If no modems show up after a while, try disconnecting and reconnecting the USB cable. Sample output:
 
 `     /org/freedesktop/ModemManager1/Modem/0 [Telit] FN980m`
 
-The final number in the file path is how the modem will be specified when using ModemManager controller. In this case, sending `mmcli -m 0` should return information about the hardware, capabilities, and connection status of the modem ([sample output]()). 
+The final number in the file path is how the modem will be specified when using ModemManager controller. In this case, sending `mmcli -m 0` should return information about the hardware, capabilities, and connection status of the modem ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-mmcli--m-0)). 
 
 Towards the bottom of the output information, it should list the initial bearer APN, which needs to match the APN of the desired network. To set this configuration, check the listed ports in the ModemManager output. The first listed port followed by `(at)` is the port through which AT commands can be sent to the modem (usually, this port is ttyUSB2). Enter `sudo socat - /dev/ttyUSB2,crnl` and send the modem the command `AT+CGDCONT=1,"IP","[insert APN]"` with the desired APN inserted where specified. Exit the `socat` command and resend `mmcli -m 0`; it should now show the desired APN in the initial bearer section. If not, power cycle the modem and reconnect.
 
-The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. You will need to enter the same APN that you set for the modem in the connection setup wizard. To test your connection, try pinging the server IP address to check that you're on the network. Try pinging a website to check that the computer can access the internet. Disconnect from WiFi and send the command `speedtest` to check download and upload speeds. The following command will return more signal info (`cdc-wdm1` is the primary port of the modem) ([sample output]()). 
+The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. You will need to enter the same APN that you set for the modem in the connection setup wizard. To test your connection, try pinging the server IP address to check that you're on the network. Try pinging a website to check that the computer can access the internet. Disconnect from WiFi and send the command `speedtest` to check download and upload speeds. The following command will return more signal info (`cdc-wdm1` is the primary port of the modem) ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-sudo-qmicli--d-devcdc-wdm0--p---device-open-proxy---nas-get-signal-info)). 
 
 `sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
 
-If there are any other problems, see the  [debugging section](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md).
+If there are any other problems, see the [debugging section](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md).
 
 ## Sample Outputs
 
