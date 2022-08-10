@@ -12,11 +12,15 @@ The final number in the file path is how the modem will be specified when using 
 
 Towards the bottom of the output information, it should list the initial bearer APN, which needs to match the APN of the desired network. To set this configuration, check the listed ports in the ModemManager output. The first listed port followed by `(at)` is the port through which AT commands can be sent to the modem (usually, this port is ttyUSB2). Enter `sudo socat - /dev/ttyUSB2,crnl` and send the modem the command `AT+CGDCONT=1,"IP","[insert APN]"` with the desired APN inserted where specified. Exit the `socat` command and resend `mmcli -m 0`; it should now show the desired APN in the initial bearer section. If not, power cycle the modem and reconnect.
 
-The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. If there are any other problems, see the  [debugging section]().
+The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. You will need to enter the same APN that you set for the modem in the connection setup wizard. To test your connection, try pinging the server IP address to check that you're on the network. Try pinging a website to check that the computer can access the internet. Disconnect from WiFi and send the command `speedtest` to check download and upload speeds. The following command will return more signal info (`cdc-wdm1` is the primary port of the modem) ([sample output]()). 
+
+`sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
+
+If there are any other problems, see the  [debugging section](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md).
 
 ## Sample Outputs
 
-### Input `sudo dmesg`
+### Input: `sudo dmesg`
 
 ```
 [20650.685345] usb 2-1: new high-speed USB device number 13 using xhci_hcd
@@ -39,7 +43,7 @@ The modem should now be ready to set up a new mobile broadband connection throug
 [20650.847914] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB4
 ```
 
-### Input `mmcli -m 0`
+### Input: `mmcli -m 0`
 
 ```
   ----------------------------------
@@ -111,4 +115,19 @@ The modem should now be ready to set up a new mobile broadband connection throug
   SIM      |       primary sim path: /org/freedesktop/ModemManager1/SIM/3
            |         sim slot paths: slot 1: /org/freedesktop/ModemManager1/SIM/3 (active)
            |                         slot 2: none
+```
+
+## Input: `sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
+
+```
+[/dev/cdc-wdm0] Successfully got signal info
+LTE:
+	RSSI: '-70 dBm'
+	RSRQ: '-12 dB'
+	RSRP: '-97 dBm'
+	SNR: '9.6 dB'
+5G:
+	RSRP: '-74 dBm'
+	SNR: '16.5 dB'
+	RSRQ: '-11 dB'
 ```
