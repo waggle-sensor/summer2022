@@ -21,6 +21,13 @@ Compiled list of dependencies to be installed on the RAKpi (Raspberry Pi 4 with 
 * Install paho mqtt: `pip3 install paho-mqtt`
 * Install the Pywaggle plugin: `pip3 install -U pywaggle[all]`
 
+## Installing RAKpi Firmware (Linux)
+1. Down the firmware [here](https://downloads.rakwireless.com/LoRa/RAK2287-Mini-PCIe/Firmware/RAK2287_Latest_Firmware.zip)
+2. Connect an SD card to your Linux computer, and find the drive the SD card is mounted to using the command in terminal: `lsblk`
+3. To flash the SD with the firmware you downloaded, give the command: `sudo dd bs=4M if=[file path downloaded firmware] of=[drive location of SD card] oflag=dsync`
+    - in our example, the firmware's filepath is `~/Downloads/RAK7248_4.2.7_20210121.img` and the SD card location is at `/dev/sda`
+
+
 ## Chirpstack and RAKpi Setup
 In this particular setup, the Gateway, Gateway Bridge, Network Server, and Application Server are all installed in the RAKpi. The RAKpi log in credentials are:
 - username: pi
