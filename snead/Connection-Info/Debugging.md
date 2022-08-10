@@ -18,7 +18,7 @@ sudo qmicli -d /dev/cdc-wdm1 --device-open-proxy --nas-network-scan
 sudo qmicli -d /dev/cdc-wdm1 --device-open-proxy --nas-get-home-network
 ```
 
-If the output of `--nas-get-home-network` contains a network MCCMNC that is no _not_ listed in the output of `--nas-network-scan`, the SIM card is most likely not cleared to roam, or is not activated on current available networks. Double check that the SIM card in use is activated and cleared to connect to the desired network. When I faced this problem, I used the following command to force the modem onto a particular network and then toggle between them, but it didn't work. You are welcome to try. Replace `310410,lte` with the MCCMNC and access technology of the found networks.
+If the output of `--nas-get-home-network` contains a network MCCMNC that is _not_ listed in the output of `--nas-network-scan`, the SIM card is most likely not cleared to roam, or is not activated on current available networks. Double check that the SIM card in use is activated and cleared to connect to the desired network. When I faced this problem, I used the following command to force the modem onto a particular network and then toggle between them, but it didn't work. You are welcome to try. Replace `310410,lte` with the MCCMNC and access technology of the found networks.
 
 `sudo qmicli -d /dev/cdc-wdm1 --device-open-proxy --nas-set-preferred-networks=310410, lte`
 
