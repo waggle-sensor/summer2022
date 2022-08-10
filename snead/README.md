@@ -22,9 +22,9 @@ My hope is to make this a useful resource of the things I've learned so no one h
 
 Most of the work done to gather information about this task was using a commercial network while the ANL Nokia network was down due to construction. My goal, therefore, is to provide all relevant information I encountered while working to create a roadmap and debugging guide for the next person who is trying to connect to the ANL network. May the 5G gods be on their side.
 
-How to Connect to a Network
+[How to Connect to a Network](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md)
 
-Common Problems and Solution Ideas
+[Common Problems and Solution Ideas](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md)
 
 Current Issues and Ideas to Fix
 
