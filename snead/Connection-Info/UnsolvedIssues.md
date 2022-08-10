@@ -1,3 +1,18 @@
+# Current Issues and Ideas to Fix
+
+## Nano and NX stuff
+
+## connect to 4g not 5G
+
+
+## `mmcli` Connection
+
+A quick current problem is the establishment of a connection between the modem and ModemManager. We are currently unsure why it sometimes requires disconnecting and reconnnecting the USB cable to the modem for it to show up for `mmcli -L`, when `dmesg` shows it properly connected. This is a problem because the modems may need to be reset in the future during their installation, and ideally we would be able to do that remotely for a Waggle Node in the field, but this issue means someone would have to physically service the node to troubleshoot something. That being said, `mmcli` is not entirely necessary to connect to the network, as far as I'm aware. 
+
+What's interesting about this is the assigned modem number will increase with each disconnect, even if the ModemManager did not recognize the modem, e.g. if I have to disconnect twice before the modem shows up the first time, the modem number will still be 2, instead of 0. It could be a problem with patience? 
+
+There are no current ideas as to a solution for this; it's more of a hassle than an issue...
+
 
 
 At the beginning of this research program, ANL's base station unit (BBU) was only serving a 4G network connected to Nokia Bell Labs' core. It was decently simple to achieve the first sub-goal with respect to 4G  by connecting the modems to a Linux laptop and accessing the network in the manner described in \textit{How to Connect to a Network} (\ref{sect:howtoconnect}). Two computers connected this way were able to ping each other and ping the BBU. The BBU was able to create an HTTP server that the computers could access. The network was unable to provide access to the internet due to restrictions placed by Argonne, so that is a permission problem, not a hardware or network problem. An issue was found where one Linux system could not connect to multiple modems at different times. At the time, this issue was assumed to be a SIM card problem because a 5G capable phone was also unable to connect, and Nokia was contacted. With current knowledge looking back, it could also have been that the modem's initial bearer APN was not set because ModemManager was able to communicate with the modem, but the computer could not get on the network, but this does not explain the problem with the phone. 
