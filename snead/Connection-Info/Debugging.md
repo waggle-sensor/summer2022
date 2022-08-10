@@ -1,6 +1,6 @@
 # Debugging: Common Problems and Solution Ideas
 
-This document details problems I encountered for which I was able to find solutions. If you cannot find your problem here, it might be in the file on [current problems]() that might not have clear solutions. All `mmcli` and `qmicli` commands come from the [ModemManager man page](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html) and [QMICLI man page](https://www.freedesktop.org/software/libqmi/man/latest/qmicli.1.html), respectively.
+This document details problems I encountered for which I was able to find solutions. If you cannot find your problem here, it might be in the file on [current problems](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/UnsolvedIssues.md) that might not have clear solutions. All `mmcli` and `qmicli` commands come from the [ModemManager man page](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html) and [QMICLI man page](https://www.freedesktop.org/software/libqmi/man/latest/qmicli.1.html), respectively.
 
 ### Modem cannot be found by ModemManager
 
@@ -10,7 +10,7 @@ Try disconnecting and reconnecting the USB cable to the modem, or power cycling 
 
 This could be a number of problems. Using `mmcli -m #`, where `#` is the assigned number of the modem, check that the initial bearer APN is the APN of your network. If not, enter `sudo socat - /dev/ttyUSB2,crnl` into the terminal and send the AT command `AT+CGDCONT=1,"IP","[insert APN]"` to the modem to switch the APN. In your Mobile Network Settings, clear out any previous connections and retry setting up this connection. 
 
-If that does not help, at worst, this could be a problem with the SIM card itself. Send these three commands, where `cdc-wdm1` should be the primary port listed in the `mmcli -m #` output (could also be something ending in `wwan0`) (if not, [ModemManager is likely out of date]() and `qmicli` will not work):
+If that does not help, at worst, this could be a problem with the SIM card itself. Send these three commands, where `cdc-wdm1` should be the primary port listed in the `mmcli -m #` output (could also be something ending in `wwan0`) (if not, [ModemManager is likely out of date](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md#modem-ports-not-assigned-to-ttyusb) and `qmicli` will not work):
 
 ```
 sudo qmicli -d /dev/cdc-wdm1 --device-open-proxy --nas-force-network-search
