@@ -4,9 +4,25 @@
 This project utilitizes the LoRaWAN technology to create a network system spanning from end nodes -> gateways -> network servers -> application servers -> forwarding LoRa frames to pywaggle's data pipeline via its plug-in:
 ![](https://i.imgur.com/G7Nl5s3.png)
 
+## Bill of Materials
+The list of machines used in this project (note that I did not include connection wires, power cords, etc):
+* [RAK2287](https://store.rakwireless.com/products/rak2287-lpwan-gateway-concentrator-module?variant=41826859385030)
+* [Raspberry Pi 4](https://www.digikey.com/en/products/detail/raspberry-pi/RASPBERRY-PI-4B-4GB/10258781?src=raspberrypi) (currently out of stock)
+* [MKR WAN 1310](https://store.arduino.cc/products/arduino-mkr-wan-1310)
+* [LoRa E5-mini](https://www.seeedstudio.com/LoRa-E5-mini-STM32WLE5JC-p-4869.html)
+
+Compiled list of dependencies to be installed on the RAKpi (Raspberry Pi 4 with the RAK2287 mounted on it):
+* `mosquitto`
+* `postgresql`
+* `resdis-server`
+* `chirpstack-network-server`
+* `chirpstack-application-server`
+* Check if the python is above version 3.6: `python3 --version`
+* Install paho mqtt: `pip3 install paho-mqtt`
+* Install the Pywaggle plugin: `pip3 install -U pywaggle[all]`
 
 ## Chirpstack and RAKpi Setup
-In this particular setup, the Gateway, Gateway Bridge, Network Server, and Application Server are all installed in the RAKpi (Raspberry Pi 4 with the RAK2287 mounted on it). The RAKpi log in credentials are:
+In this particular setup, the Gateway, Gateway Bridge, Network Server, and Application Server are all installed in the RAKpi. The RAKpi log in credentials are:
 - username: pi
 - password: raspberry
 
@@ -17,22 +33,26 @@ I did everything in root, so when you log in the RAKpi, make sure to `sudo -s`. 
 4. Select `S1 Wireless LAN`, then enter the SSID and passphrase accordingly
 5. Type `ifconfig` in terminal to check the connections:![](https://i.imgur.com/b0hc66G.png)
     - The wlan0 should have an inet address
-6. Install the dependencies:
+6. Install the dependencies (I have a feeling these dependencies are already included in the image):
     - `sudo apt install mosquitto`
     - `sudo apt install postgresql`
     - `sudo apt install redis-server`
 7. Setting up the Gateway Bridge: https://www.chirpstack.io/gateway-bridge/install/debian/
 8. Setting up the Network Server: https://www.chirpstack.io/network-server/install/debian/
-    - In the `/etc/chirpstack-application-server/chirpstack-application-server.toml` file, edit it to the following:![](https://i.imgur.com/QOdkatM.png)
-8. Setting up the Application Server: https://www.chirpstack.io/application-server/install/debian/
-    - In the `/etc/chirpstack-network-server/chirpstack-network-server.toml` file, make sure the dsn is: ![](https://i.imgur.com/s4oqZup.png)
-9. In the RAKpi terminal, use the gateway GUI by typing `gateway-config`, select the `Setup RAK Gateway Channel Plan`: ![](https://i.imgur.com/b5Wo08l.png)
-10. Select `Server is Chirpstack`: 
+    - In the `/etc/chirpstack-application-server/chirpstack-application-server.toml` file, edit it to the following:
+    ![](https://i.imgur.com/QOdkatM.png)
+9. Setting up the Application Server: https://www.chirpstack.io/application-server/install/debian/
+    - In the `/etc/chirpstack-network-server/chirpstack-network-server.toml` file, make sure the dsn is: 
+    ![](https://i.imgur.com/s4oqZup.png)
+10. In the RAKpi terminal, use the gateway GUI by typing `gateway-config`, select the `Setup RAK Gateway Channel Plan`:
+![](https://i.imgur.com/b5Wo08l.png)
+11. Select `Server is Chirpstack`: 
 ![](https://i.imgur.com/mEkliNH.png)
-6. Select `Chirpstack Channel-plan configuration`: ![](https://i.imgur.com/pHCQYGr.png)
-7. Select `US_902_928`:
+12. Select `Chirpstack Channel-plan configuration`:
+![](https://i.imgur.com/pHCQYGr.png)
+13. Select `US_902_928`:
 ![](https://i.imgur.com/bt8YxHp.png)
-8. Set the Server IP to 127.0.0.1 (localhost):
+14. Set the Server IP to 127.0.0.1 (localhost):
 ![](https://i.imgur.com/nBtTQzp.png)
 
 
@@ -56,11 +76,11 @@ There are two methods of authentication for end nodes to join the network server
 1. Over the Air Activation (OTAA)
 2. Activation by Personalization (ABP)
 
-|                 |         OTAA           |           ABP           |
-| :-------------: | :--------------------: | :----------------------:|
+|                 |          ABP           |           OTAA           |
+| :-------------: | :--------------------: | :----------------------: |
 | **Description** | Uses Device Address (DevAddr), Network Session Key (NWK SKEY), and Application Session Key (APP SKEY) to join the server | Uses Application Key (APP KEY) for request joining the server. Once joined, The NWK SKEY, APP SKEY, and DevAddr will be generated.
 | **Pros**        | Can rejoin network after device reset | The session keys don't have to be hardcoded; only the application key has to match |
-| **Cons**        | The DevAddr, NWKSKEY, APPSKEY have to be hardcoded in the device | Can't rejoin network after device reset |
+| **Cons**        | The DevAddr, NWKSKEY, APPSKEY have to be hardcoded in the device | To rejoin network after device reset, you have to manually match up the device address |
 
 The MKRWAN 1310 supports both OTAA and ABP while the E5 was only successful in using OTAA to connect.
 
@@ -115,12 +135,13 @@ Type=simple
 User=pi
 Restart=always
 RestartSec=1
-ExecStart=python3 /home/pi/mqtt_plugin.py
+ExecStart=python3 /home/pi/code/mqtt_plugin.py
 
 [Install]
 WantedBy=multi-user.target
 ```
-4. `sudo systemctl start mqtt_plugin && sudo systemctl enable mqtt_plugin`
-5. Check the status of the service: `sudo systemctl status mqtt_plugin`
-6. The logs of the lorawan frames will be updated live in the test-run-logs/data.ndjson file
+4. In the /home/pi directory, input the command `chown -R pi:pi code/` to give the service the permission to write to the ndjson file
+5. `sudo systemctl start mqtt_plugin && sudo systemctl enable mqtt_plugin`
+6. Check the status of the service: `sudo systemctl status mqtt_plugin`
+7. The logs of the lorawan frames will be updated live in the test-run-logs/data.ndjson file
 
