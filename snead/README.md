@@ -26,7 +26,7 @@ Most of the work done to gather information about this task was using a commerci
 
 [Common Problems and Solution Ideas](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md)
 
-Current Issues and Ideas to Fix
+[Current Issues and Ideas to Fix](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/CurrentIssues.md)
 
 # Telit FN980m Information
 
