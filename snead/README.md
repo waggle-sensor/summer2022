@@ -22,19 +22,20 @@ This is the module we are using to eventually connect our Waggle Nodes to the 5G
 ## Helpful AT Commands
 
 This section will not tell you the full functionality of the commands, but instead serves as a culled down list of relevant commands. Use this in conjunction with the Telit AT Command manual (not sure if it's kosher to link that here)
-- **AT+CGDCONT?** will let you define the PDP (Packet Data Protocol) context; basically, you can set the initial bearer APN, which is essential to getting the modem to connect
--  **AT#BND** selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
-  - I've actually found there isn't much flexibility for choosing a band for our Telit module. Instead can be used to see what bands are allowed
-- **AT#LTEDS** second returned argument gives current LTE band number
-- **AT#5GLINKSTAT?** will show if connected to 5G (3rd returned argument is 2 if connected)
-- **AT+WS46** selects cellular network 
-- **AT#5GCTL** enable NSA FR1/FR2 and SA FR1/FR2 
-- **AT+CIND?** returns some status updates, like battery charge, signal quality, and RSSI 
-- **AT+CESQ** returns RSRQ, RSRP, and SNR for 5G signals, will give parameters for 3G and 4G if those are enabled 
-  - **AT#CAINFO** returns like, every possible parameter possible and is a little hard to read, but could be useful
-- **AT#TEMPSENS** gives current temperature and **AT#TMLVL?** gives temperature mitigation level 
-- **AT#CSURV** performs network survey, but possibly only finds 3G and 4G networks 
-- **AT#TESTMODE** and **AT#MIMOSTS** are also possibly useful 
+- `AT+CGDCONT?` will let you define the PDP (Packet Data Protocol) context; basically, you can set the initial bearer APN, which is essential to getting the modem to connect
+    - `AT+CGDCONT= 1,"IP","[insert APN here]"` will change the APN
+-  `AT#BND` selects band for 3G, 4G, and 5G [(command help)](https://techship.com/faq/how-to-use-atbnd-to-select-active-bands-on-telit-modules/)
+    - I've actually found there isn't much flexibility for choosing a band for our Telit module. Instead can be used to see what bands are allowed
+- `AT#LTEDS` second returned argument gives current LTE band number
+- `AT#5GLINKSTAT?` will show if connected to 5G (3rd returned argument is 2 if connected)
+- `AT+WS46` selects cellular network 
+- `AT#5GCTL` enable NSA FR1/FR2 and SA FR1/FR2 
+- `AT+CIND?` returns some status updates, like battery charge, signal quality, and RSSI 
+- `AT+CESQ` returns RSRQ, RSRP, and SNR for 5G signals, will give parameters for 3G and 4G if those are enabled 
+  - `AT#CAINFO` returns every parameter possible and is a little hard to read, but could be useful
+- `AT#TEMPSENS` gives current temperature and **AT#TMLVL?** gives temperature mitigation level 
+- `AT#CSURV` performs network survey, but possibly only finds 3G and 4G networks 
+- `AT#TESTMODE` and `AT#MIMOSTS` are also possibly useful 
 
 ## Linux and Telit
 
