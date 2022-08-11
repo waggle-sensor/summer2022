@@ -1,6 +1,10 @@
 # Zoe Snead Daily Activity Log  
 My daily activity! Thoughts, questions, quick links. Most recent additions are at the top <3
 
+## Week 9: 8/8 to 8/12 (last week!)
+
+This week has been all working on my final write up, which will be a GitHub based guide that contains everything we tried when connecting to networks, what works, what doesn't, what issues we've solved and one's we haven't. The hope is that this will be a resource for the next person who tries to connect to the ANL network when it is up and running. The other part of this final write-up will be cleaning up my notes on open source 5G cores. 
+
 ## Week 8: 8/1 to 8/5
 
 ### Friday 8/5
