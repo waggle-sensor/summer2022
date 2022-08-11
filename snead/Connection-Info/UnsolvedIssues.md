@@ -1,6 +1,6 @@
 # Current Issues and Ideas to Fix
 
-## Can connect to 4G, but not 5G using Telit modems
+## Can connect to 4G, but not 5G, using Telit modems
 
 This is the biggest problem that could prevent us from intergrating the Waggle Nodes onto ANL's 5G network. Solving this issue is of highest priority. The following measures were taken to try to isolate the problem. 
 
@@ -18,14 +18,98 @@ returned the following output:
 	LTE bands (extended): '1, 2, 3, 4, 5, 7, 8, 12, 13, 14, 17, 18, 19, 20, 25, 26, 28, 29, 30, 32, 34, 38, 39, 40, 41, 42, 43, 46, 48, 66, 71'
 ```
 
-Notice how no 5G bands are listed. The next thought was what band are we on and is it an overlap band?? fjdksafhjksd;a
+Notice how no 5G bands are listed. Since the 5G networks in the area are NSA, the next thought was could we be on a band that overlaps with 5G (i.e. the entended LTE bands) so the modem is just saying LTE when it could also mean 5G NSA. We used `socat` to send AT commands to the modem, and sent the follow two commands:
+
+```
+AT#5GLINKSTAT?
+AT#LTEDS?
+```
+
+The first command told us that we were only connected to LTE, not 5G, and the second told us we were on band 30, which is not an extended band. 
+
+We double checked the available modes listed for the modem by `mmcli -m 0` and made sure that it preferred 5G with the following command:
+
+`mmcli -m 0 --set-allowed-modes='3g|4g|5g' --set-preferred-mode='5g'`
+
+And even tried restricting the modem to only allow 5G, upon which the modem disconnected from the network completely. 
+
+What's strange is we could get information about the 5G signal, as in the following, (though sometimes the 5G signal information would show up as N/A). In the second command it shows that 5G NSA is available, so maybe the modem does not recognize a distinction between 4G and 5G NSA when connecting or setting preferences?
+
+```
+# qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info
+
+[/dev/cdc-wdm0] Successfully got signal info
+LTE:
+	RSSI: '-70 dBm'
+	RSRQ: '-12 dB'
+	RSRP: '-97 dBm'
+	SNR: '9.6 dB'
+5G:
+	RSRP: '-74 dBm'
+	SNR: '16.5 dB'
+	RSRQ: '-11 dB'
+	
+# qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-info     
+[/dev/cdc-wdm0] Successfully got system info:
+	CDMA 1x service:
+		Status: 'none'
+		Preferred data path: 'no'
+	CDMA 1xEV-DO (HDR) service:
+		Status: 'none'
+		Preferred data path: 'no'
+	GSM service:
+		Status: 'none'
+		True Status: 'none'
+		Preferred data path: 'no'
+	WCDMA service:
+		Status: 'none'
+		True Status: 'none'
+		Preferred data path: 'no'
+	LTE service:
+		Status: 'available'
+		True Status: 'available'
+		Preferred data path: 'no'
+		Domain: 'cs-ps'
+		Service capability: 'cs-ps'
+		Roaming status: 'off'
+		Forbidden: 'no'
+		Cell ID: '54263189'
+		MCC: '310'
+		MNC: '410'
+		Tracking Area Code: '16676'
+		Voice support: 'no'
+		IMS voice support: 'yes'
+		eMBMS coverage info support: 'no'
+		eMBMS coverage info trace ID: '65535'
+		Cell access: 'all-calls'
+		Registration restriction: 'unrestricted'
+		Registration domain: 'not-applicable'
+		5G NSA Available: 'yes'
+		DCNR Restriction: 'no'
+	TD-SCDMA service:
+		Status: 'none'
+		True Status: 'none'
+		Preferred data path: 'no'
+	5G SA service:
+		Status: 'none'
+		True Status: 'none'
+		Preferred data path: 'no'
+	SIM reject info: 'available'
+```
+
+We have not yet been able to verifiy a connection to any 5G network. The current idea as to what could be happening is that there could be something wrong or out-of-date on the firmware of the Telit modems. Since the 5G phone could connect but the modem could not, that isolates the problem with the modem. A thought is to update the firmware and see if anything changes. I at least think it would be best to escalate this problem to Telit and ask if there is a misunderstanding or an issue.
 
 ## Jetson Nano and NX compatability
 
+Currently, both the Jetson Nano and NX run on Ubuntu 18.04, which means there are limits on the ModemManager drivers that can control the modems; without any changes, the ModemManager version on Ubunutu 18.04 is 1.10.0, which is too old to properly control the Telit modem. On the Nano, I was able to make a custom build that ran ModemManager 1.14.0, but that was not recent enough to provide the proper drivers to enable `qmicli`. Additionally, when I was finally able to connect to the modem, the achievable network speeds were over 100 times slower than when the same modem-SIM set up was plugged into my laptop running Ubuntu 22.04. 
 
+As for the Jetson NX, after mfollowing the same procedure to make a custom build of ModemManager, I was then unable to get to system to assign the modem the ttyUSB ports. This could be a problem with USB port splitter I was using, because it kept returning an error that the buffer was overflowing when it was trying to communicate to the ports. This could also be a problem with the general USB drivers in the system. 
+
+Regardless, with both computers my recommendation would be to try to get a later version of Ubuntu running. [Jetpack 5.0](https://developer.nvidia.com/embedded/jetpack) would maybe allow that, but it is unclear from the developer previews. 
 
 ## 5G phones could not connect to the Nokia network
 
+We noticed this problem right before construction on the server started, and do not yet have 5G capable phones to try again with. It's a little worrying, but possibly not applicable to connecting the Waggle Nodes. Nokia has been contacted about this issue.
 
 ## `mmcli` Connection
 
@@ -35,18 +119,10 @@ What's interesting about this is the assigned modem number will increase with ea
 
 There are no current ideas as to a solution for this; it's more of a hassle than an issue...
 
-## 5G phones could not connect to the Nokia network
+## Unable to access the internet from ANL's network
 
-Nokia has been contacted. 
+This is a redtape issue with ANL. We believe we can get clearance to access the internet if we pull some strings. 
 
+## Linux and Telit modems
 
-At the beginning of this research program, ANL's base station unit (BBU) was only serving a 4G network connected to Nokia Bell Labs' core. It was decently simple to achieve the first sub-goal with respect to 4G  by connecting the modems to a Linux laptop and accessing the network in the manner described in \textit{How to Connect to a Network} (\ref{sect:howtoconnect}). Two computers connected this way were able to ping each other and ping the BBU. The BBU was able to create an HTTP server that the computers could access. The network was unable to provide access to the internet due to restrictions placed by Argonne, so that is a permission problem, not a hardware or network problem. An issue was found where one Linux system could not connect to multiple modems at different times. At the time, this issue was assumed to be a SIM card problem because a 5G capable phone was also unable to connect, and Nokia was contacted. With current knowledge looking back, it could also have been that the modem's initial bearer APN was not set because ModemManager was able to communicate with the modem, but the computer could not get on the network, but this does not explain the problem with the phone. 
-
-It was after this initial success that the ANL BBU and its radios started undergoing construction, which shut down the network. The process then shifted towards using a 5G capable AT\&T SIM card instead of the Nokia SIM to try achieve the sub-goals on a different network, the idea being that troubleshooting connectivity on a commercial network will make connecting to the ANL network faster when it starts working again. This shift meant starting over with the sub-goals.
-
-At first, the modem showed itself to be getting a signal, but the computer was unable to connect to the network. The initial thought as to what the problem could be was an issue with the network to which it was trying to connect. {\tt qmicli}\footnote{All {\tt qmicli} commands are sourced from the QMICLI man page \cite{qmibib}} provides more network based control of modems and was used to gather more information. {\tt sudo qmicli -d /dev/cdc-wdm1 --device-open-proxy}, where {\tt cdc-wdm1} is the primary port listed from the ModemManager information output, is the base command that allowed the function to use to modem to get information and perform network surveys. For example, adding {\tt --nas-network-survey} to that base command showed a list of available networks,\footnote{If this command doesn't work, add {\tt --nas-force-network-search} to the base command instead, then retry}\footnote{Sample output in Appendix \ref{AppA}.} and {\tt --nas-set- preferred-networks= MCCMNC,access\_tech} allowed the modem to toggle between networks, but the computer still could not connect to any of the networks. Finally, by adding {\tt --nas-get-home-network}, it was seen that the home network was not one listed by the network search, and the SIM card later turned out to have been deactivated. 
-
-\subsubsection{Modem connected to 4G but not 5G}
-This is an ongoing problem that does not yet have a clear answer, but there are a couple things to try to help diagnose the problem. In the information supplied by ModemManager about the modem, check the section on Modes and make sure there is a mode that allows 5G, even better if one prefers 5G\footnote{If 5G not allowed, this is a problem with the ModemManager version. Check that it is 1.14.0 or higher.}. Check the ModemManager Documentation \cite{mmbib} on how to switch modes. An example of a command that could work is as follows:
-
-{\tt mmcli -m 4 --set-allowed-modes="3g|4g|5g" --set-preferred-mode="5g"}
+Back in June, we had trouble getting Linux systems to connect to the networks. It was an issue where we could talk to the modems but not set up the network connection. The same modem allowed a Windows system to properly connect. This was after multiple successful connections on the same computer, but with a different modem. Upon retrying with the original modem it worked. At the time, we contacted Nokia about this issue, but looking back, it could have also been an issue with the initial bearer APN on that particular modem.  
