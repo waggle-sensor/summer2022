@@ -88,7 +88,7 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
 # 5G Core Information
 As part of my goals for the summer listed above, I am researching different organizations that provide open source 5G Core systems. This information is mostly compiled from the public websites and documentation of the organizations. So far I have researched ONAP, free5GC, Aether/SD-Core (ONF), Magma, and Open Air Interface Mosaic5G & 5G CN. Most of these packages seem to be able to be installed and implemented without charge or restriction, but training or tech support is behind a paywall. Go to my [5G Core notes](https://github.com/waggle-sensor/summer2022/blob/main/snead/5G-Core.md#5g-core-information) to read more specifics!
 
-Here is the current [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_8-3-2022.pdf) of these 5G core options!
+Here is the current [decision matrix](https://github.com/waggle-sensor/summer2022/blob/main/snead/5GCoreDecisionMatrix_8-11-2022.pdf) of these 5G core options!
 
 ## Helpful 5GC Resources
 - [UERANSIM](https://github.com/aligungr/UERANSIM) is a simulator that acts as a 5G mobile phone and base station to test 5G Cores 
