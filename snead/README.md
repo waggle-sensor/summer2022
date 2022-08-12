@@ -1,6 +1,6 @@
 # Welcome to my README! 
 
-My hope is to make this a useful resource of the things I've learned so no one has to wade through the murky waters of Telit modem troubleshooting and opensource 5G documentation again! My focus is on the client side of the network, so verifying that the Waggle Nodes can connect and transmit data over the network, and the core side of a network. 
+This is the Summer 2022 GitHUb folder for Zoe Snead. My hope is to make this a useful resource of the things I've learned so no one has to wade through the murky waters of Telit modem troubleshooting and opensource 5G documentation again! My focus is on the client side of the network, so verifying that the Waggle Nodes can connect and transmit data over the network, and the core side of a network. 
 
 # Project Goals
 
