@@ -4,7 +4,7 @@
 
 This is the biggest problem that could prevent us from intergrating the Waggle Nodes onto ANL's 5G network. Solving this issue is of highest priority. The following measures were taken to try to isolate the problem. 
 
-We first made sure the tested SIM card was 5G capable by taking it from a verified 5G phone. When the SIm card was in the phone, it could connect to 5G both on and off ANL campus, and using the [Network Cell Info Lite & Wifi](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) app, we were able to use the phone to find the strongest connection off campus. The phone being able to connect meant that the problem was not with the SIM card or a lack of 5G infrastructure in our area. 
+We first made sure the tested SIM card was 5G capable by taking it from a verified 5G phone. When the SIM card was in the phone, it could connect to 5G both on and off ANL campus, and using the [Network Cell Info Lite & Wifi](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) app, we were able to use the phone to find the strongest connection off campus. The phone being able to connect meant that the problem was not with the SIM card or a lack of 5G infrastructure in our area. 
 
 We then put the SIM card into the Telit modem and connected it to the computer. Following the standard procedure listed in the [How To Connect](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md) page, we were able to connect to a network using the APN provided by the SIM card's provider. However, the ModemManager information was telling us that we were only connected to an LTE signal. Sending the following command
 
