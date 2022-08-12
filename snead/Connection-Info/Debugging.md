@@ -24,7 +24,7 @@ If the output of `--nas-get-home-network` contains a network MCCMNC that is _not
 
 ### Trouble pinging other UEs on the network
 
-Check the firewall settings on the computer and make sure it can be discovered on this network.
+Check the firewall settings on the computer and make sure it can be discovered on this network. There also is often trouble pinging devices on Argonne's WiFi due to their firewall.
 
 ### Running earlier version of Ubuntu
 
