@@ -75,11 +75,12 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
 - Check kernel version is up-to-date to run [`option`](https://superuser.com/questions/691271/what-does-modprobe-option-do)
     - run following commands:
 
-
+```
 # sudo modprobe option
-# echo 1bc7 <PID> /sys/bus/usb-serial/drivers/option1/new_id
+# sudo echo 1bc7 <PID> /sys/bus/usb-serial/drivers/option1/new_id
+```
 
-- might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
+   - might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
 - We might be able to use [libqmi project](https://gitlab.freedesktop.org/mobile-broadband/libqmi) to talk to the modem, but I'm doubtful
 - Is there a way to force the network manager wizard to open?
     - `nmcli c` shows what is currently connected, `nmcli d` shows current devices 
