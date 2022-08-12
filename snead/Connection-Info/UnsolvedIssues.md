@@ -132,14 +132,14 @@ We have not yet been able to verifiy a connection to any 5G network. The current
 
 Currently, both the Jetson Nano and NX run on Ubuntu 18.04, which means there are limits on the ModemManager drivers that can control the modems; without any changes, the ModemManager version on Ubunutu 18.04 is 1.10.0, which is too old to properly control the Telit modem. On the Nano, I was able to make a custom build that ran ModemManager 1.14.0, but that was not recent enough to provide the proper drivers to enable `qmicli`. Additionally, when I was finally able to connect to the modem, the achievable network speeds were over 100 times slower than when the same modem-SIM set up was plugged into my laptop running Ubuntu 22.04. 
 
-As for the Jetson NX, after following the same procedure to make a custom build of ModemManager, I was then unable to get to system to assign the modem the ttyUSB ports. After some research into the issue, I found that the modem ID wasn't registered with the USB driver. Sending the following commands registered them:
+As for the Jetson NX, after following the same procedure to make a custom build of ModemManager, I was then unable to get to system to assign the modem the ttyUSB ports. After some research into the issue, I found that the modem ID wasn't registered with the USB driver. Sending the following commands registered them, where `1bc7` is the decive ID and `1050` is the [PID](https://github.com/waggle-sensor/summer2022/tree/main/snead#information).
 
 ```
 sudo modprobe option
 sudo echo "1bc7 1050" /sys/bus/usb-serial/drivers/option1/new_id
 ```
 
-After registering, however, `dmesg` it kept returning an error that the buffer was overflowing when it was trying to communicate to the ports. This could also be a problem with the general USB drivers in the system. 
+After registering, however, `dmesg` it kept returning an error that the buffer was overflowing when it was trying to communicate to the ports. This could also be a problem with the general USB drivers in the system. In the future, one could look into AT commands that change the PID of the system, and therefore the USB composition of the modem, but I am unsure if that will help.
 
 Regardless, with both computers my recommendation would be to try to get a later version of Ubuntu running. [Jetpack 5.0](https://developer.nvidia.com/embedded/jetpack) would maybe allow that, but it is unclear from the developer previews. 
 
