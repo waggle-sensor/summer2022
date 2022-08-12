@@ -2,25 +2,7 @@
 
 **Note:** All `mmcli` commands are from the [ModemManager man page](https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html)
 
-ANL is using Telit's FN980m 5G capable modems. The primary OS used on the computers connected to the modems is Ubuntu 20.04 and above ([using ealier version?](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md#running-earlier-version-of-ubuntu)). The Telit modems connect to computers using a USB-C port on the front of the upper board of the modem (we have been using a USB-C to USB cable). Once connected, open a terminal and enter `sudo dmesg`, which should show that the modem is connected and the ports are attached to ttyUSBs ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-sudo-dmesg)).
-
-Next, enter the ModemManager command `mmcli -L` to search for the modem. If no modems show up after a while, try disconnecting and reconnecting the USB cable. Sample output:
-
-`     /org/freedesktop/ModemManager1/Modem/0 [Telit] FN980m`
-
-The final number in the file path is how the modem will be specified when using ModemManager controller. In this case, sending `mmcli -m 0` should return information about the hardware, capabilities, and connection status of the modem ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-mmcli--m-0)). 
-
-Towards the bottom of the output information, it should list the initial bearer APN, which needs to match the APN of the desired network. To set this configuration, check the listed ports in the ModemManager output. The first listed port followed by `(at)` is the port through which AT commands can be sent to the modem (usually, this port is ttyUSB2). Enter `sudo socat - /dev/ttyUSB2,crnl` and send the modem the command `AT+CGDCONT=1,"IP","[insert APN]"` with the desired APN inserted where specified. Exit the `socat` command and resend `mmcli -m 0`; it should now show the desired APN in the initial bearer section. If not, power cycle the modem and reconnect.
-
-The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. You will need to enter the same APN that you set for the modem in the connection setup wizard. To test your connection, try pinging the server IP address to check that you're on the network. Try pinging a website to check that the computer can access the internet. Disconnect from WiFi and send the command `speedtest` to check download and upload speeds. The following command will return more signal info (`cdc-wdm1` is the primary port of the modem) ([sample output](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/HowToConnect.md#input-sudo-qmicli--d-devcdc-wdm0--p---device-open-proxy---nas-get-signal-info)). 
-
-`sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
-
-If there are any other problems, see the [debugging section](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md).
-
-## Sample Outputs
-
-### Input: `sudo dmesg`
+ANL is using Telit's FN980m 5G capable modems. The primary OS used on the computers connected to the modems is Ubuntu 20.04 and above ([using ealier version?](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md#running-earlier-version-of-ubuntu)). The Telit modems connect to computers using a USB-C port on the front of the upper board of the modem (we have been using a USB-C to USB cable). Once the two are connected, open a terminal and enter `sudo dmesg`, which should show that the modem is connected and the ports are attached to ttyUSBs. Sample output:
 
 ```
 [20650.685345] usb 2-1: new high-speed USB device number 13 using xhci_hcd
@@ -43,7 +25,11 @@ If there are any other problems, see the [debugging section](https://github.com/
 [20650.847914] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB4
 ```
 
-### Input: `mmcli -m 0`
+Next, enter the ModemManager command `mmcli -L` to search for the modem. If no modems show up after a while, try disconnecting and reconnecting the USB cable. Sample output:
+
+`     /org/freedesktop/ModemManager1/Modem/0 [Telit] FN980m`
+
+The final number in the file path is how the modem will be specified when using ModemManager controller. In this case, sending `mmcli -m 0` should return information about the hardware, capabilities, and connection status of the modem. Sample output (with annotations):
 
 ```
   ----------------------------------
@@ -63,26 +49,26 @@ If there are any other problems, see the [debugging section](https://github.com/
            |           equipment id: 350313452018685
   ----------------------------------
   System   |                 device: /sys/devices/pci0000:00/0000:00:14.0/usb2/2-1
-           |                drivers: qmi_wwan, option
+           |                drivers: qmi_wwan, option				%% if qmi_wwan is not a driver, QMICLI will not work
            |                 plugin: telit
-           |           primary port: cdc-wdm1
+           |           primary port: cdc-wdm1					%% this is the device name QMICLI communicates with
            |                  ports: cdc-wdm1 (qmi), ttyUSB0 (ignored), ttyUSB1 (ignored)
-           |                         ttyUSB2 (at), ttyUSB3 (at), ttyUSB4 (ignored), wwan0 (net)
+           |                         ttyUSB2 (at), ttyUSB3 (at), ttyUSB4 (ignored), wwan0 (net)		%% ttyUSB2 is the port to send AT commands through
   ----------------------------------
   Numbers  |                    own: 12253281183
   ----------------------------------
   Status   |                   lock: sim-pin2
            |         unlock retries: sim-pin (3), sim-puk (10), sim-pin2 (3), sim-puk2 (10)
-           |                  state: registered
+           |                  state: registered				%% this will say 'connected' when you get on the network
            |            power state: on
            |            access tech: lte
-           |         signal quality: 83% (recent)
+           |         signal quality: 83% (recent)			%% signal qual. can be above zero while your computer is unconnected
   ----------------------------------
   Modes    |              supported: allowed: 4g; preferred: none
            |                         allowed: 5g; preferred: none
            |                         allowed: 4g, 5g; preferred: 5g
            |                         allowed: 4g, 5g; preferred: 4g
-           |                current: allowed: 4g, 5g; preferred: 5g
+           |                current: allowed: 4g, 5g; preferred: 5g	&& can toggle these with the --set-allowed-modes commands (see mmcli man page)
   ----------------------------------
  Bands     |              supported: utran-1, utran-3, utran-4, utran-6, utran-5, utran-8, 
            |                         utran-9, utran-2, eutran-1, eutran-2, eutran-3, eutran-4, eutran-5,
@@ -103,13 +89,13 @@ If there are any other problems, see the [debugging section](https://github.com/
   ----------------------------------
   3GPP     |                   imei: 350313452018685
            |          enabled locks: fixed-dialing
-           |            operator id: 310410
+           |            operator id: 310410		%% MCCMNC of the current network
            |          operator name: AT&T
            |           registration: home
   ----------------------------------
   3GPP EPS |   ue mode of operation: csps-2
            |    initial bearer path: /org/freedesktop/ModemManager1/Bearer/4
-           |     initial bearer apn: broadband
+           |     initial bearer apn: broadband		%% this is what you change in the next step
            | initial bearer ip type: ipv4
   ----------------------------------
   SIM      |       primary sim path: /org/freedesktop/ModemManager1/SIM/3
@@ -117,7 +103,11 @@ If there are any other problems, see the [debugging section](https://github.com/
            |                         slot 2: none
 ```
 
-## Input: `sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
+Towards the bottom of the output information, it should list the initial bearer APN, which needs to match the APN of the desired network. To set this configuration, check the listed ports in the ModemManager output. The first listed port followed by `(at)` is the port through which AT commands can be sent to the modem (usually, this port is ttyUSB2). Enter `sudo socat - /dev/ttyUSB2,crnl` and send the modem the command `AT+CGDCONT=1,"IP","[insert APN]"` with the desired APN inserted where specified. Exit the `socat` command and resend `mmcli -m 0`; it should now show the desired APN in the initial bearer section. If not, power cycle the modem and reconnect.
+
+The modem should now be ready to set up a new mobile broadband connection through the network settings on the computer. You will need to enter the same APN that you set for the modem in the connection setup wizard. To test your connection, try pinging the server IP address to check that you're on the network. Try pinging a website to check that the computer can access the internet. Disconnect from WiFi and send the command `speedtest` to check download and upload speeds. The following command will return more signal info (`cdc-wdm1` is the primary port of the modem). Sample output shown below command. 
+
+`sudo qmicli -d /dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info`
 
 ```
 [/dev/cdc-wdm0] Successfully got signal info
@@ -131,3 +121,5 @@ LTE:
 	SNR: '16.5 dB'
 	RSRQ: '-11 dB'
 ```
+
+If there are any problems, see the [debugging section](https://github.com/waggle-sensor/summer2022/blob/main/snead/Connection-Info/Debugging.md) for help.
