@@ -32,4 +32,4 @@ The only things this issue affects are `mmcli` and `qmicli`, which will be runni
 
 ### Modem ports not assigned to ttyUSB
 
-This is most likely a problem with the driver for the modem, which is a part of ModemManager. Check that ModemManager is version 14.0 or higher with `mmcli --version`. 
+This is most likely a problem with the driver for the modem, which is a part of ModemManager. Check that ModemManager is version 1.14.0 or higher with `mmcli --version`. 
