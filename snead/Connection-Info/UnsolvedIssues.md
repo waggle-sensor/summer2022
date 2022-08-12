@@ -49,7 +49,8 @@ LTE:
 	SNR: '16.5 dB'
 	RSRQ: '-11 dB'
 	
-# qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-info     
+# qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-info  
+
 [/dev/cdc-wdm0] Successfully got system info:
 	CDMA 1x service:
 		Status: 'none'
@@ -95,6 +96,30 @@ LTE:
 		True Status: 'none'
 		Preferred data path: 'no'
 	SIM reject info: 'available'
+```
+
+We also tried the following, whic confirms that the modem would prefer a 5G network:
+
+```
+# qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-selection-preference
+
+[/dev/cdc-wdm0] Successfully got system selection preference
+	Emergency mode: 'no'
+	Mode preference: 'lte, 5gnr'
+	Disabled modes: 'none'
+	Band preference: 'wcdma-2100, wcdma-pcs-1900, wcdma-dcs-1800, wcdma-1700-us, wcdma-850-us, wcdma-800, wcdma-900, wcdma-1700-japan, wcdma-850-japan'
+	LTE band preference: '1, 2, 3, 4, 5, 7, 8, 12, 13, 14, 17, 18, 19, 20, 25, 26, 28, 29, 30, 32, 34, 38, 39, 40, 41, 42, 43'
+	LTE band preference (extended): '1, 2, 3, 4, 5, 7, 8, 12, 13, 14, 17, 18, 19, 20, 25, 26, 28, 29, 30, 32, 34, 38, 39, 40, 41, 42, 43, 46, 48, 66, 71'
+	TD-SCDMA band preference: 'a, b, c, d, e, f'
+	CDMA PRL preference: 'any'
+	Roaming preference: 'any'
+	Network selection preference: 'automatic'
+	Service domain preference: 'cs-ps'
+	GSM/WCDMA acquisition order preference: 'wcdma'
+	Usage preference: 'data-centric'
+	Voice domain preference: 'ps-preferred'
+	Registration restriction: 'unrestricted'
+	Acquisition order preference: '5gnr, lte, umts'
 ```
 
 We have not yet been able to verifiy a connection to any 5G network. The current idea as to what could be happening is that there could be something wrong or out-of-date on the firmware of the Telit modems. Since the 5G phone could connect but the modem could not, that isolates the problem with the modem. A thought is to update the firmware and see if anything changes. I at least think it would be best to escalate this problem to Telit and ask if there is a misunderstanding or an issue.
