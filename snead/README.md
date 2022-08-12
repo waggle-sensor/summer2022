@@ -64,8 +64,8 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
 | 0x1052 | 5 reduced ACM devices + 1 RNDIS network adapter + 1 ADB | RNDIS+ DIAG + ADB + NMEA + MODEM + MODEM + AUX |
 | 0x1052 | 5 reduced ACM devices + 1 ECM network adapter + 1 ADB | DIAG + ADB + ECM + NMEA + MODEM + MODEM + AUX |
 
-    - `mmcli` allows you to see these ports
-    - <img src="https://user-images.githubusercontent.com/107580325/178070156-96091343-7972-4d82-bea0-3d2dc66a956f.png" height="100" width="600">
+   - `mmcli` allows you to see these ports
+   - <img src="https://user-images.githubusercontent.com/107580325/178070156-96091343-7972-4d82-bea0-3d2dc66a956f.png" height="100" width="600">
 - The kernel module `option` is our control interface for USB
     - this means the device created when the Telit is connected is `/dev/ttyUSBx` where 'x' is the port number (usually 2 or 3)
 
