@@ -56,19 +56,30 @@ As of 6/24 we've been having trouble connected the modems to Linux running compu
 
 ### Information
 - Our Telit modules support the following USB compositions for Linux. The default is 0x1050. The modems are of the reduced Abstract Control Model (ACM)
-    - <img src="https://user-images.githubusercontent.com/107580325/178064067-58db0cbd-9ec0-43e1-aa05-32ae9b29442d.png" height="100" width="400"> <img src="https://user-images.githubusercontent.com/107580325/178064285-a0481560-6d87-4eb5-99be-c710da8ebd95.png" height="100" width="400">
+
+| USB Composition PID | Device Type | Device Name |
+| ----------- | ----------- | ----------- |
+| 0x1050 | 5 reduced ACM devices + 1 rmnet adapter + 1 ADB | DIAG + ADB + RmNet + NMEA + MODEM + MODEM + AUX |
+| 0x1051 | 5 reduced ACM devices + 1 MBIM adapter + 1 ADB | DIAG + ADB + MBIM + NMEA + MODEM + MODEM + AUX |
+| 0x1052 | 5 reduced ACM devices + 1 RNDIS network adapter + 1 ADB | RNDIS+ DIAG + ADB + NMEA + MODEM + MODEM + AUX |
+| 0x1052 | 5 reduced ACM devices + 1 ECM network adapter + 1 ADB | DIAG + ADB + ECM + NMEA + MODEM + MODEM + AUX |
+
     - `mmcli` allows you to see these ports
     - <img src="https://user-images.githubusercontent.com/107580325/178070156-96091343-7972-4d82-bea0-3d2dc66a956f.png" height="100" width="600">
 - The kernel module `option` is our control interface for USB
     - this means the device created when the Telit is connected is `/dev/ttyUSBx` where 'x' is the port number (usually 2 or 3)
-    - > "These are Linux character devices and support most of the features implemented by the tty layer: for example a terminal emulator like minicom can be used to send AT commands.When writing code for using these devices, please refer to the programming language API related to character devices. As an example, C applications can use the exported functions in the system header files fcntl.h and unistd.h." - from Telit Linux User Guide
 
 ### Debug Ideas
 
 - use [this ACM doc page](https://docs.kernel.org/usb/authorization.html) to check if new Telit modems are authorized for communication
 - Check kernel version is up-to-date to run [`option`](https://superuser.com/questions/691271/what-does-modprobe-option-do)
-    - <img src="https://user-images.githubusercontent.com/107580325/178068703-6fe4c3bf-ab7a-4596-aa64-03fcd02bfa58.png" height="200" width="400">
-    - might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
+    - run following commands:
+
+
+# sudo modprobe option
+# echo 1bc7 <PID> /sys/bus/usb-serial/drivers/option1/new_id
+
+- might need to [rebuild kernel](https://www.olimex.com/forum/index.php?topic=558.0) if option isn't there?
 - We might be able to use [libqmi project](https://gitlab.freedesktop.org/mobile-broadband/libqmi) to talk to the modem, but I'm doubtful
 - Is there a way to force the network manager wizard to open?
     - `nmcli c` shows what is currently connected, `nmcli d` shows current devices 
