@@ -33,7 +33,7 @@ We double checked the available modes listed for the modem by `mmcli -m 0` and m
 
 And even tried restricting the modem to only allow 5G, upon which the modem disconnected from the network completely. 
 
-What's strange is we could get information about the 5G signal, as in the following, (though sometimes the 5G signal information would show up as N/A). In the second command it shows that 5G NSA is available, so maybe the modem does not recognize a distinction between 4G and 5G NSA when connecting or setting preferences?
+What's strange is we could get information about the 5G signal, as in the following, (though sometimes the 5G signal information would show up as N/A). 
 
 ```
 # qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-signal-info
@@ -48,7 +48,11 @@ LTE:
 	RSRP: '-74 dBm'
 	SNR: '16.5 dB'
 	RSRQ: '-11 dB'
-	
+```
+
+And using the next command, we can see that 5G NSA is available, so maybe the modem does not recognize a distinction between 4G and 5G NSA when connecting or setting preferences?
+
+```
 # qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-info  
 
 [/dev/cdc-wdm0] Successfully got system info:
@@ -98,7 +102,7 @@ LTE:
 	SIM reject info: 'available'
 ```
 
-We also tried the following, whic confirms that the modem would prefer a 5G network:
+We also tried the following, which confirms that the modem would prefer a 5G network:
 
 ```
 # qmicli --device=/dev/cdc-wdm0 -p --device-open-proxy --nas-get-system-selection-preference
@@ -122,7 +126,7 @@ We also tried the following, whic confirms that the modem would prefer a 5G netw
 	Acquisition order preference: '5gnr, lte, umts'
 ```
 
-We have not yet been able to verifiy a connection to any 5G network. The current idea as to what could be happening is that there could be something wrong or out-of-date on the firmware of the Telit modems. Since the 5G phone could connect but the modem could not, that isolates the problem with the modem. A thought is to update the firmware and see if anything changes. I at least think it would be best to escalate this problem to Telit and ask if there is a misunderstanding or an issue.
+We have not yet been able to verifiy a connection to any 5G network. The current idea as to what could be happening is that there could be something wrong or out-of-date on the firmware of the Telit modems. Since the 5G phone could connect but the modem could not, that isolates the issue to a problem with the modem. A thought is to update the firmware and see if anything changes. I at least think it would be best to escalate this problem to Telit and ask if there is a misunderstanding or an issue.
 
 ## Jetson Nano and NX compatability
 
