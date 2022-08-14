@@ -582,9 +582,9 @@ Deliverables
 
 |  | Goal | Priority | Notes |
 | --- | --- | --- | --- |
-| 🟩 | Train models for other time intervals | High | e.g. 6-in, 1-out |
+| ✅ | Train models for other time intervals | High | e.g. 6-in, 1-out |
 | 🟩 | Get SAGE data access | Med |  |
-| 🟩 | Complete data analysis tool | Med |  |
+| ✅ | Complete data analysis tool | Med |  |
 | 🟩 | Get access to container | Low | Sean |
 
 ✅ Completed, 🟩 In-Progress, ❎ Uncompleted (by end of week)
@@ -601,7 +601,46 @@ Different time-interval model
 
 ## Tuesday, August 9
 
-- Todo
+- Analyzed 6-day-in, 1-day-out, 30-min model
+- Finished model tool implementation (new code, lots of refactoring, etc.)
+    - Only works with dummy data, will have to rework to work w/ waggle data
+- Met with Bobby to discuss performance and next steps
 
 **Primary Project:**
-Different time-interval model
+Data analysis tool
+
+## Wednesday, August 10
+
+- Submitted job for 12-hour-in, 3-hour-out model
+- Finished data analysis tool except for SAGE access
+- Worked on plug-in
+    - Implemented functionality
+        - Need to check if data collection done properly
+    - Worked on documentation for training model
+        - Heavily refactored
+
+**Primary Project:**
+Data analysis tool/Plug-In
+
+## Thursday, August 11
+
+- Fixes various bugs in plugin
+    - Runs with dummy code on TF 2.9
+- Met with Bobby for final steps and personal feedback interview
+- Met with Seongha, Yongho, Sean
+    - Discussed status and next steps for last (!) day
+- Continued refactoring training code/writing documentation
+
+**Primary Project:**
+Plug-In
+
+## Friday, August 12
+
+- Met with Seongha for final steps and personal feedback interview
+- Refactored and documented code
+- Finished documenting/rewriting data loading/preprocessing code
+- Finished documenting/rewriting training and optimization code
+- Worked on re-adding code for seasonal models. Finished adding code for seasonal models and all documentation on Sunday, 8/14.
+
+**Primary Project:**
+Plug-In
