@@ -3,7 +3,7 @@ import json
 import base64
 from waggle.plugin import Plugin
 import os
-os.environ["PYWAGGLE_LOG_DIR"] = "/home/pi/code/test-run-logs"
+os.environ["PYWAGGLE_LOG_DIR"] = "/var/log/pywaggle"
 
 types = {
     "t": "env.temperature",
