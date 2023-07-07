@@ -1,8 +1,8 @@
-# Setting Up Soil Sensor
+# README for Soil Sensor Instructions
+
+The process below describes the initial stages of setting up the soil moisture and temperature sensor
 
 ---
-
-The process below describes the initial stages of setting up the soil moisture and temperature sensor. 
 
 ### Hardware Needed
 * USB-C to USB-C wire for serial read
@@ -20,7 +20,8 @@ Thank you to Colorado State University for the sensor.
 
 ### Connecting Board to Sensor
 > Note: red wire is for power, black is for ground, white for soil moisture, and blue for soil temperature
-1. Connect the wires from the sensor to the board as shown: 
+1. Grab the soil sensor <img src='./images/sensor.jpeg' alt='Sensor' height='500'>
+2. Connect the wires from the sensor to the board as shown: 
 <img src='./images/sensor_connected.jpeg' alt='Connected Board' height='500'>
 
 ### Connect Board to Computer
@@ -44,3 +45,5 @@ At 170 capture, I dipped half of the sensor into refrigerated water. There's no 
 **Third Graph:**
 I completely submerge the sensor into room temperature water and take it out at capture 2910. 
 <img src='./images/moisture_test.png' alt='Moisture Test' width='800'>
+
+**For more detailed instructions in capturing data with the soil sensor go to the [read_sensor](./read_sensor/README.md) directory** 
